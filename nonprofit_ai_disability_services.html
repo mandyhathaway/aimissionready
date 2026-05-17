@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI in Disability Services: Considerations for IDD and Supported Employment Organizations</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,400&family=Source+Sans+3:wght@300;400;600&family=DM+Mono:wght@400;500&display=swap');
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  a:focus-visible, button:focus-visible { outline: 2px solid var(--green); outline-offset: 2px; border-radius: 2px; }
+  .cover a:focus-visible { outline-color: #aed6f1; }
+  :root { --ink:#1a1a18; --cream:#f5f0e6; --green:#2d5a3d; --green-mid:#3d6b4a; --green-light:#eaf3de; --alert:#1d5e8a; --alert-light:#ddeaf5; --muted:#4e4e47; --card:#faf7ef; --border:rgba(45,90,61,0.18); }
+  body { font-family:'Source Sans 3',sans-serif; background:var(--cream); color:var(--ink); font-size:16px; line-height:1.7; }
+  .page { max-width:820px; margin:0 auto; }
+  .cover { background:var(--green); color:var(--cream); padding:72px 64px 60px; }
+  .cover-rule-top { border:none; border-top:1px solid #aed6f1; margin-bottom:40px; }
+  .cover-kicker { font-size:12px; font-weight:700; letter-spacing:0.22em; text-transform:uppercase; color:#aed6f1; margin-bottom:18px; }
+  .cover-title { font-family:'Playfair Display',serif; font-size:44px; font-weight:900; line-height:1.1; margin-bottom:10px; }
+  .cover-sub { font-family:'Playfair Display',serif; font-style:italic; font-size:20px; color:#dce8d8; margin-bottom:36px; }
+  .cover-rule-bottom { border:none; border-top:1px solid rgba(174,214,241,0.35); margin-bottom:28px; }
+  .cover-meta { font-size:13px; color:#b8d4c0; letter-spacing:0.04em; }
+  .cover-meta a { color:#aed6f1; text-decoration:none; }
+  .body-wrap { padding:56px 64px 72px; }
+  h2 { font-family:'Playfair Display',serif; font-size:26px; font-weight:700; color:var(--green); margin-top:44px; margin-bottom:14px; padding-bottom:8px; border-bottom:1.5px solid var(--border); }
+  h3 { font-family:'Source Sans 3',sans-serif; font-size:15px; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:var(--green-mid); margin-top:28px; margin-bottom:8px; }
+  p { margin-bottom:16px; color:var(--ink); }
+  .pullquote { background:var(--green); color:var(--cream); border-radius:4px; padding:28px 36px; margin:36px 0; font-family:'Playfair Display',serif; font-style:italic; font-size:20px; line-height:1.5; }
+  .alert-box { background:var(--alert-light); border-left:4px solid var(--alert); border-radius:0 4px 4px 0; padding:20px 24px; margin:28px 0; }
+  .alert-box .alert-label { font-family:'DM Mono',monospace; font-size:11px; font-weight:500; letter-spacing:0.15em; text-transform:uppercase; color:var(--alert); margin-bottom:6px; }
+  .alert-box p { margin:0; font-size:15px; color:#1a1a18; }
+  .green-card { background:var(--green-light); border:1px solid var(--border); border-radius:4px; padding:24px 28px; margin:28px 0; }
+  .green-card .card-label { font-family:'DM Mono',monospace; font-size:11px; font-weight:500; letter-spacing:0.15em; text-transform:uppercase; color:var(--green); margin-bottom:10px; }
+  .green-card p { margin:0 0 10px; font-size:15px; }
+  .green-card p:last-child { margin-bottom:0; }
+  .numbered-list { counter-reset:item; list-style:none; padding:0; margin:20px 0 24px; }
+  .numbered-list li { counter-increment:item; display:flex; gap:18px; margin-bottom:18px; align-items:flex-start; }
+  .numbered-list li::before { content:counter(item); font-family:'DM Mono',monospace; font-size:13px; font-weight:500; color:var(--cream); background:var(--green); width:26px; height:26px; border-radius:50%; display:flex; align-items:center; justify-content:center; flex-shrink:0; margin-top:2px; }
+  .numbered-list li p { margin:0; font-size:15px; }
+  .numbered-list li strong { display:block; margin-bottom:2px; color:var(--green); }
+  .never-list { list-style:none; padding:0; margin:16px 0; }
+  .never-list li { display:flex; gap:14px; align-items:flex-start; margin-bottom:12px; font-size:15px; }
+  .never-list li::before { content:"✕"; font-family:'DM Mono',monospace; font-size:12px; color:#c0392b; font-weight:700; flex-shrink:0; margin-top:3px; }
+  .ok-list { list-style:none; padding:0; margin:16px 0; }
+  .ok-list li { display:flex; gap:14px; align-items:flex-start; margin-bottom:12px; font-size:15px; }
+  .ok-list li::before { content:"✓"; font-family:'DM Mono',monospace; font-size:13px; color:var(--green); font-weight:700; flex-shrink:0; margin-top:2px; }
+  .contact-block { background:var(--green); color:var(--cream); padding:36px 64px; margin-top:56px; text-align:center; }
+  .contact-block p { color:#dce8d8; margin-bottom:10px; font-size:15px; }
+  .contact-block a { color:#aed6f1; text-decoration:none; font-weight:600; }
+  .contact-block .contact-name { font-family:'Playfair Display',serif; font-size:20px; font-weight:700; color:var(--cream); margin-bottom:6px; }
+  hr.section-rule { border:none; border-top:1px solid var(--border); margin:40px 0; }
+  @media (max-width:700px) { .body-wrap { padding:44px 28px 52px; } .cover { padding:56px 28px 48px; } .cover-title { font-size:34px; } }
+  @media print { body{background:white;} .cover,.pullquote,.contact-block,.green-card,.alert-box,.numbered-list li::before { -webkit-print-color-adjust:exact; print-color-adjust:exact; } }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="cover">
+    <hr class="cover-rule-top">
+    <div class="cover-kicker">Nonprofit AI Resource Series &nbsp;·&nbsp; Sector Guides</div>
+    <h1 class="cover-title">AI in disability services</h1>
+    <div class="cover-sub">Considerations for IDD, supported employment, and residential service organizations</div>
+    <hr class="cover-rule-bottom">
+    <div class="cover-meta">
+      Mandy Hathaway Consulting &nbsp;·&nbsp;
+      <a href="https://mandyhathaway.com">mandyhathaway.com</a> &nbsp;·&nbsp;
+      AI Ethics &amp; Technology Consulting
+    </div>
+  </div>
+
+  <div class="body-wrap">
+
+    <p>Disability services organizations face a different AI calculus than most nonprofits. The same data-hygiene rules apply, the same vendor questions matter, but a second layer of considerations sits on top of all of them: the people you serve may not be able to consent in the way conventional privacy frameworks assume, the materials you produce have legal accessibility requirements, and the settings you work in (day programs, residential, supported employment placements) are increasingly populated by AI-enabled devices that nobody opted in to.</p>
+
+    <p>This guide is written for organizations like Reach for Resources, Kaposia, Udac, and the dozens of others in the IDD and supported-employment orbit. It is also relevant to any nonprofit serving adults or children whose disabilities affect informed consent or whose communities are unusually exposed to algorithmic harm.</p>
+
+    <div class="pullquote">
+      The right question for disability services is not "can we use AI." It is "can the people we serve meaningfully consent to AI being used in their services, and if not, what are we doing in their place to protect them."
+    </div>
+
+    <h2>The consent problem</h2>
+
+    <p>Standard privacy frameworks assume the person whose information is being processed can read the notice, understand its implications, and make a choice. For many of the people served by disability services organizations, one or more of those assumptions does not hold. The legal status of consent varies (guardianship, conservatorship, supported decision-making agreements), the practical capacity to weigh long-term data risks against short-term service benefits varies even more, and the power dynamic between agency and client makes "free choice" a thin concept under the best of circumstances.</p>
+
+    <p>What this means practically: an AI consent form, in the standard "I agree to the use of artificial intelligence in my services" form, is almost always inadequate. It does not meet the standard of meaningful consent under most disability rights frameworks. It also does not give you cover if something goes wrong.</p>
+
+    <p>The better model treats AI consent as one component of an ongoing dialogue about how the person's information is used, conducted at the person's communication level, repeated when AI use changes, and supported by the people the client has chosen to involve in decisions of this kind. Supported decision-making frameworks fit this work directly.</p>
+
+    <h2>Supported decision-making, applied to AI</h2>
+
+    <p>Supported decision-making is the practice of helping a person make their own decisions with the support of people they trust, rather than having a guardian or surrogate decide for them. For AI consent in service settings, the model can be applied directly.</p>
+
+    <ol class="numbered-list">
+      <li>
+        <p><strong>Identify the AI use clearly, in plain language at the person's reading level.</strong> "We are starting to use a computer program that helps us write our case notes faster" is more honest than a privacy notice.</p>
+      </li>
+      <li>
+        <p><strong>Name the information that will and will not be involved.</strong> Specifically. "Your name and your work goals" is different from "your case notes" is different from "your medical history."</p>
+      </li>
+      <li>
+        <p><strong>Identify trusted supporters for the conversation.</strong> Family members, advocates, peer mentors. Not just the case manager whose work the AI will affect.</p>
+      </li>
+      <li>
+        <p><strong>Make the alternative real.</strong> If the person says no, what happens? If the answer is "service continues without AI use of your information," say so. If the answer is "this technology is built into our records system and cannot be turned off for one person," that is a different conversation and a different problem to fix.</p>
+      </li>
+      <li>
+        <p><strong>Revisit when AI use changes.</strong> A vendor adds a new feature, your organization adopts a new tool, your case management system starts using AI for risk scoring. Each is a new conversation, not a one-time signature.</p>
+      </li>
+    </ol>
+
+    <h2>Plain-language requirements are legal requirements</h2>
+
+    <p>Section 504, the ADA, and most state-level disability rights statutes require effective communication. For organizations serving people with cognitive disabilities, that has long meant providing materials at a reading level the person can access. AI-generated content does not change the standard. If anything, it raises it, because AI tools default to a reading level that is too high for many of the people you serve.</p>
+
+    <p>Any client-facing material drafted with AI assistance, including service plans, rights notices, AI consent documents, and program materials, should be checked against a defined reading level (often 6th to 8th grade for general adult population materials, lower for many IDD service contexts) and reviewed by someone whose work it is to know what your clients understand.</p>
+
+    <div class="alert-box">
+      <div class="alert-label">The asymmetry</div>
+      <p>AI can produce a draft of an AI consent document in thirty seconds. The work that makes that document legally and ethically adequate, reviewing reading level, checking for jargon, ensuring it covers the actual AI use accurately, takes the same time and skill it always did. The AI speeds up drafting. It does not replace the review.</p>
+    </div>
+
+    <h2>Residential and day-program surveillance concerns</h2>
+
+    <p>Many disability service settings now include AI-enabled devices that were installed for legitimate reasons (safety, communication, fall detection) but that operate continuously and may not have been disclosed to clients in meaningful detail. Smart speakers, AI-enabled cameras, ambient listening devices, behavior-tracking sensors. Each is a category that deserves its own policy.</p>
+
+    <div class="green-card">
+      <div class="card-label">Smart speakers and voice assistants</div>
+      <p>Alexa, Google Home, similar. Useful for accessibility (voice control of lights, thermostats, music). Continuously listening for the wake word. Recordings are processed and often stored. Should be disclosed to clients and their decision-supporters before placement. Should not be in private spaces (bedrooms, bathrooms). Should be reviewed for compliance with your data governance policy.</p>
+    </div>
+
+    <div class="green-card">
+      <div class="card-label">AI-enabled cameras</div>
+      <p>Cameras with AI analytics (motion detection, fall detection, behavior pattern recognition) are increasingly common in group home and day-program settings. They are not equivalent to old-style video surveillance. The AI processing can identify patterns and behaviors that the camera operator never intended to monitor. Policy should specify what AI features are enabled, who has access to the analysis, and how long data is retained.</p>
+    </div>
+
+    <div class="green-card">
+      <div class="card-label">Behavior tracking and predictive analytics</div>
+      <p>Some vendors are marketing AI tools that predict client behavior based on historical data, particularly around aggression, elopement, or medical events. These tools concentrate risk: false positives lead to restrictive interventions, false negatives create liability. Use is acceptable only with strong human review, clear escalation rules, and documentation that the predictions are advisory rather than determinative.</p>
+    </div>
+
+    <h2>Employment services: a specific note</h2>
+
+    <p>For supported employment, customized employment, and integrated workforce organizations (the APSE-aligned space), three AI considerations are worth surfacing specifically.</p>
+
+    <ol class="numbered-list">
+      <li>
+        <p><strong>AI in employer matching.</strong> Some employer-side platforms now use AI to screen applicants. For supported employment clients, this can be a barrier even when the client is qualified. Job developers should know what employers are using and where the friction points are.</p>
+      </li>
+      <li>
+        <p><strong>AI in job coaching documentation.</strong> Useful for note-taking, less useful for client-facing communication. Coaching notes that include details of a person's disability, accommodations, or performance should follow the same PHI and consent rules as clinical notes.</p>
+      </li>
+      <li>
+        <p><strong>AI assistive technology in placements.</strong> A growing category. Real-time prompting tools, AI scheduling assistants, AI-driven task breakdowns. Often genuinely useful for the worker. Should be coordinated with the employer, disclosed to the employee, and reviewed for whether the assistive tool itself collects data that the worker has not consented to share.</p>
+      </li>
+    </ol>
+
+    <h2>Useful AI applications for IDD service organizations</h2>
+
+    <ul class="ok-list">
+      <li>Reading-level translation of policies, notices, and program materials to client-accessible formats</li>
+      <li>Communication support tools (AAC apps with AI enhancement, voice-to-text for clients with motor disabilities)</li>
+      <li>Administrative drafting that does not involve client information (board materials, vendor communications, marketing)</li>
+      <li>Internal training development (workshop outlines, role-play scenarios, staff onboarding)</li>
+      <li>Grant writing with appropriate data hygiene (general program descriptions, not individual outcomes)</li>
+      <li>Meeting-summary tools for internal staff meetings that do not include client identifiers</li>
+      <li>Assistive technology for clients, with their consent and where the tool genuinely expands access</li>
+    </ul>
+
+    <h2>What to avoid in IDD service settings</h2>
+
+    <ul class="never-list">
+      <li>Standardized AI consent forms that do not account for varied communication needs</li>
+      <li>AI tools that score, predict, or rank clients in ways that affect service decisions, without explicit human-decision-making documentation</li>
+      <li>Smart-speaker or voice-assistant placement in client private spaces without explicit disclosure to the client and their supporters</li>
+      <li>AI-generated client-facing materials at default reading levels (typically too high)</li>
+      <li>Using AI to process behavioral incident data without an explicit policy on what the AI can and cannot influence</li>
+      <li>Letting "AI-enhanced" features turn on by default in any client-touching system without an accessibility and consent review</li>
+    </ul>
+
+    <h2>What to do this quarter</h2>
+
+    <p>Three steps that are doable inside ninety days, for any disability services organization.</p>
+
+    <ol class="numbered-list">
+      <li>
+        <p><strong>Audit AI-enabled devices and features in client-facing settings.</strong> Walk every program location. List every smart speaker, AI-enabled camera, automated tracking system, and AI feature inside existing software. Note what is enabled, who set it up, and what disclosure clients received.</p>
+      </li>
+      <li>
+        <p><strong>Revise the consent process for AI specifically.</strong> Build a supported-decision-making framework into your consent workflow. Pair it with a plain-language explainer at your clients' typical reading level. Translate as needed.</p>
+      </li>
+      <li>
+        <p><strong>Train direct-service staff.</strong> Job coaches, case managers, residential staff, day-program staff. They need to know what counts as PHI, what AI tools are approved, and how to handle the conversation when a client asks "is the computer listening to me right now."</p>
+      </li>
+    </ol>
+
+    <hr class="section-rule">
+
+    <p>For organizations like Reach for Resources, Kaposia, Udac, and the rest of the IDD orbit, this work is the difference between AI adoption that strengthens services and AI adoption that creates a new layer of harm for people who already face more of it than they should. The good news is that the disability rights frameworks already in place (supported decision-making, plain-language requirements, accessibility law) give you most of the tools you need. The AI-specific work is mostly about applying them deliberately to a new category of technology.</p>
+
+    <p>If your organization is working through any of this in real time, the Vendor Vetting guide and the HIPAA-Environment guide are the natural next reads. The Case Notes guide pairs with this one specifically.</p>
+
+  </div>
+
+  <div class="contact-block">
+    <div class="contact-name">Mandy Hathaway</div>
+    <p>AI Ethics &amp; Technology Consulting for Nonprofits</p>
+    <p><a href="https://mandyhathaway.com">mandyhathaway.com</a> &nbsp;·&nbsp; <a href="https://mandyhathaway.com/book">Book a call</a></p>
+  </div>
+
+</div>
+</body>
+</html>

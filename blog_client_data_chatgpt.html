@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Your client data and ChatGPT: what actually happens to it | AI Mission Ready</title>
+<meta name="description" content="The Meta/Llama lawsuit is the largest training-data case yet. Anthropic settled a similar one for $1.5 billion. Here is what that means for the notes your staff are pasting into ChatGPT.">
+<meta name="author" content="Mandy Hathaway">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="theme-color" content="#1a3d2b">
+<link rel="canonical" href="https://aimissionready.org/blog/client-data-chatgpt">
+
+<!-- Open Graph -->
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="AI Mission Ready">
+<meta property="og:title" content="Your client data and ChatGPT: what actually happens to it">
+<meta property="og:description" content="The training data fight is at the center of an active legal battle. The inputs come from somewhere. Often, that somewhere is your staff.">
+<meta property="og:url" content="https://aimissionready.org/blog/client-data-chatgpt">
+<meta property="og:image" content="https://aimissionready.org/og-image.png">
+<meta property="article:author" content="Mandy Hathaway">
+<meta property="article:published_time" content="2026-05-16">
+<meta property="article:section" content="Data & Privacy">
+
+<!-- JSON-LD: Article -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Your client data and ChatGPT: what actually happens to it",
+  "description": "The Meta/Llama lawsuit is the largest training-data case yet. Anthropic settled a similar one for $1.5 billion. What that means for the notes your staff are pasting into the free tier.",
+  "datePublished": "2026-05-16",
+  "author": {
+    "@type": "Person",
+    "name": "Mandy Hathaway",
+    "url": "https://mandyhathaway.com"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "AI Mission Ready",
+    "url": "https://aimissionready.org/"
+  },
+  "mainEntityOfPage": "https://aimissionready.org/blog/client-data-chatgpt",
+  "articleSection": "Data & Privacy",
+  "inLanguage": "en-US"
+}
+</script>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,400&family=Source+Sans+3:wght@300;400;600&family=DM+Mono:wght@400;500&display=swap');
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  a:focus-visible, button:focus-visible { outline: 2px solid var(--green); outline-offset: 2px; border-radius: 2px; }
+  .cover a:focus-visible { outline-color: #aed6f1; }
+  :root {
+    --ink: #1a1a18; --cream: #f5f0e6; --green: #2d5a3d; --green-mid: #3d6b4a;
+    --green-light: #eaf3de; --alert: #1d5e8a; --alert-light: #ddeaf5;
+    --warn: #a8511a; --warn-light: #f5e6d8;
+    --muted: #4e4e47; --rule: #2d5a3d; --card: #faf7ef; --border: rgba(45,90,61,0.18);
+  }
+  body { font-family: 'Source Sans 3', sans-serif; background: var(--cream); color: var(--ink); font-size: 16px; line-height: 1.7; }
+  .page { max-width: 820px; margin: 0 auto; }
+  .cover { background: var(--green); color: var(--cream); padding: 72px 64px 60px; position: relative; }
+  .cover-rule-top { width: 100%; border: none; border-top: 1px solid #aed6f1; margin-bottom: 40px; }
+  .cover-kicker { font-size: 12px; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: #aed6f1; margin-bottom: 18px; }
+  .cover-title { font-family: 'Playfair Display', serif; font-size: 44px; font-weight: 900; line-height: 1.1; margin-bottom: 14px; }
+  .cover-sub { font-family: 'Playfair Display', serif; font-style: italic; font-size: 20px; color: #dce8d8; margin-bottom: 36px; }
+  .cover-rule-bottom { width: 100%; border: none; border-top: 1px solid rgba(174,214,241,0.35); margin-bottom: 28px; }
+  .cover-meta { font-size: 13px; color: #b8d4c0; letter-spacing: 0.04em; }
+  .cover-meta a { color: #aed6f1; text-decoration: none; }
+  .body-wrap { padding: 56px 64px 72px; }
+  h2 { font-family: 'Playfair Display', serif; font-size: 26px; font-weight: 700; color: var(--green); margin-top: 44px; margin-bottom: 14px; padding-bottom: 8px; border-bottom: 1.5px solid var(--border); }
+  h3 { font-family: 'Source Sans 3', sans-serif; font-size: 15px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--green-mid); margin-top: 28px; margin-bottom: 8px; }
+  p { margin-bottom: 16px; color: var(--ink); }
+  .pullquote { background: var(--green); color: var(--cream); border-radius: 4px; padding: 28px 36px; margin: 36px 0; font-family: 'Playfair Display', serif; font-style: italic; font-size: 20px; line-height: 1.5; }
+  .alert-box { background: var(--alert-light); border-left: 4px solid var(--alert); border-radius: 0 4px 4px 0; padding: 20px 24px; margin: 28px 0; }
+  .alert-box .alert-label { font-family: 'DM Mono', monospace; font-size: 11px; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: var(--alert); margin-bottom: 6px; }
+  .alert-box p { margin: 0; font-size: 15px; color: #1a1a18; }
+  .warn-box { background: var(--warn-light); border-left: 4px solid var(--warn); border-radius: 0 4px 4px 0; padding: 20px 24px; margin: 28px 0; }
+  .warn-box .warn-label { font-family: 'DM Mono', monospace; font-size: 11px; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: var(--warn); margin-bottom: 6px; }
+  .warn-box p { margin: 0; font-size: 15px; color: #1a1a18; }
+  .green-card { background: var(--green-light); border: 1px solid var(--border); border-radius: 4px; padding: 24px 28px; margin: 28px 0; }
+  .green-card .card-label { font-family: 'DM Mono', monospace; font-size: 11px; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: var(--green); margin-bottom: 10px; }
+  .green-card p { margin: 0 0 10px; font-size: 15px; }
+  .green-card p:last-child { margin-bottom: 0; }
+  .numbered-list { counter-reset: item; list-style: none; padding: 0; margin: 20px 0 24px; }
+  .numbered-list li { counter-increment: item; display: flex; gap: 18px; margin-bottom: 18px; align-items: flex-start; }
+  .numbered-list li::before { content: counter(item); font-family: 'DM Mono', monospace; font-size: 13px; font-weight: 500; color: var(--cream); background: var(--green); width: 26px; height: 26px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px; }
+  .numbered-list li p { margin: 0; font-size: 15px; }
+  .numbered-list li strong { display: block; margin-bottom: 2px; color: var(--green); }
+  .never-list { list-style: none; padding: 0; margin: 16px 0; }
+  .never-list li { display: flex; gap: 14px; align-items: flex-start; margin-bottom: 12px; font-size: 15px; }
+  .never-list li::before { content: "✕"; font-family: 'DM Mono', monospace; font-size: 12px; color: #c0392b; font-weight: 700; flex-shrink: 0; margin-top: 3px; }
+  .contact-block { background: var(--green); color: var(--cream); padding: 36px 64px; margin-top: 56px; text-align: center; }
+  .contact-block p { color: #dce8d8; margin-bottom: 10px; font-size: 15px; }
+  .contact-block a { color: #aed6f1; text-decoration: none; font-weight: 600; }
+  .contact-block .contact-name { font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 700; color: var(--cream); margin-bottom: 6px; }
+  hr.section-rule { border: none; border-top: 1px solid var(--border); margin: 40px 0; }
+  .back-link { display: inline-block; margin: 20px 64px 0; font-size: 13px; color: var(--green-mid); text-decoration: none; letter-spacing: 0.04em; }
+  .back-link:hover { color: var(--green); }
+</style>
+</head>
+<body>
+<div class="page">
+  <a class="back-link" href="aimissionready_prototype_v1.html">&larr; Back to AI Mission Ready</a>
+  <div class="cover">
+    <hr class="cover-rule-top">
+    <div class="cover-kicker">Blog &nbsp;·&nbsp; Already Using AI &nbsp;·&nbsp; May 2026</div>
+    <h1 class="cover-title">Your client data and ChatGPT: what actually happens to it</h1>
+    <div class="cover-sub">The training data fight is at the center of an active legal battle. The inputs come from somewhere. Often, the somewhere is your staff.</div>
+    <hr class="cover-rule-bottom">
+    <div class="cover-meta">
+      Mandy Hathaway &nbsp;·&nbsp;
+      <a href="https://mandyhathaway.com">mandyhathaway.com</a> &nbsp;·&nbsp;
+      AI Ethics Consultant &amp; Technology Specialist
+    </div>
+  </div>
+
+  <div class="body-wrap">
+
+    <p>On May 5 of this year, five of the largest academic and trade publishers in the world sued Meta in a Manhattan federal court. Elsevier, Cengage, Hachette, Macmillan, and McGraw Hill, along with author Scott Turow, are claiming that Meta unlawfully copied and used millions of books, academic papers, and other works to train its Llama large language model without licensing or compensation. The damages they are asking for are not yet public, but for scale: Anthropic settled a similar case in September 2025 for $1.5 billion.</p>
+
+    <p>You may have read the headlines and thought "this is a story about big publishers and big tech, not about my nonprofit." That would be a reasonable conclusion based on the framing. But here is the thing about training data lawsuits. The legal question they are asking is not "did Meta steal these specific books?" The legal question is "what counts as a fair use of someone else's information when you are training an AI on it?" That question applies to every input that has ever been typed into one of these systems. Including the inputs that came from your staff.</p>
+
+    <div class="pullquote">
+      Every word your staff types into ChatGPT is an input. The fight happening in court right now is about who owns those inputs and what the companies can do with them. That fight is not over.
+    </div>
+
+    <h2>What happens when your case manager pastes notes into ChatGPT</h2>
+
+    <p>Let me describe a moment that is happening in nonprofits all over the country, today, right now.</p>
+
+    <p>A case manager has six progress reports to write before Friday. She has been doing this for years. She is good at it. But she is also tired, and the funder narrative is due, and her caseload is the largest it has ever been. She opens ChatGPT, pastes in her notes from a recent client visit, and types "rewrite this as a 200-word progress summary in professional tone." Thirty seconds later, she has a draft. She edits it, removes the parts that are not quite right, adds a sentence about next steps, and pastes it into her case management system.</p>
+
+    <p>She has saved fifteen minutes. The summary is fine. The client never sees it. The nonprofit's reporting is not affected. From her perspective, nothing has changed.</p>
+
+    <p>From a data perspective, here is what just happened. The client's name, the details of their housing situation, the description of their symptoms, the name of their child, and the case manager's own observations about their mental state have all left the nonprofit's building. That information has traveled over the public internet to a server operated by OpenAI. It has been processed by their model. And what happens next depends entirely on which version of ChatGPT she was using and what her account settings are.</p>
+
+    <h2>The three things that can happen to that data</h2>
+
+    <p>This is the part that most staff have never been told, and most nonprofits have never explained. Once your input reaches the AI company's server, there are three possible paths.</p>
+
+    <ol class="numbered-list">
+      <li>
+        <p><strong>It is processed and discarded.</strong> The AI company uses your input to generate a response, then deletes it. This is the most protective option and is standard in enterprise and business plans from the major vendors, including ChatGPT Enterprise, ChatGPT Team, and the corresponding tiers at Microsoft and Anthropic.</p>
+      </li>
+      <li>
+        <p><strong>It is stored, sometimes indefinitely.</strong> Many free and consumer plans retain conversation history so users can return to past chats. That history sits on the vendor's servers and is subject to their security practices, their breach history, and their response to legal subpoenas. If someone sues the AI company tomorrow and the court orders discovery, your client's information could be in scope.</p>
+      </li>
+      <li>
+        <p><strong>It is used to train or improve the model.</strong> Some free consumer tools, including the default settings on ChatGPT's free tier, allow the company to use your inputs to improve the model. This means your client's case notes could become part of the data the next version of the model is trained on. The training-data lawsuits we are watching right now are about exactly this kind of use.</p>
+      </li>
+    </ol>
+
+    <div class="warn-box">
+      <div class="warn-label">What this means in May 2026</div>
+      <p>If your staff are using the free tier of ChatGPT with default settings, every input they have made since they signed up may be available to OpenAI for training purposes. Disabling chat history retroactively does not remove what has already been used. The setting from this point on matters. The history may not be recoverable.</p>
+    </div>
+
+    <h2>Why this is different for nonprofits</h2>
+
+    <p>A for-profit consultancy might lose a client over a data breach. A nonprofit can lose the people it serves.</p>
+
+    <p>Domestic violence shelters have particular reason to be careful about where client names appear. Health and human services nonprofits operate under HIPAA, state confidentiality statutes, or both. Legal aid organizations are bound by attorney-client privilege. Schools and youth programs operate under FERPA. Reentry programs work with people whose information is sometimes the subject of active court cases. In every one of these contexts, the information that gets pasted into an AI tool is information your organization has promised someone you would protect.</p>
+
+    <p>The "I did not realize" defense does not hold up well in any of these contexts. State attorneys general are starting to bring enforcement actions against organizations that exposed protected information through unsanctioned AI use. Funders are starting to ask. And the most important audience, the people you serve, are starting to ask whether their case notes are part of the next version of ChatGPT.</p>
+
+    <h2>What you can actually do</h2>
+
+    <p>If your staff are already using AI tools (and they are), there are three moves that disproportionately reduce the risk.</p>
+
+    <p><strong>Move 1: Tell staff which tools they may use, and make sure those tools are on a paid plan with the right data settings.</strong> The single biggest lever is moving staff off free consumer tools and onto enterprise or business plans where inputs are not used for training. ChatGPT Team is $25 per user per month. ChatGPT Enterprise is custom-priced. Microsoft 365 Copilot, when configured properly, processes data under the same protections as the rest of M365. The cost is not zero, but it is meaningful smaller than the cost of a state AG investigation.</p>
+
+    <p><strong>Move 2: Tell staff what categories of information may not go into any external AI tool, regardless of which tool they are using.</strong> Client names with case details. Diagnoses, treatment plans, medication lists. Anything from a protected health record. SSNs, account numbers, immigration status. Children's information, especially minors. The list is short, and staff can hold it in their heads if you make it short.</p>
+
+    <p><strong>Move 3: Make it easy for staff to ask before they paste.</strong> The most consistent finding in my work with nonprofits is that staff want to do the right thing and do not know who to ask. A single sentence in your AI guidance that names a real person ("If you are unsure whether something is okay to put into an AI tool, ask [name] before you paste") changes the behavior more than any policy document.</p>
+
+    <div class="green-card">
+      <div class="card-label">A reasonable starting point</div>
+      <p>If you do nothing else this week: send a short email to staff saying "until we have a written policy, please do not paste anything containing client names, health information, financial details, or anything that would be confidential under our existing privacy commitments into any AI tool, including ChatGPT, Gemini, Claude, or Copilot. If you have a question about whether something is okay, send it to me before you paste." Sign your name. Date it. That email, sent today, is more protective than a forty-page framework written six months from now.</p>
+    </div>
+
+    <h2>The lawsuits are not going to stop</h2>
+
+    <p>The Meta case is one of dozens currently active. The Bloomberg case (against OpenAI) is progressing. The Anthropic settlement set a precedent that authors and publishers can win. The U.S. Copyright Office has issued guidance suggesting that training on copyrighted material is not automatically fair use. Whatever the eventual outcome, the legal fight over what counts as a legitimate AI input is going to continue for years.</p>
+
+    <p>For nonprofits, the practical takeaway is not that AI is too risky to use. It is that the inputs matter, the settings matter, and the difference between the free tier and the paid tier matters in a way that was hypothetical eighteen months ago and is concrete now. The Meta lawsuit is not a story about big publishers and big tech. It is a reminder that everything anyone has ever typed into one of these tools is somewhere, and the question of what happens to it is being decided in courts right now.</p>
+
+    <p>The case manager from earlier in this post is not the villain in any of this. She is a tired person doing her job in a sector that has been asked to do more with less for a decade. The villain, if there is one, is the gap between what the tools do and what the people using them have been told. Closing that gap is the work.</p>
+
+  </div>
+
+  <div class="contact-block">
+    <div class="contact-name">Mandy Hathaway</div>
+    <p>AI Ethics Consultant &amp; Technology Specialist</p>
+    <p><a href="https://mandyhathaway.com">mandyhathaway.com</a> &nbsp;·&nbsp; <a href="mailto:MandyHathaway@Proton.me">MandyHathaway@Proton.me</a></p>
+  </div>
+
+</div>
+</body>
+</html>

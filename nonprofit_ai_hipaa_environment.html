@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI in a HIPAA-Regulated Environment: A Practical Guide for Nonprofits</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,400&family=Source+Sans+3:wght@300;400;600&family=DM+Mono:wght@400;500&display=swap');
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  a:focus-visible, button:focus-visible { outline: 2px solid var(--green); outline-offset: 2px; border-radius: 2px; }
+  .cover a:focus-visible { outline-color: #aed6f1; }
+  :root { --ink:#1a1a18; --cream:#f5f0e6; --green:#2d5a3d; --green-mid:#3d6b4a; --green-light:#eaf3de; --alert:#1d5e8a; --alert-light:#ddeaf5; --muted:#4e4e47; --card:#faf7ef; --border:rgba(45,90,61,0.18); }
+  body { font-family:'Source Sans 3',sans-serif; background:var(--cream); color:var(--ink); font-size:16px; line-height:1.7; }
+  .page { max-width:820px; margin:0 auto; }
+  .cover { background:var(--green); color:var(--cream); padding:72px 64px 60px; }
+  .cover-rule-top { border:none; border-top:1px solid #aed6f1; margin-bottom:40px; }
+  .cover-kicker { font-size:12px; font-weight:700; letter-spacing:0.22em; text-transform:uppercase; color:#aed6f1; margin-bottom:18px; }
+  .cover-title { font-family:'Playfair Display',serif; font-size:44px; font-weight:900; line-height:1.1; margin-bottom:10px; }
+  .cover-sub { font-family:'Playfair Display',serif; font-style:italic; font-size:20px; color:#dce8d8; margin-bottom:36px; }
+  .cover-rule-bottom { border:none; border-top:1px solid rgba(174,214,241,0.35); margin-bottom:28px; }
+  .cover-meta { font-size:13px; color:#b8d4c0; letter-spacing:0.04em; }
+  .cover-meta a { color:#aed6f1; text-decoration:none; }
+  .body-wrap { padding:56px 64px 72px; }
+  h2 { font-family:'Playfair Display',serif; font-size:26px; font-weight:700; color:var(--green); margin-top:44px; margin-bottom:14px; padding-bottom:8px; border-bottom:1.5px solid var(--border); }
+  h3 { font-family:'Source Sans 3',sans-serif; font-size:15px; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:var(--green-mid); margin-top:28px; margin-bottom:8px; }
+  p { margin-bottom:16px; color:var(--ink); }
+  .pullquote { background:var(--green); color:var(--cream); border-radius:4px; padding:28px 36px; margin:36px 0; font-family:'Playfair Display',serif; font-style:italic; font-size:20px; line-height:1.5; }
+  .alert-box { background:var(--alert-light); border-left:4px solid var(--alert); border-radius:0 4px 4px 0; padding:20px 24px; margin:28px 0; }
+  .alert-box .alert-label { font-family:'DM Mono',monospace; font-size:11px; font-weight:500; letter-spacing:0.15em; text-transform:uppercase; color:var(--alert); margin-bottom:6px; }
+  .alert-box p { margin:0; font-size:15px; color:#1a1a18; }
+  .green-card { background:var(--green-light); border:1px solid var(--border); border-radius:4px; padding:24px 28px; margin:28px 0; }
+  .green-card .card-label { font-family:'DM Mono',monospace; font-size:11px; font-weight:500; letter-spacing:0.15em; text-transform:uppercase; color:var(--green); margin-bottom:10px; }
+  .green-card p { margin:0 0 10px; font-size:15px; }
+  .green-card p:last-child { margin-bottom:0; }
+  .numbered-list { counter-reset:item; list-style:none; padding:0; margin:20px 0 24px; }
+  .numbered-list li { counter-increment:item; display:flex; gap:18px; margin-bottom:18px; align-items:flex-start; }
+  .numbered-list li::before { content:counter(item); font-family:'DM Mono',monospace; font-size:13px; font-weight:500; color:var(--cream); background:var(--green); width:26px; height:26px; border-radius:50%; display:flex; align-items:center; justify-content:center; flex-shrink:0; margin-top:2px; }
+  .numbered-list li p { margin:0; font-size:15px; }
+  .numbered-list li strong { display:block; margin-bottom:2px; color:var(--green); }
+  .never-list { list-style:none; padding:0; margin:16px 0; }
+  .never-list li { display:flex; gap:14px; align-items:flex-start; margin-bottom:12px; font-size:15px; }
+  .never-list li::before { content:"✕"; font-family:'DM Mono',monospace; font-size:12px; color:#c0392b; font-weight:700; flex-shrink:0; margin-top:3px; }
+  .ok-list { list-style:none; padding:0; margin:16px 0; }
+  .ok-list li { display:flex; gap:14px; align-items:flex-start; margin-bottom:12px; font-size:15px; }
+  .ok-list li::before { content:"✓"; font-family:'DM Mono',monospace; font-size:13px; color:var(--green); font-weight:700; flex-shrink:0; margin-top:2px; }
+  .contact-block { background:var(--green); color:var(--cream); padding:36px 64px; margin-top:56px; text-align:center; }
+  .contact-block p { color:#dce8d8; margin-bottom:10px; font-size:15px; }
+  .contact-block a { color:#aed6f1; text-decoration:none; font-weight:600; }
+  .contact-block .contact-name { font-family:'Playfair Display',serif; font-size:20px; font-weight:700; color:var(--cream); margin-bottom:6px; }
+  hr.section-rule { border:none; border-top:1px solid var(--border); margin:40px 0; }
+  @media (max-width:700px) { .body-wrap { padding:44px 28px 52px; } .cover { padding:56px 28px 48px; } .cover-title { font-size:34px; } }
+  @media print { body{background:white;} .cover,.pullquote,.contact-block,.green-card,.alert-box,.numbered-list li::before { -webkit-print-color-adjust:exact; print-color-adjust:exact; } }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="cover">
+    <hr class="cover-rule-top">
+    <div class="cover-kicker">Nonprofit AI Resource Series &nbsp;·&nbsp; Lane 2: Already Using AI</div>
+    <h1 class="cover-title">AI in a HIPAA-regulated environment</h1>
+    <div class="cover-sub">PHI in prompts, the BAA chain, and the default-on problem</div>
+    <hr class="cover-rule-bottom">
+    <div class="cover-meta">
+      Mandy Hathaway Consulting &nbsp;·&nbsp;
+      <a href="https://mandyhathaway.com">mandyhathaway.com</a> &nbsp;·&nbsp;
+      AI Ethics &amp; Technology Consulting
+    </div>
+  </div>
+
+  <div class="body-wrap">
+
+    <p>HIPAA was not designed for generative AI. The Privacy Rule and the Security Rule predate every tool in this guide by two decades. But the standards still apply, and they apply hard. If your organization is a covered entity, a business associate, or hybrid, every AI tool that processes protected health information is subject to HIPAA, regardless of whether the vendor's marketing mentions it.</p>
+
+    <p>This guide is not legal advice. Run anything material past your compliance officer or a healthcare attorney. What this guide does is walk through the practical question patterns that show up when nonprofit teams in HIPAA-covered settings start using AI: what counts as PHI in a prompt, how to think about the BAA chain when AI is involved, and what to do about vendor features that quietly default to on.</p>
+
+    <div class="pullquote">
+      A vendor saying "we take privacy seriously" is not a Business Associate Agreement. A toggle in a settings menu is not an opt-in. The standard for HIPAA-covered AI use is a written contract that names what the vendor will and will not do with your PHI.
+    </div>
+
+    <h2>What counts as PHI in an AI prompt</h2>
+
+    <p>Protected Health Information is health-related information combined with any of the eighteen identifiers HIPAA lists. The identifiers are familiar: names, addresses, dates other than year, phone numbers, email addresses, SSNs, medical record numbers, account numbers, license plate numbers, full-face photographs, and a few categories of biometric and account identifiers. PHI rules apply to text, audio, image, and video inputs in the same way.</p>
+
+    <p>The most common mistake in AI use is treating a chat input as "just a prompt" rather than as data transmission. From a compliance perspective, the moment your case manager types "I'm working with [Client Name] who has [Diagnosis]" into a chat tool, you have transmitted PHI to a third party. Whether that transmission is permissible depends entirely on whether you have a Business Associate Agreement with the vendor that covers AI processing.</p>
+
+    <p>De-identification works, but it has to be real de-identification. HIPAA recognizes two methods: Expert Determination (a statistician certifies that the data cannot be re-identified) and Safe Harbor (you strip all eighteen identifiers and have no actual knowledge that the data could be re-identified). Most ad-hoc anonymization fails Safe Harbor because of dates of service, geographic granularity, or rare combinations of attributes that identify a person even without their name. When in doubt, treat the data as PHI.</p>
+
+    <h2>The BAA chain, plain</h2>
+
+    <p>If a vendor processes PHI on your behalf, they are a business associate. A BAA is the written contract that allows the relationship. The complication with generative AI: most generative AI features inside other tools are powered by a different vendor's underlying model. So when your EHR, your CRM, your video platform, or your charting tool adds "AI summarization," there are usually two contracts that matter:</p>
+
+    <ol class="numbered-list">
+      <li>
+        <p><strong>Your BAA with the primary vendor.</strong> The one whose product you bought (the EHR, the CRM). This is the contract you probably already have.</p>
+      </li>
+      <li>
+        <p><strong>The primary vendor's BAA with the AI provider.</strong> The contract between, say, your EHR vendor and OpenAI or Anthropic or Google. You will not see this contract directly, but you can and should ask whether it exists and what it covers.</p>
+      </li>
+      <li>
+        <p><strong>Any additional subprocessors.</strong> Cloud hosting, evaluation tools, content moderation services. Each step in the chain potentially touches PHI.</p>
+      </li>
+    </ol>
+
+    <p>For HIPAA compliance, the chain has to be intact. A break anywhere in it (a subprocessor without a BAA, a model provider not covered under business associate terms) means PHI is flowing somewhere it should not be.</p>
+
+    <div class="alert-box">
+      <div class="alert-label">Question to ask every primary vendor</div>
+      <p>When your product's AI features process our data, who is the underlying model provider, what subprocessors does that involve, and which of those entities are covered under our existing BAA with you? If you cannot tell us in writing, what is the path to getting that confirmed?</p>
+    </div>
+
+    <h2>The default-on problem</h2>
+
+    <p>The single most common HIPAA-AI compliance failure in 2026 is not staff misuse. It is vendor product updates that quietly add AI features and turn them on by default. This pattern has shown up across major EHR vendors, video conferencing platforms, productivity suites, and patient communication tools.</p>
+
+    <p>The mechanism is usually the same. A vendor releases a new version. The release notes mention an "AI-enhanced" feature: meeting summaries, intake intelligence, predictive scheduling, case-note auto-completion, charting suggestions. By default, the feature is enabled. Your organization's data starts flowing into the AI processing pipeline before anyone in compliance or IT has reviewed it.</p>
+
+    <p>For HIPAA-covered nonprofits, this is not a future risk. It is happening now, in tools your team uses every day. The fix is operational: an explicit review at every vendor update, a written policy that AI features are off by default until reviewed, and a periodic audit of what is actually enabled in each tool.</p>
+
+    <h2>Vendor questions worth asking, in order</h2>
+
+    <p>Before any HIPAA-covered organization enables an AI feature in any tool, run through these questions with the vendor in writing. If you cannot get answers, the feature should stay off.</p>
+
+    <ol class="numbered-list">
+      <li>
+        <p><strong>Is the AI feature on by default, and how do we turn it off org-wide?</strong> A toggle for individual users is not enough. There must be an administrator control.</p>
+      </li>
+      <li>
+        <p><strong>Does our existing BAA cover the AI feature?</strong> If yes, get it in writing referencing the specific feature. If no, do not enable until amended.</p>
+      </li>
+      <li>
+        <p><strong>What is the underlying model provider, and what is your BAA arrangement with them?</strong> "We use OpenAI" without a BAA chain is not HIPAA-compliant.</p>
+      </li>
+      <li>
+        <p><strong>Is any of our data used for training or model improvement?</strong> For PHI, the answer must be no, in writing, with no exceptions.</p>
+      </li>
+      <li>
+        <p><strong>Where is the data processed geographically?</strong> If a subprocessor processes data outside the United States, additional compliance considerations apply.</p>
+      </li>
+      <li>
+        <p><strong>What is the retention period?</strong> Confirm that conversation data, audio transcripts, or processing logs are deleted within a defined window.</p>
+      </li>
+      <li>
+        <p><strong>What is the audit trail?</strong> If PHI is accidentally entered, can you tell us who, when, and what was done about it?</p>
+      </li>
+      <li>
+        <p><strong>What is your breach notification process for AI-feature incidents?</strong> Standard HIPAA breach notification still applies, and it has to be operationalized.</p>
+      </li>
+    </ol>
+
+    <h2>When AI use is acceptable in a HIPAA environment</h2>
+
+    <p>AI is not categorically off-limits for HIPAA-covered nonprofits. It is acceptable in defined conditions.</p>
+
+    <ul class="ok-list">
+      <li>With a vendor where a current, AI-specific BAA is in place that covers the model provider and any subprocessors</li>
+      <li>For tasks that do not involve PHI at all (administrative drafting, board materials, public-facing communications)</li>
+      <li>For PHI tasks where the AI processing happens inside your organization's environment (on-prem or in a tenant configured for HIPAA workloads)</li>
+      <li>With staff training on what is and is not allowed in each tool, refreshed annually</li>
+      <li>With administrative controls that prevent staff from enabling AI features in tools that do not have BAA coverage</li>
+    </ul>
+
+    <h2>What is never acceptable</h2>
+
+    <ul class="never-list">
+      <li>Pasting client identifiers into a consumer-tier chat tool, regardless of staff intent</li>
+      <li>Using free transcription services on telehealth or counseling sessions</li>
+      <li>Enabling default-on AI features in any HIPAA-touching vendor without a documented BAA review</li>
+      <li>Treating "the vendor says it's HIPAA-compliant" as sufficient without a current BAA</li>
+      <li>Using AI to draft documentation that goes into the patient record without human review and attribution</li>
+      <li>Enabling AI-generated diagnosis suggestions or treatment recommendations without clinical review and explicit documentation</li>
+    </ul>
+
+    <h2>Common mistakes worth catching now</h2>
+
+    <div class="green-card">
+      <div class="card-label">Mistake one</div>
+      <p>Assuming the team plan covers what enterprise covers. Team-tier subscriptions to ChatGPT, Claude, and Gemini do not include BAA coverage. Enterprise tiers usually do, but the contract has to be executed. The free tier never does.</p>
+    </div>
+
+    <div class="green-card">
+      <div class="card-label">Mistake two</div>
+      <p>Letting AI meeting-summary bots into clinical meetings, case conferences, or supervision. The transcripts contain PHI, and the tool processing them likely lacks BAA coverage. Default policy: AI bots are not allowed in any meeting where client information may be discussed.</p>
+    </div>
+
+    <div class="green-card">
+      <div class="card-label">Mistake three</div>
+      <p>Treating the vendor's own definition of "HIPAA-ready" as authoritative. Some vendors use the term to mean "we have a BAA available on the enterprise tier." Others use it to mean "we have security controls similar to what HIPAA requires." These are not the same.</p>
+    </div>
+
+    <div class="green-card">
+      <div class="card-label">Mistake four</div>
+      <p>Forgetting that BAAs cover the contracted relationship, not future feature additions. If your BAA was signed before the vendor added AI features, you cannot assume the BAA covers the new feature. Re-confirm in writing for any AI capability added after the original contract.</p>
+    </div>
+
+    <h2>What to do this quarter</h2>
+
+    <p>If your organization is HIPAA-covered and using AI in any form, three things are worth doing in the next ninety days. They do not require a budget or a consultant.</p>
+
+    <ol class="numbered-list">
+      <li>
+        <p><strong>Audit what AI features are enabled in each existing vendor.</strong> Walk through every tool that touches PHI: EHR, CRM, video, scheduling, intake, documentation. List the AI features that are enabled. Note which ones are on by default. This list is your remediation queue.</p>
+      </li>
+      <li>
+        <p><strong>Verify the BAA chain for each AI feature you intend to keep using.</strong> Request written confirmation from each primary vendor naming the model provider, the subprocessors, and the BAA coverage. Disable any feature where the chain cannot be verified within sixty days.</p>
+      </li>
+      <li>
+        <p><strong>Update your AI use policy to explicitly cover HIPAA conditions.</strong> Make the rule unambiguous: PHI does not go into AI tools that lack a current, AI-specific BAA. Train staff. Repeat annually.</p>
+      </li>
+    </ol>
+
+    <hr class="section-rule">
+
+    <p>HIPAA compliance with AI is mostly a question of process discipline, not technical sophistication. The standards have not changed. The vendors and the features are new. What protects your organization is the same thing that has always protected it: a clear policy, vendor accountability, training, and an audit cycle that catches drift before it becomes a breach.</p>
+
+    <p>This guide pairs naturally with the EHR Migration guide for clinical-services orgs, and the Vendor Vetting guide for any HIPAA-covered nonprofit assessing a new tool. Read those next.</p>
+
+  </div>
+
+  <div class="contact-block">
+    <div class="contact-name">Mandy Hathaway</div>
+    <p>AI Ethics &amp; Technology Consulting for Nonprofits</p>
+    <p><a href="https://mandyhathaway.com">mandyhathaway.com</a> &nbsp;·&nbsp; <a href="https://mandyhathaway.com/book">Book a call</a></p>
+  </div>
+
+</div>
+</body>
+</html>

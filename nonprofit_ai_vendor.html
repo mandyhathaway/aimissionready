@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Vendor Accountability for Nonprofits: What to Ask Before You Sign Anything</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,400&family=Source+Sans+3:wght@300;400;600&family=DM+Mono:wght@400;500&display=swap');
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  a:focus-visible { outline: 2px solid var(--green); outline-offset: 2px; border-radius: 2px; }
+  .cover a:focus-visible { outline-color: #aed6f1; }
+  :root {
+    --ink: #1a1a18; --cream: #f5f0e6; --green: #2d5a3d; --green-mid: #3d6b4a;
+    --green-light: #eaf3de; --alert: #1d5e8a; --alert-light: #ddeaf5;
+    --muted: #4e4e47; --card: #faf7ef; --border: rgba(45,90,61,0.18);
+  }
+  body { font-family: 'Source Sans 3', sans-serif; background: var(--cream); color: var(--ink); font-size: 16px; line-height: 1.7; }
+  .page { max-width: 820px; margin: 0 auto; }
+  .cover { background: var(--green); color: var(--cream); padding: 72px 64px 60px; }
+  .cover-rule-top { width: 100%; border: none; border-top: 1px solid #aed6f1; margin-bottom: 40px; }
+  .cover-kicker { font-size: 12px; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: #aed6f1; margin-bottom: 18px; }
+  .cover-title { font-family: 'Playfair Display', serif; font-size: 40px; font-weight: 900; line-height: 1.08; margin-bottom: 10px; }
+  .cover-sub { font-family: 'Playfair Display', serif; font-style: italic; font-size: 20px; color: #dce8d8; margin-bottom: 36px; }
+  .cover-rule-bottom { width: 100%; border: none; border-top: 1px solid rgba(174,214,241,0.35); margin-bottom: 28px; }
+  .cover-meta { font-size: 13px; color: #b8d4c0; letter-spacing: 0.04em; }
+  .cover-meta a { color: #aed6f1; text-decoration: none; }
+  .body-wrap { padding: 56px 64px 72px; }
+  h2 { font-family: 'Playfair Display', serif; font-size: 26px; font-weight: 700; color: var(--green); margin-top: 44px; margin-bottom: 14px; padding-bottom: 8px; border-bottom: 1.5px solid var(--border); }
+  p { margin-bottom: 16px; color: var(--ink); }
+  .pullquote { background: var(--green); color: var(--cream); border-radius: 4px; padding: 28px 36px; margin: 36px 0; font-family: 'Playfair Display', serif; font-style: italic; font-size: 20px; line-height: 1.5; }
+  .alert-box { background: var(--alert-light); border-left: 4px solid var(--alert); border-radius: 0 4px 4px 0; padding: 20px 24px; margin: 28px 0; }
+  .alert-box .alert-label { font-family: 'DM Mono', monospace; font-size: 11px; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: var(--alert); margin-bottom: 6px; }
+  .alert-box p { margin: 0; font-size: 15px; color: #1a1a18; }
+  .green-card { background: var(--green-light); border: 1px solid var(--border); border-radius: 4px; padding: 24px 28px; margin: 28px 0; }
+  .green-card .card-label { font-family: 'DM Mono', monospace; font-size: 11px; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: var(--green); margin-bottom: 10px; }
+  .green-card p { margin: 0 0 10px; font-size: 15px; }
+  .green-card p:last-child { margin-bottom: 0; }
+  .numbered-list { counter-reset: item; list-style: none; padding: 0; margin: 20px 0 24px; }
+  .numbered-list li { counter-increment: item; display: flex; gap: 18px; margin-bottom: 18px; align-items: flex-start; }
+  .numbered-list li::before { content: counter(item); font-family: 'DM Mono', monospace; font-size: 13px; font-weight: 500; color: var(--cream); background: var(--green); width: 26px; height: 26px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px; }
+  .numbered-list li p { margin: 0; font-size: 15px; }
+  .numbered-list li strong { display: block; margin-bottom: 2px; color: var(--green); }
+  .red-flag-list { list-style: none; padding: 0; margin: 16px 0; }
+  .red-flag-list li { display: flex; gap: 14px; align-items: flex-start; margin-bottom: 12px; font-size: 15px; }
+  .red-flag-list li::before { content: "⚑"; font-size: 13px; color: #c0392b; flex-shrink: 0; margin-top: 2px; }
+  .contact-block { background: var(--green); color: var(--cream); padding: 36px 64px; margin-top: 56px; text-align: center; }
+  .contact-block p { color: #dce8d8; margin-bottom: 10px; font-size: 15px; }
+  .contact-block a { color: #aed6f1; text-decoration: none; font-weight: 600; }
+  .contact-block .contact-name { font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 700; color: var(--cream); margin-bottom: 6px; }
+  @media print {
+    body { background: white; }
+    .cover, .pullquote, .contact-block, .green-card, .alert-box, .numbered-list li::before { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="cover">
+    <hr class="cover-rule-top">
+    <div class="cover-kicker">Nonprofit AI Resources &nbsp;·&nbsp; Mandy Hathaway Consulting</div>
+    <h1 class="cover-title">AI Vendor Accountability for Nonprofits</h1>
+    <div class="cover-sub">What to ask before you sign anything</div>
+    <hr class="cover-rule-bottom">
+    <div class="cover-meta">Mandy Hathaway Consulting &nbsp;·&nbsp; <a href="https://mandyhathaway.com">mandyhathaway.com</a> &nbsp;·&nbsp; AI Ethics &amp; Technology Consulting</div>
+  </div>
+  <div class="body-wrap">
+
+    <p>Signing up for a new software tool used to be a relatively low-stakes decision for most nonprofits. The main questions were cost and fit. AI tools raise a different set of questions, because what happens to your data after you start using a tool matters in ways that traditional software often did not.</p>
+
+    <p>This guide covers what to ask AI vendors before committing, what the answers should tell you, and what red flags to take seriously. It is written for nonprofit leaders and operations staff who are not lawyers, and who need practical guidance rather than contract review expertise.</p>
+
+    <div class="pullquote">
+      Vendor accountability starts before the contract, not after. The questions you ask during evaluation tell you more about a vendor than anything in their marketing materials.
+    </div>
+
+    <h2>The questions that matter most</h2>
+
+    <ol class="numbered-list">
+      <li>
+        <p><strong>Do you use customer data to train your AI models?</strong> This is the threshold question. The answer should be specific, not vague. "We take privacy seriously" is not an answer. "We do not use data from paid plans to train models, and we offer a data processing addendum that specifies this" is an answer. If the vendor cannot give a clear yes or no, assume the answer is yes.</p>
+      </li>
+      <li>
+        <p><strong>How long do you retain input data, and where is it stored?</strong> Some tools retain conversation and input data indefinitely unless you delete it. Others process and discard immediately. Retention periods matter for privacy compliance and for your overall data footprint. Server location matters if your funders have data sovereignty requirements.</p>
+      </li>
+      <li>
+        <p><strong>Do you offer a Data Processing Agreement (DPA)?</strong> A DPA is a contract that specifies exactly how the vendor handles your organization's data, including retention, security standards, breach notification, and sub-processor disclosures. Reputable enterprise vendors have standard DPAs available. If a vendor cannot provide one, that is a significant signal about their suitability for use with any sensitive information.</p>
+      </li>
+      <li>
+        <p><strong>What are your security certifications?</strong> SOC 2 Type II is the most common certification for cloud software vendors. HIPAA Business Associate Agreement capability matters if you handle health information. Asking for certifications tells you both what the vendor has achieved and how seriously they take the question.</p>
+      </li>
+      <li>
+        <p><strong>What happens to our data if we cancel?</strong> You should know, before you start, how to get your data out and what happens to it after you leave. A vendor that cannot answer this question clearly is a vendor who has not thought carefully about data lifecycle.</p>
+      </li>
+      <li>
+        <p><strong>What is your breach notification process?</strong> If the vendor experiences a security incident that affects your data, how quickly will they notify you, and through what channel? "We will notify you in accordance with applicable law" is minimally acceptable. A specific timeframe and designated contact is better.</p>
+      </li>
+    </ol>
+
+    <h2>Understanding the difference between consumer and enterprise terms</h2>
+
+    <p>Many AI tools offer both a free or consumer tier and a paid enterprise or business tier. The terms of service can be meaningfully different between these plans, particularly around data training and retention.</p>
+
+    <div class="alert-box">
+      <div class="alert-label">Read the terms for your specific plan</div>
+      <p>A vendor's consumer product may use inputs for training while the same vendor's enterprise product does not. The company's general privacy policy may not distinguish between plans clearly. Always read the terms for the specific plan your organization is on, not the company's general privacy page. If the terms are ambiguous, ask for written clarification before using the tool with sensitive data.</p>
+    </div>
+
+    <h2>Red flags to take seriously</h2>
+
+    <ul class="red-flag-list">
+      <li>The vendor cannot or will not answer data training questions directly.</li>
+      <li>Terms of service require you to grant broad rights to use your content or inputs.</li>
+      <li>No DPA is available, or the vendor has not heard of the term.</li>
+      <li>Security certifications are absent or the vendor is evasive when asked.</li>
+      <li>The vendor is a recent startup with no track record and no transparency about their data practices.</li>
+      <li>The pricing has changed significantly since you signed up, suggesting business model instability.</li>
+      <li>Breach notification language is absent from the terms or is vague about timing.</li>
+      <li>There is no clear process for exporting or deleting your data.</li>
+    </ul>
+
+    <p>None of these is automatically disqualifying in isolation, but a pattern of them (or any single flag on a tool that will handle sensitive client data) warrants serious caution.</p>
+
+    <h2>When a vendor relationship changes</h2>
+
+    <p>Vendor terms are not static. Pricing changes, data policies are updated, products are acquired or shut down. For any tool your organization relies on meaningfully, build in a periodic check: at least once a year, review the current terms and confirm they still align with your organization's requirements.</p>
+
+    <div class="green-card">
+      <div class="card-label">Annual vendor review checklist</div>
+      <p>Has the vendor changed their data processing or training policy in the past year?</p>
+      <p>Is the DPA we signed still current, or has the vendor issued an updated version?</p>
+      <p>Have there been any reported security incidents involving this vendor?</p>
+      <p>Has pricing changed in a way that affects our budget planning?</p>
+      <p>Are we still using this tool in the way we intended when we adopted it, or has use drifted?</p>
+      <p>Does this vendor still meet our current compliance requirements?</p>
+    </div>
+
+    <h2>Exiting a vendor relationship</h2>
+
+    <p>At some point, every vendor relationship ends, either because you switch tools, the vendor shuts down, or the terms change in ways you cannot accept. The time to plan for this is before you are in it, not during.</p>
+
+    <p>For any tool where your organization's data accumulates, know your export process before you need it. Download conversation histories, exported reports, or any other organizational data that lives in the vendor's platform on a regular schedule. Treat vendor-stored data the same way you would treat data stored on a device that could fail. Back it up on your own terms before you are forced to.</p>
+
+  </div>
+  <div class="contact-block">
+    <p class="contact-name">Mandy Hathaway</p>
+    <p>AI Ethics &amp; Technology Consulting for Nonprofits</p>
+    <p><a href="https://mandyhathaway.com">mandyhathaway.com</a> &nbsp;·&nbsp; <a href="https://mandyhathaway.com/book">Book a call</a></p>
+  </div>
+</div>
+</body>
+</html>

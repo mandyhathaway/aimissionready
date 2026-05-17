@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI for Fundraising and Development: What Helps, What to Watch For, Where Confidentiality Breaks</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,400&family=Source+Sans+3:wght@300;400;600&family=DM+Mono:wght@400;500&display=swap');
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  a:focus-visible, button:focus-visible { outline: 2px solid var(--green); outline-offset: 2px; border-radius: 2px; }
+  :root { --ink:#1a1a18; --cream:#f5f0e6; --green:#2d5a3d; --green-mid:#3d6b4a; --green-light:#eaf3de; --alert:#1d5e8a; --alert-light:#ddeaf5; --muted:#4e4e47; --border:rgba(45,90,61,0.18); }
+  body { font-family:'Source Sans 3',sans-serif; background:var(--cream); color:var(--ink); font-size:16px; line-height:1.7; }
+  .page { max-width:820px; margin:0 auto; }
+  .cover { background:var(--green); color:var(--cream); padding:72px 64px 60px; }
+  .cover-rule-top, .cover-rule-bottom { border:none; }
+  .cover-rule-top { border-top:1px solid #aed6f1; margin-bottom:40px; }
+  .cover-rule-bottom { border-top:1px solid rgba(174,214,241,0.35); margin-bottom:28px; }
+  .cover-kicker { font-size:12px; font-weight:700; letter-spacing:0.22em; text-transform:uppercase; color:#aed6f1; margin-bottom:18px; }
+  .cover-title { font-family:'Playfair Display',serif; font-size:44px; font-weight:900; line-height:1.1; margin-bottom:10px; }
+  .cover-sub { font-family:'Playfair Display',serif; font-style:italic; font-size:20px; color:#dce8d8; margin-bottom:36px; }
+  .cover-meta { font-size:13px; color:#b8d4c0; letter-spacing:0.04em; }
+  .cover-meta a { color:#aed6f1; text-decoration:none; }
+  .body-wrap { padding:56px 64px 72px; }
+  h2 { font-family:'Playfair Display',serif; font-size:26px; font-weight:700; color:var(--green); margin-top:44px; margin-bottom:14px; padding-bottom:8px; border-bottom:1.5px solid var(--border); }
+  h3 { font-family:'Source Sans 3',sans-serif; font-size:15px; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:var(--green-mid); margin-top:28px; margin-bottom:8px; }
+  p { margin-bottom:16px; color:var(--ink); }
+  .pullquote { background:var(--green); color:var(--cream); border-radius:4px; padding:28px 36px; margin:36px 0; font-family:'Playfair Display',serif; font-style:italic; font-size:20px; line-height:1.5; }
+  .alert-box { background:var(--alert-light); border-left:4px solid var(--alert); border-radius:0 4px 4px 0; padding:20px 24px; margin:28px 0; }
+  .alert-box .alert-label { font-family:'DM Mono',monospace; font-size:11px; font-weight:500; letter-spacing:0.15em; text-transform:uppercase; color:var(--alert); margin-bottom:6px; }
+  .alert-box p { margin:0; font-size:15px; }
+  .green-card { background:var(--green-light); border:1px solid var(--border); border-radius:4px; padding:24px 28px; margin:28px 0; }
+  .green-card .card-label { font-family:'DM Mono',monospace; font-size:11px; font-weight:500; letter-spacing:0.15em; text-transform:uppercase; color:var(--green); margin-bottom:10px; }
+  .green-card p { margin:0 0 10px; font-size:15px; }
+  .green-card p:last-child { margin-bottom:0; }
+  .numbered-list { counter-reset:item; list-style:none; padding:0; margin:20px 0 24px; }
+  .numbered-list li { counter-increment:item; display:flex; gap:18px; margin-bottom:18px; align-items:flex-start; }
+  .numbered-list li::before { content:counter(item); font-family:'DM Mono',monospace; font-size:13px; font-weight:500; color:var(--cream); background:var(--green); width:26px; height:26px; border-radius:50%; display:flex; align-items:center; justify-content:center; flex-shrink:0; margin-top:2px; }
+  .numbered-list li p { margin:0; font-size:15px; }
+  .numbered-list li strong { display:block; margin-bottom:2px; color:var(--green); }
+  .never-list, .ok-list { list-style:none; padding:0; margin:16px 0; }
+  .never-list li, .ok-list li { display:flex; gap:14px; align-items:flex-start; margin-bottom:12px; font-size:15px; }
+  .never-list li::before { content:"✕"; font-family:'DM Mono',monospace; font-size:12px; color:#c0392b; font-weight:700; flex-shrink:0; margin-top:3px; }
+  .ok-list li::before { content:"✓"; font-family:'DM Mono',monospace; font-size:13px; color:var(--green); font-weight:700; flex-shrink:0; margin-top:2px; }
+  .contact-block { background:var(--green); color:var(--cream); padding:36px 64px; margin-top:56px; text-align:center; }
+  .contact-block p { color:#dce8d8; margin-bottom:10px; font-size:15px; }
+  .contact-block a { color:#aed6f1; text-decoration:none; font-weight:600; }
+  .contact-block .contact-name { font-family:'Playfair Display',serif; font-size:20px; font-weight:700; color:var(--cream); margin-bottom:6px; }
+  hr.section-rule { border:none; border-top:1px solid var(--border); margin:40px 0; }
+  @media (max-width:700px) { .body-wrap { padding:44px 28px 52px; } .cover { padding:56px 28px 48px; } .cover-title { font-size:34px; } }
+  @media print { body{background:white;} .cover,.pullquote,.contact-block,.green-card,.alert-box,.numbered-list li::before { -webkit-print-color-adjust:exact; print-color-adjust:exact; } }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="cover">
+    <hr class="cover-rule-top">
+    <div class="cover-kicker">Nonprofit AI Resource Series &nbsp;·&nbsp; Sector Guides</div>
+    <h1 class="cover-title">AI for fundraising &amp; development</h1>
+    <div class="cover-sub">What helps, what to watch for, where confidentiality breaks</div>
+    <hr class="cover-rule-bottom">
+    <div class="cover-meta">
+      Mandy Hathaway Consulting &nbsp;·&nbsp;
+      <a href="https://mandyhathaway.com">mandyhathaway.com</a> &nbsp;·&nbsp;
+      AI Ethics &amp; Technology Consulting
+    </div>
+  </div>
+
+  <div class="body-wrap">
+
+    <p>Development teams have a particular AI problem. The cases for AI use are obvious: drafting takes hours, personalization is laborious, prospect research is slow, donor data is everywhere. The cases for AI caution are less obvious and easier to skip past: donor data is also among the most legally and ethically sensitive material a nonprofit holds, and the lines between "personalization" and "surveillance" are thinner than vendor marketing suggests.</p>
+
+    <p>This guide covers the development-specific AI workflows that actually help, the ones that create disproportionate risk, and the rules of thumb that keep donor relationships intact while you use these tools.</p>
+
+    <div class="pullquote">
+      The best donor stewardship has always been about being known. AI can either deepen that knowing or replace it with a synthetic version of it. The difference matters more than your CRM vendor will tell you.
+    </div>
+
+    <h2>What AI is genuinely good at for development</h2>
+
+    <ul class="ok-list">
+      <li>Drafting first passes of acknowledgment letters, with your style and voice loaded into a Custom GPT or Project (see the Getting More From Any AI guide)</li>
+      <li>Generating opening hook options for annual appeals and major-gift outreach</li>
+      <li>Rewriting standard language at different reading levels or for different donor cohorts</li>
+      <li>Summarizing long donor conversations or meeting notes after the fact</li>
+      <li>Drafting follow-up emails based on a brief description of what happened in a conversation</li>
+      <li>Brainstorming donor cultivation paths from anonymized profiles ("a donor who has given five times, primarily to housing programs")</li>
+      <li>Translating impact data into narrative language for donor reports</li>
+      <li>Generating personalization variations of a single base message for different segments</li>
+    </ul>
+
+    <h2>Where the risks concentrate</h2>
+
+    <p>Most development AI risk is not about the AI itself. It is about what data flows where, what gets retained, and who else can see it later. Three areas deserve specific attention.</p>
+
+    <div class="green-card">
+      <div class="card-label">Risk area one: prospect research with consumer AI</div>
+      <p>Pasting a donor's name, employer, and giving history into a consumer-tier AI tool to generate a "profile" creates a record of that person's relationship with your organization on the AI vendor's servers. If your tier allows training on inputs, parts of that record could influence future outputs. Use enterprise-tier tools with no-training contracts, or use purpose-built prospect research tools that have been vetted for this specifically.</p>
+    </div>
+
+    <div class="green-card">
+      <div class="card-label">Risk area two: voice-cloned outreach</div>
+      <p>The technology exists to clone a development director's voice and send personalized voicemails or videos at scale. The technology should not be used. Even when consented to internally, the deception of the recipient breaks the basic trust premise of donor relationships. A handwritten note from your real handwriting still outperforms anything an AI can synthesize.</p>
+    </div>
+
+    <div class="green-card">
+      <div class="card-label">Risk area three: predictive scoring of donors</div>
+      <p>Some CRMs and add-on platforms now offer AI-generated "donor scores" predicting likelihood to give, capacity, or churn. Use cautiously. The models are usually trained on patterns that reproduce existing inequity (donors who look like past major donors get scored higher). Treat scores as advisory and audit them periodically for discriminatory patterns by demographic.</p>
+    </div>
+
+    <h2>Donor data hygiene rules for AI use</h2>
+
+    <p>The principle is straightforward. The discipline of following it is the hard part.</p>
+
+    <ul class="never-list">
+      <li>No donor names combined with giving amounts in any external AI tool</li>
+      <li>No specific contact information (addresses, phone numbers, personal emails) in chat prompts</li>
+      <li>No donor health information, family situations, or personal disclosures in AI tools, even on enterprise tiers, without explicit consent</li>
+      <li>No board member or major donor names combined with internal strategy discussion in AI tools that lack a current enterprise contract</li>
+      <li>No CRM exports or full donor lists pasted into chat-style AI tools</li>
+      <li>No prospect notes with detailed personal background pasted into AI tools at any tier without anonymization</li>
+    </ul>
+
+    <h2>How to write better donor communications with AI without losing voice</h2>
+
+    <p>The most common complaint about AI-drafted donor communications is that they sound generic. They do, when used as a one-shot vending machine. They do not, when set up deliberately with the four moves from the Getting More From Any AI guide.</p>
+
+    <ol class="numbered-list">
+      <li>
+        <p><strong>Build a development-specific assistant with your real voice loaded in.</strong> Upload three to five donor communications you wrote that worked. Add your case for support, your style guide, your banned-word list, your stated values. From now on, every donor draft starts from your real voice instead of the AI default.</p>
+      </li>
+      <li>
+        <p><strong>Use anonymized donor profiles, not real ones.</strong> "A donor who has given mid-level for six years and cares about housing stability" is enough context for the AI. Adding the actual name does not improve the output; it just adds risk.</p>
+      </li>
+      <li>
+        <p><strong>Iterate before you send.</strong> First drafts of donor communications are rarely the keeper. Use the "make it" verbs (more direct, warmer, less marketing-tone) and the self-critique move ("identify the three weakest sentences").</p>
+      </li>
+      <li>
+        <p><strong>Have a human read it out loud.</strong> AI-generated donor letters have a cadence that sounds fine silently and slightly off out loud. Reading aloud catches the dropoffs no other review catches.</p>
+      </li>
+    </ol>
+
+    <h2>Personalization vs. surveillance</h2>
+
+    <p>The line is real, and it is getting harder to see. Personalization is using information a donor has shared with you, or that is genuinely public, to make their experience of your organization feel known. Surveillance is using data they did not knowingly share, or inferring information they did not disclose, to optimize their behavior toward outcomes you wanted from them.</p>
+
+    <p>AI makes both easier. The first kind of personalization, the kind that comes from actually knowing your donors and treating them like individuals, is what good development has always been. AI can extend it. The second kind, predictive nudging based on inferred behavioral patterns, is closer to what major tech platforms do, and donors notice when they are on the receiving end. The credibility hit is bigger than the marginal gain.</p>
+
+    <div class="alert-box">
+      <div class="alert-label">A useful test</div>
+      <p>If a donor asked you directly "what do you know about me and how did you learn it," would you be comfortable explaining the entire chain, including what AI tools were involved? If yes, you are probably in the personalization zone. If you would hesitate, you are probably closer to surveillance than you wanted to be.</p>
+    </div>
+
+    <h2>Disclosure to donors: when and how</h2>
+
+    <p>Donor expectations are shifting. Some donors will ask directly whether AI was used in their communications. Most will not, but a growing minority will assume it was and will react based on how transparent the organization is when asked.</p>
+
+    <p>The working principle: be ready to answer honestly. You do not need a disclaimer on every email saying "AI helped draft this." You do need a clear answer when a donor asks, and you should expect the question with rising frequency.</p>
+
+    <p>If your organization is doing something that would meaningfully surprise donors (using AI for major-gift cultivation strategy, voice-cloned outreach, predictive scoring that drives moves management), that is worth proactive disclosure on your privacy page or in your donor terms.</p>
+
+    <h2>CRM-AI integrations to think carefully about</h2>
+
+    <p>The major nonprofit CRMs are all adding AI features in 2026. Some are useful. Some are not. The question is not whether to use them; it is which ones and on what terms.</p>
+
+    <ol class="numbered-list">
+      <li>
+        <p><strong>AI-generated donor profiles.</strong> Useful for time-saving. Verify that the data sources are public, not scraped from places donors would not expect. Read the data terms.</p>
+      </li>
+      <li>
+        <p><strong>AI summarization of donor history.</strong> Useful for staff transitions and reviews. Confirm that summaries are generated within your CRM's secure environment rather than sent to an external model.</p>
+      </li>
+      <li>
+        <p><strong>AI-generated cultivation suggestions.</strong> Useful as one input among many. Not a substitute for the relationship work your team does. Audit periodically to see whether the suggestions reproduce equity gaps in your donor base.</p>
+      </li>
+      <li>
+        <p><strong>AI-drafted email sequences.</strong> Useful for first passes. Always review before send. Beware of features that auto-send without human approval.</p>
+      </li>
+      <li>
+        <p><strong>Predictive churn scoring.</strong> Useful as a flag for stewardship attention. Not predictive enough to act on without judgment. Review against your actual lapsed-donor pattern to test whether the model is right for your donor base.</p>
+      </li>
+    </ol>
+
+    <hr class="section-rule">
+
+    <h2>What to do this quarter</h2>
+
+    <ol class="numbered-list">
+      <li>
+        <p><strong>Build a development assistant.</strong> One Custom GPT, Claude Project, or Gemini Gem with your voice and reference material loaded in. Use it for at least one donor draft. Iterate on the setup until the output sounds like you.</p>
+      </li>
+      <li>
+        <p><strong>Audit what AI features are enabled in your CRM and email tools.</strong> Most of them have AI features turned on by default now. Decide deliberately what to keep on and what to disable.</p>
+      </li>
+      <li>
+        <p><strong>Draft your team's donor-data AI policy in one page.</strong> What can go into AI, what cannot, who approves new tools, what to say if a donor asks. Share it with the team. Train on it briefly. Revisit in six months.</p>
+      </li>
+    </ol>
+
+    <p>For more on the disclosure question, see the blog post "A funder just asked us about our AI policy." For the broader policy framework, see the Lane 2 guide on Creating an AI Use Policy.</p>
+
+  </div>
+
+  <div class="contact-block">
+    <div class="contact-name">Mandy Hathaway</div>
+    <p>AI Ethics &amp; Technology Consulting for Nonprofits</p>
+    <p><a href="https://mandyhathaway.com">mandyhathaway.com</a> &nbsp;·&nbsp; <a href="https://mandyhathaway.com/book">Book a call</a></p>
+  </div>
+
+</div>
+</body>
+</html>

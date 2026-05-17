@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Security for Nonprofits: What Happens to Your Data</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,400&family=Source+Sans+3:wght@300;400;600&family=DM+Mono:wght@400;500&display=swap');
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  a:focus-visible, button:focus-visible {
+    outline: 2px solid var(--green);
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
+  .cover a:focus-visible {
+    outline-color: #aed6f1;
+  }
+
+  :root {
+    --ink: #1a1a18;
+    --cream: #f5f0e6;
+    --green: #2d5a3d;
+    --green-mid: #3d6b4a;
+    --green-light: #eaf3de;
+    --alert: #1d5e8a;
+    --alert-light: #ddeaf5;
+    --muted: #4e4e47;
+    --rule: #2d5a3d;
+    --card: #faf7ef;
+    --border: rgba(45,90,61,0.18);
+  }
+
+  body {
+    font-family: 'Source Sans 3', sans-serif;
+    background: var(--cream);
+    color: var(--ink);
+    font-size: 16px;
+    line-height: 1.7;
+  }
+
+  .page { max-width: 820px; margin: 0 auto; }
+
+  /* COVER */
+  .cover {
+    background: var(--green);
+    color: var(--cream);
+    padding: 72px 64px 60px;
+    position: relative;
+  }
+  .cover-rule-top {
+    width: 100%;
+    border: none;
+    border-top: 1px solid #aed6f1;
+    margin-bottom: 40px;
+  }
+  .cover-kicker {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: #aed6f1;
+    margin-bottom: 18px;
+  }
+  .cover-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 48px;
+    font-weight: 900;
+    line-height: 1.08;
+    margin-bottom: 10px;
+  }
+  .cover-sub {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 20px;
+    color: #dce8d8;
+    margin-bottom: 36px;
+  }
+  .cover-rule-bottom {
+    width: 100%;
+    border: none;
+    border-top: 1px solid rgba(174,214,241,0.35);
+    margin-bottom: 28px;
+  }
+  .cover-meta {
+    font-size: 13px;
+    color: #b8d4c0;
+    letter-spacing: 0.04em;
+  }
+  .cover-meta a {
+    color: #aed6f1;
+    text-decoration: none;
+  }
+
+  /* BODY */
+  .body-wrap {
+    padding: 56px 64px 72px;
+  }
+
+  h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 26px;
+    font-weight: 700;
+    color: var(--green);
+    margin-top: 44px;
+    margin-bottom: 14px;
+    padding-bottom: 8px;
+    border-bottom: 1.5px solid var(--border);
+  }
+
+  h3 {
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--green-mid);
+    margin-top: 28px;
+    margin-bottom: 8px;
+  }
+
+  p {
+    margin-bottom: 16px;
+    color: var(--ink);
+  }
+
+  /* PULLQUOTE */
+  .pullquote {
+    background: var(--green);
+    color: var(--cream);
+    border-radius: 4px;
+    padding: 28px 36px;
+    margin: 36px 0;
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 20px;
+    line-height: 1.5;
+  }
+
+  /* ALERT / INFO BOX */
+  .alert-box {
+    background: var(--alert-light);
+    border-left: 4px solid var(--alert);
+    border-radius: 0 4px 4px 0;
+    padding: 20px 24px;
+    margin: 28px 0;
+  }
+  .alert-box .alert-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--alert);
+    margin-bottom: 6px;
+  }
+  .alert-box p {
+    margin: 0;
+    font-size: 15px;
+    color: #1a1a18;
+  }
+
+  /* GREEN CARD */
+  .green-card {
+    background: var(--green-light);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 24px 28px;
+    margin: 28px 0;
+  }
+  .green-card .card-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--green);
+    margin-bottom: 10px;
+  }
+  .green-card p {
+    margin: 0 0 10px;
+    font-size: 15px;
+  }
+  .green-card p:last-child { margin-bottom: 0; }
+
+  /* NUMBERED LIST */
+  .numbered-list {
+    counter-reset: item;
+    list-style: none;
+    padding: 0;
+    margin: 20px 0 24px;
+  }
+  .numbered-list li {
+    counter-increment: item;
+    display: flex;
+    gap: 18px;
+    margin-bottom: 18px;
+    align-items: flex-start;
+  }
+  .numbered-list li::before {
+    content: counter(item);
+    font-family: 'DM Mono', monospace;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--cream);
+    background: var(--green);
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+  .numbered-list li p {
+    margin: 0;
+    font-size: 15px;
+  }
+  .numbered-list li strong {
+    display: block;
+    margin-bottom: 2px;
+    color: var(--green);
+  }
+
+  /* NEVER LIST */
+  .never-list {
+    list-style: none;
+    padding: 0;
+    margin: 16px 0;
+  }
+  .never-list li {
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+    margin-bottom: 12px;
+    font-size: 15px;
+  }
+  .never-list li::before {
+    content: "✕";
+    font-family: 'DM Mono', monospace;
+    font-size: 12px;
+    color: #c0392b;
+    font-weight: 700;
+    flex-shrink: 0;
+    margin-top: 3px;
+  }
+
+  /* CONTACT */
+  .contact-block {
+    background: var(--green);
+    color: var(--cream);
+    padding: 36px 64px;
+    margin-top: 56px;
+    text-align: center;
+  }
+  .contact-block p {
+    color: #dce8d8;
+    margin-bottom: 10px;
+    font-size: 15px;
+  }
+  .contact-block a {
+    color: #aed6f1;
+    text-decoration: none;
+    font-weight: 600;
+  }
+  .contact-block .contact-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--cream);
+    margin-bottom: 6px;
+  }
+
+  hr.section-rule {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 40px 0;
+  }
+
+  @media print {
+    body { background: white; }
+    .cover { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .pullquote { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .contact-block { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .green-card { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .alert-box { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .numbered-list li::before { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- COVER -->
+  <div class="cover">
+    <hr class="cover-rule-top">
+    <div class="cover-kicker">Nonprofit AI Resource Series &nbsp;·&nbsp; Lane 1: Considering AI</div>
+    <h1 class="cover-title">AI Security for Nonprofits</h1>
+    <div class="cover-sub">What actually happens to your data</div>
+    <hr class="cover-rule-bottom">
+    <div class="cover-meta">
+      Mandy Hathaway Consulting &nbsp;·&nbsp;
+      <a href="https://mandyhathaway.com">mandyhathaway.com</a> &nbsp;·&nbsp;
+      AI Ethics &amp; Technology Consulting
+    </div>
+  </div>
+
+  <!-- BODY -->
+  <div class="body-wrap">
+
+    <p>The security concern comes up in almost every conversation about AI in the nonprofit sector, and it should. You work with people's medical histories, housing records, employment files, and case notes. You hold information that, in the wrong hands, could harm the people you serve. That concern is not unfounded, and it does not go away just because an AI tool has a privacy policy.</p>
+
+    <p>This guide does not tell you that AI is safe. It tells you what is actually happening when data moves through an AI tool, where the real risks are, and what you can do to protect your clients and your organization.</p>
+
+    <div class="pullquote">
+      The question is not whether AI tools have security risks. Everything digital does. The question is whether you understand them well enough to make a deliberate choice.
+    </div>
+
+    <h2>What happens when you use a cloud AI tool</h2>
+
+    <p>When a staff member types something into a cloud-based AI tool, that text leaves your building. It travels over the internet to a server operated by the AI company, gets processed, and a response comes back. At minimum, the AI company's infrastructure has handled your text.</p>
+
+    <p>What happens after that depends on the tool and the terms of service you agreed to. There are three things that can happen to your data once it reaches that server:</p>
+
+    <ol class="numbered-list">
+      <li>
+        <p><strong>It is processed and discarded.</strong> Some enterprise tools process your input to generate a response and do not retain it afterward. This is the most protective option and is standard in paid enterprise plans from major vendors.</p>
+      </li>
+      <li>
+        <p><strong>It is stored temporarily.</strong> Many tools retain conversation history for a period of time. This is usually to power features like chat history or to let you return to a previous conversation. That stored data sits on the vendor's servers and is subject to their security practices.</p>
+      </li>
+      <li>
+        <p><strong>It is used to train or improve the model.</strong> Some free tools, particularly consumer-facing ones, include language in their terms of service allowing them to use your inputs to improve their AI. This is the scenario with the most significant privacy implications for nonprofits.</p>
+      </li>
+    </ol>
+
+    <div class="alert-box">
+      <div class="alert-label">Important distinction</div>
+      <p>Free consumer tools and paid enterprise tools often have very different data handling policies. The free version of a tool may use your inputs for training. The paid enterprise version of the same tool may not. Always check the terms for the specific plan your organization is using, not just the company's general privacy page.</p>
+    </div>
+
+    <h2>What you should never put into an AI tool</h2>
+
+    <p>Regardless of which tool you use or what their policies say, some categories of information should never go into an external AI system. If any of the following appears in what you are typing or uploading, remove it first.</p>
+
+    <ul class="never-list">
+      <li>Client names combined with any service detail, diagnosis, or case information</li>
+      <li>Social Security numbers, Medicaid IDs, or any government identification numbers</li>
+      <li>Medical or psychiatric records, diagnoses, or treatment notes</li>
+      <li>Housing status, address, or residential placement information</li>
+      <li>Income, benefits, or financial account information</li>
+      <li>Immigration status</li>
+      <li>Any information a client shared under an expectation of confidentiality</li>
+      <li>Login credentials, passwords, or internal system access information</li>
+      <li>Donor personal information beyond what is already public</li>
+      <li>Proprietary grant application content before submission</li>
+    </ul>
+
+    <p>This does not mean you cannot use AI for case-related work. It means you need to work with anonymized or generalized versions of information. Describing a situation in general terms, "a client who needs supported employment and has a recent gap in housing stability," gives an AI tool enough context to be helpful without putting any individual at risk.</p>
+
+    <h2>What "training on your data" actually means</h2>
+
+    <p>You may have heard that AI companies train on user data and worry that a client's information could end up influencing the model and appearing in someone else's response. This is worth understanding clearly, because the risk is real but different from how it is often described.</p>
+
+    <p>When an AI company uses conversation data for training, that text gets processed mathematically to adjust the model's behavior over time. It does not get stored in a retrievable database where someone could search for it. A specific client's name or case note is extremely unlikely to be reproduced verbatim in a future response.</p>
+
+    <p>The actual risk is subtler: your organization's data patterns, language, and context could influence model behavior in ways that are hard to predict or trace. For most nonprofits this is a lower-stakes concern than the more direct risks of data breach or improper storage. But for organizations subject to HIPAA or state-level data protection requirements, any use of protected information in external AI systems should go through your compliance process regardless of training risk.</p>
+
+    <h2>Five things to do before using any AI tool organizationally</h2>
+
+    <ol class="numbered-list">
+      <li>
+        <p><strong>Read the data processing terms, not just the privacy policy.</strong> Look specifically for language about training, data retention, and whether your organization's data is used to improve the model. These terms are often in the "enterprise" or "business" section of the documentation.</p>
+      </li>
+      <li>
+        <p><strong>Ask whether a data processing agreement (DPA) is available.</strong> Enterprise vendors typically offer a DPA that specifies exactly how your data is handled. If a vendor cannot provide one, that is relevant information about their suitability for your organization.</p>
+      </li>
+      <li>
+        <p><strong>Decide what categories of information staff are permitted to use with AI tools.</strong> This does not require a lengthy policy document to start. A one-page list of what is and is not acceptable is enough to give staff guidance and reduce your risk immediately.</p>
+      </li>
+      <li>
+        <p><strong>Check whether your existing compliance obligations apply.</strong> If you handle health information, you may have HIPAA obligations. If you serve immigrants, you have additional sensitivity considerations. Know which frameworks apply to your organization before expanding AI use.</p>
+      </li>
+      <li>
+        <p><strong>Designate someone to own this.</strong> Security decisions made ad hoc by individual staff members produce inconsistent results. One person does not need to become an AI expert, but someone should be the point of contact for questions and the person who reviews new tools before they get adopted.</p>
+      </li>
+    </ol>
+
+    <div class="green-card">
+      <div class="card-label">Questions to ask any AI vendor</div>
+      <p>Do you use customer data to train your models, and can I opt out?</p>
+      <p>How long do you retain conversation or input data?</p>
+      <p>Do you offer a data processing agreement for nonprofit or enterprise accounts?</p>
+      <p>Where are your servers located, and are they subject to US data protection law?</p>
+      <p>What happens to our data if we cancel our account?</p>
+    </div>
+
+    <h2>If something goes wrong</h2>
+
+    <p>Most AI security incidents at nonprofits are not dramatic breaches. They are staff members inadvertently sharing more than they should, or using a free consumer tool that was not approved for organizational use. The more common failure mode is policy drift, not a cyberattack.</p>
+
+    <p>If you discover that protected client information was sent to an external AI tool, treat it the same way you would any data incident. Document what happened, assess what information was involved, check whether your breach notification obligations apply, and use it as the prompt to put clearer guidelines in place.</p>
+
+    <p>The goal is not a perfect record. The goal is a culture where staff know what the expectations are and feel comfortable raising questions before something goes wrong rather than after.</p>
+
+  </div>
+
+  <!-- CONTACT -->
+  <div class="contact-block">
+    <p class="contact-name">Mandy Hathaway</p>
+    <p>AI Ethics &amp; Technology Consulting for Nonprofits</p>
+    <p><a href="https://mandyhathaway.com">mandyhathaway.com</a> &nbsp;·&nbsp; <a href="https://mandyhathaway.com/book">Book a call</a></p>
+  </div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI in Environmental and Climate Nonprofits: Mission Alignment, Footprint, and Scientific Accuracy</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,400&family=Source+Sans+3:wght@300;400;600&family=DM+Mono:wght@400;500&display=swap');
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root { --ink:#1a1a18; --cream:#f5f0e6; --green:#2d5a3d; --green-light:#eaf3de; --alert:#1d5e8a; --alert-light:#ddeaf5; --muted:#4e4e47; --border:rgba(45,90,61,0.18); }
+  body { font-family:'Source Sans 3',sans-serif; background:var(--cream); color:var(--ink); font-size:16px; line-height:1.7; }
+  .page { max-width:820px; margin:0 auto; }
+  .cover { background:var(--green); color:var(--cream); padding:64px 56px 52px; }
+  .cover-rule-top, .cover-rule-bottom { border:none; }
+  .cover-rule-top { border-top:1px solid #aed6f1; margin-bottom:32px; }
+  .cover-rule-bottom { border-top:1px solid rgba(174,214,241,0.35); margin-bottom:24px; }
+  .cover-kicker { font-size:12px; font-weight:700; letter-spacing:0.22em; text-transform:uppercase; color:#aed6f1; margin-bottom:14px; }
+  .cover-title { font-family:'Playfair Display',serif; font-size:40px; font-weight:900; line-height:1.12; margin-bottom:10px; }
+  .cover-sub { font-family:'Playfair Display',serif; font-style:italic; font-size:19px; color:#dce8d8; margin-bottom:30px; }
+  .cover-meta { font-size:13px; color:#b8d4c0; letter-spacing:0.04em; }
+  .cover-meta a { color:#aed6f1; text-decoration:none; }
+  .body-wrap { padding:48px 56px 60px; }
+  h2 { font-family:'Playfair Display',serif; font-size:24px; font-weight:700; color:var(--green); margin-top:36px; margin-bottom:12px; padding-bottom:8px; border-bottom:1.5px solid var(--border); }
+  p { margin-bottom:14px; color:var(--ink); font-size:15.5px; }
+  .pullquote { background:var(--green); color:var(--cream); border-radius:4px; padding:24px 32px; margin:30px 0; font-family:'Playfair Display',serif; font-style:italic; font-size:18px; line-height:1.5; }
+  .alert-box { background:var(--alert-light); border-left:4px solid var(--alert); border-radius:0 4px 4px 0; padding:18px 22px; margin:24px 0; }
+  .alert-box .alert-label { font-family:'DM Mono',monospace; font-size:11px; font-weight:500; letter-spacing:0.15em; text-transform:uppercase; color:var(--alert); margin-bottom:6px; }
+  .alert-box p { margin:0; font-size:14.5px; }
+  .green-card { background:var(--green-light); border:1px solid var(--border); border-radius:4px; padding:20px 24px; margin:20px 0; }
+  .green-card .card-label { font-family:'DM Mono',monospace; font-size:11px; font-weight:500; letter-spacing:0.15em; text-transform:uppercase; color:var(--green); margin-bottom:8px; }
+  .green-card p { margin:0 0 8px; font-size:14.5px; }
+  .green-card p:last-child { margin-bottom:0; }
+  .never-list { list-style:none; padding:0; margin:14px 0; }
+  .never-list li { display:flex; gap:14px; align-items:flex-start; margin-bottom:10px; font-size:14.5px; }
+  .never-list li::before { content:"✕"; font-family:'DM Mono',monospace; font-size:12px; color:#c0392b; font-weight:700; flex-shrink:0; margin-top:3px; }
+  .contact-block { background:var(--green); color:var(--cream); padding:32px 56px; margin-top:48px; text-align:center; }
+  .contact-block p { color:#dce8d8; margin-bottom:8px; font-size:14.5px; }
+  .contact-block a { color:#aed6f1; text-decoration:none; font-weight:600; }
+  .contact-block .contact-name { font-family:'Playfair Display',serif; font-size:19px; font-weight:700; color:var(--cream); margin-bottom:6px; }
+  hr.section-rule { border:none; border-top:1px solid var(--border); margin:32px 0; }
+  @media (max-width:700px) { .body-wrap { padding:36px 24px 48px; } .cover { padding:48px 24px 40px; } .cover-title { font-size:30px; } }
+  @media print { body{background:white;} .cover,.pullquote,.contact-block,.green-card,.alert-box { -webkit-print-color-adjust:exact; print-color-adjust:exact; } }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="cover">
+    <hr class="cover-rule-top">
+    <div class="cover-kicker">Nonprofit AI Resource Series &nbsp;·&nbsp; Sector Vertical</div>
+    <h1 class="cover-title">AI in environmental and climate nonprofits</h1>
+    <div class="cover-sub">Mission alignment, the footprint question, and scientific accuracy</div>
+    <hr class="cover-rule-bottom">
+    <div class="cover-meta">
+      Mandy Hathaway Consulting &nbsp;·&nbsp;
+      <a href="https://mandyhathaway.com">mandyhathaway.com</a> &nbsp;·&nbsp;
+      AI Ethics &amp; Technology Consulting
+    </div>
+  </div>
+
+  <div class="body-wrap">
+
+    <p>Environmental and climate-justice organizations occupy a particular position in the AI conversation. The same data-center buildout that powers AI is one of the largest new contributors to U.S. electricity demand. Many of the communities most affected by data-center water and electricity use are environmental justice communities. For an organization whose mission is to address climate, environment, or environmental equity, adopting AI tools without acknowledging these patterns is a credibility problem with the communities and donors the organization depends on.</p>
+
+    <p>This guide covers AI considerations specific to environmental and climate nonprofits: conservation, climate advocacy, environmental justice, energy and policy, sustainability, and adjacent fields. It assumes you have read the general guidance and the environmental cost guide, and are now thinking about how it maps to your work.</p>
+
+    <div class="pullquote">
+      Climate organizations cannot opt out of AI without giving up real capacity. They also cannot adopt it as if the footprint does not matter. The work is to do both: use the tools and be honest about the cost.
+    </div>
+
+    <h2>The mission-alignment question</h2>
+
+    <p>The environmental cost guide covers the working numbers. The question for environmental nonprofits is sharper: how do you adopt tools that have measurable environmental cost while remaining credible on environmental issues?</p>
+
+    <p>The frame that works: you adopt AI for specific uses that meaningfully advance the mission, you choose vendors with the most credible sustainability commitments, you use the smallest model that does the job, and you are transparent about all of it. The credibility comes from the deliberation, not from the abstention.</p>
+
+    <div class="green-card">
+      <div class="card-label">A working principle</div>
+      <p>AI use is acceptable when it lets you do more environmental work than its footprint costs. Drafting an action alert in five minutes instead of an hour: yes. Generating dozens of AI images for routine social posts: harder to justify. The mission-cost calculation is the discipline.</p>
+    </div>
+
+    <h2>Where AI helps environmental work specifically</h2>
+
+    <p>Several AI capabilities are particularly useful for environmental and climate work, beyond general nonprofit drafting tasks.</p>
+
+    <p><strong>Satellite imagery analysis and remote sensing.</strong> AI for deforestation monitoring, illegal fishing detection, methane plume identification, wildfire prediction. These are use cases where AI dramatically extends what small organizations can do. Worth pursuing.</p>
+
+    <p><strong>Scientific literature synthesis.</strong> Climate research moves quickly. AI assistance in tracking new papers, synthesizing findings for non-technical audiences, and identifying relevant work for grant proposals is genuinely useful, with the citation-verification discipline applied rigorously.</p>
+
+    <p><strong>Regulatory comment generation and analysis.</strong> EPA and other regulatory comment periods produce volumes of input that humans cannot read in full. AI for first-pass synthesis is useful; AI for drafting your organization's substantive comments is fine when human review is rigorous.</p>
+
+    <p><strong>Translation and accessibility for affected communities.</strong> Environmental justice work often requires multilingual community engagement. AI translation with qualified-translator review (see the translation guide) extends reach without proportionally extending cost.</p>
+
+    <p><strong>Modeling and visualization support.</strong> AI assistance with creating visualizations of climate data, scenario modeling outputs, and policy impact projections, with scientific review of accuracy.</p>
+
+    <h2>Scientific accuracy as a higher bar</h2>
+
+    <p>Environmental organizations are scrutinized for scientific accuracy in ways most nonprofits are not. AI introduces specific risks here.</p>
+
+    <div class="alert-box">
+      <div class="alert-label">The hallucination problem in scientific content</div>
+      <p>AI tools confidently invent scientific citations, misrepresent statistics, oversimplify complex science, and produce plausible-sounding claims that are wrong. For environmental orgs, where a misstated statistic can become opposition ammunition, this risk is acute. Every science-adjacent AI output requires verification against primary sources before publication.</p>
+    </div>
+
+    <div class="alert-box">
+      <div class="alert-label">The simplification problem</div>
+      <p>AI tools optimize for clarity and accessibility, which often means stripping nuance from climate science. The scientific consensus on a question is often "with high confidence, X is true, but Y is contested and Z is uncertain." AI tools tend to collapse this into "X is true," removing the uncertainty that scientific integrity requires.</p>
+    </div>
+
+    <h2>The deep work of vendor selection</h2>
+
+    <p>For environmental orgs, vendor selection matters more than for most nonprofits. Two practical moves.</p>
+
+    <p>Prefer vendors with credible renewable-energy commitments and honest reporting. Microsoft and Google publish detailed sustainability reports; some smaller vendors do as well. Adobe's Firefly model has stronger sustainability positioning than several competitors. The signal you send by choosing thoughtfully is part of the field-shaping work.</p>
+
+    <p>Ask vendors about water use, not just carbon. Several major data-center clusters are in water-stressed regions. Vendors that can answer water-use questions are taking the issue seriously; vendors that cannot are not.</p>
+
+    <h2>The conversation with your community</h2>
+
+    <p>Environmental justice work depends on relationships with communities who are often directly affected by data-center siting, water use, and the broader patterns of who bears environmental cost. Your organization's AI use is part of this conversation, whether or not you bring it up.</p>
+
+    <div class="green-card">
+      <div class="card-label">A working approach</div>
+      <p>Be public about your AI use position. Name the tradeoff. Acknowledge the geographic patterns. Commit to using AI for things that advance environmental work, in ways that minimize footprint where possible. The communities most affected by data-center clustering will respect honest engagement more than they will respect avoidance.</p>
+    </div>
+
+    <h2>Uses worth avoiding</h2>
+
+    <ul class="never-list">
+      <li>Climate or science communications that have not been verified against primary sources</li>
+      <li>AI-generated imagery of environmental harm that did not actually occur, even when illustratively similar</li>
+      <li>Modeling outputs presented as your organization's analysis without disclosure that AI generated them</li>
+      <li>Routine high-footprint AI use (image and video generation) for low-stakes communications when text would suffice</li>
+      <li>Greenwashed AI marketing claims that overstate vendor sustainability without verification</li>
+    </ul>
+
+    <h2>What to do this quarter</h2>
+
+    <p>Audit AI use across your organization with the environmental footprint as one consideration. The audit is the same one every nonprofit should do; for environmental orgs the weighting is different.</p>
+
+    <p>Draft an organizational position statement on AI use. Two or three paragraphs naming the tradeoff, your vendor selection criteria, and your commitments. Post on your transparency or about page.</p>
+
+    <p>Train staff on the science-accuracy discipline for any AI output that touches climate, environmental science, or public health. The citation-verification habit is the protection.</p>
+
+    <p>Choose at least one AI use case that meaningfully advances mission and double down on it. Satellite imagery, regulatory analysis, multilingual community engagement. The strongest justification for AI footprint is mission-aligned use.</p>
+
+    <hr class="section-rule">
+
+    <p>Environmental and climate nonprofits have an opportunity to model what thoughtful AI adoption looks like in a sector whose values intersect directly with the technology's costs. The path forward is neither principled rejection nor uncritical adoption. It is deliberate use, honest accounting, and a willingness to make the conversation about AI footprint part of the broader work the sector already does on responsibility and stewardship.</p>
+
+  </div>
+
+  <div class="contact-block">
+    <div class="contact-name">Mandy Hathaway</div>
+    <p>AI Ethics &amp; Technology Consulting for Nonprofits</p>
+    <p><a href="https://mandyhathaway.com">mandyhathaway.com</a> &nbsp;·&nbsp; <a href="https://mandyhathaway.com/book">Book a call</a></p>
+  </div>
+
+</div>
+</body>
+</html>

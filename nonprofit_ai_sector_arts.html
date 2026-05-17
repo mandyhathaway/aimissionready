@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI in Arts and Culture Nonprofits: Artist Communities, Copyright, and the Image Generation Question</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,400&family=Source+Sans+3:wght@300;400;600&family=DM+Mono:wght@400;500&display=swap');
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root { --ink:#1a1a18; --cream:#f5f0e6; --green:#2d5a3d; --green-light:#eaf3de; --alert:#1d5e8a; --alert-light:#ddeaf5; --muted:#4e4e47; --border:rgba(45,90,61,0.18); }
+  body { font-family:'Source Sans 3',sans-serif; background:var(--cream); color:var(--ink); font-size:16px; line-height:1.7; }
+  .page { max-width:820px; margin:0 auto; }
+  .cover { background:var(--green); color:var(--cream); padding:64px 56px 52px; }
+  .cover-rule-top, .cover-rule-bottom { border:none; }
+  .cover-rule-top { border-top:1px solid #aed6f1; margin-bottom:32px; }
+  .cover-rule-bottom { border-top:1px solid rgba(174,214,241,0.35); margin-bottom:24px; }
+  .cover-kicker { font-size:12px; font-weight:700; letter-spacing:0.22em; text-transform:uppercase; color:#aed6f1; margin-bottom:14px; }
+  .cover-title { font-family:'Playfair Display',serif; font-size:40px; font-weight:900; line-height:1.12; margin-bottom:10px; }
+  .cover-sub { font-family:'Playfair Display',serif; font-style:italic; font-size:19px; color:#dce8d8; margin-bottom:30px; }
+  .cover-meta { font-size:13px; color:#b8d4c0; letter-spacing:0.04em; }
+  .cover-meta a { color:#aed6f1; text-decoration:none; }
+  .body-wrap { padding:48px 56px 60px; }
+  h2 { font-family:'Playfair Display',serif; font-size:24px; font-weight:700; color:var(--green); margin-top:36px; margin-bottom:12px; padding-bottom:8px; border-bottom:1.5px solid var(--border); }
+  p { margin-bottom:14px; color:var(--ink); font-size:15.5px; }
+  .pullquote { background:var(--green); color:var(--cream); border-radius:4px; padding:24px 32px; margin:30px 0; font-family:'Playfair Display',serif; font-style:italic; font-size:18px; line-height:1.5; }
+  .alert-box { background:var(--alert-light); border-left:4px solid var(--alert); border-radius:0 4px 4px 0; padding:18px 22px; margin:24px 0; }
+  .alert-box .alert-label { font-family:'DM Mono',monospace; font-size:11px; font-weight:500; letter-spacing:0.15em; text-transform:uppercase; color:var(--alert); margin-bottom:6px; }
+  .alert-box p { margin:0; font-size:14.5px; }
+  .green-card { background:var(--green-light); border:1px solid var(--border); border-radius:4px; padding:20px 24px; margin:20px 0; }
+  .green-card .card-label { font-family:'DM Mono',monospace; font-size:11px; font-weight:500; letter-spacing:0.15em; text-transform:uppercase; color:var(--green); margin-bottom:8px; }
+  .green-card p { margin:0 0 8px; font-size:14.5px; }
+  .green-card p:last-child { margin-bottom:0; }
+  .never-list { list-style:none; padding:0; margin:14px 0; }
+  .never-list li { display:flex; gap:14px; align-items:flex-start; margin-bottom:10px; font-size:14.5px; }
+  .never-list li::before { content:"✕"; font-family:'DM Mono',monospace; font-size:12px; color:#c0392b; font-weight:700; flex-shrink:0; margin-top:3px; }
+  .contact-block { background:var(--green); color:var(--cream); padding:32px 56px; margin-top:48px; text-align:center; }
+  .contact-block p { color:#dce8d8; margin-bottom:8px; font-size:14.5px; }
+  .contact-block a { color:#aed6f1; text-decoration:none; font-weight:600; }
+  .contact-block .contact-name { font-family:'Playfair Display',serif; font-size:19px; font-weight:700; color:var(--cream); margin-bottom:6px; }
+  hr.section-rule { border:none; border-top:1px solid var(--border); margin:32px 0; }
+  @media (max-width:700px) { .body-wrap { padding:36px 24px 48px; } .cover { padding:48px 24px 40px; } .cover-title { font-size:30px; } }
+  @media print { body{background:white;} .cover,.pullquote,.contact-block,.green-card,.alert-box { -webkit-print-color-adjust:exact; print-color-adjust:exact; } }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="cover">
+    <hr class="cover-rule-top">
+    <div class="cover-kicker">Nonprofit AI Resource Series &nbsp;·&nbsp; Sector Vertical</div>
+    <h1 class="cover-title">AI in arts &amp; culture nonprofits</h1>
+    <div class="cover-sub">Artist communities, copyright, and the image generation question</div>
+    <hr class="cover-rule-bottom">
+    <div class="cover-meta">
+      Mandy Hathaway Consulting &nbsp;·&nbsp;
+      <a href="https://mandyhathaway.com">mandyhathaway.com</a> &nbsp;·&nbsp;
+      AI Ethics &amp; Technology Consulting
+    </div>
+  </div>
+
+  <div class="body-wrap">
+
+    <p>Arts and culture nonprofits sit in a particular bind on AI. Most of the general nonprofit AI guidance applies (data security, vendor vetting, staff policy). But arts orgs also serve a constituency, the artists themselves, whose livelihoods and creative work have been directly affected by how AI models were trained. Adopting AI tools without acknowledging that history is a credibility problem with the people the organization exists to support.</p>
+
+    <p>This guide covers the AI considerations specific to arts organizations: museums, galleries, performing arts, community arts, arts councils, arts service orgs. It assumes you have read the general guidance and are now thinking about how it maps to your specific work.</p>
+
+    <div class="pullquote">
+      Arts organizations whose staff use AI image generation while their artist constituents are fighting to stop AI from scraping their work without consent will be asked, eventually, which side they are on.
+    </div>
+
+    <h2>The training data problem, as it applies to arts orgs</h2>
+
+    <p>Most current image generation models (Midjourney, Stable Diffusion, others) were trained on large datasets that included artworks scraped from the internet without artist consent. Visual artists have organized substantially around this issue, with class-action litigation, advocacy through organizations like the Concept Art Association, and ongoing pressure for opt-out and compensation mechanisms. Music AI tools have prompted similar organizing from musicians; voice AI has prompted the same from voice actors and performers.</p>
+
+    <p>An arts nonprofit using a tool trained on uncompensated artist work has a credibility problem in front of the artists it serves. Not necessarily a disqualifying one, but a real one.</p>
+
+    <h2>The tier system worth applying</h2>
+
+    <div class="green-card">
+      <div class="card-label">Tier 1 — Lower friction</div>
+      <p>Adobe Firefly and similar tools trained on licensed or opted-in content. The commercial-safety claims are stronger and the artist-consent posture is meaningfully better. Reasonable default for arts org image needs.</p>
+    </div>
+
+    <div class="green-card">
+      <div class="card-label">Tier 2 — Use with deliberation</div>
+      <p>Generative AI in Canva, Microsoft 365, Google Workspace. Trained on broader datasets but with vendor accountability and opt-out mechanisms in maturing form. Acceptable for general communications when artist constituency is not directly affected.</p>
+    </div>
+
+    <div class="green-card">
+      <div class="card-label">Tier 3 — Reconsider</div>
+      <p>Standalone tools like Midjourney whose training-data practices are most contested. Use cases that involve generating imagery in identifiable artist styles (especially living artists) should be considered off-limits regardless of the tool. The legal question is unsettled; the ethical question is clearer.</p>
+    </div>
+
+    <h2>Copyright and licensing considerations</h2>
+
+    <p>Three legal questions arts orgs face that other nonprofits do not face as sharply.</p>
+
+    <p><strong>Ownership of AI-generated content.</strong> The U.S. Copyright Office position (as of mid-2026) is that purely AI-generated content is not copyrightable. Material that combines human authorship with AI assistance may be copyrightable in the human-authored parts. For arts orgs producing materials that will be licensed, displayed, or commercialized, the ownership status matters and should be documented.</p>
+
+    <p><strong>Likeness and style.</strong> Generating imagery in the style of a specific identifiable artist, or generating likenesses of identifiable people, raises legal risk that has not been fully tested in courts but is increasingly being addressed by state-level statutes. Avoid unless you have specific clearance and a clear reason.</p>
+
+    <p><strong>Existing work in AI tools.</strong> If your nonprofit holds or licenses works from artists, uploading those works to AI tools (for marketing material generation, for analysis, for any purpose) may violate the underlying licenses and the artists' consent. Read the agreements before pasting.</p>
+
+    <h2>The artist constituency conversation</h2>
+
+    <p>Arts orgs face a question other sectors do not: what does your AI use mean to the artists you serve? Three principles that help.</p>
+
+    <div class="alert-box">
+      <div class="alert-label">Principle one</div>
+      <p>Be public about your AI use in arts contexts specifically. A short statement on your website naming what tools you use, what you do not use them for, and your commitment around artist compensation positions you ahead of the curve and builds trust with the constituency that matters most.</p>
+    </div>
+
+    <div class="alert-box">
+      <div class="alert-label">Principle two</div>
+      <p>Where AI is used to produce imagery for your communications, prefer Adobe Firefly or tools with clear artist-consent positioning. The cost difference is minimal; the credibility difference is real.</p>
+    </div>
+
+    <div class="alert-box">
+      <div class="alert-label">Principle three</div>
+      <p>When AI use is contested in your constituency, ask. A short survey of your artist members on what AI uses are acceptable to them from their service organization will produce more useful guidance than any general framework. The artists serve as the experts on the impact on artists.</p>
+    </div>
+
+    <h2>Useful AI applications for arts and culture orgs</h2>
+
+    <p>The general nonprofit AI use cases apply: drafting communications, grant work, meeting summaries, board materials. Arts-specific uses worth noting:</p>
+
+    <p><strong>Accessibility work.</strong> AI-generated audio descriptions for visual art, AI captions for performance, AI translation for multilingual programming. These extend access for audiences who would otherwise be excluded. Strong fit for the mission of most arts orgs.</p>
+
+    <p><strong>Archival and collections work.</strong> AI-assisted metadata generation, transcription of oral histories, image recognition for collection management. Useful, with the caveat that human review remains necessary for accuracy.</p>
+
+    <p><strong>Audience research and segmentation.</strong> Same considerations as general nonprofit fundraising (see the Fundraising guide). The personalization vs. surveillance line applies here too.</p>
+
+    <p><strong>Educational programming.</strong> AI as a teaching subject in itself, particularly for media arts programs, is genuinely useful. AI as a creative tool for participant work, with the ethical context discussed, is increasingly common in arts education programming.</p>
+
+    <h2>Uses worth avoiding</h2>
+
+    <ul class="never-list">
+      <li>Generating imagery in the style of identifiable living artists for any purpose</li>
+      <li>Using AI to produce materials that would compete with paid commissions you would normally extend to artists</li>
+      <li>Uploading work from artists you license without explicit permission</li>
+      <li>Voice cloning of performers without consent</li>
+      <li>Synthesizing audience-facing creative output without disclosure of AI involvement</li>
+      <li>Replacing artist instructors or teaching artists with AI tools, even where the budget pressure suggests it</li>
+    </ul>
+
+    <h2>What to do this quarter</h2>
+
+    <p>For an arts and culture nonprofit just starting to think about this:</p>
+
+    <p>Take inventory of AI tools currently in use across the organization. Categorize them by training-data posture (Tier 1, 2, 3 above). Identify any uses that would be uncomfortable to defend in front of your artist constituency.</p>
+
+    <p>Draft a brief organizational statement on AI use. One paragraph naming what you use, what you don't, and your commitments around artist work. Share with board, then with constituency.</p>
+
+    <p>Survey your artist constituency. Even a short, informal survey produces signal you cannot get from general AI guidance. The artists will tell you where the lines are for your organization specifically.</p>
+
+    <p>Review existing artist contracts and licenses for AI-related language. Some need updating; others need new clauses added on renewal.</p>
+
+    <hr class="section-rule">
+
+    <p>Arts and culture organizations have a particular opportunity in this moment. By approaching AI deliberately and transparently in front of your artist constituency, you build credibility that other nonprofits cannot. By approaching AI as if the constituency does not notice, you build the opposite. The choice is structural; the timing is now.</p>
+
+  </div>
+
+  <div class="contact-block">
+    <div class="contact-name">Mandy Hathaway</div>
+    <p>AI Ethics &amp; Technology Consulting for Nonprofits</p>
+    <p><a href="https://mandyhathaway.com">mandyhathaway.com</a> &nbsp;·&nbsp; <a href="https://mandyhathaway.com/book">Book a call</a></p>
+  </div>
+
+</div>
+</body>
+</html>

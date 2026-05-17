@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>EHR vendors are adding AI. Here is what to ask before they roll it out. | AI Mission Ready</title>
+<meta name="description" content="Procentive, Epic, Cerner, Athena, eClinicalWorks. Every major EHR is shipping AI features in 2026, often default-on. Here is what to ask your vendor, when to ask it, and what to do if the answer is unsatisfying.">
+<meta name="author" content="Mandy Hathaway">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="theme-color" content="#1a3d2b">
+<link rel="canonical" href="https://aimissionready.org/blog/ehr-vendors-adding-ai">
+
+<!-- Open Graph -->
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="AI Mission Ready">
+<meta property="og:title" content="EHR vendors are adding AI. Here is what to ask before they roll it out.">
+<meta property="og:description" content="Every major EHR is shipping AI features in 2026, often default-on. What to ask your vendor, when to ask it, and what to do if the answer is unsatisfying.">
+<meta property="og:url" content="https://aimissionready.org/blog/ehr-vendors-adding-ai">
+<meta property="og:image" content="https://aimissionready.org/og-image.png">
+<meta property="article:author" content="Mandy Hathaway">
+<meta property="article:published_time" content="2026-05-16">
+<meta property="article:section" content="Already Using AI">
+
+<!-- JSON-LD: Article -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "EHR vendors are adding AI. Here is what to ask before they roll it out.",
+  "description": "Every major EHR is shipping AI features in 2026, often default-on. What to ask your vendor, when to ask it, and what to do if the answer is unsatisfying.",
+  "datePublished": "2026-05-16",
+  "author": {
+    "@type": "Person",
+    "name": "Mandy Hathaway",
+    "url": "https://mandyhathaway.com"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "AI Mission Ready",
+    "url": "https://aimissionready.org/"
+  },
+  "mainEntityOfPage": "https://aimissionready.org/blog/ehr-vendors-adding-ai",
+  "articleSection": "Already Using AI",
+  "inLanguage": "en-US"
+}
+</script>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,400&family=Source+Sans+3:wght@300;400;600&family=DM+Mono:wght@400;500&display=swap');
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  a:focus-visible, button:focus-visible { outline: 2px solid var(--green); outline-offset: 2px; border-radius: 2px; }
+  .cover a:focus-visible { outline-color: #aed6f1; }
+  :root {
+    --ink: #1a1a18; --cream: #f5f0e6; --green: #2d5a3d; --green-mid: #3d6b4a;
+    --green-light: #eaf3de; --alert: #1d5e8a; --alert-light: #ddeaf5;
+    --warn: #a8511a; --warn-light: #f5e6d8;
+    --muted: #4e4e47; --rule: #2d5a3d; --card: #faf7ef; --border: rgba(45,90,61,0.18);
+  }
+  body { font-family: 'Source Sans 3', sans-serif; background: var(--cream); color: var(--ink); font-size: 16px; line-height: 1.7; }
+  .page { max-width: 820px; margin: 0 auto; }
+  .cover { background: var(--green); color: var(--cream); padding: 72px 64px 60px; position: relative; }
+  .cover-rule-top { width: 100%; border: none; border-top: 1px solid #aed6f1; margin-bottom: 40px; }
+  .cover-kicker { font-size: 12px; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: #aed6f1; margin-bottom: 18px; }
+  .cover-title { font-family: 'Playfair Display', serif; font-size: 42px; font-weight: 900; line-height: 1.12; margin-bottom: 14px; }
+  .cover-sub { font-family: 'Playfair Display', serif; font-style: italic; font-size: 19px; color: #dce8d8; margin-bottom: 36px; }
+  .cover-rule-bottom { width: 100%; border: none; border-top: 1px solid rgba(174,214,241,0.35); margin-bottom: 28px; }
+  .cover-meta { font-size: 13px; color: #b8d4c0; letter-spacing: 0.04em; }
+  .cover-meta a { color: #aed6f1; text-decoration: none; }
+  .body-wrap { padding: 56px 64px 72px; }
+  h2 { font-family: 'Playfair Display', serif; font-size: 26px; font-weight: 700; color: var(--green); margin-top: 44px; margin-bottom: 14px; padding-bottom: 8px; border-bottom: 1.5px solid var(--border); }
+  h3 { font-family: 'Source Sans 3', sans-serif; font-size: 15px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--green-mid); margin-top: 28px; margin-bottom: 8px; }
+  p { margin-bottom: 16px; color: var(--ink); }
+  .pullquote { background: var(--green); color: var(--cream); border-radius: 4px; padding: 28px 36px; margin: 36px 0; font-family: 'Playfair Display', serif; font-style: italic; font-size: 20px; line-height: 1.5; }
+  .alert-box { background: var(--alert-light); border-left: 4px solid var(--alert); border-radius: 0 4px 4px 0; padding: 20px 24px; margin: 28px 0; }
+  .alert-box .alert-label { font-family: 'DM Mono', monospace; font-size: 11px; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: var(--alert); margin-bottom: 6px; }
+  .alert-box p { margin: 0; font-size: 15px; color: #1a1a18; }
+  .warn-box { background: var(--warn-light); border-left: 4px solid var(--warn); border-radius: 0 4px 4px 0; padding: 20px 24px; margin: 28px 0; }
+  .warn-box .warn-label { font-family: 'DM Mono', monospace; font-size: 11px; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: var(--warn); margin-bottom: 6px; }
+  .warn-box p { margin: 0; font-size: 15px; color: #1a1a18; }
+  .green-card { background: var(--green-light); border: 1px solid var(--border); border-radius: 4px; padding: 24px 28px; margin: 28px 0; }
+  .green-card .card-label { font-family: 'DM Mono', monospace; font-size: 11px; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: var(--green); margin-bottom: 10px; }
+  .green-card p { margin: 0 0 10px; font-size: 15px; }
+  .green-card p:last-child { margin-bottom: 0; }
+  .numbered-list { counter-reset: item; list-style: none; padding: 0; margin: 20px 0 24px; }
+  .numbered-list li { counter-increment: item; display: flex; gap: 18px; margin-bottom: 18px; align-items: flex-start; }
+  .numbered-list li::before { content: counter(item); font-family: 'DM Mono', monospace; font-size: 13px; font-weight: 500; color: var(--cream); background: var(--green); width: 26px; height: 26px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px; }
+  .numbered-list li p { margin: 0; font-size: 15px; }
+  .numbered-list li strong { display: block; margin-bottom: 2px; color: var(--green); }
+  .contact-block { background: var(--green); color: var(--cream); padding: 36px 64px; margin-top: 56px; text-align: center; }
+  .contact-block p { color: #dce8d8; margin-bottom: 10px; font-size: 15px; }
+  .contact-block a { color: #aed6f1; text-decoration: none; font-weight: 600; }
+  .contact-block .contact-name { font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 700; color: var(--cream); margin-bottom: 6px; }
+  .back-link { display: inline-block; margin: 20px 64px 0; font-size: 13px; color: var(--green-mid); text-decoration: none; letter-spacing: 0.04em; }
+  .back-link:hover { color: var(--green); }
+</style>
+</head>
+<body>
+<div class="page">
+  <a class="back-link" href="aimissionready_prototype_v1.html">&larr; Back to AI Mission Ready</a>
+  <div class="cover">
+    <hr class="cover-rule-top">
+    <div class="cover-kicker">Blog &nbsp;·&nbsp; Already Using AI &nbsp;·&nbsp; May 2026</div>
+    <h1 class="cover-title">EHR vendors are adding AI. Here is what to ask before they roll it out.</h1>
+    <div class="cover-sub">The pattern: an AI summary feature appears in your next release notes. The decision was made somewhere else. Now what?</div>
+    <hr class="cover-rule-bottom">
+    <div class="cover-meta">
+      Mandy Hathaway &nbsp;·&nbsp;
+      <a href="https://mandyhathaway.com">mandyhathaway.com</a> &nbsp;·&nbsp;
+      AI Ethics Consultant &amp; Technology Specialist
+    </div>
+  </div>
+
+  <div class="body-wrap">
+
+    <p>If your organization runs an EHR, you have probably seen at least one of these notices in the past six months. Procentive's roadmap calls out AI-assisted documentation. Epic is rolling out ambient charting via Microsoft DAX Copilot. Cerner (now Oracle Health) has its Clinical Digital Assistant. Athena released Athena Embedded AI. eClinicalWorks added Sunoh.ai for ambient documentation. Even smaller behavioral health and human services EHRs are racing to ship "AI summary" features as a competitive differentiator.</p>
+
+    <p>This is not a decision your organization made. The vendor made it. The AI features are arriving on a calendar the vendor controls, often enabled by default at the tenant level. By the time you read the release notes, the feature has already begun processing your data, which is some of the most sensitive information your organization holds.</p>
+
+    <p>This post is about what to do when an EHR vendor announces AI features, written specifically for the human services, behavioral health, and small medical nonprofits that handle protected health information without large compliance teams.</p>
+
+    <div class="pullquote">
+      The decision to use AI on protected health information has already been made by the EHR vendor. Your only remaining decision is whether to leave the default on.
+    </div>
+
+    <h2>What is actually shipping in EHRs right now</h2>
+
+    <p>A non-exhaustive view of what major EHRs are deploying as of May 2026:</p>
+
+    <ul style="margin: 0 0 24px 24px; padding: 0; font-size: 0.95rem; line-height: 1.75;">
+      <li><strong>Ambient documentation:</strong> AI listens to a clinician-client conversation in real time and produces a draft progress note. Used by Epic (via DAX), Athena, eClinicalWorks (via Sunoh), Cerner. Some behavioral health EHRs offering parallel features.</li>
+      <li><strong>Smart documentation assist:</strong> AI suggests text completions inside the clinician's typing flow. Less obvious than ambient capture, often default-on.</li>
+      <li><strong>Auto-summarization:</strong> AI generates summary paragraphs from a session's structured fields, prior notes, or both.</li>
+      <li><strong>Case briefing on chart open:</strong> AI generates a "client snapshot" each time staff open a record, pulling from prior notes and structured data.</li>
+      <li><strong>Predictive prompts:</strong> AI suggests diagnoses, billing codes, treatment goals, or next steps based on patterns in the data.</li>
+      <li><strong>AI search and retrieval:</strong> Natural-language search inside client records, including across unstructured notes.</li>
+    </ul>
+
+    <p>Each of these features processes protected health information. Each is being added to systems that were originally designed around traditional, deterministic workflows. The data flowing through them often includes diagnoses, medications, treatment plans, names of family members, addresses, and other information your clients trusted you to protect.</p>
+
+    <h2>The two windows you have</h2>
+
+    <p>If you are about to sign an EHR contract (Scenario A), or you are mid-migration from one EHR to another, you have a window. Use it. The questions you ask now are the questions you will not be able to renegotiate after the contract is signed.</p>
+
+    <p>If you are on an EHR that is already shipping AI features (Scenario B), you do not have negotiating room. You have settings access, audit windows, and the ability to disable. Use those.</p>
+
+    <h2>Scenario A: Questions to ask before you sign</h2>
+
+    <ol class="numbered-list">
+      <li>
+        <p><strong>Which AI features are included in the contract we are signing for?</strong> Get the list in writing. Vendors sometimes describe AI capabilities in marketing materials that are not in your specific plan, and sometimes ship features post-signature that are.</p>
+      </li>
+      <li>
+        <p><strong>Is there a Business Associate Agreement that specifically covers AI feature use?</strong> Your standard EHR BAA may not address the AI features. Insist on one that does. If the vendor says "the BAA covers everything," ask for that in writing.</p>
+      </li>
+      <li>
+        <p><strong>Do AI features process our PHI on the EHR vendor's infrastructure, on a third-party AI provider (Microsoft, OpenAI, Anthropic, Google), or both?</strong> This matters because each handoff is another point where the BAA needs to hold up.</p>
+      </li>
+      <li>
+        <p><strong>Are our inputs used to train the vendor's AI, or any third party's?</strong> The answer should be a clear no for any HIPAA-covered EHR. If it is not, do not sign.</p>
+      </li>
+      <li>
+        <p><strong>What is the opt-in posture for new AI features released during our contract term?</strong> Default-on, default-off, or notify-and-confirm. Get this in writing.</p>
+      </li>
+      <li>
+        <p><strong>Can we disable AI features at the tenant level, the practice level, the user level, and the encounter level?</strong> You want all four. Anything less means staff in sensitive contexts cannot turn it off when needed.</p>
+      </li>
+      <li>
+        <p><strong>How are AI-generated outputs logged for audit?</strong> If an AI summary makes its way into a client's record and is later contested, you need to be able to show what the AI produced versus what the clinician edited.</p>
+      </li>
+      <li>
+        <p><strong>What is your incident response if an AI feature produces a harmful or incorrect output that reaches a client?</strong> Vendors that cannot answer this question concretely have not thought about it.</p>
+      </li>
+    </ol>
+
+    <div class="alert-box">
+      <div class="alert-label">If a vendor cannot answer in writing</div>
+      <p>"We are still finalizing those policies" is not an acceptable answer for a contract you are about to sign. If the answers are not concrete, written, and specific, you are signing a contract under terms the vendor has not committed to. That is the moment to ask for a delay, ask for a written addendum, or look at competitors.</p>
+    </div>
+
+    <h2>Scenario B: When AI features arrive in an EHR you already run</h2>
+
+    <p>Most nonprofits will not get the Scenario A window for their current EHR. The features will simply appear in a release. The work, in order:</p>
+
+    <ol class="numbered-list">
+      <li>
+        <p><strong>Find every AI feature now active in your tenant.</strong> The vendor portal usually has a settings page that names them. Do not rely on what your account manager told you. Look at the actual admin settings.</p>
+      </li>
+      <li>
+        <p><strong>Check the default state of each.</strong> On or off. If on, decide quickly whether you accept that.</p>
+      </li>
+      <li>
+        <p><strong>Read the data processing terms specific to each feature.</strong> Not the general BAA. The feature-specific terms.</p>
+      </li>
+      <li>
+        <p><strong>Disable any feature you have not affirmatively decided to use.</strong> The default state is the vendor's preference, not yours.</p>
+      </li>
+      <li>
+        <p><strong>Notify staff.</strong> Tell them what the feature does, whether it is enabled, and whether their workflow has changed. The absence of communication produces shadow use.</p>
+      </li>
+    </ol>
+
+    <h2>The default-on problem, specifically for EHRs</h2>
+
+    <p>This deserves its own section because EHRs are uniquely sensitive. The pattern most often goes:</p>
+
+    <ol class="numbered-list">
+      <li><p>Vendor announces AI feature in release notes (often three to six weeks before activation).</p></li>
+      <li><p>Release notes are read by your IT or operations staff, who may or may not flag the AI feature to leadership.</p></li>
+      <li><p>The feature ships on the scheduled date with default settings the vendor chose.</p></li>
+      <li><p>Clinicians notice the new behavior and either embrace it or work around it. Neither group typically reports it up.</p></li>
+      <li><p>Three months later, leadership realizes the feature has been processing client data the entire time.</p></li>
+    </ol>
+
+    <p>The fix is not technical. The fix is having a person responsible for reading EHR release notes the day they come out, with the authority to disable features before they activate, and a 24-hour review process for anything new.</p>
+
+    <h2>What to do this week</h2>
+
+    <p>If you do nothing else after reading this:</p>
+
+    <ol class="numbered-list">
+      <li>
+        <p><strong>Identify the person who reads your EHR release notes.</strong> If that is not a named role, name it today. The job is small: read the release notes within 24 hours of publication, flag anything AI-related to leadership, recommend a default state.</p>
+      </li>
+      <li>
+        <p><strong>Audit your current AI settings.</strong> Go to your EHR admin panel, find the AI features list, and document which are enabled. If you cannot find this, ask the vendor for a current list of active AI features in your tenant. Get it in writing.</p>
+      </li>
+      <li>
+        <p><strong>Send one email to staff.</strong> Tell them what AI features your EHR currently has enabled, what they should and should not use them for, and who to ask before pasting anything into any AI feature they encounter. One paragraph is enough.</p>
+      </li>
+    </ol>
+
+    <div class="green-card">
+      <div class="card-label">Larissa-shaped note</div>
+      <p>This post was written for nonprofits in the middle of EHR migrations or platform updates. If your organization is in either situation, the <a href="nonprofit_ai_vendor_migration.html" target="_blank">vendor migration guide</a> on this site has the full audit framework, the staff-conversation template, and the six-question decision process. This blog post is the news-pegged version. The guide is the working tool.</p>
+    </div>
+
+    <h2>Why this is happening now</h2>
+
+    <p>EHR vendors are not adding AI because their customers asked for it. They are adding AI because their competitors did, because the industry analyst reports reward it, and because they need a story to tell on the next earnings call. That does not make the features inherently bad. It does mean the features were not designed around your specific use case, your client population, or your confidentiality obligations.</p>
+
+    <p>The mismatch between vendor incentives and your organization's responsibilities is the gap you are managing. Vendors will ship faster than you can evaluate. The structural answer is to have someone whose job is to evaluate, and to give them the authority to say no on behalf of the organization.</p>
+
+    <p>If you are reading this and you do not yet have that person named, that is the work. The features will keep arriving. The questions in this post will keep applying. Build the muscle once, use it every quarter.</p>
+
+  </div>
+
+  <div class="contact-block">
+    <div class="contact-name">Mandy Hathaway</div>
+    <p>AI Ethics Consultant &amp; Technology Specialist</p>
+    <p><a href="https://mandyhathaway.com">mandyhathaway.com</a> &nbsp;·&nbsp; <a href="mailto:MandyHathaway@Proton.me">MandyHathaway@Proton.me</a></p>
+  </div>
+
+</div>
+</body>
+</html>

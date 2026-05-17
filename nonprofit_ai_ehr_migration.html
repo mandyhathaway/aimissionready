@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EHR Vendors and AI: A Practical Guide for Nonprofits</title>
+<meta name="description" content="Every major EHR is adding AI features in 2026. This guide covers EHR-specific AI considerations for human services, behavioral health, and clinical nonprofits: migration evaluation, BAA chains, the default-on problem, vendor-by-vendor notes, and what to do this quarter.">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,400&family=Source+Sans+3:wght@300;400;600&family=DM+Mono:wght@400;500&display=swap');
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  a:focus-visible { outline: 2px solid var(--green); outline-offset: 2px; border-radius: 2px; }
+  .cover a:focus-visible { outline-color: #aed6f1; }
+  :root {
+    --ink: #1a1a18; --cream: #f5f0e6; --green: #2d5a3d; --green-mid: #3d6b4a;
+    --green-light: #eaf3de; --alert: #1d5e8a; --alert-light: #ddeaf5;
+    --warn: #a8511a; --warn-light: #f5e6d8;
+    --muted: #4e4e47; --card: #faf7ef; --border: rgba(45,90,61,0.18);
+  }
+  body { font-family: 'Source Sans 3', sans-serif; background: var(--cream); color: var(--ink); font-size: 16px; line-height: 1.7; }
+  .page { max-width: 820px; margin: 0 auto; }
+  .cover { background: var(--green); color: var(--cream); padding: 72px 64px 60px; }
+  .cover-rule-top { width: 100%; border: none; border-top: 1px solid #aed6f1; margin-bottom: 40px; }
+  .cover-kicker { font-size: 12px; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: #aed6f1; margin-bottom: 18px; }
+  .cover-title { font-family: 'Playfair Display', serif; font-size: 40px; font-weight: 900; line-height: 1.1; margin-bottom: 10px; }
+  .cover-sub { font-family: 'Playfair Display', serif; font-style: italic; font-size: 20px; color: #dce8d8; margin-bottom: 36px; }
+  .cover-rule-bottom { width: 100%; border: none; border-top: 1px solid rgba(174,214,241,0.35); margin-bottom: 28px; }
+  .cover-meta { font-size: 13px; color: #b8d4c0; letter-spacing: 0.04em; }
+  .cover-meta a { color: #aed6f1; text-decoration: none; }
+  .body-wrap { padding: 56px 64px 72px; }
+  h2 { font-family: 'Playfair Display', serif; font-size: 26px; font-weight: 700; color: var(--green); margin-top: 44px; margin-bottom: 14px; padding-bottom: 8px; border-bottom: 1.5px solid var(--border); }
+  h3 { font-family: 'Source Sans 3', sans-serif; font-size: 15px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--green-mid); margin-top: 28px; margin-bottom: 8px; }
+  p { margin-bottom: 16px; color: var(--ink); }
+  .pullquote { background: var(--green); color: var(--cream); border-radius: 4px; padding: 28px 36px; margin: 36px 0; font-family: 'Playfair Display', serif; font-style: italic; font-size: 20px; line-height: 1.5; }
+  .alert-box { background: var(--alert-light); border-left: 4px solid var(--alert); border-radius: 0 4px 4px 0; padding: 20px 24px; margin: 28px 0; }
+  .alert-box .alert-label { font-family: 'DM Mono', monospace; font-size: 11px; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: var(--alert); margin-bottom: 6px; }
+  .alert-box p { margin: 0; font-size: 15px; color: #1a1a18; }
+  .warn-box { background: var(--warn-light); border-left: 4px solid var(--warn); border-radius: 0 4px 4px 0; padding: 20px 24px; margin: 28px 0; }
+  .warn-box .warn-label { font-family: 'DM Mono', monospace; font-size: 11px; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: var(--warn); margin-bottom: 6px; }
+  .warn-box p { margin: 0; font-size: 15px; color: #1a1a18; }
+  .green-card { background: var(--green-light); border: 1px solid var(--border); border-radius: 4px; padding: 24px 28px; margin: 28px 0; }
+  .green-card .card-label { font-family: 'DM Mono', monospace; font-size: 11px; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: var(--green); margin-bottom: 10px; }
+  .green-card p { margin: 0 0 10px; font-size: 15px; }
+  .green-card p:last-child { margin-bottom: 0; }
+  .numbered-list { counter-reset: item; list-style: none; padding: 0; margin: 20px 0 24px; }
+  .numbered-list li { counter-increment: item; display: flex; gap: 18px; margin-bottom: 18px; align-items: flex-start; }
+  .numbered-list li::before { content: counter(item); font-family: 'DM Mono', monospace; font-size: 13px; font-weight: 500; color: var(--cream); background: var(--green); width: 26px; height: 26px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px; }
+  .numbered-list li p { margin: 0; font-size: 15px; }
+  .numbered-list li strong { display: block; margin-bottom: 2px; color: var(--green); }
+  .ask-list { list-style: none; padding: 0; margin: 16px 0; }
+  .ask-list li { display: flex; gap: 14px; align-items: flex-start; margin-bottom: 14px; font-size: 15px; padding-left: 4px; }
+  .ask-list li::before { content: "?"; font-family: 'DM Mono', monospace; font-size: 13px; color: var(--cream); background: var(--green); width: 22px; height: 22px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-weight: 700; margin-top: 2px; }
+  .vendor-table { width: 100%; border-collapse: collapse; margin: 20px 0 28px; font-size: 14.5px; }
+  .vendor-table th, .vendor-table td { padding: 12px 14px; text-align: left; border-bottom: 1px solid var(--border); vertical-align: top; }
+  .vendor-table th { background: var(--green); color: var(--cream); font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 700; }
+  .vendor-table td:first-child { font-weight: 700; color: var(--green); width: 28%; }
+  .contact-block { background: var(--green); color: var(--cream); padding: 36px 64px; margin-top: 56px; text-align: center; }
+  .contact-block p { color: #dce8d8; margin-bottom: 10px; font-size: 15px; }
+  .contact-block a { color: #aed6f1; text-decoration: none; font-weight: 600; }
+  .contact-block .contact-name { font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 700; color: var(--cream); margin-bottom: 6px; }
+  @media print {
+    body { background: white; }
+    .cover, .pullquote, .contact-block, .green-card, .alert-box, .warn-box, .numbered-list li::before, .ask-list li::before, .vendor-table th { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="cover">
+    <hr class="cover-rule-top">
+    <div class="cover-kicker">Nonprofit AI Resources &nbsp;·&nbsp; Lane 2 &nbsp;·&nbsp; Mandy Hathaway Consulting</div>
+    <h1 class="cover-title">EHR Vendors and AI</h1>
+    <div class="cover-sub">A practical guide for nonprofits running clinical, behavioral health, and human services systems</div>
+    <hr class="cover-rule-bottom">
+    <div class="cover-meta">Mandy Hathaway Consulting &nbsp;·&nbsp; <a href="https://mandyhathaway.com">mandyhathaway.com</a> &nbsp;·&nbsp; AI Ethics &amp; Technology Consulting</div>
+  </div>
+  <div class="body-wrap">
+
+    <p>This guide is for nonprofits running EHRs in human services, behavioral health, IDD services, primary care, and other settings where the records contain protected health information. The single most important AI development in your operational stack right now is happening inside your EHR, and most organizations have not yet caught up to it.</p>
+
+    <p>The pattern is consistent across every major EHR vendor: AI features are being added to existing platforms at an accelerating pace, often shipped enabled by default at the tenant level, sometimes without explicit notice to the customer. By the time most nonprofit leaders read about a new AI feature, it has already started processing client data.</p>
+
+    <p>This guide covers what is actually shipping, what to ask your vendor (whether you are migrating to a new EHR or running an existing one), how the BAA chain works, the default-on problem specifically for EHRs, vendor-by-vendor notes on what is happening in major platforms, and what to do this quarter.</p>
+
+    <div class="pullquote">
+      The decision to use AI on protected health information has already been made by the EHR vendor. Your remaining decision is whether to leave the default on.
+    </div>
+
+    <h2>What is actually shipping</h2>
+
+    <p>Six AI feature categories are now common across major EHRs in 2026:</p>
+
+    <ol class="numbered-list">
+      <li>
+        <p><strong>Ambient documentation.</strong> AI listens to a clinician-client conversation in real time and produces a draft progress note. Examples: Epic via DAX Copilot (Microsoft), eClinicalWorks via Sunoh.ai, Athena's ambient capture features, Cerner/Oracle's Clinical Digital Assistant.</p>
+      </li>
+      <li>
+        <p><strong>Smart documentation assist.</strong> AI suggests text completions inside the clinician's typing flow. Less visible than ambient capture, often default-on, often the first AI feature staff actually encounter.</p>
+      </li>
+      <li>
+        <p><strong>Auto-summarization.</strong> AI generates summary paragraphs from structured fields, prior notes, or both. Used for progress summaries, intake summaries, and case briefings.</p>
+      </li>
+      <li>
+        <p><strong>Chart-open snapshots.</strong> AI generates a "client snapshot" each time staff open a record, pulling from prior notes and structured data. Convenient and high-risk in equal measure.</p>
+      </li>
+      <li>
+        <p><strong>Predictive prompts.</strong> AI suggests diagnoses, billing codes, treatment goals, or next steps based on patterns. Quality varies enormously by vendor and use case.</p>
+      </li>
+      <li>
+        <p><strong>AI search and retrieval.</strong> Natural-language search inside client records, including across unstructured notes.</p>
+      </li>
+    </ol>
+
+    <p>Each of these processes protected health information. Each is being added to systems that were designed for traditional, deterministic workflows. The data flowing through them often includes diagnoses, medications, treatment plans, names of family members, addresses, and other information your clients trusted you to protect.</p>
+
+    <h2>Two scenarios, two timelines</h2>
+
+    <p>The questions you need to ask depend on where you are in the EHR lifecycle.</p>
+
+    <p><strong>Scenario A: You are signing a new EHR contract or migrating between EHRs.</strong> You have a window. Use it. The contract terms you negotiate now are the terms you will live with for the next three to seven years.</p>
+
+    <p><strong>Scenario B: You are running an EHR that is now adding AI features through release updates.</strong> You do not have negotiating room on the contract. You have settings access, release-note awareness, and the ability to disable.</p>
+
+    <h2>Scenario A: Questions for the migration RFP and contract negotiation</h2>
+
+    <p>If you are evaluating EHRs (whether replacing an aging system or starting fresh), include these in your RFP and contract negotiation. They are written so that the answers can be evaluated objectively.</p>
+
+    <ul class="ask-list">
+      <li>List every AI feature included in the plan tier we are signing for. Distinguish between currently shipping, in development, and planned.</li>
+      <li>For each AI feature, identify the underlying AI provider (your own infrastructure, a third party such as Microsoft, OpenAI, Anthropic, Google).</li>
+      <li>Provide the data flow diagram for each AI feature: where our PHI is processed, where it is stored, where it is transmitted, and for how long.</li>
+      <li>Confirm in writing that no AI feature trains models on our PHI, including no use for "product improvement," "anonymized analysis," or "quality monitoring."</li>
+      <li>Provide a Business Associate Agreement that specifically names each AI feature and the third-party AI providers involved.</li>
+      <li>If any AI processing flows through a third-party AI provider, confirm a BAA exists between your company and that AI provider, and provide attestation we can verify.</li>
+      <li>Document the opt-in posture for new AI features added during the contract term: default-on, default-off, or notify-and-confirm.</li>
+      <li>Document the granularity of disable controls: tenant, practice, user, encounter, field.</li>
+      <li>Document how AI-generated outputs are logged for audit purposes, including how AI-suggested content is distinguished from clinician-entered content.</li>
+      <li>Describe your incident response process if an AI feature produces a harmful or incorrect output that reaches a client.</li>
+      <li>Provide your AI feature roadmap for the next 18 months, with expected release dates and default-state intentions.</li>
+      <li>If we discontinue use, are AI-related inputs (audio recordings, transcripts, generated drafts) deleted from your systems and from any third-party AI provider, and on what timeline?</li>
+    </ul>
+
+    <div class="alert-box">
+      <div class="alert-label">If a vendor cannot answer in writing</div>
+      <p>"We are still finalizing those policies" is not acceptable for a contract you are about to sign. If the answers are not concrete, written, and specific, you are signing under terms the vendor has not committed to. That is the moment to ask for a written addendum, a contract delay, or an alternative vendor.</p>
+    </div>
+
+    <h2>Scenario B: When AI features arrive in an EHR you already run</h2>
+
+    <p>If you cannot renegotiate, you can audit, configure, and communicate. The work in order:</p>
+
+    <ol class="numbered-list">
+      <li>
+        <p><strong>Find every AI feature now active in your tenant.</strong> Use the vendor's admin portal. Document what is on, what is off, and what the default state was. Do not rely on your account manager's verbal summary.</p>
+      </li>
+      <li>
+        <p><strong>Identify the BAA chain.</strong> If the feature uses a third-party AI provider, you need BAAs between you and your EHR vendor, and between your EHR vendor and the AI provider. Both must be active for the AI processing of PHI to be HIPAA-compliant.</p>
+      </li>
+      <li>
+        <p><strong>Read the data processing terms specific to each feature.</strong> Generic BAA language may not cover the new feature. Ask the vendor to confirm in writing that the BAA covers each specific feature you are using.</p>
+      </li>
+      <li>
+        <p><strong>Disable any feature you have not affirmatively decided to use.</strong> The default state is the vendor's preference, not yours.</p>
+      </li>
+      <li>
+        <p><strong>Notify staff.</strong> Tell them what AI features your EHR currently has enabled, what they may and may not use them for, and who to ask before pasting anything anywhere. One paragraph is enough.</p>
+      </li>
+      <li>
+        <p><strong>Update your privacy and consent documents.</strong> Standard intake consents written before 2023 usually do not name AI processing. Your legal counsel should review whether your current consents cover the AI features now active.</p>
+      </li>
+    </ol>
+
+    <h2>The BAA chain question, specifically</h2>
+
+    <p>This is the single most misunderstood compliance question in EHR-AI right now.</p>
+
+    <p>HIPAA requires a Business Associate Agreement between a covered entity (your nonprofit) and any business associate (your EHR vendor, and anyone who processes PHI on their behalf). When your EHR vendor adds an AI feature that uses a third-party AI provider, the AI provider becomes a sub-business-associate. HIPAA requires a contract between the business associate and the sub-business-associate. The standard term is a Business Associate Subcontractor Agreement.</p>
+
+    <p>What this means in practice: when your EHR ships ambient documentation via Microsoft DAX Copilot, three contracts need to hold up. Yours with the EHR vendor. The EHR vendor's with Microsoft. And the underlying data flow practices both companies follow.</p>
+
+    <p>Some EHR vendors have clean chains. Some have arrangements that are "technically compliant" but contractually thin. Some have not yet completed sub-BAA work and are shipping AI features anyway. You cannot tell which is which by looking at the marketing page. You have to ask, in writing, and get a specific answer.</p>
+
+    <div class="warn-box">
+      <div class="warn-label">Practical test</div>
+      <p>Ask your EHR vendor: "Provide a current copy of the BAA between your company and each third-party AI provider used in features active in our tenant. If a BAA does not exist for any feature in use, identify which feature and disable it immediately." If they cannot or will not provide this within 10 business days, you have your answer about the maturity of their AI compliance posture.</p>
+    </div>
+
+    <h2>Vendor-by-vendor: what is happening as of May 2026</h2>
+
+    <p>This snapshot is illustrative, not exhaustive. Verify with your specific vendor account team before relying on any of it. Pricing and feature availability change rapidly.</p>
+
+    <table class="vendor-table">
+      <thead>
+        <tr>
+          <th>EHR</th>
+          <th>Current AI features &amp; status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Epic</td>
+          <td>Ambient documentation via Microsoft DAX Copilot is the marquee feature. Smart documentation suggestions, MyChart message responses, predictive billing prompts also live. Generally strong BAA infrastructure, but feature-by-feature verification still required. Pricing add-on.</td>
+        </tr>
+        <tr>
+          <td>Cerner / Oracle Health</td>
+          <td>Clinical Digital Assistant is the headline product, plus voice-driven charting. Oracle's broader AI strategy is increasingly integrated. Roadmap is aggressive; default states warrant scrutiny.</td>
+        </tr>
+        <tr>
+          <td>Athena (athenaOne)</td>
+          <td>Athena Embedded AI brand covers ambient documentation, summarization, and chart prep. Several features shipped enabled by default in 2025. Check your settings.</td>
+        </tr>
+        <tr>
+          <td>eClinicalWorks</td>
+          <td>Sunoh.ai for ambient documentation. Healow patient-facing features include AI. Sub-BAA structure worth verifying directly.</td>
+        </tr>
+        <tr>
+          <td>NextGen Healthcare</td>
+          <td>Ambient AI documentation, AI-assisted coding, and predictive analytics features rolled out across 2025. Default states vary by module.</td>
+        </tr>
+        <tr>
+          <td>Procentive</td>
+          <td>Behavioral health EHR with an aging roadmap. Platform direction is under review. If you are on Procentive in 2026, the AI question is largely about what comes next, not what is shipping today.</td>
+        </tr>
+        <tr>
+          <td>Therap</td>
+          <td>IDD-focused EHR. AI features in early rollout. Smaller vendor, fewer features, but the same BAA chain questions apply.</td>
+        </tr>
+        <tr>
+          <td>Welligent</td>
+          <td>Behavioral health and human services. AI documentation features in development. Verify current state with your account team.</td>
+        </tr>
+        <tr>
+          <td>Salesforce Health Cloud</td>
+          <td>Einstein for Health Cloud includes summarization, predictive prompts, and intake assist. Strong BAA infrastructure overall; granular feature audits still warranted.</td>
+        </tr>
+        <tr>
+          <td>SimplePractice / TheraNest</td>
+          <td>Smaller clinical practice EHRs increasingly adding AI features. Lower compliance maturity than major hospital systems; verify everything specifically.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>The default-on problem, specifically for EHRs</h2>
+
+    <p>Across the EHR market, the dominant pattern for new AI features is: ship enabled by default at the tenant level. The vendor's reasoning is that defaults drive adoption, which drives feature data, which improves the product. The nonprofit's reality is that a feature shipped Tuesday begins processing PHI Wednesday, regardless of whether anyone in the organization made a deliberate decision.</p>
+
+    <p>The structural fix is not a settings audit done once. The structural fix is a person whose role includes reading EHR release notes within 24 hours of publication, with the authority to disable features before they activate, and a 48-hour review process for anything new before staff begin using it.</p>
+
+    <p>For most small and mid-size nonprofits, this is a 1-to-2-hour-a-month responsibility once the habit is built. The cost of not having it is, sometimes, an entire compliance posture quietly eroding for months before anyone notices.</p>
+
+    <h2>What to do this quarter</h2>
+
+    <ol class="numbered-list">
+      <li>
+        <p><strong>Identify your EHR release-note reader.</strong> Name a person, write it in their job description if it is not already, and give them 24-hour expectations for surfacing AI announcements.</p>
+      </li>
+      <li>
+        <p><strong>Audit your current AI feature state.</strong> Document what is enabled, what is disabled, what the default was. Save this as a baseline you can update each quarter.</p>
+      </li>
+      <li>
+        <p><strong>Request the BAA documentation.</strong> Specifically for AI features. Specifically for any third-party AI providers in the chain. In writing.</p>
+      </li>
+      <li>
+        <p><strong>Review your intake and consent documents.</strong> Determine with legal counsel whether your current consents cover AI processing of session content. Update if needed.</p>
+      </li>
+      <li>
+        <p><strong>Brief your staff.</strong> One short email per significant AI feature: what it does, whether it is on, what they should and should not use it for, who to ask before doing something unusual.</p>
+      </li>
+      <li>
+        <p><strong>Brief your board.</strong> Most nonprofit boards have not yet had this conversation. A 15-minute board agenda item once a quarter is enough to keep AI compliance visible.</p>
+      </li>
+    </ol>
+
+    <h2>Related resources</h2>
+
+    <p>This guide focuses on EHRs specifically. The broader patterns covered here apply to other vendor-driven AI rollouts (CRM, productivity, video conferencing). Two companion resources:</p>
+
+    <ul style="margin: 0 0 24px 24px; padding: 0; font-size: 0.95rem;">
+      <li style="margin-bottom: 8px;"><a href="nonprofit_ai_vendor_migration.html"><strong>When Your Software Vendor Adds AI</strong></a>. The broader vendor-migration framework that covers EHR, CRM, productivity, and other platform contexts. Same patterns, broader applicability.</li>
+      <li style="margin-bottom: 8px;"><a href="nonprofit_ai_case_notes.html"><strong>Case Notes and AI: A Careful Guide</strong></a>. The companion piece on what staff can and cannot do with case notes specifically, including the gray area of EHR-native AI features.</li>
+      <li style="margin-bottom: 0;"><a href="nonprofit_ai_vendor.html"><strong>AI Vendor Accountability for Nonprofits</strong></a>. The general-purpose vendor evaluation guide; useful as a complement to the more specific EHR questions here.</li>
+    </ul>
+
+    <h2>The pattern, for the long term</h2>
+
+    <p>Every quarter, your EHR vendor will ship new AI features. The pattern will not slow down. The work is not "evaluate AI in our EHR" as a one-time project. The work is building a habit, in your organization, of treating each new AI feature as a small governance decision.</p>
+
+    <p>That habit takes one to two hours a month once established. Without it, your organization will drift into AI use it did not approve, with compliance posture it cannot defend, on behalf of clients whose consent did not extend that far. With it, you stay deliberate. The choice is structural, not technical.</p>
+
+  </div>
+
+  <div class="contact-block">
+    <div class="contact-name">Mandy Hathaway</div>
+    <p>AI Ethics Consultant &amp; Technology Specialist</p>
+    <p><a href="https://mandyhathaway.com">mandyhathaway.com</a> &nbsp;·&nbsp; <a href="mailto:MandyHathaway@Proton.me">MandyHathaway@Proton.me</a></p>
+  </div>
+
+</div>
+</body>
+</html>

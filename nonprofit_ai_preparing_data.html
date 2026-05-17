@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Preparing Your Data: What to Clean, What to Protect, and What to Keep Out</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,400&family=Source+Sans+3:wght@300;400;600&family=DM+Mono:wght@400;500&display=swap');
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  a:focus-visible { outline: 2px solid var(--green); outline-offset: 2px; border-radius: 2px; }
+  .cover a:focus-visible { outline-color: #aed6f1; }
+  :root {
+    --ink: #1a1a18; --cream: #f5f0e6; --green: #2d5a3d; --green-mid: #3d6b4a;
+    --green-light: #eaf3de; --alert: #1d5e8a; --alert-light: #ddeaf5;
+    --muted: #4e4e47; --card: #faf7ef; --border: rgba(45,90,61,0.18);
+  }
+  body { font-family: 'Source Sans 3', sans-serif; background: var(--cream); color: var(--ink); font-size: 16px; line-height: 1.7; }
+  .page { max-width: 820px; margin: 0 auto; }
+  .cover { background: var(--green); color: var(--cream); padding: 72px 64px 60px; }
+  .cover-rule-top { width: 100%; border: none; border-top: 1px solid #aed6f1; margin-bottom: 40px; }
+  .cover-kicker { font-size: 12px; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: #aed6f1; margin-bottom: 18px; }
+  .cover-title { font-family: 'Playfair Display', serif; font-size: 40px; font-weight: 900; line-height: 1.08; margin-bottom: 10px; }
+  .cover-sub { font-family: 'Playfair Display', serif; font-style: italic; font-size: 20px; color: #dce8d8; margin-bottom: 36px; }
+  .cover-rule-bottom { width: 100%; border: none; border-top: 1px solid rgba(174,214,241,0.35); margin-bottom: 28px; }
+  .cover-meta { font-size: 13px; color: #b8d4c0; letter-spacing: 0.04em; }
+  .cover-meta a { color: #aed6f1; text-decoration: none; }
+  .body-wrap { padding: 56px 64px 72px; }
+  h2 { font-family: 'Playfair Display', serif; font-size: 26px; font-weight: 700; color: var(--green); margin-top: 44px; margin-bottom: 14px; padding-bottom: 8px; border-bottom: 1.5px solid var(--border); }
+  p { margin-bottom: 16px; color: var(--ink); }
+  .pullquote { background: var(--green); color: var(--cream); border-radius: 4px; padding: 28px 36px; margin: 36px 0; font-family: 'Playfair Display', serif; font-style: italic; font-size: 20px; line-height: 1.5; }
+  .alert-box { background: var(--alert-light); border-left: 4px solid var(--alert); border-radius: 0 4px 4px 0; padding: 20px 24px; margin: 28px 0; }
+  .alert-box .alert-label { font-family: 'DM Mono', monospace; font-size: 11px; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: var(--alert); margin-bottom: 6px; }
+  .alert-box p { margin: 0; font-size: 15px; color: #1a1a18; }
+  .green-card { background: var(--green-light); border: 1px solid var(--border); border-radius: 4px; padding: 24px 28px; margin: 28px 0; }
+  .green-card .card-label { font-family: 'DM Mono', monospace; font-size: 11px; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: var(--green); margin-bottom: 10px; }
+  .green-card p { margin: 0 0 10px; font-size: 15px; }
+  .green-card p:last-child { margin-bottom: 0; }
+  .numbered-list { counter-reset: item; list-style: none; padding: 0; margin: 20px 0 24px; }
+  .numbered-list li { counter-increment: item; display: flex; gap: 18px; margin-bottom: 18px; align-items: flex-start; }
+  .numbered-list li::before { content: counter(item); font-family: 'DM Mono', monospace; font-size: 13px; font-weight: 500; color: var(--cream); background: var(--green); width: 26px; height: 26px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px; }
+  .numbered-list li p { margin: 0; font-size: 15px; }
+  .numbered-list li strong { display: block; margin-bottom: 2px; color: var(--green); }
+  .tier-table { width: 100%; border-collapse: collapse; margin: 24px 0; font-size: 14px; }
+  .tier-table th { background: var(--green); color: var(--cream); font-family: 'DM Mono', monospace; font-size: 11px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; padding: 10px 16px; text-align: left; }
+  .tier-table td { padding: 10px 16px; border-bottom: 1px solid var(--border); vertical-align: top; font-size: 14px; }
+  .tier-table tr:nth-child(even) td { background: var(--card); }
+  .tier-table td:first-child { font-weight: 600; }
+  .contact-block { background: var(--green); color: var(--cream); padding: 36px 64px; margin-top: 56px; text-align: center; }
+  .contact-block p { color: #dce8d8; margin-bottom: 10px; font-size: 15px; }
+  .contact-block a { color: #aed6f1; text-decoration: none; font-weight: 600; }
+  .contact-block .contact-name { font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 700; color: var(--cream); margin-bottom: 6px; }
+  @media print {
+    body { background: white; }
+    .cover, .pullquote, .contact-block, .green-card, .alert-box, .numbered-list li::before, .tier-table th { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="cover">
+    <hr class="cover-rule-top">
+    <div class="cover-kicker">Nonprofit AI Resources &nbsp;·&nbsp; Mandy Hathaway Consulting</div>
+    <h1 class="cover-title">Preparing Your Data</h1>
+    <div class="cover-sub">What to clean, what to protect, and what to keep out entirely</div>
+    <hr class="cover-rule-bottom">
+    <div class="cover-meta">Mandy Hathaway Consulting &nbsp;·&nbsp; <a href="https://mandyhathaway.com">mandyhathaway.com</a> &nbsp;·&nbsp; AI Ethics &amp; Technology Consulting</div>
+  </div>
+  <div class="body-wrap">
+
+    <p>The phrase "garbage in, garbage out" predates AI by decades, but it has never been more relevant. The quality of what an AI tool produces is directly shaped by the quality of what you give it. For nonprofits, this has two dimensions: the accuracy of your data, and its appropriateness for use in an AI tool at all.</p>
+
+    <p>This document covers both. It is written for organizations that are already using or actively planning to use AI tools with their own data: program records, case notes, client intake information, service logs, evaluation data, or grant data. If you are still deciding whether to use AI, the companion document on privacy is a useful starting point.</p>
+
+    <div class="pullquote">
+      Preparing data for AI use is not a technical task. It is a judgment task. The question is not whether you can process it. The question is whether you should, and in what form.
+    </div>
+
+    <h2>What "data" means in this context</h2>
+
+    <p>When nonprofits talk about using AI with their data, they usually mean one of a few things: asking AI to help analyze program outcomes, using AI to draft reports based on service records, having AI summarize case notes or meeting notes, or uploading documents for AI to search and synthesize.</p>
+
+    <p>All of these involve transferring information from your organization's systems to an external AI tool. The preparation questions are the same regardless of the specific use case: Is this information accurate enough to be useful? Does it contain anything that should not leave your organization? And is it structured in a way that the tool can actually work with?</p>
+
+    <h2>Sensitivity tiers: how to categorize what you have</h2>
+
+    <p>Not all organizational data carries the same privacy weight. A useful starting point is sorting your common data types into tiers based on how sensitive they are and what constraints apply to them.</p>
+
+    <table class="tier-table">
+      <thead>
+        <tr>
+          <th>Tier</th>
+          <th>Examples</th>
+          <th>AI use guidance</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>High sensitivity</td>
+          <td>Client names + service details, case notes, medical or psychiatric records, immigration status, income and benefits data, housing placement records</td>
+          <td>Do not use in external AI tools. If analysis is needed, anonymize or aggregate before any AI tool touches it.</td>
+        </tr>
+        <tr>
+          <td>Medium sensitivity</td>
+          <td>Aggregated program outcome data, anonymized case examples, internal staff notes not tied to clients, internal financial summaries</td>
+          <td>Usable with caution. Verify that no individual can be identified from the data before using. Check vendor data handling terms.</td>
+        </tr>
+        <tr>
+          <td>Lower sensitivity</td>
+          <td>General program descriptions, published reports, grant narratives (submitted), board meeting minutes without client discussion, job postings, general organizational communications</td>
+          <td>Generally appropriate for AI assistance with standard review.</td>
+        </tr>
+        <tr>
+          <td>Administrative</td>
+          <td>Template letters, policy documents, staff handbook drafts, internal procedure documents</td>
+          <td>Appropriate for AI drafting and editing assistance.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>What anonymization actually requires</h2>
+
+    <p>Removing a name does not anonymize a record. In a small community or a small program, enough context can identify an individual even without a name attached. True anonymization requires removing or generalizing enough information that re-identification is not reasonably possible.</p>
+
+    <div class="alert-box">
+      <div class="alert-label">The re-identification test</div>
+      <p>Before using any client-adjacent data with an AI tool, ask: if someone who knew this client read this text, could they figure out it was about that person? If yes, more needs to come out. Details to check: name (obvious), but also employer, school, specific neighborhood, diagnosis in combination with other details, service dates that narrow down who was enrolled, and any detail unique to that individual's situation.</p>
+    </div>
+
+    <p>For most nonprofit reporting and analysis tasks, the goal is not to anonymize individual records for AI use. It is to aggregate data before it reaches the AI tool. Totals, rates, percentages, and program-level trends are analytically useful and carry dramatically lower privacy risk than record-level data.</p>
+
+    <h2>Cleaning data before AI use</h2>
+
+    <p>Beyond privacy, data quality matters for output quality. AI tools work best with information that is consistent, complete, and clearly structured. Common data quality issues in nonprofit records include inconsistent formatting, missing fields, duplicate entries, outdated information, and notes that made sense in context but lack the background for an AI tool to interpret correctly.</p>
+
+    <ol class="numbered-list">
+      <li>
+        <p><strong>Check for inconsistencies.</strong> If you are using AI to analyze program data, inconsistent category names, date formats, or status labels will produce confused output. Standardize before you analyze.</p>
+      </li>
+      <li>
+        <p><strong>Remove or flag outdated records.</strong> AI tools do not know that a record from five years ago reflects a program that no longer exists. Flag or exclude data that predates significant program changes if you want the output to reflect current operations.</p>
+      </li>
+      <li>
+        <p><strong>Provide context the tool cannot infer.</strong> If you are uploading a document for AI to summarize or analyze, include a brief description of what it is and what you need from it. "This is a quarterly service log for our employment program. I need a summary of outcomes and any patterns in service gaps" will produce better output than uploading the file alone.</p>
+      </li>
+      <li>
+        <p><strong>Check for embedded sensitive information.</strong> Spreadsheets, reports, and documents sometimes contain more than you realize. A grant report may include a case study with enough detail to identify a client. An outcomes spreadsheet may have a notes column with personal information. Review before uploading, not after.</p>
+      </li>
+    </ol>
+
+    <h2>A practical pre-use checklist</h2>
+
+    <div class="green-card">
+      <div class="card-label">Before any data goes into an AI tool</div>
+      <p>Have I identified what sensitivity tier this data falls into?</p>
+      <p>If it is high sensitivity: have I anonymized or aggregated it sufficiently that re-identification is not reasonably possible?</p>
+      <p>Have I checked for embedded personal information that might not be obvious (notes columns, case examples, embedded metadata)?</p>
+      <p>Is the data accurate and current enough to produce useful output?</p>
+      <p>Have I verified that the tool I am using is approved for this type of data under our organization's guidelines?</p>
+      <p>Do I have a data processing agreement in place with this vendor if using medium or higher sensitivity data?</p>
+    </div>
+
+    <p>Data preparation is not a one-time task. As your AI use evolves, the types of data you work with and the tools you use will change. Building a regular review habit (checking what is being used, how, and whether the current approach still makes sense) keeps the practice healthy over time.</p>
+
+  </div>
+  <div class="contact-block">
+    <p class="contact-name">Mandy Hathaway</p>
+    <p>AI Ethics &amp; Technology Consulting for Nonprofits</p>
+    <p><a href="https://mandyhathaway.com">mandyhathaway.com</a> &nbsp;·&nbsp; <a href="https://mandyhathaway.com/book">Book a call</a></p>
+  </div>
+</div>
+</body>
+</html>

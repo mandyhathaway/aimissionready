@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Auditing Informal AI Use: When Staff Are Already Using It and No One Has a Policy</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,400&family=Source+Sans+3:wght@300;400;600&family=DM+Mono:wght@400;500&display=swap');
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  a:focus-visible { outline: 2px solid var(--green); outline-offset: 2px; border-radius: 2px; }
+  .cover a:focus-visible { outline-color: #aed6f1; }
+  :root {
+    --ink: #1a1a18; --cream: #f5f0e6; --green: #2d5a3d; --green-mid: #3d6b4a;
+    --green-light: #eaf3de; --alert: #1d5e8a; --alert-light: #ddeaf5;
+    --muted: #4e4e47; --card: #faf7ef; --border: rgba(45,90,61,0.18);
+  }
+  body { font-family: 'Source Sans 3', sans-serif; background: var(--cream); color: var(--ink); font-size: 16px; line-height: 1.7; }
+  .page { max-width: 820px; margin: 0 auto; }
+  .cover { background: var(--green); color: var(--cream); padding: 72px 64px 60px; }
+  .cover-rule-top { width: 100%; border: none; border-top: 1px solid #aed6f1; margin-bottom: 40px; }
+  .cover-kicker { font-size: 12px; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: #aed6f1; margin-bottom: 18px; }
+  .cover-title { font-family: 'Playfair Display', serif; font-size: 40px; font-weight: 900; line-height: 1.08; margin-bottom: 10px; }
+  .cover-sub { font-family: 'Playfair Display', serif; font-style: italic; font-size: 20px; color: #dce8d8; margin-bottom: 36px; }
+  .cover-rule-bottom { width: 100%; border: none; border-top: 1px solid rgba(174,214,241,0.35); margin-bottom: 28px; }
+  .cover-meta { font-size: 13px; color: #b8d4c0; letter-spacing: 0.04em; }
+  .cover-meta a { color: #aed6f1; text-decoration: none; }
+  .body-wrap { padding: 56px 64px 72px; }
+  h2 { font-family: 'Playfair Display', serif; font-size: 26px; font-weight: 700; color: var(--green); margin-top: 44px; margin-bottom: 14px; padding-bottom: 8px; border-bottom: 1.5px solid var(--border); }
+  p { margin-bottom: 16px; color: var(--ink); }
+  .pullquote { background: var(--green); color: var(--cream); border-radius: 4px; padding: 28px 36px; margin: 36px 0; font-family: 'Playfair Display', serif; font-style: italic; font-size: 20px; line-height: 1.5; }
+  .alert-box { background: var(--alert-light); border-left: 4px solid var(--alert); border-radius: 0 4px 4px 0; padding: 20px 24px; margin: 28px 0; }
+  .alert-box .alert-label { font-family: 'DM Mono', monospace; font-size: 11px; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: var(--alert); margin-bottom: 6px; }
+  .alert-box p { margin: 0; font-size: 15px; color: #1a1a18; }
+  .green-card { background: var(--green-light); border: 1px solid var(--border); border-radius: 4px; padding: 24px 28px; margin: 28px 0; }
+  .green-card .card-label { font-family: 'DM Mono', monospace; font-size: 11px; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: var(--green); margin-bottom: 10px; }
+  .green-card p { margin: 0 0 10px; font-size: 15px; }
+  .green-card p:last-child { margin-bottom: 0; }
+  .numbered-list { counter-reset: item; list-style: none; padding: 0; margin: 20px 0 24px; }
+  .numbered-list li { counter-increment: item; display: flex; gap: 18px; margin-bottom: 18px; align-items: flex-start; }
+  .numbered-list li::before { content: counter(item); font-family: 'DM Mono', monospace; font-size: 13px; font-weight: 500; color: var(--cream); background: var(--green); width: 26px; height: 26px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px; }
+  .numbered-list li p { margin: 0; font-size: 15px; }
+  .numbered-list li strong { display: block; margin-bottom: 2px; color: var(--green); }
+  .contact-block { background: var(--green); color: var(--cream); padding: 36px 64px; margin-top: 56px; text-align: center; }
+  .contact-block p { color: #dce8d8; margin-bottom: 10px; font-size: 15px; }
+  .contact-block a { color: #aed6f1; text-decoration: none; font-weight: 600; }
+  .contact-block .contact-name { font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 700; color: var(--cream); margin-bottom: 6px; }
+  @media print {
+    body { background: white; }
+    .cover, .pullquote, .contact-block, .green-card, .alert-box, .numbered-list li::before { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="cover">
+    <hr class="cover-rule-top">
+    <div class="cover-kicker">Nonprofit AI Resources &nbsp;·&nbsp; Mandy Hathaway Consulting</div>
+    <h1 class="cover-title">Auditing Informal AI Use</h1>
+    <div class="cover-sub">When staff are already using AI and no one has a policy</div>
+    <hr class="cover-rule-bottom">
+    <div class="cover-meta">Mandy Hathaway Consulting &nbsp;·&nbsp; <a href="https://mandyhathaway.com">mandyhathaway.com</a> &nbsp;·&nbsp; AI Ethics &amp; Technology Consulting</div>
+  </div>
+  <div class="body-wrap">
+
+    <p>In most nonprofits, AI use did not start with a leadership decision. It started with a staff member who discovered a tool that made their job easier and started using it. Then another staff member. Then a few more, each making their own decisions about what to use and how. By the time leadership is ready to think about AI policy, the tool is already in the building.</p>
+
+    <p>This is not a failure of organizational culture. It is an accurate description of how technology adoption actually happens. The appropriate response is not to pretend it did not occur or to crack down retroactively. It is to find out what is actually happening, respond to it thoughtfully, and create a path from informal use to governed use.</p>
+
+    <div class="pullquote">
+      Shadow IT has always existed. What is new is that AI tools can touch client data in ways that older shadow software typically could not. That changes the stakes of not knowing what is being used.
+    </div>
+
+    <h2>Why this matters more with AI than with previous tools</h2>
+
+    <p>When staff adopted unapproved tools in previous eras (a personal Dropbox for file sharing, a consumer email client for work), the risks were real but typically limited. The data sat somewhere else, but it was still your data, still in a recognizable form.</p>
+
+    <p>AI tools introduce a different dynamic. When a staff member pastes a client's case notes into an AI writing assistant to draft a progress report, that information is being processed by an external system with its own data handling practices. The client did not consent to this. The organization may not even know it is happening. And depending on the vendor's terms, the data may be retained or used in ways the organization cannot control.</p>
+
+    <p>This is not a reason to prohibit AI use. It is a reason to know about it and govern it.</p>
+
+    <h2>How to find out what is actually being used</h2>
+
+    <p>The most effective way to understand informal AI use in your organization is to ask staff directly, in a way that makes honesty feel safe. If staff believe the conversation is leading to prohibition or blame, they will underreport. If they understand that the goal is to support their work and address any risks, they are far more likely to tell you what is actually happening.</p>
+
+    <ol class="numbered-list">
+      <li>
+        <p><strong>Start with a conversation, not a survey.</strong> A team meeting or one-on-one conversations produce richer information than a form. Ask: "What tools are you using to help with your work right now? Anything you've found useful for writing, organizing, summarizing?" Frame it as learning, not auditing.</p>
+      </li>
+      <li>
+        <p><strong>Ask specifically about AI features in existing tools.</strong> Many staff do not think of Copilot in Word or the AI summary feature in their video conferencing tool as "AI." Ask about features, not just tools, to get a complete picture.</p>
+      </li>
+      <li>
+        <p><strong>Ask what they are using it for.</strong> Understanding the tasks being supported tells you where AI is providing value and where the risk concentration is. Document writing and meeting summaries carry different risk profiles than client-record processing.</p>
+      </li>
+      <li>
+        <p><strong>Ask what they wish they could do.</strong> This surfaces the unmet needs that drove informal adoption in the first place. Addressing those needs within a governed framework is better than prohibition that staff will route around.</p>
+      </li>
+    </ol>
+
+    <div class="alert-box">
+      <div class="alert-label">Before you ask</div>
+      <p>Be explicit with staff that you are not conducting this conversation to discipline anyone. Informal AI use is nearly universal in every sector right now, and staff who adopted tools in good faith should not be treated as having done something wrong. If the tone of the conversation is punitive, you will not get accurate information, and you will damage the trust you need to implement effective governance.</p>
+    </div>
+
+    <h2>What to do with what you find</h2>
+
+    <p>Once you have a picture of current AI use, the response depends on what you found. Most organizations discover a mix of low-risk uses that can be approved and formalized, and some higher-risk practices that need adjustment.</p>
+
+    <ol class="numbered-list">
+      <li>
+        <p><strong>Affirm what is working well.</strong> If staff have found tools that are genuinely useful and low-risk, say so explicitly. Adding those tools to an approved list and acknowledging the value they provide is motivating and builds goodwill for the governance conversation that follows.</p>
+      </li>
+      <li>
+        <p><strong>Address the high-risk practices directly but without blame.</strong> If you find that staff have been putting client information into external AI tools, the response is to explain why that is a problem, put clear guidance in place from this point on, and move on. If no harm has occurred, treat it as a governance gap rather than a disciplinary matter.</p>
+      </li>
+      <li>
+        <p><strong>Create a path to formal approval for tools that are not yet on an approved list.</strong> Staff who discovered useful tools should not feel punished for their initiative. A lightweight approval process that lets staff propose tools for review is more effective than simply banning everything unapproved.</p>
+      </li>
+      <li>
+        <p><strong>Use what you learned to build the policy.</strong> The actual use cases your staff have found are the most relevant input for what your AI use policy needs to cover. A policy built around real organizational needs will be more useful and more followed than one built around abstract risk scenarios.</p>
+      </li>
+    </ol>
+
+    <h2>From informal to governed: a realistic timeline</h2>
+
+    <p>Moving from unmanaged informal AI use to a governed practice is not a one-conversation process. A realistic timeline for a small to mid-size nonprofit looks something like this:</p>
+
+    <div class="green-card">
+      <div class="card-label">A practical sequence</div>
+      <p><strong>Month 1:</strong> Conduct the listening conversation with staff. Document what tools are in use and for what purposes. Identify any high-risk practices that need immediate attention.</p>
+      <p><strong>Month 2:</strong> Draft a minimal use policy based on what you learned. Include an approved tools list, information restrictions, and a named contact for questions. Circulate for staff input before finalizing.</p>
+      <p><strong>Month 3:</strong> Communicate the policy at a staff meeting. Be clear about what changes, what is now formally approved, and where the process is for new tools.</p>
+      <p><strong>Ongoing:</strong> Build in a regular check-in, at minimum annually, to update the approved list and revisit any practices that have changed.</p>
+    </div>
+
+    <h2>The goal is not control</h2>
+
+    <p>Organizations that approach AI governance as a control problem tend to produce policies that staff route around. Organizations that approach it as a support problem (how do we help staff use these tools well and safely) tend to produce cultures where people actually follow the guidance.</p>
+
+    <p>Staff who use AI tools are, in most cases, trying to do their jobs more effectively. Meeting them there, with clear guidance and genuine support, is both more ethical and more practical than a framework built on restriction and surveillance. The audit is not the end goal. It is the starting point for a healthier relationship with the technology your organization is already using.</p>
+
+  </div>
+  <div class="contact-block">
+    <p class="contact-name">Mandy Hathaway</p>
+    <p>AI Ethics &amp; Technology Consulting for Nonprofits</p>
+    <p><a href="https://mandyhathaway.com">mandyhathaway.com</a> &nbsp;·&nbsp; <a href="https://mandyhathaway.com/book">Book a call</a></p>
+  </div>
+</div>
+</body>
+</html>

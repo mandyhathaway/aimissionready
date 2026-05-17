@@ -1,0 +1,21 @@
+/* TEAM */
+Built by:       Mandy Hathaway
+Role:           AI Ethics Consultant & Technology Specialist
+Site:           https://mandyhathaway.com
+Location:       College Station, TX, USA
+
+/* SITE */
+Standards:      HTML5, CSS3, ES6, JSON-LD
+Components:     Single-page application with hash routing
+Fonts:          Playfair Display, Source Sans 3, DM Mono (Google Fonts)
+Hosting:        GitHub Pages, custom domain via Porkbun
+License:        Content licensed CC BY-NC 4.0
+                https://creativecommons.org/licenses/by-nc/4.0/
+
+/* THANKS */
+Thanks to the nonprofit leaders whose questions shaped these resources,
+and to the funders, regulators, and researchers whose ongoing work
+makes AI literacy in the social sector possible.
+
+The complete external resources page credits each contributing
+organization. See: https://aimissionready.org/#resources

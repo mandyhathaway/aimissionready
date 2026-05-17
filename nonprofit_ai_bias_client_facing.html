@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bias in Client-Facing AI: Eligibility, Intake, Prioritization, and Decisions That Affect People</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,400&family=Source+Sans+3:wght@300;400;600&family=DM+Mono:wght@400;500&display=swap');
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root { --ink:#1a1a18; --cream:#f5f0e6; --green:#2d5a3d; --green-mid:#3d6b4a; --green-light:#eaf3de; --alert:#1d5e8a; --alert-light:#ddeaf5; --muted:#4e4e47; --border:rgba(45,90,61,0.18); }
+  body { font-family:'Source Sans 3',sans-serif; background:var(--cream); color:var(--ink); font-size:16px; line-height:1.7; }
+  .page { max-width:820px; margin:0 auto; }
+  .cover { background:var(--green); color:var(--cream); padding:72px 64px 60px; }
+  .cover-rule-top, .cover-rule-bottom { border:none; }
+  .cover-rule-top { border-top:1px solid #aed6f1; margin-bottom:40px; }
+  .cover-rule-bottom { border-top:1px solid rgba(174,214,241,0.35); margin-bottom:28px; }
+  .cover-kicker { font-size:12px; font-weight:700; letter-spacing:0.22em; text-transform:uppercase; color:#aed6f1; margin-bottom:18px; }
+  .cover-title { font-family:'Playfair Display',serif; font-size:42px; font-weight:900; line-height:1.1; margin-bottom:10px; }
+  .cover-sub { font-family:'Playfair Display',serif; font-style:italic; font-size:20px; color:#dce8d8; margin-bottom:36px; }
+  .cover-meta { font-size:13px; color:#b8d4c0; letter-spacing:0.04em; }
+  .cover-meta a { color:#aed6f1; text-decoration:none; }
+  .body-wrap { padding:56px 64px 72px; }
+  h2 { font-family:'Playfair Display',serif; font-size:26px; font-weight:700; color:var(--green); margin-top:44px; margin-bottom:14px; padding-bottom:8px; border-bottom:1.5px solid var(--border); }
+  h3 { font-family:'Source Sans 3',sans-serif; font-size:15px; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:var(--green-mid); margin-top:28px; margin-bottom:8px; }
+  p { margin-bottom:16px; color:var(--ink); }
+  .pullquote { background:var(--green); color:var(--cream); border-radius:4px; padding:28px 36px; margin:36px 0; font-family:'Playfair Display',serif; font-style:italic; font-size:20px; line-height:1.5; }
+  .alert-box { background:var(--alert-light); border-left:4px solid var(--alert); border-radius:0 4px 4px 0; padding:20px 24px; margin:28px 0; }
+  .alert-box .alert-label { font-family:'DM Mono',monospace; font-size:11px; font-weight:500; letter-spacing:0.15em; text-transform:uppercase; color:var(--alert); margin-bottom:6px; }
+  .alert-box p { margin:0; font-size:15px; }
+  .green-card { background:var(--green-light); border:1px solid var(--border); border-radius:4px; padding:24px 28px; margin:28px 0; }
+  .green-card .card-label { font-family:'DM Mono',monospace; font-size:11px; font-weight:500; letter-spacing:0.15em; text-transform:uppercase; color:var(--green); margin-bottom:10px; }
+  .green-card p { margin:0 0 10px; font-size:15px; }
+  .green-card p:last-child { margin-bottom:0; }
+  .numbered-list { counter-reset:item; list-style:none; padding:0; margin:20px 0 24px; }
+  .numbered-list li { counter-increment:item; display:flex; gap:18px; margin-bottom:18px; align-items:flex-start; }
+  .numbered-list li::before { content:counter(item); font-family:'DM Mono',monospace; font-size:13px; font-weight:500; color:var(--cream); background:var(--green); width:26px; height:26px; border-radius:50%; display:flex; align-items:center; justify-content:center; flex-shrink:0; margin-top:2px; }
+  .numbered-list li p { margin:0; font-size:15px; }
+  .numbered-list li strong { display:block; margin-bottom:2px; color:var(--green); }
+  .never-list { list-style:none; padding:0; margin:16px 0; }
+  .never-list li { display:flex; gap:14px; align-items:flex-start; margin-bottom:12px; font-size:15px; }
+  .never-list li::before { content:"✕"; font-family:'DM Mono',monospace; font-size:12px; color:#c0392b; font-weight:700; flex-shrink:0; margin-top:3px; }
+  .contact-block { background:var(--green); color:var(--cream); padding:36px 64px; margin-top:56px; text-align:center; }
+  .contact-block p { color:#dce8d8; margin-bottom:10px; font-size:15px; }
+  .contact-block a { color:#aed6f1; text-decoration:none; font-weight:600; }
+  .contact-block .contact-name { font-family:'Playfair Display',serif; font-size:20px; font-weight:700; color:var(--cream); margin-bottom:6px; }
+  hr.section-rule { border:none; border-top:1px solid var(--border); margin:40px 0; }
+  @media (max-width:700px) { .body-wrap { padding:44px 28px 52px; } .cover { padding:56px 28px 48px; } .cover-title { font-size:32px; } }
+  @media print { body{background:white;} .cover,.pullquote,.contact-block,.green-card,.alert-box,.numbered-list li::before { -webkit-print-color-adjust:exact; print-color-adjust:exact; } }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="cover">
+    <hr class="cover-rule-top">
+    <div class="cover-kicker">Nonprofit AI Resource Series &nbsp;·&nbsp; Deep Topic</div>
+    <h1 class="cover-title">Bias in client-facing AI</h1>
+    <div class="cover-sub">Eligibility, intake, prioritization, and decisions that affect the people you serve</div>
+    <hr class="cover-rule-bottom">
+    <div class="cover-meta">
+      Mandy Hathaway Consulting &nbsp;·&nbsp;
+      <a href="https://mandyhathaway.com">mandyhathaway.com</a> &nbsp;·&nbsp;
+      AI Ethics &amp; Technology Consulting
+    </div>
+  </div>
+
+  <div class="body-wrap">
+
+    <p>Of all the categories of nonprofit AI use, this is the one that matters most and the one that is most often handled badly. When AI is used to decide who gets housing, who is prioritized for case management, who passes an intake screening, who is flagged as high-risk for child welfare review, the failures fall directly on the people your organization exists to serve. They fall hardest on the populations who are already underserved by every other system in their life. And they are often invisible to the staff using the tool, because the bias is built into the inputs and the math, not into anyone's intent.</p>
+
+    <p>This guide is the deeper treatment of bias-in-AI for the use cases that touch clients directly. The Lane 1 risk guide covers AI errors at the general level. This guide covers the specific category where errors compound, accountability diffuses, and the consequences are most serious.</p>
+
+    <div class="pullquote">
+      The danger is not the spectacular failure that makes the news. It is the quiet pattern of decisions that, run a thousand times, redirects scarce resources away from the people who need them most.
+    </div>
+
+    <h2>What "client-facing AI" actually means</h2>
+
+    <p>The category is broader than it sounds. It includes any AI that shapes a decision about a specific person seeking services, even when a human is nominally in the loop. The use cases showing up most in nonprofit work right now:</p>
+
+    <ol class="numbered-list">
+      <li>
+        <p><strong>Intake chatbots and screening tools.</strong> AI conversations that determine what services a person is offered, often before a human ever speaks with them.</p>
+      </li>
+      <li>
+        <p><strong>Eligibility scoring for benefits, housing, or programs.</strong> AI models that score applications and rank them for staff review, where the score effectively determines the outcome.</p>
+      </li>
+      <li>
+        <p><strong>Case prioritization.</strong> Predictive tools that rank cases for urgency, particularly in child welfare, homelessness response, and behavioral health.</p>
+      </li>
+      <li>
+        <p><strong>Risk assessment for service planning.</strong> AI that predicts likelihood of recidivism, dropout, hospitalization, or family separation, used to shape what services are offered.</p>
+      </li>
+      <li>
+        <p><strong>Resource allocation algorithms.</strong> Coordinated entry systems for homeless services, school assignment systems, foster care placement matching.</p>
+      </li>
+      <li>
+        <p><strong>Automated scheduling and routing.</strong> AI that decides which clients get which staff, on what timeline, in what location.</p>
+      </li>
+    </ol>
+
+    <p>Each of these touches a person's access to services your organization controls. Each of them carries bias risk that the vendor will downplay and that staff using the tool may not see.</p>
+
+    <h2>How bias enters these systems</h2>
+
+    <p>Bias in client-facing AI is not usually about prejudice in the model's "thinking." It is about three structural patterns, any one of which is enough to produce systematically discriminatory outcomes.</p>
+
+    <div class="green-card">
+      <div class="card-label">Pattern one: representational bias in training data</div>
+      <p>The model learned from data that under-represents certain populations. A risk-scoring model trained primarily on cases from English-speaking families will score non-English-speaking families differently, often worse, even when controlling for the underlying situation. The model is not malicious; it is incomplete.</p>
+    </div>
+
+    <div class="green-card">
+      <div class="card-label">Pattern two: encoded historical discrimination</div>
+      <p>The model learned from past decisions that already reflected discrimination. A child welfare risk model trained on historical removal patterns learns that Black families and Indigenous families are higher risk, because the historical record shows them being investigated and separated more often. The model reproduces the pattern as a prediction. Virginia Eubanks's "Automating Inequality" remains the foundational text on this exact failure mode.</p>
+    </div>
+
+    <div class="green-card">
+      <div class="card-label">Pattern three: deployment context divergence</div>
+      <p>The model performs well on average but fails in the specific population your organization serves. A coordinated entry vulnerability assessment that works for the general homeless population may misread the situations of trans clients, undocumented clients, clients with co-occurring disabilities, or clients whose disabilities mean they cannot self-report consistently. The tool was validated; just not for your people.</p>
+    </div>
+
+    <h2>Three categories of harm worth naming</h2>
+
+    <p>The bias-in-AI literature distinguishes between several kinds of harm. For client-facing nonprofit work, three categories matter most.</p>
+
+    <ol class="numbered-list">
+      <li>
+        <p><strong>Allocative harm.</strong> The most common: the tool decides who gets the resource, and the people who are systematically scored lower get less of it. Housing not offered, services not prioritized, benefits not approved.</p>
+      </li>
+      <li>
+        <p><strong>Representational harm.</strong> The tool's outputs encode dehumanizing or inaccurate assumptions about certain populations. Intake chatbots that recognize white-sounding names and not others. Risk scores that interpret cultural communication patterns as warning signs. Recommended services that assume nuclear-family structures.</p>
+      </li>
+      <li>
+        <p><strong>Interactional harm.</strong> The presence of the AI changes how staff treat clients. "The system flagged you" becomes the reason a question is asked, a service is denied, a referral is made. Clients learn that their relationship with your organization is also their relationship with an algorithm they cannot see or appeal.</p>
+      </li>
+    </ol>
+
+    <h2>The "automating inequality" pattern</h2>
+
+    <p>Across documented cases of AI in human services, a pattern recurs. The tool is adopted to make decisions more efficient, consistent, and "objective." It performs well on aggregate metrics. The hidden costs concentrate on the populations who are already most vulnerable. By the time the pattern is identified, the tool is embedded in the workflow and removing it feels harder than living with the harm.</p>
+
+    <p>This is not a hypothetical concern. The Allegheny Family Screening Tool, the LA County coordinated entry system, the Michigan unemployment fraud detection system, and dozens of less-publicized examples have followed the same arc: efficiency promise, equity erosion, eventual reckoning, sometimes reform. Eubanks's work documents the pattern in detail. Cathy O'Neil's "Weapons of Math Destruction" provides the broader frame. Both are essential reading for any nonprofit leader considering an AI tool in this category.</p>
+
+    <h2>The standards that should apply, before any tool is adopted</h2>
+
+    <p>Client-facing AI should not be subject to the same vendor-evaluation process as office productivity tools. Higher standards are warranted because the consequences of failure are higher. The minimum:</p>
+
+    <div class="alert-box">
+      <div class="alert-label">Required before adoption</div>
+      <p>Human-in-the-loop authority is named and documented. AI provides information; a human makes the decision. The human's authority to override the AI is explicit, supported by leadership, and not penalized by performance metrics that reward agreement with the AI.</p>
+    </div>
+
+    <div class="alert-box">
+      <div class="alert-label">Required before adoption</div>
+      <p>An equity audit has been conducted on the specific tool, in the specific population you serve. Not the vendor's general validation. Not "the tool has been used in other settings." Your own clients, your own demographics, your own outcomes. Where the demographic data does not exist or is too small, that is itself a reason for additional caution.</p>
+    </div>
+
+    <div class="alert-box">
+      <div class="alert-label">Required before adoption</div>
+      <p>Beneficiary disclosure and appeal pathway are in place. Clients are told that AI is involved in their case. There is a clear, accessible path to contest an AI-influenced decision and have a human re-examine it. The appeal pathway works for clients with limited English, low literacy, cognitive disabilities, or fear of authorities.</p>
+    </div>
+
+    <h2>Common pitfalls worth catching now</h2>
+
+    <ol class="numbered-list">
+      <li>
+        <p><strong>Treating AI scores as objective.</strong> A number is not less biased than a judgment; it is bias that has been quantified. Staff learn quickly to trust scores because they reduce decision burden. The leadership task is to keep that trust calibrated to the actual reliability of the tool.</p>
+      </li>
+      <li>
+        <p><strong>"The system said" as decision-making.</strong> Even when policy names human authority, staff under time pressure defer to AI recommendations because the alternative is more work. The structural fix: build review time into the workflow, not as overhead.</p>
+      </li>
+      <li>
+        <p><strong>The efficiency framing.</strong> "We can serve more clients per staff hour with this tool" almost always trades quality for quantity, with the quality losses falling on the populations the tool understands least.</p>
+      </li>
+      <li>
+        <p><strong>Pilot creep.</strong> A pilot that was scoped for one population spreads to others where the validation does not hold. The pilot's good outcomes are reported; the broader use is not separately evaluated.</p>
+      </li>
+      <li>
+        <p><strong>Vendor self-validation.</strong> "Our tool has been tested for bias" is not equity due diligence. Ask who tested, on what data, with what results, and what populations the tool performed worst on.</p>
+      </li>
+    </ol>
+
+    <h2>What to do if you are already using one of these tools</h2>
+
+    <p>Most nonprofits in this space are already running at least one client-facing AI tool, often inherited from a funder requirement, a coordinated entry mandate, or a software vendor's product update. A retrospective audit is the move.</p>
+
+    <ol class="numbered-list">
+      <li>
+        <p><strong>Identify every tool that scores, classifies, or prioritizes clients.</strong> Including ones embedded in software you bought for other reasons (CRM, EHR, case management). Many are not labeled as AI in your interface.</p>
+      </li>
+      <li>
+        <p><strong>Pull the last twelve months of outputs.</strong> For each tool, look at outcomes by demographic groups your organization serves. Race, gender, age, primary language, disability status, immigration status where you can. The patterns will tell you where to look closer.</p>
+      </li>
+      <li>
+        <p><strong>Compare AI-influenced decisions to comparable decisions made without the tool.</strong> Where possible, identify control cases. Where not, look at whether decisions changed materially after the tool was adopted, in ways that fell on particular populations.</p>
+      </li>
+      <li>
+        <p><strong>Talk to staff who use the tool daily.</strong> They know where it fails. They often do not feel safe saying so. Make the conversation explicit and protected.</p>
+      </li>
+      <li>
+        <p><strong>Talk to clients who experienced AI-influenced decisions.</strong> Where appropriate and consented. Their accounts of how the process felt are signal even when the outcomes look acceptable on paper.</p>
+      </li>
+    </ol>
+
+    <h2>When the answer should be "stop using this tool"</h2>
+
+    <ul class="never-list">
+      <li>The retrospective audit shows demographically concentrated harm and the vendor cannot explain or mitigate it</li>
+      <li>Human-in-the-loop authority is nominal but not real; staff cannot in practice override the tool</li>
+      <li>The tool is making decisions about benefits, housing, or services for which there is no appeal path</li>
+      <li>The vendor refuses to disclose training data, validation methodology, or known failure modes</li>
+      <li>Adoption was driven by funder or jurisdiction mandate rather than your organization's own judgment, and the mandate has not been re-examined</li>
+      <li>The tool's "efficiency gain" has translated to caseload growth without corresponding staff capacity to maintain quality</li>
+    </ul>
+
+    <h2>When AI for client-affecting decisions can be appropriate</h2>
+
+    <p>Not all use is harmful. The conditions under which it can work:</p>
+
+    <ol class="numbered-list">
+      <li>
+        <p><strong>The AI is genuinely advisory, with strong human-decision documentation.</strong> Staff are trained to use AI outputs as one input among several, and the workflow makes this practical.</p>
+      </li>
+      <li>
+        <p><strong>The tool has been validated for your specific population, with the validation documented and re-examined annually.</strong></p>
+      </li>
+      <li>
+        <p><strong>Clients are told, in plain language and at their reading level, that AI is involved.</strong> They have a real path to request a human-only review.</p>
+      </li>
+      <li>
+        <p><strong>There is a named accountable person, with authority to disable the tool.</strong> The escalation path is short.</p>
+      </li>
+      <li>
+        <p><strong>The organization commits, in writing, to publishing periodic equity reviews of AI-influenced outcomes.</strong> Transparency is the discipline that keeps the system honest.</p>
+      </li>
+    </ol>
+
+    <hr class="section-rule">
+
+    <p>Client-facing AI is the corner of nonprofit AI work where the consequences of getting it wrong are most serious, and where the sector is most exposed to repeating mistakes that other public-services adopters have already made. The good news is that the patterns are documented, the failure modes are knowable, and the standards that should apply are not mysterious. The bad news is that the sector pressure to adopt these tools is high, the vendor marketing is sophisticated, and the consequences of a slow adoption decision fall in different places than the consequences of a fast one.</p>
+
+    <p>If you are working through a decision on a tool in this category, the Equity Lens framework is the right first step. If you are already using one, the retrospective audit above is the work that needs to happen this quarter. If you have the option to decline an AI tool that does not pass the standards above, declining is a legitimate choice that some funders are starting to support and that your clients will not regret.</p>
+
+  </div>
+
+  <div class="contact-block">
+    <div class="contact-name">Mandy Hathaway</div>
+    <p>AI Ethics &amp; Technology Consulting for Nonprofits</p>
+    <p><a href="https://mandyhathaway.com">mandyhathaway.com</a> &nbsp;·&nbsp; <a href="https://mandyhathaway.com/book">Book a call</a></p>
+  </div>
+
+</div>
+</body>
+</html>

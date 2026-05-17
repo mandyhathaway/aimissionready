@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Staff Use Policies for Nonprofits: How to Create One If You Have None</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,400&family=Source+Sans+3:wght@300;400;600&family=DM+Mono:wght@400;500&display=swap');
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  a:focus-visible { outline: 2px solid var(--green); outline-offset: 2px; border-radius: 2px; }
+  .cover a:focus-visible { outline-color: #aed6f1; }
+  :root {
+    --ink: #1a1a18; --cream: #f5f0e6; --green: #2d5a3d; --green-mid: #3d6b4a;
+    --green-light: #eaf3de; --alert: #1d5e8a; --alert-light: #ddeaf5;
+    --muted: #4e4e47; --card: #faf7ef; --border: rgba(45,90,61,0.18);
+  }
+  body { font-family: 'Source Sans 3', sans-serif; background: var(--cream); color: var(--ink); font-size: 16px; line-height: 1.7; }
+  .page { max-width: 820px; margin: 0 auto; }
+  .cover { background: var(--green); color: var(--cream); padding: 72px 64px 60px; }
+  .cover-rule-top { width: 100%; border: none; border-top: 1px solid #aed6f1; margin-bottom: 40px; }
+  .cover-kicker { font-size: 12px; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: #aed6f1; margin-bottom: 18px; }
+  .cover-title { font-family: 'Playfair Display', serif; font-size: 40px; font-weight: 900; line-height: 1.08; margin-bottom: 10px; }
+  .cover-sub { font-family: 'Playfair Display', serif; font-style: italic; font-size: 20px; color: #dce8d8; margin-bottom: 36px; }
+  .cover-rule-bottom { width: 100%; border: none; border-top: 1px solid rgba(174,214,241,0.35); margin-bottom: 28px; }
+  .cover-meta { font-size: 13px; color: #b8d4c0; letter-spacing: 0.04em; }
+  .cover-meta a { color: #aed6f1; text-decoration: none; }
+  .body-wrap { padding: 56px 64px 72px; }
+  h2 { font-family: 'Playfair Display', serif; font-size: 26px; font-weight: 700; color: var(--green); margin-top: 44px; margin-bottom: 14px; padding-bottom: 8px; border-bottom: 1.5px solid var(--border); }
+  p { margin-bottom: 16px; color: var(--ink); }
+  .pullquote { background: var(--green); color: var(--cream); border-radius: 4px; padding: 28px 36px; margin: 36px 0; font-family: 'Playfair Display', serif; font-style: italic; font-size: 20px; line-height: 1.5; }
+  .alert-box { background: var(--alert-light); border-left: 4px solid var(--alert); border-radius: 0 4px 4px 0; padding: 20px 24px; margin: 28px 0; }
+  .alert-box .alert-label { font-family: 'DM Mono', monospace; font-size: 11px; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: var(--alert); margin-bottom: 6px; }
+  .alert-box p { margin: 0; font-size: 15px; color: #1a1a18; }
+  .green-card { background: var(--green-light); border: 1px solid var(--border); border-radius: 4px; padding: 24px 28px; margin: 28px 0; }
+  .green-card .card-label { font-family: 'DM Mono', monospace; font-size: 11px; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: var(--green); margin-bottom: 10px; }
+  .green-card p { margin: 0 0 10px; font-size: 15px; }
+  .green-card p:last-child { margin-bottom: 0; }
+  .numbered-list { counter-reset: item; list-style: none; padding: 0; margin: 20px 0 24px; }
+  .numbered-list li { counter-increment: item; display: flex; gap: 18px; margin-bottom: 18px; align-items: flex-start; }
+  .numbered-list li::before { content: counter(item); font-family: 'DM Mono', monospace; font-size: 13px; font-weight: 500; color: var(--cream); background: var(--green); width: 26px; height: 26px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px; }
+  .numbered-list li p { margin: 0; font-size: 15px; }
+  .numbered-list li strong { display: block; margin-bottom: 2px; color: var(--green); }
+  .policy-template { background: var(--card); border: 1.5px solid var(--border); border-radius: 4px; padding: 28px 32px; margin: 28px 0; }
+  .policy-template .template-label { font-family: 'DM Mono', monospace; font-size: 11px; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: var(--muted); margin-bottom: 16px; }
+  .policy-template h3 { font-family: 'Source Sans 3', sans-serif; font-size: 14px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--green); margin-top: 18px; margin-bottom: 6px; }
+  .policy-template p { font-size: 14px; margin-bottom: 8px; }
+  .policy-template p:last-child { margin-bottom: 0; }
+  .contact-block { background: var(--green); color: var(--cream); padding: 36px 64px; margin-top: 56px; text-align: center; }
+  .contact-block p { color: #dce8d8; margin-bottom: 10px; font-size: 15px; }
+  .contact-block a { color: #aed6f1; text-decoration: none; font-weight: 600; }
+  .contact-block .contact-name { font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 700; color: var(--cream); margin-bottom: 6px; }
+  @media print {
+    body { background: white; }
+    .cover, .pullquote, .contact-block, .green-card, .alert-box, .numbered-list li::before { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="cover">
+    <hr class="cover-rule-top">
+    <div class="cover-kicker">Nonprofit AI Resources &nbsp;·&nbsp; Mandy Hathaway Consulting</div>
+    <h1 class="cover-title">AI Staff Use Policies for Nonprofits</h1>
+    <div class="cover-sub">How to create one if you have none</div>
+    <hr class="cover-rule-bottom">
+    <div class="cover-meta">Mandy Hathaway Consulting &nbsp;·&nbsp; <a href="https://mandyhathaway.com">mandyhathaway.com</a> &nbsp;·&nbsp; AI Ethics &amp; Technology Consulting</div>
+  </div>
+  <div class="body-wrap">
+
+    <p>Most nonprofits do not have an AI use policy. This is not surprising. The tools have arrived faster than most organizations' capacity to govern them, and policy development takes time that stretched staff rarely have. The result is that staff are making their own decisions about what to use, how to use it, and what to put into it, often without any organizational guidance at all.</p>
+
+    <p>A staff AI use policy does not need to be a lengthy compliance document. It needs to answer the questions staff actually have: What tools can I use? What can I put into them? Who do I ask if I am not sure? What happens if something goes wrong? A one-page document that answers those questions clearly is more useful than a ten-page framework that no one reads.</p>
+
+    <div class="pullquote">
+      A policy that exists and is communicated is infinitely more useful than a perfect policy that is still being drafted. Start with what you know and update it as you learn more.
+    </div>
+
+    <h2>Why a policy matters even when trust is high</h2>
+
+    <p>Organizations with high-trust cultures sometimes resist formal policies because they feel like they signal distrust of staff. In the context of AI, this instinct is worth examining.</p>
+
+    <p>Staff are not making bad decisions because they lack integrity. They are making inconsistent decisions because they lack information. A case manager who pastes client notes into an AI writing tool is not being careless. She is trying to do her job efficiently, and nobody told her not to do that. A policy is not a signal of distrust. It is the organization giving staff the information they need to make good decisions.</p>
+
+    <p>There is also a liability dimension. If something goes wrong and it emerges that the organization had no guidance in place, leadership is in a weaker position than if guidance existed but was not followed. Having a policy that reflects reasonable care protects both the organization and the staff members who are trying to do the right thing.</p>
+
+    <h2>What to cover</h2>
+
+    <p>A functional AI use policy for a small to mid-size nonprofit needs five components:</p>
+
+    <ol class="numbered-list">
+      <li><p><strong>Approved tools.</strong> A list of the AI tools staff are permitted to use for organizational work. This does not need to be exhaustive, but it should be specific enough that staff know what is in bounds. If staff want to use something not on the list, there should be a clear process for requesting approval.</p></li>
+      <li><p><strong>Permitted uses.</strong> What the approved tools may be used for. Writing assistance, drafting communications, summarizing documents, research. Be specific about what is appropriate so staff do not have to guess.</p></li>
+      <li><p><strong>Information restrictions.</strong> What information may not go into any external AI tool. Client identifying information, health records, case notes, SSNs, financial account details. List the categories explicitly. This is the most important section of the policy from a risk standpoint.</p></li>
+      <li><p><strong>Review requirements.</strong> What AI-generated content requires human review before use. Anything leaving the organization should be reviewed. Anything with legal or financial implications should be reviewed by someone with relevant expertise.</p></li>
+      <li><p><strong>Questions and incident reporting.</strong> Who staff should contact with questions about AI tool use, and who they should notify if something does not go as expected.</p></li>
+    </ol>
+
+    <h2>A template to adapt</h2>
+
+    <div class="policy-template">
+      <div class="template-label">Sample policy: adapt for your organization</div>
+
+      <h3>AI Tools: Staff Use Guidelines</h3>
+      <p><em>Effective: [Date] &nbsp;·&nbsp; Owner: [Name/Role] &nbsp;·&nbsp; Review: Annually</em></p>
+
+      <h3>Approved tools</h3>
+      <p>[Organization name] has approved the following tools for staff use in organizational work: [list tools]. Staff who wish to use an AI tool not on this list should contact [name/role] before using it for organizational purposes.</p>
+
+      <h3>What you can use AI tools for</h3>
+      <p>Approved tools may be used to assist with drafting written communications, summarizing documents and meeting notes, conducting general research, creating templates and internal documents, and editing or improving written work. AI-generated content used externally must be reviewed by the staff member responsible for that communication before it goes out.</p>
+
+      <h3>What you may not put into any external AI tool</h3>
+      <p>The following information must never be entered into any external AI tool, regardless of which tool it is: client names combined with any service, medical, or case information; Social Security numbers or government ID numbers; health or psychiatric records; housing or financial information belonging to clients; immigration status; login credentials or passwords. When in doubt, use general or anonymized language rather than specific client details.</p>
+
+      <h3>Questions and concerns</h3>
+      <p>If you are unsure whether a particular use is appropriate, contact [name/role] before proceeding. If something goes wrong (a client's information was sent to an AI tool in error, or you receive output that seems problematic), notify [name/role] promptly. There is no penalty for raising concerns early.</p>
+    </div>
+
+    <h2>Communicating the policy</h2>
+
+    <p>A policy that is emailed out and never mentioned again will not change behavior. Effective communication requires a brief introduction at a staff meeting, a clear place where the document lives and can be found, inclusion in onboarding for new staff, and a revisit when the policy is updated.</p>
+
+    <div class="alert-box">
+      <div class="alert-label">On enforcement</div>
+      <p>AI use policies in nonprofits are almost never enforced through surveillance. They work through shared understanding and a culture where staff feel comfortable asking before they act. The goal is not to catch people doing the wrong thing. It is to make the right thing clear enough that most people do it without thinking.</p>
+    </div>
+
+    <h2>When to update</h2>
+
+    <p>AI tools and the landscape around them are changing quickly. A policy that is accurate today may be outdated in six months. Build in a scheduled review, at minimum annually, and update the policy whenever there is a significant change in the tools your organization uses, a new compliance requirement, or an incident that reveals a gap in the current guidance.</p>
+
+    <p>The version date matters. Staff who see an outdated policy are right to wonder whether it reflects current organizational thinking. Keeping the date current, even when the substance has not changed, signals that someone is paying attention.</p>
+
+  </div>
+  <div class="contact-block">
+    <p class="contact-name">Mandy Hathaway</p>
+    <p>AI Ethics &amp; Technology Consulting for Nonprofits</p>
+    <p><a href="https://mandyhathaway.com">mandyhathaway.com</a> &nbsp;·&nbsp; <a href="https://mandyhathaway.com/book">Book a call</a></p>
+  </div>
+</div>
+</body>
+</html>

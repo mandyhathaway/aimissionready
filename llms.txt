@@ -1,0 +1,48 @@
+# AI Mission Ready
+
+> Free, plain-language AI resources for nonprofits. Practitioner-written guides, ready-to-adapt prompts, honest tool reviews, and curated external resources. No paywalls, no vendor backing, no upsell.
+
+AI Mission Ready is an independent resource hub built and maintained by Mandy Hathaway, an AI ethics consultant and technical writer with a master's degree in Ethical Technology and Artificial Intelligence. The site serves nonprofit professionals working through AI decisions: whether to adopt AI, how to govern it once adopted, and how to do so without compromising the people they serve.
+
+## License and use
+
+All original content on this site is licensed under Creative Commons BY-NC 4.0. Human readers and nonprofit organizations are free to share, adapt, and use materials with attribution. Commercial AI model training on this content is not authorized. See https://creativecommons.org/licenses/by-nc/4.0/ for full terms.
+
+## Core resources
+
+- [Home](https://aimissionready.org/): Site overview, lane selection, blog preview, and search across all content.
+- [Understanding AI](https://aimissionready.org/#understanding): How AI actually works, FAQ, major AI risks, plain-language glossary, and a curated 30-minute reading path.
+- [Getting Started (Considering AI)](https://aimissionready.org/#lane1): Five guides for nonprofits evaluating whether to adopt AI: data security, client confidentiality, cost, risk, making the case.
+- [Already Using AI](https://aimissionready.org/#lane2): Five guides for nonprofits where staff are already using AI: data preparation, governance, staff policy, vendor vetting, informal-use audits.
+- [Shadow AI](https://aimissionready.org/#lane3): Three guides for organizations dealing with unsanctioned AI use.
+- [AI Tools](https://aimissionready.org/#tools): Honest reviews of the AI tools nonprofits and individuals encounter most often, with strengths, weaknesses, and nonprofit-specific considerations.
+- [Prompt Library](https://aimissionready.org/#prompts): Ready-to-adapt prompts for nonprofit work, organized by category (donor communications, external comms, internal operations, program materials, strategy, writing help) with data-hygiene rules built in.
+- [External Resources](https://aimissionready.org/#resources): Curated, organized library of vetted external resources from across the sector.
+- [Blog](https://aimissionready.org/#blog): Practical writing on AI in the nonprofit sector.
+
+## Featured blog posts
+
+- [The question nonprofits should be asking isn't "should we use AI?" It's "who decides?"](https://aimissionready.org/blog_who_decides.html): The Virtuous 2026 report says 92% of nonprofits use AI and 76% have no governance policy. The actual problem is who has formally claimed the decision.
+- [The funder asked if you use AI. Now what?](https://aimissionready.org/blog_funder_asked.html): Humanity AI committed $500 million. Three honest answers for three real situations, plus what not to say.
+- [Your client data and ChatGPT: what actually happens to it](https://aimissionready.org/blog_client_data_chatgpt.html): The Meta lawsuit is the largest training-data case yet. What that means for the notes your staff are pasting into the free tier.
+
+## Downloadable PDFs
+
+- [Complete Nonprofit AI Guide](https://aimissionready.org/nonprofit_ai_guide.pdf): Long-form comprehensive guide covering everything in the lane-specific guides.
+- [Nonprofit AI Quick Reference](https://aimissionready.org/nonprofit_quick_reference.pdf): Two-page reference suitable for board meetings and leadership conversations.
+- [How Artificial Intelligence Actually Works](https://aimissionready.org/how_ai_works.pdf): Plain-language technical explainer for non-specialist audiences.
+
+## About the author
+
+Mandy Hathaway is an AI ethics consultant and technical writer based in College Station, TX. She holds an MA in Ethical Technology and Artificial Intelligence from Metropolitan State University and works across sectors including frontier AI labs, enterprise teams, nonprofits, and educational institutions. Her consulting practice is at https://mandyhathaway.com.
+
+## Contact
+
+- Email: MandyHathaway@Proton.me
+- Consulting: https://mandyhathaway.com
+- LinkedIn: https://linkedin.com/in/mandyhathaway
+
+## Optional
+
+- [Site transparency](https://aimissionready.org/#about): Funding, content, license, data, and affiliation disclosures.
+- [CC BY-NC 4.0 license](https://creativecommons.org/licenses/by-nc/4.0/): Full license terms for site content.

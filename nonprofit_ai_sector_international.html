@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI in International Development Nonprofits: Cross-Border Data, Power Dynamics, and Local Context</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,400&family=Source+Sans+3:wght@300;400;600&family=DM+Mono:wght@400;500&display=swap');
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root { --ink:#1a1a18; --cream:#f5f0e6; --green:#2d5a3d; --green-light:#eaf3de; --alert:#1d5e8a; --alert-light:#ddeaf5; --muted:#4e4e47; --border:rgba(45,90,61,0.18); }
+  body { font-family:'Source Sans 3',sans-serif; background:var(--cream); color:var(--ink); font-size:16px; line-height:1.7; }
+  .page { max-width:820px; margin:0 auto; }
+  .cover { background:var(--green); color:var(--cream); padding:64px 56px 52px; }
+  .cover-rule-top, .cover-rule-bottom { border:none; }
+  .cover-rule-top { border-top:1px solid #aed6f1; margin-bottom:32px; }
+  .cover-rule-bottom { border-top:1px solid rgba(174,214,241,0.35); margin-bottom:24px; }
+  .cover-kicker { font-size:12px; font-weight:700; letter-spacing:0.22em; text-transform:uppercase; color:#aed6f1; margin-bottom:14px; }
+  .cover-title { font-family:'Playfair Display',serif; font-size:40px; font-weight:900; line-height:1.12; margin-bottom:10px; }
+  .cover-sub { font-family:'Playfair Display',serif; font-style:italic; font-size:19px; color:#dce8d8; margin-bottom:30px; }
+  .cover-meta { font-size:13px; color:#b8d4c0; letter-spacing:0.04em; }
+  .cover-meta a { color:#aed6f1; text-decoration:none; }
+  .body-wrap { padding:48px 56px 60px; }
+  h2 { font-family:'Playfair Display',serif; font-size:24px; font-weight:700; color:var(--green); margin-top:36px; margin-bottom:12px; padding-bottom:8px; border-bottom:1.5px solid var(--border); }
+  p { margin-bottom:14px; color:var(--ink); font-size:15.5px; }
+  .pullquote { background:var(--green); color:var(--cream); border-radius:4px; padding:24px 32px; margin:30px 0; font-family:'Playfair Display',serif; font-style:italic; font-size:18px; line-height:1.5; }
+  .alert-box { background:var(--alert-light); border-left:4px solid var(--alert); border-radius:0 4px 4px 0; padding:18px 22px; margin:24px 0; }
+  .alert-box .alert-label { font-family:'DM Mono',monospace; font-size:11px; font-weight:500; letter-spacing:0.15em; text-transform:uppercase; color:var(--alert); margin-bottom:6px; }
+  .alert-box p { margin:0; font-size:14.5px; }
+  .green-card { background:var(--green-light); border:1px solid var(--border); border-radius:4px; padding:20px 24px; margin:20px 0; }
+  .green-card .card-label { font-family:'DM Mono',monospace; font-size:11px; font-weight:500; letter-spacing:0.15em; text-transform:uppercase; color:var(--green); margin-bottom:8px; }
+  .green-card p { margin:0 0 8px; font-size:14.5px; }
+  .green-card p:last-child { margin-bottom:0; }
+  .never-list { list-style:none; padding:0; margin:14px 0; }
+  .never-list li { display:flex; gap:14px; align-items:flex-start; margin-bottom:10px; font-size:14.5px; }
+  .never-list li::before { content:"✕"; font-family:'DM Mono',monospace; font-size:12px; color:#c0392b; font-weight:700; flex-shrink:0; margin-top:3px; }
+  .contact-block { background:var(--green); color:var(--cream); padding:32px 56px; margin-top:48px; text-align:center; }
+  .contact-block p { color:#dce8d8; margin-bottom:8px; font-size:14.5px; }
+  .contact-block a { color:#aed6f1; text-decoration:none; font-weight:600; }
+  .contact-block .contact-name { font-family:'Playfair Display',serif; font-size:19px; font-weight:700; color:var(--cream); margin-bottom:6px; }
+  hr.section-rule { border:none; border-top:1px solid var(--border); margin:32px 0; }
+  @media (max-width:700px) { .body-wrap { padding:36px 24px 48px; } .cover { padding:48px 24px 40px; } .cover-title { font-size:30px; } }
+  @media print { body{background:white;} .cover,.pullquote,.contact-block,.green-card,.alert-box { -webkit-print-color-adjust:exact; print-color-adjust:exact; } }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="cover">
+    <hr class="cover-rule-top">
+    <div class="cover-kicker">Nonprofit AI Resource Series &nbsp;·&nbsp; Sector Vertical</div>
+    <h1 class="cover-title">AI in international development nonprofits</h1>
+    <div class="cover-sub">Cross-border data, power dynamics, and the local context problem</div>
+    <hr class="cover-rule-bottom">
+    <div class="cover-meta">
+      Mandy Hathaway Consulting &nbsp;·&nbsp;
+      <a href="https://mandyhathaway.com">mandyhathaway.com</a> &nbsp;·&nbsp;
+      AI Ethics &amp; Technology Consulting
+    </div>
+  </div>
+
+  <div class="body-wrap">
+
+    <p>International development organizations face AI questions that domestic nonprofits do not face the same way: cross-border data flows that trigger multiple legal regimes, partner organizations with very different infrastructure and capacity, AI models that perform poorly on the languages and contexts where the work happens, and the underlying power dynamic of headquarters in the global North making AI decisions that affect partners and beneficiaries in the global South. This guide covers the considerations specific to organizations whose work crosses borders.</p>
+
+    <p>For global development orgs, NetHope's AI Ethics for Nonprofits Toolkit is the right anchor reference (linked from the External Resources page). This guide is the shorter, practical complement.</p>
+
+    <div class="pullquote">
+      The pattern to avoid: AI decisions made at headquarters that move sensitive partner and beneficiary data into systems that the partner has no visibility into and the beneficiary has no awareness of. That is not technology adoption; that is technology imposition.
+    </div>
+
+    <h2>Cross-border data flows</h2>
+
+    <p>The moment your organization moves data across borders into AI processing, you are operating under multiple legal regimes simultaneously. The major ones to know about:</p>
+
+    <p><strong>GDPR (European Union).</strong> Strict on data transfer, requires lawful basis for processing, gives data subjects significant rights including the right to know about automated decision-making affecting them. Applies if you process EU residents' data, regardless of where your organization is based.</p>
+
+    <p><strong>Sector- and country-specific data protection laws.</strong> Brazil's LGPD, India's DPDPA, South Africa's POPIA, Kenya's Data Protection Act, the EU AI Act, and many others. These vary in scope and rigor but increasingly impose real obligations.</p>
+
+    <p><strong>Data localization requirements.</strong> Some countries require that data about their citizens be stored or processed within their borders. AI tools that route data through U.S. or European data centers may violate these requirements even when other terms are clean.</p>
+
+    <p><strong>U.S. requirements that apply abroad.</strong> Sanctions, export controls, and certain federal grant requirements travel with the U.S.-based organization regardless of where the work happens.</p>
+
+    <div class="alert-box">
+      <div class="alert-label">The minimum-viable response</div>
+      <p>Before adopting any AI tool that will process partner or beneficiary data from a specific country, confirm with counsel that the data flow complies with that country's data protection law and any U.S. requirements that travel with your work. The cost of doing this once per tool is far less than the cost of remediation after a complaint.</p>
+    </div>
+
+    <h2>Language and local context</h2>
+
+    <p>AI translation guide considerations apply here with extra weight. AI tools perform best on languages with large English-internet training data and worst on languages where the data is sparse. For most global development work, the languages that matter most are in the second category.</p>
+
+    <div class="green-card">
+      <div class="card-label">A useful rule of thumb</div>
+      <p>If a language has fewer than ten million speakers represented in standard internet corpora, treat AI translation as a rough draft only. For Indigenous languages, low-resource African and Asian languages, and dialects of major languages, the gap between fluent-sounding AI output and accurate AI output is often substantial and invisible to non-speakers.</p>
+    </div>
+
+    <p>Beyond language, the cultural context problem is real. AI tools trained primarily on English-language internet content carry the assumptions of that content. Outputs about family structure, economic life, gender roles, religious practice, and many other domains reflect a default that may not fit the cultural context of the work. This is not a fixable bug; it is a feature of how these tools work. The mitigation is human review by people who know the context.</p>
+
+    <h2>Partner organization capacity differences</h2>
+
+    <p>The capacity gap between headquarters and field partners is a structural reality of international development work. AI adoption can either widen this gap or close it, depending on how it is approached.</p>
+
+    <p>The widening pattern: HQ adopts AI tools, generates AI-assisted outputs (reports, plans, communications), expects partner orgs to engage with those outputs at the same speed and sophistication. Partners without similar tooling fall behind in the working relationship. The unspoken hierarchy of who has AI access becomes part of the broader hierarchy of who has voice in the partnership.</p>
+
+    <p>The narrowing pattern: HQ invests in shared AI tooling for the partnership, with capacity-building support so that partners can use the tools as full participants. Decisions about what tools to adopt and how to use them include partner voice. AI savings get reinvested in partner capacity rather than absorbed at HQ.</p>
+
+    <h2>Beneficiary-facing AI in development settings</h2>
+
+    <p>AI tools used in direct service delivery (chatbots for health information, automated case management, predictive targeting of interventions) carry all the bias-in-client-facing-AI risks discussed in that guide, plus an additional layer specific to development contexts.</p>
+
+    <p>The models powering these tools were trained on data that does not represent the beneficiaries. The validation studies were done in different settings. The failure modes you would catch in your home country may not be visible to you in a partner country. The accountability path for a beneficiary harmed by an AI decision is harder when the relevant entity is a U.S.-based nonprofit with a partner in their country, with an AI vendor in a third.</p>
+
+    <div class="alert-box">
+      <div class="alert-label">The standard worth holding</div>
+      <p>Any beneficiary-facing AI in international development work should be validated in the specific population, with the validation documented and reviewed periodically. The general "this tool works on average" claim is insufficient when the population whose harm would matter most is statistically invisible in the validation data.</p>
+    </div>
+
+    <h2>The "tech transfer" frame and its limits</h2>
+
+    <p>One common framing for AI in development is that it is a form of technology transfer: bringing capabilities from the North to the South. This frame has real value and real limits.</p>
+
+    <p>The value: capacity-building, infrastructure investment, training that genuinely strengthens partner organizations are unambiguously positive. The limits: AI tools that are "transferred" without ownership, without the underlying data being stewarded by the partner, without the partner having voice in how the tools are used, are not transferred. They are extended, on terms the partner did not set.</p>
+
+    <p>The healthier frame: AI adoption in international development should be co-designed with partners, accountable to local data protection and ethics frameworks, and structured so that the partner's own capacity grows rather than the partner's dependence on HQ growing.</p>
+
+    <h2>AI in humanitarian response</h2>
+
+    <p>Disaster response and humanitarian work create unique pressures. Speed matters. Decisions are made with incomplete information. The temptation to use AI for prioritization, needs assessment, and aid allocation is real, and several major humanitarian organizations have piloted these tools.</p>
+
+    <p>The same bias-in-client-facing-AI considerations apply, with the additional weight that decisions in humanitarian contexts are often life-and-death. The standard should be higher, not lower. Where AI is used, the human-in-the-loop requirement is non-negotiable, the equity-audit requirement applies in real time, and the documentation requirement is even more important because the accountability environment in humanitarian work is already complicated.</p>
+
+    <h2>Uses worth avoiding</h2>
+
+    <ul class="never-list">
+      <li>Cross-border data transfer into AI tools without confirmed compliance with applicable data protection law</li>
+      <li>AI translation as the only step for legally significant communications with beneficiaries</li>
+      <li>AI-driven targeting of humanitarian aid without explicit human decision authority and audit trail</li>
+      <li>AI tools that aggregate partner organization data centrally without partner consent for that aggregation</li>
+      <li>Predictive analytics about specific populations that have not been validated in those populations</li>
+      <li>Adoption decisions made at HQ that affect partner workflows without partner consultation</li>
+      <li>Voice or image generation that depicts beneficiaries without their explicit, informed consent</li>
+    </ul>
+
+    <h2>What to do this quarter</h2>
+
+    <p>Inventory AI use across the organization, with cross-border data flows flagged explicitly. The list will surface things you did not know were happening.</p>
+
+    <p>Engage your major partner organizations in a conversation about AI. Ask what they are using, what is being used on their data, what they would want in a shared AI policy. The conversation itself rebalances some of the dynamic.</p>
+
+    <p>Confirm legal compliance for any cross-border AI processing that involves partner or beneficiary data. Country-by-country if needed. The cost is real but bounded.</p>
+
+    <p>For any beneficiary-facing AI use in any country, apply the bias-in-client-facing-AI guide standards. The standard should be the same regardless of where the beneficiaries live; current practice often does not reflect that.</p>
+
+    <hr class="section-rule">
+
+    <p>International development organizations sit at the intersection of nearly every AI consideration in the guidance: data security, vendor accountability, cross-border legal compliance, language and cultural fit, partner power dynamics, beneficiary protection, environmental cost. The work is real, but the framework is the same one that has always applied to good international development practice: deliberate adoption, partner voice, local accountability, transparent decision-making. AI does not change those principles. It tests whether your organization actually lives by them.</p>
+
+  </div>
+
+  <div class="contact-block">
+    <div class="contact-name">Mandy Hathaway</div>
+    <p>AI Ethics &amp; Technology Consulting for Nonprofits</p>
+    <p><a href="https://mandyhathaway.com">mandyhathaway.com</a> &nbsp;·&nbsp; <a href="https://mandyhathaway.com/book">Book a call</a></p>
+  </div>
+
+</div>
+</body>
+</html>

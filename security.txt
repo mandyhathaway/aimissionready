@@ -1,0 +1,9 @@
+# security.txt for aimissionready.org
+# Per RFC 9116. When deployed, place at /.well-known/security.txt
+# https://securitytxt.org/
+
+Contact: mailto:MandyHathaway@Proton.me
+Expires: 2027-05-16T00:00:00.000Z
+Preferred-Languages: en
+Canonical: https://aimissionready.org/.well-known/security.txt
+Policy: https://aimissionready.org/#about

@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>When Your Software Vendor Adds AI: A Practical Guide for Nonprofits</title>
+<meta name="description" content="EHR, CRM, and productivity vendors are adding AI features to systems your organization already uses. Here is how to evaluate them, what to ask, and what to disable.">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,400&family=Source+Sans+3:wght@300;400;600&family=DM+Mono:wght@400;500&display=swap');
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  a:focus-visible { outline: 2px solid var(--green); outline-offset: 2px; border-radius: 2px; }
+  .cover a:focus-visible { outline-color: #aed6f1; }
+  :root {
+    --ink: #1a1a18; --cream: #f5f0e6; --green: #2d5a3d; --green-mid: #3d6b4a;
+    --green-light: #eaf3de; --alert: #1d5e8a; --alert-light: #ddeaf5;
+    --muted: #4e4e47; --card: #faf7ef; --border: rgba(45,90,61,0.18);
+  }
+  body { font-family: 'Source Sans 3', sans-serif; background: var(--cream); color: var(--ink); font-size: 16px; line-height: 1.7; }
+  .page { max-width: 820px; margin: 0 auto; }
+  .cover { background: var(--green); color: var(--cream); padding: 72px 64px 60px; }
+  .cover-rule-top { width: 100%; border: none; border-top: 1px solid #aed6f1; margin-bottom: 40px; }
+  .cover-kicker { font-size: 12px; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: #aed6f1; margin-bottom: 18px; }
+  .cover-title { font-family: 'Playfair Display', serif; font-size: 38px; font-weight: 900; line-height: 1.1; margin-bottom: 10px; }
+  .cover-sub { font-family: 'Playfair Display', serif; font-style: italic; font-size: 20px; color: #dce8d8; margin-bottom: 36px; }
+  .cover-rule-bottom { width: 100%; border: none; border-top: 1px solid rgba(174,214,241,0.35); margin-bottom: 28px; }
+  .cover-meta { font-size: 13px; color: #b8d4c0; letter-spacing: 0.04em; }
+  .cover-meta a { color: #aed6f1; text-decoration: none; }
+  .body-wrap { padding: 56px 64px 72px; }
+  h2 { font-family: 'Playfair Display', serif; font-size: 26px; font-weight: 700; color: var(--green); margin-top: 44px; margin-bottom: 14px; padding-bottom: 8px; border-bottom: 1.5px solid var(--border); }
+  h3 { font-family: 'Source Sans 3', sans-serif; font-size: 15px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--green-mid); margin-top: 28px; margin-bottom: 8px; }
+  p { margin-bottom: 16px; color: var(--ink); }
+  .pullquote { background: var(--green); color: var(--cream); border-radius: 4px; padding: 28px 36px; margin: 36px 0; font-family: 'Playfair Display', serif; font-style: italic; font-size: 20px; line-height: 1.5; }
+  .alert-box { background: var(--alert-light); border-left: 4px solid var(--alert); border-radius: 0 4px 4px 0; padding: 20px 24px; margin: 28px 0; }
+  .alert-box .alert-label { font-family: 'DM Mono', monospace; font-size: 11px; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: var(--alert); margin-bottom: 6px; }
+  .alert-box p { margin: 0; font-size: 15px; color: #1a1a18; }
+  .green-card { background: var(--green-light); border: 1px solid var(--border); border-radius: 4px; padding: 24px 28px; margin: 28px 0; }
+  .green-card .card-label { font-family: 'DM Mono', monospace; font-size: 11px; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: var(--green); margin-bottom: 10px; }
+  .green-card p { margin: 0 0 10px; font-size: 15px; }
+  .green-card p:last-child { margin-bottom: 0; }
+  .numbered-list { counter-reset: item; list-style: none; padding: 0; margin: 20px 0 24px; }
+  .numbered-list li { counter-increment: item; display: flex; gap: 18px; margin-bottom: 18px; align-items: flex-start; }
+  .numbered-list li::before { content: counter(item); font-family: 'DM Mono', monospace; font-size: 13px; font-weight: 500; color: var(--cream); background: var(--green); width: 26px; height: 26px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px; }
+  .numbered-list li p { margin: 0; font-size: 15px; }
+  .numbered-list li strong { display: block; margin-bottom: 2px; color: var(--green); }
+  .ask-list { list-style: none; padding: 0; margin: 16px 0; }
+  .ask-list li { display: flex; gap: 14px; align-items: flex-start; margin-bottom: 14px; font-size: 15px; padding-left: 4px; }
+  .ask-list li::before { content: "?"; font-family: 'DM Mono', monospace; font-size: 13px; color: var(--cream); background: var(--green); width: 22px; height: 22px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-weight: 700; margin-top: 2px; }
+  .contact-block { background: var(--green); color: var(--cream); padding: 36px 64px; margin-top: 56px; text-align: center; }
+  .contact-block p { color: #dce8d8; margin-bottom: 10px; font-size: 15px; }
+  .contact-block a { color: #aed6f1; text-decoration: none; font-weight: 600; }
+  .contact-block .contact-name { font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 700; color: var(--cream); margin-bottom: 6px; }
+  @media print {
+    body { background: white; }
+    .cover, .pullquote, .contact-block, .green-card, .alert-box, .numbered-list li::before, .ask-list li::before { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="cover">
+    <hr class="cover-rule-top">
+    <div class="cover-kicker">Nonprofit AI Resources &nbsp;·&nbsp; Lane 2 &nbsp;·&nbsp; Mandy Hathaway Consulting</div>
+    <h1 class="cover-title">When Your Software Vendor Adds AI</h1>
+    <div class="cover-sub">EHR, CRM, productivity tools, and the AI features you did not sign up for</div>
+    <hr class="cover-rule-bottom">
+    <div class="cover-meta">Mandy Hathaway Consulting &nbsp;·&nbsp; <a href="https://mandyhathaway.com">mandyhathaway.com</a> &nbsp;·&nbsp; AI Ethics &amp; Technology Consulting</div>
+  </div>
+  <div class="body-wrap">
+
+    <p>The conversation most nonprofit leaders are having about AI is the one about whether to adopt it. The more common situation in practice is that AI is being added to systems your organization has already adopted. Your EHR vendor announces an AI summary feature in the next release. Your CRM rolls out predictive donor scoring. Your video conferencing platform turns on meeting summaries by default. Microsoft 365 sends a release note about Copilot integration.</p>
+
+    <p>None of these are decisions your organization made. They are decisions other companies made, in tools your organization is committed to, that will start processing your data the moment the feature ships. This guide is about how to handle that situation, which is going to be the dominant pattern of AI adoption in the nonprofit sector for the foreseeable future.</p>
+
+    <div class="pullquote">
+      The hardest AI decisions for nonprofits are not "should we adopt this tool." They are "what do we do about the AI features already inside the tools we use."
+    </div>
+
+    <h2>Two scenarios, two timelines</h2>
+
+    <p>This guide covers two distinct situations, both increasingly common.</p>
+
+    <ol class="numbered-list">
+      <li>
+        <p><strong>Scenario A: You are replacing an aging system.</strong> Your organization is migrating from one EHR, CRM, or operational platform to another. The new platform has AI features built in, often as a selling point. The contract is in negotiation. You have bargaining room here that you will not have once the contract is signed.</p>
+      </li>
+      <li>
+        <p><strong>Scenario B: A platform you already use is adding AI.</strong> Microsoft 365, Google Workspace, Salesforce, Zoom, your EHR, your case management system. They announce AI features in a release note. The features arrive on a date the vendor chose. You did not negotiate this, and you have no bargaining room. What you have is settings access and the ability to disable.</p>
+      </li>
+    </ol>
+
+    <p>The questions you ask are different in each scenario. The first half of this guide is for Scenario A (before you sign). The second half is for Scenario B (after the feature has shipped).</p>
+
+    <h2>Scenario A: Questions to ask before signing a migration contract</h2>
+
+    <p>If your organization is in the middle of vendor evaluation for a new EHR, CRM, or platform, you have a window. Use it. Once the contract is signed, the AI features come with the platform, and your ability to modify the terms drops sharply.</p>
+
+    <ul class="ask-list">
+      <li>Which AI features are included in the plan we are signing for, and which require an additional license?</li>
+      <li>For each AI feature: does it process data on the vendor's servers, on a third-party AI provider's servers, or in our own tenant?</li>
+      <li>If it uses a third-party AI provider (OpenAI, Anthropic, Google, etc.), what are the data terms with that third party?</li>
+      <li>Are our inputs used to train AI models, either yours or any third party's?</li>
+      <li>Can AI features be disabled at the organization level by an administrator?</li>
+      <li>If new AI features are added during our contract term, what is the process: opt-in by default, opt-out by default, or explicit announcement before activation?</li>
+      <li>Is there a data processing addendum (DPA) that specifically addresses AI feature use?</li>
+      <li>If we discontinue use, are our prior AI inputs deleted, or do they persist in vendor systems?</li>
+      <li>How are AI-generated outputs (summaries, suggestions, scores) logged for audit purposes?</li>
+      <li>What is your incident response process if an AI feature produces a harmful or incorrect output that reaches a client?</li>
+    </ul>
+
+    <div class="alert-box">
+      <div class="alert-label">Negotiation reality</div>
+      <p>Most nonprofit-scale contracts will not let you renegotiate the vendor's product roadmap. What you can usually get: a written assurance that AI features added during the contract term will be opt-in for your organization, a DPA that specifies AI data handling, and an explicit list of which AI features your current license includes. If the vendor will not provide these in writing, that is information you need before signing.</p>
+    </div>
+
+    <h2>Scenario B: When AI features ship inside a platform you already use</h2>
+
+    <p>This is the more common situation. You receive a release note, an email, or a small banner notification announcing a new AI capability. Sometimes it ships enabled by default. Sometimes it requires action to turn on. Often the notification is buried inside a broader product update message.</p>
+
+    <p>The work to do, in order:</p>
+
+    <ol class="numbered-list">
+      <li>
+        <p><strong>Find out what shipped.</strong> Read the release note in detail. Check the admin settings page for new toggles. Search the vendor's documentation for the feature name. Do not rely on the marketing description.</p>
+      </li>
+      <li>
+        <p><strong>Identify the default state.</strong> Is the feature on or off by default for your tenant? If on, decide quickly whether you want it on. The default state is the vendor's preference, not necessarily yours.</p>
+      </li>
+      <li>
+        <p><strong>Check the data handling terms specific to that feature.</strong> Generic platform terms may not cover the new AI feature. Look for a specific data processing addendum or terms supplement.</p>
+      </li>
+      <li>
+        <p><strong>Decide who in your organization will own the decision.</strong> One person, with the authority to say yes or no on behalf of the organization. The default of "everyone decides for themselves" produces inconsistent use and undermines the policy work the rest of this guide series covers.</p>
+      </li>
+      <li>
+        <p><strong>Communicate to staff.</strong> Whatever your decision, tell staff what the new feature does, whether it is enabled, and what they should and should not use it for. A one-paragraph email is enough. The absence of communication invites confusion and shadow use.</p>
+      </li>
+    </ol>
+
+    <h2>The default-on problem</h2>
+
+    <p>This deserves its own section because it is the single most common way nonprofits end up with AI use they did not approve.</p>
+
+    <p>Most major platforms now ship new AI features as enabled by default at the tenant level, with individual user-level controls layered on top. The vendor's reasoning is that defaults drive adoption, which drives feature data, which improves the product. The nonprofit's reality is that a feature shipped on Tuesday is processing client data on Wednesday, regardless of whether anyone in the organization made a deliberate decision about it.</p>
+
+    <p>Some specific defaults to check today, regardless of whether you have received a release note:</p>
+
+    <ul class="ask-list">
+      <li>Zoom AI Companion: typically on for paid plans. Recording behavior varies by setting.</li>
+      <li>Microsoft 365 Copilot: licensing-gated, but Microsoft 365 "smart features" and connected experiences ship on by default and include some AI processing.</li>
+      <li>Google Workspace: Gemini for Workspace is paid, but Gmail Smart Compose, Smart Reply, and Docs writing suggestions ship on and use AI-adjacent processing.</li>
+      <li>Slack: Slack AI is paid, but message rewriting suggestions and search features include AI processing.</li>
+      <li>Most modern EHRs (Procentive, Epic, Cerner, Athena, eClinicalWorks): AI features are being rolled out per release, often default-on at the practice or tenant level.</li>
+      <li>Major CRMs (Salesforce, HubSpot, Bloomerang, Neon): AI features in higher tiers, but some basic AI processing (smart suggestions, predictive fields) ships in standard tiers.</li>
+    </ul>
+
+    <p>A 90-minute audit of your existing platforms' AI settings, done once a quarter, is more protective than the most carefully written use policy. The use policy is for the staff. The settings audit is for the systems themselves.</p>
+
+    <h2>The conversation with staff after a feature ships</h2>
+
+    <p>When a new AI feature appears in a tool your team is already using, staff have three immediate questions:</p>
+
+    <ol class="numbered-list">
+      <li>
+        <p><strong>"Can I use this?"</strong> Answer plainly, by feature. "Yes for X, no for Y, ask before doing Z."</p>
+      </li>
+      <li>
+        <p><strong>"Does my work still get logged the same way?"</strong> AI summaries and AI-edited content may appear in audit logs differently. If you do not know, find out. Your compliance posture depends on it.</p>
+      </li>
+      <li>
+        <p><strong>"Will I be evaluated based on AI-generated output?"</strong> This is the question staff are most reluctant to ask out loud. Address it directly. Make clear whether AI-assisted output is acceptable, encouraged, or off-limits for performance evaluation purposes.</p>
+      </li>
+    </ol>
+
+    <div class="green-card">
+      <div class="card-label">Practical template</div>
+      <p>"Our [platform name] released [feature name] on [date]. It [brief description of what it does]. We have decided to [enable/disable/limit] this feature for our organization. If it is enabled: you may use it for [specific tasks], but please do not use it for [excluded categories, especially anything client-identifying]. If you have a question about whether something is appropriate, ask [name/role] before you use the feature. We will revisit this decision in [time frame] based on what we learn."</p>
+    </div>
+
+    <h2>The decision template</h2>
+
+    <p>When an AI feature ships in a platform you already use, run through this decision process. It takes about 30 minutes per feature and produces a record you can show to a board, a funder, or a regulator.</p>
+
+    <ol class="numbered-list">
+      <li>
+        <p><strong>What does this feature actually do?</strong> Read the documentation, not the marketing. Write one sentence in your own words.</p>
+      </li>
+      <li>
+        <p><strong>What data does it process?</strong> Inputs only, or also stored content, attachments, prior conversations, integrations.</p>
+      </li>
+      <li>
+        <p><strong>Where does that data go?</strong> Vendor servers, third-party AI provider, both, or somewhere else. Is the answer in writing?</p>
+      </li>
+      <li>
+        <p><strong>What is the consent posture for the people whose data is in scope?</strong> Clients, donors, staff, partners. Are existing consent practices sufficient, or does this feature change the calculus?</p>
+      </li>
+      <li>
+        <p><strong>What would have to be true for this feature to be appropriate for our use?</strong> List the conditions. If they are not met, the feature should be off until they are.</p>
+      </li>
+      <li>
+        <p><strong>Who is responsible for revisiting this decision when conditions change?</strong> Name a person and a review date.</p>
+      </li>
+    </ol>
+
+    <p>This is not a complex framework. It is the structured conversation that, in most nonprofits, never gets had. Having it is most of the work.</p>
+
+    <h2>The pattern, for the long term</h2>
+
+    <p>Every quarter, every platform your organization uses will release new AI features. The pattern will not slow down. The work is not "evaluate AI" as a one-time decision. The work is "build the habit of evaluating each AI feature as it arrives," and "make sure someone in the organization owns that habit."</p>
+
+    <p>Reach for Resources, the nonprofit that prompted this guide, is in the middle of an EHR migration. The questions in this document came directly from that conversation. They will come up again when their CRM vendor rolls out the next feature, and again when their HR platform does. Building this evaluation muscle is what separates organizations that use AI deliberately from organizations that find out, six months later, what AI has been doing inside their stack.</p>
+
+    <p>If your organization is in either scenario right now, the work is doable. It is not a software problem. It is a governance habit problem, and habits can be built.</p>
+
+  </div>
+
+  <div class="contact-block">
+    <div class="contact-name">Mandy Hathaway</div>
+    <p>AI Ethics Consultant &amp; Technology Specialist</p>
+    <p><a href="https://mandyhathaway.com">mandyhathaway.com</a> &nbsp;·&nbsp; <a href="mailto:MandyHathaway@Proton.me">MandyHathaway@Proton.me</a></p>
+  </div>
+
+</div>
+</body>
+</html>

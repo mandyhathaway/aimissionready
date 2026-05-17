@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NIST AI Risk Management Framework Crosswalk for Nonprofits</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,400&family=Source+Sans+3:wght@300;400;600&family=DM+Mono:wght@400;500&display=swap');
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root { --ink:#1a1a18; --cream:#f5f0e6; --green:#2d5a3d; --green-light:#eaf3de; --blue:#2d6694; --blue-light:#e3ecf5; --amber:#b8882e; --purple:#5a2d7a; --muted:#5a6a5c; --border:rgba(45,90,61,0.18); }
+  body { font-family:'Source Sans 3',sans-serif; background:var(--cream); color:var(--ink); font-size:15px; line-height:1.6; padding:24px; }
+  .page { max-width:980px; margin:0 auto; background:#fff; border:1px solid var(--border); box-shadow:0 2px 10px rgba(0,0,0,0.06); }
+  .header { background:var(--green); color:var(--cream); padding:36px 44px 28px; }
+  .header-kicker { font-family:'DM Mono',monospace; font-size:11px; font-weight:700; letter-spacing:0.18em; text-transform:uppercase; color:#aed6f1; margin-bottom:10px; }
+  .header h1 { font-family:'Playfair Display',serif; font-size:30px; font-weight:700; line-height:1.15; margin-bottom:6px; }
+  .header .header-sub { font-family:'Playfair Display',serif; font-style:italic; font-size:16px; color:#dce8d8; }
+  .body { padding:32px 44px 40px; }
+  .intro { font-size:14.5px; color:var(--ink); margin-bottom:24px; line-height:1.7; max-width:820px; }
+  .legend { display:flex; gap:12px; flex-wrap:wrap; margin:20px 0 28px; padding:14px 18px; background:var(--green-light); border:1px solid var(--border); border-radius:6px; font-size:13px; }
+  .legend-item { display:inline-flex; align-items:center; gap:6px; }
+  .legend-chip { display:inline-block; width:14px; height:14px; border-radius:3px; }
+  .chip-govern { background:var(--green); }
+  .chip-map { background:var(--blue); }
+  .chip-measure { background:var(--amber); }
+  .chip-manage { background:var(--purple); }
+  table.crosswalk { width:100%; border-collapse:collapse; font-size:13.5px; margin-bottom:20px; }
+  table.crosswalk th { background:var(--green); color:var(--cream); padding:10px 12px; text-align:left; font-family:'DM Mono',monospace; font-size:11px; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; }
+  table.crosswalk td { border-bottom:1px solid var(--border); padding:12px; vertical-align:top; }
+  table.crosswalk tr:hover td { background:var(--green-light); }
+  table.crosswalk .nist-fn { font-weight:700; color:#fff; padding:3px 8px; border-radius:3px; font-size:11px; letter-spacing:0.08em; text-transform:uppercase; display:inline-block; }
+  .nist-fn.govern { background:var(--green); }
+  .nist-fn.map { background:var(--blue); }
+  .nist-fn.measure { background:var(--amber); }
+  .nist-fn.manage { background:var(--purple); }
+  table.crosswalk a { color:var(--blue); font-weight:600; text-decoration:none; }
+  table.crosswalk a:hover { text-decoration:underline; }
+  .fn-section { margin:32px 0; }
+  .fn-header { padding:14px 18px; color:#fff; border-radius:6px 6px 0 0; }
+  .fn-header.govern { background:var(--green); }
+  .fn-header.map { background:var(--blue); }
+  .fn-header.measure { background:var(--amber); }
+  .fn-header.manage { background:var(--purple); }
+  .fn-header h2 { font-family:'Playfair Display',serif; font-size:20px; font-weight:700; line-height:1.2; margin:0; color:#fff; }
+  .fn-header .fn-tag { font-family:'DM Mono',monospace; font-size:10px; font-weight:700; letter-spacing:0.15em; text-transform:uppercase; opacity:0.85; margin-bottom:2px; }
+  .fn-body { padding:20px 22px; background:#fff; border:1px solid var(--border); border-top:none; border-radius:0 0 6px 6px; }
+  .fn-body p { font-size:14px; color:var(--ink); margin-bottom:10px; }
+  .fn-body p:last-child { margin-bottom:0; }
+  .fn-body .matches { margin-top:12px; padding-top:12px; border-top:1px dashed var(--border); }
+  .fn-body .matches-label { font-family:'DM Mono',monospace; font-size:10.5px; font-weight:700; letter-spacing:0.13em; text-transform:uppercase; color:var(--muted); margin-bottom:8px; }
+  .fn-body .matches ul { list-style:none; padding:0; margin:0; }
+  .fn-body .matches li { font-size:13.5px; padding:4px 0; }
+  .fn-body .matches li a { color:var(--blue); font-weight:600; text-decoration:none; }
+  .footer-band { background:var(--green); color:var(--cream); padding:20px 44px; display:flex; justify-content:space-between; align-items:center; font-size:12px; flex-wrap:wrap; gap:10px; }
+  .footer-band a { color:#aed6f1; text-decoration:none; font-weight:600; }
+  @media (max-width:700px) { .body { padding:24px; } .header { padding:24px; } table.crosswalk { font-size:12px; } table.crosswalk td, table.crosswalk th { padding:8px; } }
+  @media print {
+    body { padding:0; background:#fff; }
+    .page { box-shadow:none; border:none; max-width:none; }
+    .header, .legend, .fn-header, .footer-band, table.crosswalk th { -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+    @page { margin: 0.5in; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="header">
+    <div class="header-kicker">Nonprofit AI · Framework Crosswalk</div>
+    <h1>NIST AI Risk Management Framework crosswalk</h1>
+    <div class="header-sub">How aimissionready.org guides map to the four NIST AI RMF functions</div>
+  </div>
+
+  <div class="body">
+
+    <p class="intro">The NIST AI Risk Management Framework (AI RMF) is the federal reference standard for AI governance. It is increasingly cited by federal funders, state regulators, and sophisticated foundation grantmakers. The framework has four core functions: Govern, Map, Measure, and Manage. This crosswalk shows where the aimissionready guides cover each function, so that nonprofits using these resources can demonstrate framework alignment when funders or auditors ask. It is not a certification; it is a navigation tool.</p>
+
+    <div class="legend">
+      <strong style="color:var(--green); margin-right:4px;">NIST AI RMF Functions:</strong>
+      <div class="legend-item"><span class="legend-chip chip-govern"></span> Govern</div>
+      <div class="legend-item"><span class="legend-chip chip-map"></span> Map</div>
+      <div class="legend-item"><span class="legend-chip chip-measure"></span> Measure</div>
+      <div class="legend-item"><span class="legend-chip chip-manage"></span> Manage</div>
+    </div>
+
+    <div class="fn-section">
+      <div class="fn-header govern">
+        <div class="fn-tag">NIST AI RMF · Function 1</div>
+        <h2>GOVERN — Cultivate a culture of risk management</h2>
+      </div>
+      <div class="fn-body">
+        <p>NIST's GOVERN function covers the organizational policies, accountability structures, and culture that make all the other functions possible. For nonprofits, this maps closely to the policy, governance, and board-level work that creates the conditions for everything else.</p>
+        <p><em>NIST sub-categories particularly relevant to nonprofits:</em> GOVERN 1.1 (policies and processes), GOVERN 2.1 (roles and responsibilities), GOVERN 3.2 (board awareness and oversight), GOVERN 4.1 (organizational culture), GOVERN 6.1 (third-party risk management).</p>
+        <div class="matches">
+          <div class="matches-label">aimissionready guides that cover GOVERN</div>
+          <ul>
+            <li>→ <a href="nonprofit_ai_staff_policy.html" target="_blank">Creating an AI Use Policy When You Have None</a> (policy foundation)</li>
+            <li>→ <a href="nonprofit_ai_board_questions.html" target="_blank">Five Questions Every Nonprofit Board Should Ask</a> (board oversight)</li>
+            <li>→ <a href="nonprofit_ai_governance.html" target="_blank">Where Is Your Data Going Right Now?</a> (governance practice)</li>
+            <li>→ <a href="nonprofit_ai_vendor.html" target="_blank">What to Ask Before You Sign an AI Vendor Contract</a> (third-party risk)</li>
+            <li>→ <a href="nonprofit_ai_workforce.html" target="_blank">AI and Your Staff</a> (organizational culture)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="fn-section">
+      <div class="fn-header map">
+        <div class="fn-tag">NIST AI RMF · Function 2</div>
+        <h2>MAP — Establish context and identify risks</h2>
+      </div>
+      <div class="fn-body">
+        <p>NIST's MAP function covers understanding the AI system's purpose, the context of its use, the affected populations, and the risks specific to each. For nonprofits, this is the equity-centered work that asks who benefits, who is at risk, and what the actual use case is.</p>
+        <p><em>NIST sub-categories particularly relevant to nonprofits:</em> MAP 1.1 (system context), MAP 2.2 (purpose and use), MAP 3.1 (benefits and costs), MAP 4.1 (impact assessment), MAP 5.1 (affected groups).</p>
+        <div class="matches">
+          <div class="matches-label">aimissionready guides that cover MAP</div>
+          <ul>
+            <li>→ <a href="nonprofit_ai_equity_lens.html" target="_blank">The Equity Lens (Four Questions)</a> (affected groups, impact)</li>
+            <li>→ <a href="nonprofit_ai_making_the_case.html" target="_blank">Making the Case for AI, or Against It</a> (system purpose, benefits)</li>
+            <li>→ <a href="nonprofit_ai_disability_services.html" target="_blank">AI in Disability Services</a> (sector-specific impact mapping)</li>
+            <li>→ <a href="nonprofit_ai_risk.html" target="_blank">What Happens When AI Gets It Wrong</a> (risk identification)</li>
+            <li>→ <a href="nonprofit_ai_audit_informal.html" target="_blank">When Staff Are Already Using AI</a> (context discovery)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="fn-section">
+      <div class="fn-header measure">
+        <div class="fn-tag">NIST AI RMF · Function 3</div>
+        <h2>MEASURE — Analyze and assess identified risks</h2>
+      </div>
+      <div class="fn-body">
+        <p>NIST's MEASURE function covers the assessment, testing, and monitoring activities that turn identified risks into managed risks. For most nonprofits, this is lighter-weight than NIST's enterprise framing assumes, but the principle holds: you cannot manage what you do not measure.</p>
+        <p><em>NIST sub-categories particularly relevant to nonprofits:</em> MEASURE 1.1 (test and evaluation), MEASURE 2.6 (bias and fairness), MEASURE 2.10 (privacy), MEASURE 3.1 (effectiveness), MEASURE 4.1 (continuous monitoring).</p>
+        <div class="matches">
+          <div class="matches-label">aimissionready guides that cover MEASURE</div>
+          <ul>
+            <li>→ <a href="nonprofit_ai_security.html" target="_blank">What Actually Happens to Your Data</a> (privacy assessment)</li>
+            <li>→ <a href="nonprofit_ai_privacy.html" target="_blank">Protecting Client Confidentiality</a> (privacy testing)</li>
+            <li>→ <a href="nonprofit_ai_risk_tier_chart.html" target="_blank">Risk-Tier Use Chart</a> (risk classification)</li>
+            <li>→ <a href="nonprofit_ai_preparing_data.html" target="_blank">Preparing Your Data for AI</a> (input quality assessment)</li>
+            <li>→ <a href="nonprofit_ai_governance.html" target="_blank">Where Is Your Data Going Right Now?</a> (continuous monitoring)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="fn-section">
+      <div class="fn-header manage">
+        <div class="fn-tag">NIST AI RMF · Function 4</div>
+        <h2>MANAGE — Allocate resources to mapped and measured risks</h2>
+      </div>
+      <div class="fn-body">
+        <p>NIST's MANAGE function covers the operational response: prioritizing identified risks, implementing controls, responding to incidents, and reviewing decisions. For nonprofits, this is the day-to-day work of running an AI-aware organization.</p>
+        <p><em>NIST sub-categories particularly relevant to nonprofits:</em> MANAGE 1.1 (risk prioritization), MANAGE 2.2 (third-party management), MANAGE 3.1 (incident response), MANAGE 4.1 (continuous improvement).</p>
+        <div class="matches">
+          <div class="matches-label">aimissionready guides that cover MANAGE</div>
+          <ul>
+            <li>→ <a href="nonprofit_ai_cost.html" target="_blank">What You'll Actually Spend</a> (resource allocation)</li>
+            <li>→ <a href="nonprofit_ai_vendor_migration.html" target="_blank">When a Vendor Adds AI to a Product You Already Use</a> (third-party management)</li>
+            <li>→ <a href="nonprofit_ai_ehr_migration.html" target="_blank">EHR Vendors and AI</a> (vendor management in practice)</li>
+            <li>→ <a href="nonprofit_ai_hipaa_environment.html" target="_blank">AI in a HIPAA-Regulated Environment</a> (incident response, BAA management)</li>
+            <li>→ <a href="nonprofit_ai_case_notes.html" target="_blank">Case Notes and AI</a> (operational workflow controls)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <h2 style="font-family:'Playfair Display',serif; font-size:22px; color:var(--green); margin:32px 0 14px;">How to use this crosswalk</h2>
+
+    <p style="font-size:14.5px; line-height:1.7;">If a funder asks whether your AI governance work aligns with NIST AI RMF, this crosswalk gives you a defensible answer: "We use the aimissionready framework, which maps to all four NIST AI RMF functions as follows..." and you can hand them this page. It is not an audit or a certification, but it is a credible navigation showing that the work you have done covers the same territory NIST covers.</p>
+
+    <p style="font-size:14.5px; line-height:1.7;">For organizations subject to actual NIST AI RMF compliance requirements (federal grant programs, certain state regulators, some federal contractors), this crosswalk is a starting point, not a substitute for the full NIST framework documentation. Read NIST AI RMF 1.0 directly when the stakes warrant it. Linked at the External Resources page under Frameworks and Standards.</p>
+
+    <p style="font-size:13.5px; color:var(--muted); font-style:italic; line-height:1.65; margin-top:18px;">This crosswalk was last reviewed against NIST AI RMF 1.0. NIST has signaled updates to come. When NIST AI RMF 2.0 lands, this document will be revised to match.</p>
+
+  </div>
+
+  <div class="footer-band">
+    <div>License: CC BY-NC 4.0. Adapt for your organization or funder communication.</div>
+    <div>Mandy Hathaway &middot; <a href="https://aimissionready.org">aimissionready.org</a></div>
+  </div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI in Advocacy and Civic Nonprofits: Lobbying Limits, Electioneering, Authenticity, and Deepfake Risk</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,400&family=Source+Sans+3:wght@300;400;600&family=DM+Mono:wght@400;500&display=swap');
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root { --ink:#1a1a18; --cream:#f5f0e6; --green:#2d5a3d; --green-light:#eaf3de; --alert:#1d5e8a; --alert-light:#ddeaf5; --muted:#4e4e47; --border:rgba(45,90,61,0.18); }
+  body { font-family:'Source Sans 3',sans-serif; background:var(--cream); color:var(--ink); font-size:16px; line-height:1.7; }
+  .page { max-width:820px; margin:0 auto; }
+  .cover { background:var(--green); color:var(--cream); padding:64px 56px 52px; }
+  .cover-rule-top, .cover-rule-bottom { border:none; }
+  .cover-rule-top { border-top:1px solid #aed6f1; margin-bottom:32px; }
+  .cover-rule-bottom { border-top:1px solid rgba(174,214,241,0.35); margin-bottom:24px; }
+  .cover-kicker { font-size:12px; font-weight:700; letter-spacing:0.22em; text-transform:uppercase; color:#aed6f1; margin-bottom:14px; }
+  .cover-title { font-family:'Playfair Display',serif; font-size:40px; font-weight:900; line-height:1.12; margin-bottom:10px; }
+  .cover-sub { font-family:'Playfair Display',serif; font-style:italic; font-size:19px; color:#dce8d8; margin-bottom:30px; }
+  .cover-meta { font-size:13px; color:#b8d4c0; letter-spacing:0.04em; }
+  .cover-meta a { color:#aed6f1; text-decoration:none; }
+  .body-wrap { padding:48px 56px 60px; }
+  h2 { font-family:'Playfair Display',serif; font-size:24px; font-weight:700; color:var(--green); margin-top:36px; margin-bottom:12px; padding-bottom:8px; border-bottom:1.5px solid var(--border); }
+  p { margin-bottom:14px; color:var(--ink); font-size:15.5px; }
+  .pullquote { background:var(--green); color:var(--cream); border-radius:4px; padding:24px 32px; margin:30px 0; font-family:'Playfair Display',serif; font-style:italic; font-size:18px; line-height:1.5; }
+  .alert-box { background:var(--alert-light); border-left:4px solid var(--alert); border-radius:0 4px 4px 0; padding:18px 22px; margin:24px 0; }
+  .alert-box .alert-label { font-family:'DM Mono',monospace; font-size:11px; font-weight:500; letter-spacing:0.15em; text-transform:uppercase; color:var(--alert); margin-bottom:6px; }
+  .alert-box p { margin:0; font-size:14.5px; }
+  .green-card { background:var(--green-light); border:1px solid var(--border); border-radius:4px; padding:20px 24px; margin:20px 0; }
+  .green-card .card-label { font-family:'DM Mono',monospace; font-size:11px; font-weight:500; letter-spacing:0.15em; text-transform:uppercase; color:var(--green); margin-bottom:8px; }
+  .green-card p { margin:0 0 8px; font-size:14.5px; }
+  .green-card p:last-child { margin-bottom:0; }
+  .never-list { list-style:none; padding:0; margin:14px 0; }
+  .never-list li { display:flex; gap:14px; align-items:flex-start; margin-bottom:10px; font-size:14.5px; }
+  .never-list li::before { content:"✕"; font-family:'DM Mono',monospace; font-size:12px; color:#c0392b; font-weight:700; flex-shrink:0; margin-top:3px; }
+  .contact-block { background:var(--green); color:var(--cream); padding:32px 56px; margin-top:48px; text-align:center; }
+  .contact-block p { color:#dce8d8; margin-bottom:8px; font-size:14.5px; }
+  .contact-block a { color:#aed6f1; text-decoration:none; font-weight:600; }
+  .contact-block .contact-name { font-family:'Playfair Display',serif; font-size:19px; font-weight:700; color:var(--cream); margin-bottom:6px; }
+  hr.section-rule { border:none; border-top:1px solid var(--border); margin:32px 0; }
+  @media (max-width:700px) { .body-wrap { padding:36px 24px 48px; } .cover { padding:48px 24px 40px; } .cover-title { font-size:30px; } }
+  @media print { body{background:white;} .cover,.pullquote,.contact-block,.green-card,.alert-box { -webkit-print-color-adjust:exact; print-color-adjust:exact; } }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="cover">
+    <hr class="cover-rule-top">
+    <div class="cover-kicker">Nonprofit AI Resource Series &nbsp;·&nbsp; Sector Vertical</div>
+    <h1 class="cover-title">AI in advocacy and civic nonprofits</h1>
+    <div class="cover-sub">Lobbying limits, electioneering, authenticity, and the deepfake question</div>
+    <hr class="cover-rule-bottom">
+    <div class="cover-meta">
+      Mandy Hathaway Consulting &nbsp;·&nbsp;
+      <a href="https://mandyhathaway.com">mandyhathaway.com</a> &nbsp;·&nbsp;
+      AI Ethics &amp; Technology Consulting
+    </div>
+  </div>
+
+  <div class="body-wrap">
+
+    <p>Advocacy and civic engagement nonprofits have a particular AI calculus. The same AI tools that make it cheap to draft action alerts, generate testimony, and personalize outreach also make it cheap to do things that violate IRS rules, election law, or the trust that organized advocacy depends on. This guide is for 501(c)(3) advocacy orgs, civic engagement organizations, voter education nonprofits, community organizing groups, and any nonprofit whose work touches policy advocacy or elections.</p>
+
+    <p>The general AI guidance applies (data security, vendor vetting, governance). The additional considerations specific to this sector are about authenticity, regulatory boundaries, and the new failure modes AI introduces into the practice of organized civic life.</p>
+
+    <div class="pullquote">
+      Advocacy works because the contact between a member and a decision-maker carries the weight of a real person taking a real action. Anything that breaks that authenticity, even when efficient, erodes the credibility the entire field depends on.
+    </div>
+
+    <h2>Lobbying and the (c)(3) limit</h2>
+
+    <p>501(c)(3) organizations are subject to limits on lobbying activity (the substantial-part test or the 501(h) election). AI does not change the limits. It does change how easy it is to inadvertently exceed them.</p>
+
+    <p>Three patterns to watch for. AI-generated mass communications that include direct legislative asks count as direct or grassroots lobbying depending on the recipient and the content. The scale that AI enables can quickly multiply your lobbying minutes beyond what your (c)(3) tracking accounts for. AI-drafted talking points used in lobbying meetings count as lobbying expenditure. AI-personalized constituent outreach for legislative action counts toward grassroots lobbying limits.</p>
+
+    <div class="alert-box">
+      <div class="alert-label">Operational discipline</div>
+      <p>If your advocacy org uses AI to scale grassroots or direct lobbying, your tracking has to scale too. The accounting is the same; the volume is different. Talk to your tax counsel before substantially increasing AI-enabled advocacy output.</p>
+    </div>
+
+    <h2>Electioneering and the (c)(3) prohibition</h2>
+
+    <p>501(c)(3) organizations cannot intervene in candidate elections. The prohibition is absolute. AI does not relax it, and it creates a few new risks worth noting.</p>
+
+    <p>AI-generated voter education materials must remain genuinely non-partisan in substance and framing. AI tools that suggest "more engaging" framings sometimes produce content that slides into implicit endorsement. Voter contact tools that use AI to personalize messages can inadvertently produce content that varies in ways that affect different voters' perception of candidates.</p>
+
+    <p>The safe practice: any AI-assisted voter education work goes through the same review your existing materials would. AI is a drafting tool, not a policy decider. Your voter engagement counsel reviews the output, not just the policy.</p>
+
+    <h2>Deepfakes and synthetic media</h2>
+
+    <p>The single most dangerous AI category for advocacy orgs is synthetic media: AI-generated audio, video, or images that depict real people saying or doing things they did not. The technology is now cheap, fast, and convincing. Several states have passed laws restricting election-related deepfakes. The legal landscape is moving but is not yet settled.</p>
+
+    <div class="alert-box">
+      <div class="alert-label">The position to take, regardless of legal status</div>
+      <p>Do not produce synthetic depictions of identifiable public figures. Do not produce synthetic depictions of opposition figures or candidates under any circumstance. Do not produce synthetic constituent testimony. The credibility damage when discovered, and discovery is likely, outlasts the marginal advantage in the moment.</p>
+    </div>
+
+    <h2>Authenticity in member contact</h2>
+
+    <p>Organized advocacy depends on the assumption that a contact from a constituent is genuine. AI-personalized form letters break this assumption when scaled past a recognizable threshold. Legislative offices have become quick to identify AI-generated patterns, and the contacts are weighted accordingly.</p>
+
+    <p>The line worth holding: AI can help your members write better letters. AI cannot pretend to be your members. The former is empowerment; the latter is fraud, even when no one technically violated a rule.</p>
+
+    <div class="green-card">
+      <div class="card-label">A working standard for member contact</div>
+      <p>AI-assisted templates that members actually customize and send themselves are acceptable, even helpful. AI-generated content sent on behalf of members without their substantive customization, or AI-generated synthetic constituent voices, are not. The line is whether a real member is actually choosing to communicate, with their own framing, even when AI helped them draft.</p>
+    </div>
+
+    <h2>Research, policy analysis, and AI</h2>
+
+    <p>One of the most useful AI applications in advocacy work is research synthesis. Legislative tracking, regulatory comment analysis, opposition research, policy literature reviews. AI handles the volume; humans handle the judgment.</p>
+
+    <p>Two cautions worth holding. AI is famously bad at distinguishing real research from invented research. Citation hallucinations have caused several public embarrassments for advocacy orgs. Verify every cited source before publishing. AI tools trained on broad internet content reflect the biases of that content; policy analysis using AI should be cross-checked against primary sources for issues where ideological framing dominates the discussion.</p>
+
+    <h2>Coalition work and AI use</h2>
+
+    <p>Coalitions are common in advocacy work, and they create AI considerations that single-org work does not.</p>
+
+    <p>If you produce AI-assisted materials for a coalition, disclose to coalition partners. Other orgs may have stricter policies than yours. If a coalition partner uses AI-generated material in your joint advocacy without your knowledge, your organization's name is on it. Coalition agreements going forward should address AI use explicitly.</p>
+
+    <h2>Disclosure to your members and the public</h2>
+
+    <p>The advocacy field has begun moving toward voluntary disclosure of AI use in communications. The pattern that is settling: AI assistance in drafting is generally accepted with brief disclosure or omitted disclosure for routine communications, while AI generation of substantive content (op-eds, testimony, reports) is expected to be disclosed prominently. Your organization's specific posture should match your membership's expectations and your sector norms.</p>
+
+    <h2>Uses worth avoiding entirely</h2>
+
+    <ul class="never-list">
+      <li>Synthetic media depicting any identifiable real person, including allies, opponents, candidates, or constituents</li>
+      <li>AI-generated constituent testimony presented as if from real constituents</li>
+      <li>Mass-personalized voter contact during election season without explicit non-partisan compliance review</li>
+      <li>AI-generated research citations published without primary-source verification</li>
+      <li>Auto-replies to legislator offices that scale beyond what you can document as genuine constituent engagement</li>
+      <li>AI-generated images of policy targets in misleading contexts</li>
+      <li>Voice cloning of organizational leaders for outreach (even with consent, the recipient deception is the problem)</li>
+    </ul>
+
+    <h2>What to do this quarter</h2>
+
+    <p>For an advocacy nonprofit just starting to address this:</p>
+
+    <p>Get your AI policy reviewed by counsel familiar with both nonprofit law and election law if you do voter engagement. The intersections matter more here than in most sectors.</p>
+
+    <p>Update your lobbying tracking process to capture AI-enabled scale. If you have moved to an (h) election or are considering one, the AI question should be in the calculation.</p>
+
+    <p>Document your organizational position on synthetic media. Clear written policy that no AI-generated depictions of real people will be produced or distributed. Communicate to staff and coalition partners.</p>
+
+    <p>Train your staff on what AI personalization is acceptable for member contact and what crosses the line. The line is finer here than elsewhere.</p>
+
+    <hr class="section-rule">
+
+    <p>Advocacy and civic nonprofits hold one of the most consequential positions in this AI moment: the same tools that could amplify organized civic voice could also be the tools that hollow it out. Organizations that move deliberately, with attention to authenticity and regulatory boundaries, will build durable credibility. Organizations that scale without those guardrails will produce short-term wins and long-term damage. The field needs the first kind right now.</p>
+
+  </div>
+
+  <div class="contact-block">
+    <div class="contact-name">Mandy Hathaway</div>
+    <p>AI Ethics &amp; Technology Consulting for Nonprofits</p>
+    <p><a href="https://mandyhathaway.com">mandyhathaway.com</a> &nbsp;·&nbsp; <a href="https://mandyhathaway.com/book">Book a call</a></p>
+  </div>
+
+</div>
+</body>
+</html>

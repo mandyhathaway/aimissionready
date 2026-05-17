@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Environmental Cost of AI: What Nonprofits Should Know About Energy, Water, and Carbon</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,400&family=Source+Sans+3:wght@300;400;600&family=DM+Mono:wght@400;500&display=swap');
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root { --ink:#1a1a18; --cream:#f5f0e6; --green:#2d5a3d; --green-mid:#3d6b4a; --green-light:#eaf3de; --alert:#1d5e8a; --alert-light:#ddeaf5; --muted:#4e4e47; --border:rgba(45,90,61,0.18); }
+  body { font-family:'Source Sans 3',sans-serif; background:var(--cream); color:var(--ink); font-size:16px; line-height:1.7; }
+  .page { max-width:820px; margin:0 auto; }
+  .cover { background:var(--green); color:var(--cream); padding:72px 64px 60px; }
+  .cover-rule-top, .cover-rule-bottom { border:none; }
+  .cover-rule-top { border-top:1px solid #aed6f1; margin-bottom:40px; }
+  .cover-rule-bottom { border-top:1px solid rgba(174,214,241,0.35); margin-bottom:28px; }
+  .cover-kicker { font-size:12px; font-weight:700; letter-spacing:0.22em; text-transform:uppercase; color:#aed6f1; margin-bottom:18px; }
+  .cover-title { font-family:'Playfair Display',serif; font-size:44px; font-weight:900; line-height:1.1; margin-bottom:10px; }
+  .cover-sub { font-family:'Playfair Display',serif; font-style:italic; font-size:20px; color:#dce8d8; margin-bottom:36px; }
+  .cover-meta { font-size:13px; color:#b8d4c0; letter-spacing:0.04em; }
+  .cover-meta a { color:#aed6f1; text-decoration:none; }
+  .body-wrap { padding:56px 64px 72px; }
+  h2 { font-family:'Playfair Display',serif; font-size:26px; font-weight:700; color:var(--green); margin-top:44px; margin-bottom:14px; padding-bottom:8px; border-bottom:1.5px solid var(--border); }
+  h3 { font-family:'Source Sans 3',sans-serif; font-size:15px; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:var(--green-mid); margin-top:28px; margin-bottom:8px; }
+  p { margin-bottom:16px; color:var(--ink); }
+  .pullquote { background:var(--green); color:var(--cream); border-radius:4px; padding:28px 36px; margin:36px 0; font-family:'Playfair Display',serif; font-style:italic; font-size:20px; line-height:1.5; }
+  .alert-box { background:var(--alert-light); border-left:4px solid var(--alert); border-radius:0 4px 4px 0; padding:20px 24px; margin:28px 0; }
+  .alert-box .alert-label { font-family:'DM Mono',monospace; font-size:11px; font-weight:500; letter-spacing:0.15em; text-transform:uppercase; color:var(--alert); margin-bottom:6px; }
+  .alert-box p { margin:0; font-size:15px; }
+  .green-card { background:var(--green-light); border:1px solid var(--border); border-radius:4px; padding:24px 28px; margin:28px 0; }
+  .green-card .card-label { font-family:'DM Mono',monospace; font-size:11px; font-weight:500; letter-spacing:0.15em; text-transform:uppercase; color:var(--green); margin-bottom:10px; }
+  .green-card p { margin:0 0 10px; font-size:15px; }
+  .green-card p:last-child { margin-bottom:0; }
+  .numbered-list { counter-reset:item; list-style:none; padding:0; margin:20px 0 24px; }
+  .numbered-list li { counter-increment:item; display:flex; gap:18px; margin-bottom:18px; align-items:flex-start; }
+  .numbered-list li::before { content:counter(item); font-family:'DM Mono',monospace; font-size:13px; font-weight:500; color:var(--cream); background:var(--green); width:26px; height:26px; border-radius:50%; display:flex; align-items:center; justify-content:center; flex-shrink:0; margin-top:2px; }
+  .numbered-list li p { margin:0; font-size:15px; }
+  .numbered-list li strong { display:block; margin-bottom:2px; color:var(--green); }
+  .contact-block { background:var(--green); color:var(--cream); padding:36px 64px; margin-top:56px; text-align:center; }
+  .contact-block p { color:#dce8d8; margin-bottom:10px; font-size:15px; }
+  .contact-block a { color:#aed6f1; text-decoration:none; font-weight:600; }
+  .contact-block .contact-name { font-family:'Playfair Display',serif; font-size:20px; font-weight:700; color:var(--cream); margin-bottom:6px; }
+  hr.section-rule { border:none; border-top:1px solid var(--border); margin:40px 0; }
+  @media (max-width:700px) { .body-wrap { padding:44px 28px 52px; } .cover { padding:56px 28px 48px; } .cover-title { font-size:34px; } }
+  @media print { body{background:white;} .cover,.pullquote,.contact-block,.green-card,.alert-box,.numbered-list li::before { -webkit-print-color-adjust:exact; print-color-adjust:exact; } }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="cover">
+    <hr class="cover-rule-top">
+    <div class="cover-kicker">Nonprofit AI Resource Series &nbsp;·&nbsp; Deep Topic</div>
+    <h1 class="cover-title">The environmental cost of AI</h1>
+    <div class="cover-sub">What nonprofits should know about energy, water, and carbon</div>
+    <hr class="cover-rule-bottom">
+    <div class="cover-meta">
+      Mandy Hathaway Consulting &nbsp;·&nbsp;
+      <a href="https://mandyhathaway.com">mandyhathaway.com</a> &nbsp;·&nbsp;
+      AI Ethics &amp; Technology Consulting
+    </div>
+  </div>
+
+  <div class="body-wrap">
+
+    <p>AI uses real energy and real water. Not in metaphor. In megawatt-hours and gallons. For most of the last decade this was a niche concern, the kind of thing that researchers tracked and the rest of us did not need to think about. That changed quickly once generative AI moved into everyday use. Data center buildouts to support AI training and inference are now a significant driver of new electricity demand in the United States and a measurable strain on water resources in regions where data centers cluster.</p>
+
+    <p>For nonprofit leaders, the environmental cost of AI is not yet a major budget line. It is showing up in three other places: board conversations, donor questions, and the values-alignment work that any environmental or climate-justice organization owes its mission. This guide gives you the working numbers, the questions worth asking vendors, and a frame for talking about it that does not require you to either greenwash AI use or reject it on principle.</p>
+
+    <div class="pullquote">
+      The environmental cost of AI is not a reason to refuse to use it. It is a reason to use it deliberately, to ask vendors about their footprint, and to be honest with your community about the tradeoff your organization is making.
+    </div>
+
+    <h2>The working numbers, kept simple</h2>
+
+    <p>Exact numbers vary by model, vendor, and reporting methodology, and the figures shift as the industry matures. The order-of-magnitude picture is the part that matters for nonprofit decision-making.</p>
+
+    <ol class="numbered-list">
+      <li>
+        <p><strong>Training a large language model is energy-intensive.</strong> The training of a single frontier model uses electricity equivalent to a small town's annual consumption. The cost is paid once per model version, then amortized across hundreds of millions of users. Your organization did not directly cause it, but it is part of the system you are participating in.</p>
+      </li>
+      <li>
+        <p><strong>Inference (everyday use) is cheaper per query but enormous in aggregate.</strong> A single ChatGPT-style query uses roughly five to ten times the energy of a Google search. Multiplied across hundreds of millions of daily queries, this is the bigger ongoing story.</p>
+      </li>
+      <li>
+        <p><strong>Image and video generation cost substantially more than text.</strong> Generating an image uses roughly the energy of charging a smartphone halfway. Video generation is dramatically more.</p>
+      </li>
+      <li>
+        <p><strong>Water cooling at data centers is material in some regions.</strong> Major data center clusters in the southwest United States, in particular, have become a measurable share of municipal water use. Vendors are starting to report water-use intensity, though methodology varies.</p>
+      </li>
+      <li>
+        <p><strong>The trend is upward, fast.</strong> Industry energy projections through 2030 are striking. Data center electricity demand is one of the largest new contributors to the United States grid load.</p>
+      </li>
+    </ol>
+
+    <h2>Why this matters for nonprofits specifically</h2>
+
+    <p>The environmental cost shows up in nonprofit work in five places.</p>
+
+    <div class="green-card">
+      <div class="card-label">Place one: board conversations</div>
+      <p>Board members increasingly ask about the environmental footprint of organizational decisions, especially in organizations whose mission touches climate, environmental justice, or sustainability. "We adopted AI tools" without an environmental answer is becoming an uncomfortable position.</p>
+    </div>
+
+    <div class="green-card">
+      <div class="card-label">Place two: funder questions</div>
+      <p>Some climate-focused funders are starting to include questions about technology footprint in due diligence. The current bar is low (an honest answer beats no answer) but the bar is rising.</p>
+    </div>
+
+    <div class="green-card">
+      <div class="card-label">Place three: mission consistency for environmental orgs</div>
+      <p>If your organization works on environmental issues, adopting AI tools without acknowledging the environmental cost is a credibility problem. Not because you should refuse to use them, but because your audiences will notice if you treat the question as if it does not exist.</p>
+    </div>
+
+    <div class="green-card">
+      <div class="card-label">Place four: client-community considerations</div>
+      <p>Many of the communities most affected by data-center clustering (water-stressed regions, communities adjacent to industrial-scale facilities) are also the communities your organization may serve. The environmental cost of AI is often borne by people who never use the tools.</p>
+    </div>
+
+    <div class="green-card">
+      <div class="card-label">Place five: long-term sustainability of the tools themselves</div>
+      <p>The economics of AI at current energy cost are unstable. If electricity prices spike or carbon pricing tightens, AI tool pricing will rise sharply. Build expectations accordingly.</p>
+    </div>
+
+    <h2>What to ask vendors</h2>
+
+    <p>The questions worth asking are not "are you carbon-neutral" (every vendor will say yes via offsets). They are more specific.</p>
+
+    <ol class="numbered-list">
+      <li>
+        <p><strong>What is the energy intensity per query for the AI features we will use?</strong> Most vendors do not publish this number. Ask. The answer, or the refusal to answer, is informative.</p>
+      </li>
+      <li>
+        <p><strong>What is your data center mix, and what percentage of compute runs on renewable energy?</strong> Several major AI providers publish this; some do so honestly. Compare against their parent company's broader sustainability claims.</p>
+      </li>
+      <li>
+        <p><strong>What is your reported water-use intensity for the regions where our data is processed?</strong> Newer concern, fewer vendors report it. Worth asking.</p>
+      </li>
+      <li>
+        <p><strong>Do you offer a model size or efficiency tier appropriate for our use case?</strong> The smallest model that does the job uses the least energy. A vendor that defaults you into a large model for tasks a smaller one would handle is making a choice on your behalf.</p>
+      </li>
+      <li>
+        <p><strong>What are you doing to reduce the per-query cost over time?</strong> The pattern of the vendor's investment tells you whether environmental cost is internalized in their planning or treated as someone else's problem.</p>
+      </li>
+    </ol>
+
+    <h2>What your own organization can do</h2>
+
+    <p>Small actions inside your nonprofit do not solve the macro problem. They do let you make consistent decisions and answer questions honestly when they come.</p>
+
+    <ol class="numbered-list">
+      <li>
+        <p><strong>Use the right size tool for the job.</strong> If a smaller model can handle the task (and most nonprofit text tasks do not need the largest model available), use the smaller model. Vendors that offer tiered models often let you pick.</p>
+      </li>
+      <li>
+        <p><strong>Batch tasks rather than running many small jobs.</strong> Particularly for embedding, summarization, or any large-document processing. Fewer, larger jobs is more efficient than many tiny ones.</p>
+      </li>
+      <li>
+        <p><strong>Be deliberate about image and video generation.</strong> The order-of-magnitude environmental cost is much higher than text. Reserve for when the visual is actually needed.</p>
+      </li>
+      <li>
+        <p><strong>Choose vendors with credible sustainability reporting where possible.</strong> Not perfect ones. The honest reporting matters as much as the absolute number.</p>
+      </li>
+      <li>
+        <p><strong>Be honest about it in your transparency communications.</strong> If your organization reports on environmental practices, include AI in the picture. A short sentence is enough.</p>
+      </li>
+    </ol>
+
+    <h2>How to talk about it in a board conversation</h2>
+
+    <p>The frame that works is neither defensive nor dismissive. It acknowledges the tradeoff, names what the organization is doing to be deliberate, and treats the question as legitimate rather than as a gotcha.</p>
+
+    <div class="alert-box">
+      <div class="alert-label">A working framing</div>
+      <p>"We are using AI tools because the time savings allow us to direct more capacity toward the mission. The tools have a real environmental cost, which our vendors are working to reduce and which we monitor. We chose vendors with credible sustainability reporting, we use the smallest model that fits the task, and we are not generating images or video unless they are actually needed. We do not think AI use is free. We think the tradeoff is worth it for the work we do, and we are willing to revisit that judgment as the picture changes."</p>
+    </div>
+
+    <h2>For environmental and climate justice organizations specifically</h2>
+
+    <p>If your mission touches environmental issues, you have an additional consideration: your AI use is part of the field your work covers. A few practical moves worth considering.</p>
+
+    <p>Document your AI environmental position publicly. A short paragraph on your About or transparency page that names the tradeoff and the choices you have made. This is the credibility move that distinguishes thoughtful adoption from greenwashing.</p>
+
+    <p>Choose vendors deliberately. Where you have meaningful choice (most general-purpose AI tasks), prefer vendors with credible renewable-energy commitments and honest water reporting. This is one of the few places where market signal from your sector matters.</p>
+
+    <p>Consider what AI helps you do for your mission specifically. The strongest justification is mission alignment: AI tools that help you do environmental work more effectively can justify their footprint in ways that AI tools used for routine office tasks cannot.</p>
+
+    <hr class="section-rule">
+
+    <p>The environmental cost of AI is real, growing, and worth tracking. It is not a reason to opt out of AI use, but it is a reason to be deliberate about it and honest about the tradeoff. Nonprofit leaders who can have this conversation calmly will be ahead of the curve as donors, funders, and boards start asking. The conversation will get harder before it gets easier; building the habit now is worth doing.</p>
+
+  </div>
+
+  <div class="contact-block">
+    <div class="contact-name">Mandy Hathaway</div>
+    <p>AI Ethics &amp; Technology Consulting for Nonprofits</p>
+    <p><a href="https://mandyhathaway.com">mandyhathaway.com</a> &nbsp;·&nbsp; <a href="https://mandyhathaway.com/book">Book a call</a></p>
+  </div>
+
+</div>
+</body>
+</html>

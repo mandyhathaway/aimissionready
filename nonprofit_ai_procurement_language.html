@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Procurement Language Pack for Nonprofits: Contract Clauses, RFP Language, and Exit Terms</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,400&family=Source+Sans+3:wght@300;400;600&family=DM+Mono:wght@400;500&display=swap');
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root { --ink:#1a1a18; --cream:#f5f0e6; --green:#2d5a3d; --green-mid:#3d6b4a; --green-light:#eaf3de; --blue:#2d6694; --blue-light:#e3ecf5; --muted:#5a6a5c; --border:rgba(45,90,61,0.18); }
+  body { font-family:'Source Sans 3',sans-serif; background:var(--cream); color:var(--ink); font-size:15px; line-height:1.65; padding:24px; }
+  .page { max-width:880px; margin:0 auto; background:#fff; border:1px solid var(--border); box-shadow:0 2px 10px rgba(0,0,0,0.06); }
+  .header { background:var(--green); color:var(--cream); padding:44px 52px 36px; }
+  .header-kicker { font-family:'DM Mono',monospace; font-size:11px; font-weight:700; letter-spacing:0.18em; text-transform:uppercase; color:#aed6f1; margin-bottom:10px; }
+  .header h1 { font-family:'Playfair Display',serif; font-size:32px; font-weight:700; line-height:1.15; margin-bottom:6px; }
+  .header .header-sub { font-family:'Playfair Display',serif; font-style:italic; font-size:17px; color:#dce8d8; }
+  .body { padding:36px 52px 32px; }
+  .intro { font-size:14.5px; color:var(--ink); margin-bottom:24px; line-height:1.7; }
+  .disclaimer { background:#fef5f0; border-left:4px solid #c0392b; border-radius:0 4px 4px 0; padding:16px 22px; margin:18px 0 28px; }
+  .disclaimer .d-label { font-family:'DM Mono',monospace; font-size:10.5px; font-weight:700; letter-spacing:0.13em; text-transform:uppercase; color:#c0392b; margin-bottom:6px; }
+  .disclaimer p { font-size:13.5px; color:var(--ink); margin:0; line-height:1.6; }
+  h2 { font-family:'Playfair Display',serif; font-size:23px; color:var(--green); margin:36px 0 12px; padding-bottom:8px; border-bottom:1.5px solid var(--border); }
+  h3 { font-family:'Source Sans 3',sans-serif; font-size:14px; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:var(--green-mid); margin:22px 0 8px; }
+  p { margin-bottom:14px; }
+  .clause-box { background:var(--green-light); border:1px solid var(--border); border-radius:6px; padding:22px 26px; margin:14px 0 22px; }
+  .clause-box .c-label { font-family:'DM Mono',monospace; font-size:10.5px; font-weight:700; letter-spacing:0.13em; text-transform:uppercase; color:var(--green); margin-bottom:10px; }
+  .clause-text { font-family:'DM Mono',monospace; font-size:13px; line-height:1.65; color:var(--ink); background:#fff; padding:14px 16px; border:1px solid var(--border); border-radius:4px; white-space:pre-wrap; }
+  .note { background:var(--blue-light); border-left:4px solid var(--blue); border-radius:0 4px 4px 0; padding:14px 18px; margin:10px 0 18px; font-size:13.5px; color:var(--ink); }
+  .note .n-label { font-family:'DM Mono',monospace; font-size:10.5px; font-weight:700; letter-spacing:0.13em; text-transform:uppercase; color:var(--blue); margin-bottom:6px; display:block; }
+  .footer-band { background:var(--green); color:var(--cream); padding:20px 52px; display:flex; justify-content:space-between; align-items:center; font-size:12px; flex-wrap:wrap; gap:10px; }
+  .footer-band a { color:#aed6f1; text-decoration:none; font-weight:600; }
+  @media (max-width:700px) { .body { padding:24px; } .header { padding:24px; } .clause-box { padding:16px; } .clause-text { font-size:12px; padding:10px 12px; } }
+  @media print {
+    body { padding:0; background:#fff; }
+    .page { box-shadow:none; border:none; max-width:none; }
+    .header, .clause-box, .note, .disclaimer, .footer-band { -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+    @page { margin: 0.5in; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="header">
+    <div class="header-kicker">Nonprofit AI · Procurement Pack</div>
+    <h1>AI procurement language pack</h1>
+    <div class="header-sub">Ready-to-adapt contract clauses, RFP language, and exit terms</div>
+  </div>
+
+  <div class="body">
+
+    <p class="intro">When your nonprofit signs a contract with a vendor whose product uses AI, the standard vendor templates protect the vendor, not you. This pack collects the contract clauses and RFP language that nonprofits should ask for, paste in, or insist on when AI is anywhere in the relationship. Adapt for your jurisdiction, your data sensitivity, and your counsel.</p>
+
+    <div class="disclaimer">
+      <div class="d-label">Disclaimer</div>
+      <p>This is not legal advice. Run any contract language past your attorney before sending or signing. The clauses below are starting points that organize the questions worth asking; the specific wording your counsel uses will be different.</p>
+    </div>
+
+    <h2>1. RFP language: AI capability and data handling questions</h2>
+
+    <p>Include the following language in any RFP for a tool that uses AI or that may add AI features during the contract term. Asks the vendor to commit to specific answers before you negotiate.</p>
+
+    <div class="clause-box">
+      <div class="c-label">For inclusion in the RFP response requirements</div>
+      <div class="clause-text">7. AI and machine learning disclosure.
+
+Respondent shall describe in detail:
+a. All AI or machine learning features currently incorporated into the product.
+b. All AI or ML features that may be added during the contract term, and the notice and opt-in process for each.
+c. The underlying AI model providers, including any third-party model providers or subprocessors.
+d. Whether customer data is used to train, fine-tune, or improve any AI model, including the model provider's models. Confirm in writing that customer data is not used for training in default configuration, and identify any settings the customer must configure to maintain this protection.
+e. Data residency: the geographic locations where customer data is processed, stored, or transmitted in connection with AI features.
+f. The vendor's process for evaluating bias, accuracy, and safety in any AI feature affecting customer or beneficiary outcomes.
+g. The vendor's incident notification process for AI-related incidents (incorrect outputs, data exposure, security events).
+h. Whether the vendor offers a Business Associate Agreement covering AI features for customers subject to HIPAA.</div>
+    </div>
+
+    <div class="note">
+      <span class="n-label">Why this matters</span>
+      Vendors will not volunteer this information. Putting it in the RFP shifts the burden of proof to them and gives you written answers you can hold them to during the contract negotiation.
+    </div>
+
+    <h2>2. Master service agreement clause: data use and AI processing</h2>
+
+    <p>For the master agreement with any vendor whose product processes your data through AI features.</p>
+
+    <div class="clause-box">
+      <div class="c-label">Data Use and AI Processing</div>
+      <div class="clause-text">X.1 Vendor shall not use Customer Data to train, fine-tune, or improve any artificial intelligence or machine learning model, whether owned by Vendor or by any third-party model provider, without Customer's prior written consent for each specific use.
+
+X.2 Vendor shall maintain a current list of all subprocessors (including AI model providers) that process Customer Data, and shall provide updated lists upon request. Vendor shall provide thirty (30) days' written notice before adding any new subprocessor, during which Customer may object.
+
+X.3 Any AI feature added to the product during the contract term shall be off by default for Customer's tenant. Vendor shall provide written notice and obtain Customer's affirmative opt-in before enabling the AI feature in Customer's environment.
+
+X.4 Vendor warrants that any AI feature used to process Customer Data has been evaluated for accuracy, bias, and harmful output in the contexts of intended use, and shall provide a summary of such evaluations upon Customer's reasonable request.
+
+X.5 Vendor shall notify Customer within seventy-two (72) hours of any incident in which an AI feature produced incorrect output that affected Customer's records, communications, or beneficiaries, or in which Customer Data may have been exposed through an AI processing pathway.</div>
+    </div>
+
+    <h2>3. BAA addendum language for HIPAA-covered nonprofits</h2>
+
+    <p>For any vendor whose product touches PHI. Use as an addendum to your existing BAA, or insist on inclusion in a new BAA.</p>
+
+    <div class="clause-box">
+      <div class="c-label">AI Processing Addendum to BAA</div>
+      <div class="clause-text">Y.1 The parties acknowledge that Vendor's product includes or may include AI-enabled features that process Protected Health Information ("PHI") on behalf of Covered Entity. Such processing constitutes a use or disclosure of PHI under HIPAA and is subject to the terms of the underlying Business Associate Agreement.
+
+Y.2 Vendor shall identify all AI-enabled features that process PHI and shall enumerate them in Exhibit [A], which shall be updated as new AI features are added.
+
+Y.3 Vendor shall maintain a Business Associate Agreement, or equivalent contractual protection, with any third-party AI model provider that processes PHI in connection with Vendor's product. Vendor shall provide written confirmation of these BAA arrangements upon Covered Entity's request.
+
+Y.4 Vendor shall not use PHI to train, evaluate, or improve any AI model, whether owned by Vendor or by a third party.
+
+Y.5 Any AI feature added during the term of this Agreement that may process PHI shall require Covered Entity's affirmative opt-in before activation in Covered Entity's tenant. Default-on activation is prohibited.
+
+Y.6 Vendor shall include AI-related incidents within its breach notification obligations under the BAA, including but not limited to incidents in which AI features produced unauthorized disclosure of PHI, processed PHI through unauthorized pathways, or generated outputs that compromised the confidentiality, integrity, or availability of PHI.</div>
+    </div>
+
+    <h2>4. Exit and termination clauses</h2>
+
+    <p>Vendor lock-in is one of the slower-developing risks of AI adoption. These clauses keep the exit door open.</p>
+
+    <div class="clause-box">
+      <div class="c-label">Data Portability and Exit Cooperation</div>
+      <div class="clause-text">Z.1 Upon Customer's request, and at any point during or following the contract term, Vendor shall provide Customer with a complete export of Customer Data in a non-proprietary, machine-readable format (CSV, JSON, or industry-standard equivalent) at no additional cost.
+
+Z.2 Where Customer's use of AI features has produced derived data (summaries, classifications, embeddings, fine-tuning artifacts), Vendor shall provide such derived data to Customer upon termination if it can be exported, or shall confirm in writing that it has been deleted from Vendor's systems.
+
+Z.3 Vendor shall provide reasonable transition assistance for ninety (90) days following any termination, including documentation, technical support, and good-faith cooperation with Customer's selected successor vendor.
+
+Z.4 Vendor shall delete all Customer Data, including derived data from AI processing, from Vendor's production systems and from any third-party model provider's systems within sixty (60) days of termination, and shall provide written certification of deletion.</div>
+    </div>
+
+    <h2>5. Procurement decision checklist</h2>
+
+    <p>For internal use during vendor evaluation. Walk through these eight items before signing.</p>
+
+    <div class="clause-box">
+      <div class="c-label">Internal procurement checklist for any AI-enabled vendor</div>
+      <div class="clause-text">[ ] 1. Vendor has provided written answers to RFP AI disclosure section (Section 1 above).
+[ ] 2. Master agreement includes data-use and AI-processing terms (Section 2 above), or equivalent.
+[ ] 3. If HIPAA-covered: BAA includes AI processing addendum (Section 3 above), or vendor has confirmed AI features are not enabled.
+[ ] 4. Data export and exit cooperation clauses are in the contract (Section 4 above).
+[ ] 5. Subprocessor list has been reviewed and is current.
+[ ] 6. Vendor has confirmed SOC 2 Type II or equivalent attestation, dated within the last twelve months.
+[ ] 7. Vendor has confirmed data residency requirements meet organizational and regulatory needs.
+[ ] 8. Internal AI lead has reviewed and signed off on the procurement.
+
+Approved by: ________________________ Date: ________________</div>
+    </div>
+
+    <h2>6. Notice template: vendor adds an AI feature you did not opt into</h2>
+
+    <p>When you discover a vendor has enabled an AI feature without your affirmative opt-in. Send promptly.</p>
+
+    <div class="clause-box">
+      <div class="c-label">Sample notice to vendor</div>
+      <div class="clause-text">Subject: Request to disable [feature name] in our tenant immediately
+
+[Vendor name],
+
+We have identified that [feature name], which uses AI to [brief description], has been enabled in our tenant. Our records do not show affirmative opt-in for this feature by our organization.
+
+Pursuant to our agreement dated [date], any AI feature added during the contract term requires our written opt-in before activation in our tenant. We did not provide such opt-in for this feature.
+
+Please:
+1. Disable [feature name] in our tenant within twenty-four (24) hours of receipt of this notice.
+2. Confirm in writing that customer data processed by [feature name] during the period of unauthorized activation has not been retained, used for training, or shared with subprocessors beyond what is necessary to immediately delete it.
+3. Provide an explanation of how this feature was enabled without our opt-in, and the procedural changes you will implement to prevent recurrence.
+
+We are not seeking to terminate the relationship over this incident, but we expect resolution within the timeframes above. Please confirm receipt and acknowledge action items.
+
+[Name, role]</div>
+    </div>
+
+    <h2>How to use this pack</h2>
+
+    <p style="font-size:14px;">Most of the clauses above will not survive verbatim into a final contract. They will be modified by your counsel, negotiated against by the vendor, and adapted to your specific situation. The point of the pack is not the exact wording. It is the topics. If your final contract addresses every topic the pack covers, you are in reasonable shape. If your final contract is silent on most of them, you have done the vendor's work for them.</p>
+
+    <p style="font-size:14px;">Use the procurement checklist for every AI-enabled vendor evaluation, regardless of grant size or strategic priority. The five minutes the checklist takes is the cheapest insurance available.</p>
+
+  </div>
+
+  <div class="footer-band">
+    <div>License: CC BY-NC 4.0. Adapt for your organization with your counsel.</div>
+    <div>Mandy Hathaway &middot; <a href="https://aimissionready.org">aimissionready.org</a></div>
+  </div>
+
+</div>
+</body>
+</html>

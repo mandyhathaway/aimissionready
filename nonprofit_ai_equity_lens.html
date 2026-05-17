@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Equity Lens: Four Questions to Ask Before Adopting Any AI Tool</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,400&family=Source+Sans+3:wght@300;400;600&family=DM+Mono:wght@400;500&display=swap');
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  a:focus-visible, button:focus-visible { outline: 2px solid var(--green); outline-offset: 2px; border-radius: 2px; }
+  :root { --ink:#1a1a18; --cream:#f5f0e6; --green:#2d5a3d; --green-mid:#3d6b4a; --green-light:#eaf3de; --alert:#1d5e8a; --alert-light:#ddeaf5; --muted:#4e4e47; --border:rgba(45,90,61,0.18); }
+  body { font-family:'Source Sans 3',sans-serif; background:var(--cream); color:var(--ink); font-size:16px; line-height:1.7; }
+  .page { max-width:820px; margin:0 auto; }
+  .cover { background:var(--green); color:var(--cream); padding:72px 64px 60px; }
+  .cover-rule-top, .cover-rule-bottom { border:none; }
+  .cover-rule-top { border-top:1px solid #aed6f1; margin-bottom:40px; }
+  .cover-rule-bottom { border-top:1px solid rgba(174,214,241,0.35); margin-bottom:28px; }
+  .cover-kicker { font-size:12px; font-weight:700; letter-spacing:0.22em; text-transform:uppercase; color:#aed6f1; margin-bottom:18px; }
+  .cover-title { font-family:'Playfair Display',serif; font-size:44px; font-weight:900; line-height:1.1; margin-bottom:10px; }
+  .cover-sub { font-family:'Playfair Display',serif; font-style:italic; font-size:20px; color:#dce8d8; margin-bottom:36px; }
+  .cover-meta { font-size:13px; color:#b8d4c0; letter-spacing:0.04em; }
+  .cover-meta a { color:#aed6f1; text-decoration:none; }
+  .body-wrap { padding:56px 64px 72px; }
+  h2 { font-family:'Playfair Display',serif; font-size:26px; font-weight:700; color:var(--green); margin-top:44px; margin-bottom:14px; padding-bottom:8px; border-bottom:1.5px solid var(--border); }
+  h3 { font-family:'Source Sans 3',sans-serif; font-size:15px; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:var(--green-mid); margin-top:28px; margin-bottom:8px; }
+  p { margin-bottom:16px; color:var(--ink); }
+  .pullquote { background:var(--green); color:var(--cream); border-radius:4px; padding:28px 36px; margin:36px 0; font-family:'Playfair Display',serif; font-style:italic; font-size:20px; line-height:1.5; }
+  .alert-box { background:var(--alert-light); border-left:4px solid var(--alert); border-radius:0 4px 4px 0; padding:20px 24px; margin:28px 0; }
+  .alert-box .alert-label { font-family:'DM Mono',monospace; font-size:11px; font-weight:500; letter-spacing:0.15em; text-transform:uppercase; color:var(--alert); margin-bottom:6px; }
+  .alert-box p { margin:0; font-size:15px; }
+  .green-card { background:var(--green-light); border:1px solid var(--border); border-radius:4px; padding:24px 28px; margin:28px 0; }
+  .green-card .card-label { font-family:'DM Mono',monospace; font-size:11px; font-weight:500; letter-spacing:0.15em; text-transform:uppercase; color:var(--green); margin-bottom:10px; }
+  .green-card p { margin:0 0 10px; font-size:15px; }
+  .green-card p:last-child { margin-bottom:0; }
+  .question-block { background:#fff; border:1.5px solid var(--green); border-radius:6px; padding:28px 32px; margin:24px 0; }
+  .question-block .q-number { font-family:'DM Mono',monospace; font-size:13px; font-weight:700; letter-spacing:0.15em; text-transform:uppercase; color:var(--green); margin-bottom:8px; }
+  .question-block h3 { font-family:'Playfair Display',serif; font-size:22px; color:var(--green); margin:0 0 12px; text-transform:none; letter-spacing:0; font-weight:700; }
+  .question-block p { font-size:15px; color:var(--ink); }
+  .question-block p:last-child { margin-bottom:0; }
+  .contact-block { background:var(--green); color:var(--cream); padding:36px 64px; margin-top:56px; text-align:center; }
+  .contact-block p { color:#dce8d8; margin-bottom:10px; font-size:15px; }
+  .contact-block a { color:#aed6f1; text-decoration:none; font-weight:600; }
+  .contact-block .contact-name { font-family:'Playfair Display',serif; font-size:20px; font-weight:700; color:var(--cream); margin-bottom:6px; }
+  hr.section-rule { border:none; border-top:1px solid var(--border); margin:40px 0; }
+  @media (max-width:700px) { .body-wrap { padding:44px 28px 52px; } .cover { padding:56px 28px 48px; } .cover-title { font-size:34px; } }
+  @media print { body{background:white;} .cover,.pullquote,.contact-block,.green-card,.alert-box,.question-block { -webkit-print-color-adjust:exact; print-color-adjust:exact; } }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="cover">
+    <hr class="cover-rule-top">
+    <div class="cover-kicker">Nonprofit AI Resource Series &nbsp;·&nbsp; Framework</div>
+    <h1 class="cover-title">The equity lens</h1>
+    <div class="cover-sub">Four questions to ask before adopting any AI tool</div>
+    <hr class="cover-rule-bottom">
+    <div class="cover-meta">
+      Mandy Hathaway Consulting &nbsp;·&nbsp;
+      <a href="https://mandyhathaway.com">mandyhathaway.com</a> &nbsp;·&nbsp;
+      AI Ethics &amp; Technology Consulting
+    </div>
+  </div>
+
+  <div class="body-wrap">
+
+    <p>Most AI adoption frameworks center the organization adopting the tool. This one centers the people the tool will affect. It is designed to slot in before a vendor decision, before a procurement conversation, before staff training. It takes ten to twenty minutes per AI tool under consideration. It can save you from harms that are very hard to undo once a tool is in the building.</p>
+
+    <p>This framework is compatible with NTEN's AI Framework for an Equitable World, which is the larger sector reference. NTEN's framework is more comprehensive and more rigorous. This one is more practical for a quick review before a vendor demo or a board conversation. Use this one as a first pass. Reach for NTEN's framework when the answers below raise concerns worth deeper work.</p>
+
+    <div class="pullquote">
+      The question every AI adoption decision turns on is also the simplest: who benefits from this tool, who is at risk from it, and is the second list shorter than the first.
+    </div>
+
+    <h2>The four questions</h2>
+
+    <div class="question-block">
+      <div class="q-number">Question 1</div>
+      <h3>Who decides whether this tool is used, and whose voice was in that decision?</h3>
+      <p>If the AI tool will affect clients, were clients or their representatives part of deciding whether to adopt it? If it will affect direct-service staff, were they consulted? If it will affect a specific population (people with disabilities, immigrants, people of color, LGBTQ+ communities) and your decision-making group does not include people from those communities, the answer is the decision is incomplete. This is not always a reason not to proceed. It is always a reason to slow down and bring those voices in.</p>
+    </div>
+
+    <div class="question-block">
+      <div class="q-number">Question 2</div>
+      <h3>If this tool fails or produces a bad output, who carries the harm?</h3>
+      <p>Map it specifically. A grant proposal AI hallucinates a statistic and your funder catches it: the harm falls on you and your relationship with the funder. An eligibility-screening AI denies benefits incorrectly: the harm falls on the person denied, often someone whose life circumstances make appealing difficult. A predictive case-management tool flags a parent as high-risk based on biased patterns: the harm falls on the family, on their relationship with services, and on the next family who looks demographically similar. Tools where the harm falls hardest on the most vulnerable people require the highest scrutiny, the most explicit human review, and the strongest documentation of decision-making authority.</p>
+    </div>
+
+    <div class="question-block">
+      <div class="q-number">Question 3</div>
+      <h3>What patterns is the model trained on, and how do those patterns relate to the communities you serve?</h3>
+      <p>Large language models learn from the internet, which over-represents some languages, perspectives, and cultural frames and under-represents others. Predictive models in human services learn from past decisions, which often encode discrimination. The question is not whether a tool is biased (every model is, to some degree). The question is whether the specific biases of the specific tool intersect with the specific communities you serve in ways that could harm them. For organizations serving primarily English-speaking, majority-white, middle-income populations, generic AI tools usually perform tolerably. For organizations serving communities that the training data does not represent well, generic AI tools produce outputs that range from useless to actively harmful. Ask the vendor what the training data was, who tested for bias, and what the failure modes are for your specific population.</p>
+    </div>
+
+    <div class="question-block">
+      <div class="q-number">Question 4</div>
+      <h3>If we stopped using this tool tomorrow, what would break, and is that dependency something we are comfortable with?</h3>
+      <p>The slow harm of AI adoption is dependency. A tool gets baked into the workflow. The vendor changes pricing, deprecates the feature, gets acquired, or gets caught in a scandal. Migrating away costs more than the original adoption did, and the work that was being done by the tool now has to be rebuilt or done at much greater human cost. Tools that touch core organizational work (case management, fundraising, communications at scale, financial decisions) require an exit plan before adoption, not after. If you cannot describe how you would stop using the tool, you should not start using it.</p>
+    </div>
+
+    <h2>What to do with the answers</h2>
+
+    <p>Most AI tools will surface meaningful concerns on at least one of the four questions. That is not automatically disqualifying. It is information. A tool that passes questions 1, 3, and 4 cleanly but raises a concern on question 2 (the harm falls on the most vulnerable) deserves additional safeguards: stronger human review, explicit documentation, and a quicker exit if the safeguards do not hold. A tool that struggles on multiple questions deserves either substantial mitigation or rejection.</p>
+
+    <div class="green-card">
+      <div class="card-label">Action template</div>
+      <p>For each AI tool under consideration, write one paragraph per question. Share the paragraphs with the people most affected by the decision before finalizing. Revisit the paragraphs annually and after any significant vendor change. Keep them in the same folder as your AI use policy.</p>
+    </div>
+
+    <h2>When this framework points to "not yet"</h2>
+
+    <p>Sometimes the right answer to an AI adoption question is "the tool is not ready, or we are not ready." That answer is harder than it sounds because vendor pressure, board curiosity, and the broader sector momentum all push toward adoption. The framework gives you defensible language for the "not yet" answer.</p>
+
+    <div class="alert-box">
+      <div class="alert-label">Defensible language for a "not yet"</div>
+      <p>"We worked through the equity questions and identified that the people most affected by this tool were not in the decision and the harm if the tool fails falls on them disproportionately. Before we move forward, we need a more deliberate consultation process. We will revisit this question in [timeframe]."</p>
+    </div>
+
+    <h2>The longer version</h2>
+
+    <p>This four-question framework is a starting point. For a deeper equity-centered approach, NTEN's AI Framework for an Equitable World walks through three overlapping circles (Assessment, Impact, Intervention) and a longer set of questions per circle. Worth your time when an AI tool passes this framework but you want to go deeper, or when your organization is building its broader AI governance approach. Linked from the External Resources page under Frameworks &amp; Standards.</p>
+
+    <hr class="section-rule">
+
+    <p>Equity-centered AI adoption is slower, more deliberative, and harder than the kind that just moves through procurement. It also produces fewer of the harms that nonprofits are well-positioned to avoid and uniquely positioned to be held accountable for. The framework above is the minimum. Going deeper is always available.</p>
+
+  </div>
+
+  <div class="contact-block">
+    <div class="contact-name">Mandy Hathaway</div>
+    <p>AI Ethics &amp; Technology Consulting for Nonprofits</p>
+    <p><a href="https://mandyhathaway.com">mandyhathaway.com</a> &nbsp;·&nbsp; <a href="https://mandyhathaway.com/book">Book a call</a></p>
+  </div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>The question nonprofits should be asking isn't "should we use AI?" It's "who decides?" | AI Mission Ready</title>
+<meta name="description" content="92% of nonprofits use AI. 76% have no governance policy. The actual problem is not whether to use AI. It is that no one has formally claimed the decision.">
+<meta name="author" content="Mandy Hathaway">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="theme-color" content="#1a3d2b">
+<link rel="canonical" href="https://aimissionready.org/blog/who-decides">
+
+<!-- Open Graph -->
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="AI Mission Ready">
+<meta property="og:title" content="The question nonprofits should be asking isn't &quot;should we use AI?&quot; It's &quot;who decides?&quot;">
+<meta property="og:description" content="92% of nonprofits use AI. 76% have no governance policy. The actual problem isn't whether to use AI, it's that no one has formally claimed the decision.">
+<meta property="og:url" content="https://aimissionready.org/blog/who-decides">
+<meta property="og:image" content="https://aimissionready.org/og-image.png">
+<meta property="article:author" content="Mandy Hathaway">
+<meta property="article:published_time" content="2026-05-16">
+<meta property="article:section" content="AI Governance">
+
+<!-- JSON-LD: Article -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "The question nonprofits should be asking isn't \"should we use AI?\" It's \"who decides?\"",
+  "description": "92% of nonprofits use AI. 76% have no governance policy. The actual problem is who has formally claimed the decision.",
+  "datePublished": "2026-05-16",
+  "author": {
+    "@type": "Person",
+    "name": "Mandy Hathaway",
+    "url": "https://mandyhathaway.com"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "AI Mission Ready",
+    "url": "https://aimissionready.org/"
+  },
+  "mainEntityOfPage": "https://aimissionready.org/blog/who-decides",
+  "articleSection": "AI Governance",
+  "inLanguage": "en-US"
+}
+</script>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,400&family=Source+Sans+3:wght@300;400;600&family=DM+Mono:wght@400;500&display=swap');
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  a:focus-visible, button:focus-visible { outline: 2px solid var(--green); outline-offset: 2px; border-radius: 2px; }
+  .cover a:focus-visible { outline-color: #aed6f1; }
+  :root {
+    --ink: #1a1a18; --cream: #f5f0e6; --green: #2d5a3d; --green-mid: #3d6b4a;
+    --green-light: #eaf3de; --alert: #1d5e8a; --alert-light: #ddeaf5;
+    --muted: #4e4e47; --rule: #2d5a3d; --card: #faf7ef; --border: rgba(45,90,61,0.18);
+  }
+  body { font-family: 'Source Sans 3', sans-serif; background: var(--cream); color: var(--ink); font-size: 16px; line-height: 1.7; }
+  .page { max-width: 820px; margin: 0 auto; }
+  .cover { background: var(--green); color: var(--cream); padding: 72px 64px 60px; position: relative; }
+  .cover-rule-top { width: 100%; border: none; border-top: 1px solid #aed6f1; margin-bottom: 40px; }
+  .cover-kicker { font-size: 12px; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: #aed6f1; margin-bottom: 18px; }
+  .cover-title { font-family: 'Playfair Display', serif; font-size: 42px; font-weight: 900; line-height: 1.12; margin-bottom: 14px; }
+  .cover-sub { font-family: 'Playfair Display', serif; font-style: italic; font-size: 19px; color: #dce8d8; margin-bottom: 36px; }
+  .cover-rule-bottom { width: 100%; border: none; border-top: 1px solid rgba(174,214,241,0.35); margin-bottom: 28px; }
+  .cover-meta { font-size: 13px; color: #b8d4c0; letter-spacing: 0.04em; }
+  .cover-meta a { color: #aed6f1; text-decoration: none; }
+  .body-wrap { padding: 56px 64px 72px; }
+  h2 { font-family: 'Playfair Display', serif; font-size: 26px; font-weight: 700; color: var(--green); margin-top: 44px; margin-bottom: 14px; padding-bottom: 8px; border-bottom: 1.5px solid var(--border); }
+  h3 { font-family: 'Source Sans 3', sans-serif; font-size: 15px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--green-mid); margin-top: 28px; margin-bottom: 8px; }
+  p { margin-bottom: 16px; color: var(--ink); }
+  .pullquote { background: var(--green); color: var(--cream); border-radius: 4px; padding: 28px 36px; margin: 36px 0; font-family: 'Playfair Display', serif; font-style: italic; font-size: 20px; line-height: 1.5; }
+  .alert-box { background: var(--alert-light); border-left: 4px solid var(--alert); border-radius: 0 4px 4px 0; padding: 20px 24px; margin: 28px 0; }
+  .alert-box .alert-label { font-family: 'DM Mono', monospace; font-size: 11px; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: var(--alert); margin-bottom: 6px; }
+  .alert-box p { margin: 0; font-size: 15px; color: #1a1a18; }
+  .green-card { background: var(--green-light); border: 1px solid var(--border); border-radius: 4px; padding: 24px 28px; margin: 28px 0; }
+  .green-card .card-label { font-family: 'DM Mono', monospace; font-size: 11px; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: var(--green); margin-bottom: 10px; }
+  .green-card p { margin: 0 0 10px; font-size: 15px; }
+  .green-card p:last-child { margin-bottom: 0; }
+  .numbered-list { counter-reset: item; list-style: none; padding: 0; margin: 20px 0 24px; }
+  .numbered-list li { counter-increment: item; display: flex; gap: 18px; margin-bottom: 18px; align-items: flex-start; }
+  .numbered-list li::before { content: counter(item); font-family: 'DM Mono', monospace; font-size: 13px; font-weight: 500; color: var(--cream); background: var(--green); width: 26px; height: 26px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px; }
+  .numbered-list li p { margin: 0; font-size: 15px; }
+  .numbered-list li strong { display: block; margin-bottom: 2px; color: var(--green); }
+  .contact-block { background: var(--green); color: var(--cream); padding: 36px 64px; margin-top: 56px; text-align: center; }
+  .contact-block p { color: #dce8d8; margin-bottom: 10px; font-size: 15px; }
+  .contact-block a { color: #aed6f1; text-decoration: none; font-weight: 600; }
+  .contact-block .contact-name { font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 700; color: var(--cream); margin-bottom: 6px; }
+  hr.section-rule { border: none; border-top: 1px solid var(--border); margin: 40px 0; }
+  .back-link { display: inline-block; margin: 20px 64px 0; font-size: 13px; color: var(--green-mid); text-decoration: none; letter-spacing: 0.04em; }
+  .back-link:hover { color: var(--green); }
+</style>
+</head>
+<body>
+<div class="page">
+  <a class="back-link" href="aimissionready_prototype_v1.html">&larr; Back to AI Mission Ready</a>
+  <div class="cover">
+    <hr class="cover-rule-top">
+    <div class="cover-kicker">Blog &nbsp;·&nbsp; Governance &nbsp;·&nbsp; May 2026</div>
+    <h1 class="cover-title">The question nonprofits should be asking isn't "should we use AI?" It's "who decides?"</h1>
+    <div class="cover-sub">92% of nonprofits use AI. 76% have no governance policy. The decision is happening either way.</div>
+    <hr class="cover-rule-bottom">
+    <div class="cover-meta">
+      Mandy Hathaway &nbsp;·&nbsp;
+      <a href="https://mandyhathaway.com">mandyhathaway.com</a> &nbsp;·&nbsp;
+      AI Ethics Consultant &amp; Technology Specialist
+    </div>
+  </div>
+
+  <div class="body-wrap">
+
+    <p>The 2026 Nonprofit AI Adoption Report came out this month. The headline is that 92% of nonprofits are now using AI in some form. The detail buried four paragraphs in is that 76% of those organizations have no AI governance policy, and only 7% report major impact from their use. That gap, between adoption and governance, between use and benefit, is the actual story.</p>
+
+    <p>Most coverage of the report has framed this as a policy problem. Nonprofits need to write better policies. They need governance frameworks. They need training. All of that is true. But it skips the question that sits underneath the policy question, and the answer to that question shapes everything else.</p>
+
+    <p>The question is: who decides?</p>
+
+    <div class="pullquote">
+      AI adoption almost never happens through a board vote. It happens through one staff member who tried Copilot for a grant draft and liked it. The absence of a decision-maker is itself a decision.
+    </div>
+
+    <h2>How adoption actually happens</h2>
+
+    <p>If you ask most nonprofit leaders when their organization started using AI, you will get a confused answer. There was no launch, no kickoff, no formal evaluation. There was a moment, sometime in the last eighteen months, when someone on staff noticed that the grant draft they wrote with ChatGPT was cleaner than the one they wrote alone. They mentioned it to a colleague. The colleague tried it for case notes. Three months later, the development director was using it for donor research and the program manager was using it for client outreach.</p>
+
+    <p>No one approved this. No one prohibited it. No one was asked. The decision was made by accumulation.</p>
+
+    <p>This is how nearly all technology adoption has happened in nonprofits for the last twenty years. Email, then smartphones, then cloud storage, then Slack, then Zoom. Each one started as a single staff member's preference and ended up as the way the organization operates. AI is following the same path, and most of the time, that is fine.</p>
+
+    <p>The problem with AI is that the stakes are different. Email exposed your messages to a vendor. Cloud storage exposed your files. AI exposes whatever your staff types into it, which often includes the things you are most obligated to protect: case notes, client names, intake records, medical references, financial details, internal communications about people in crisis. The accumulation pattern that worked for email is a much more serious gamble with AI.</p>
+
+    <h2>The three layers of "who decides"</h2>
+
+    <p>When I work with nonprofit leaders on AI governance, the question of who decides is not actually one question. It is three.</p>
+
+    <ol class="numbered-list">
+      <li>
+        <p><strong>Who decides whether the organization uses AI at all.</strong> This is the highest-level question. It is, in most cases, already answered by accumulation: staff are using AI, so the organization is using AI. But formally claiming the decision matters because it puts someone in a position to set direction. This is usually the executive director, sometimes with board involvement.</p>
+      </li>
+      <li>
+        <p><strong>Who decides which tools are approved.</strong> The middle layer. Once the organization has said yes to AI, someone needs to be the person who looks at a new tool, asks the right questions about data handling and vendor terms, and gives or withholds approval. In a small nonprofit, this is usually the same person as the layer above. In a larger one, it is the operations lead, the IT manager, or whoever is most fluent in vendor evaluation.</p>
+      </li>
+      <li>
+        <p><strong>Who decides how approved tools are used day to day.</strong> The ground layer. This is the policy question. Once a tool is approved, what can staff put into it, and what must they keep out. This decision usually lives in a written policy, and a designated person owns updating it when something changes.</p>
+      </li>
+    </ol>
+
+    <p>Most nonprofits I have seen confuse these three layers, or assign all three to the same exhausted executive director, or assign none of them to anyone. The most common pattern is that the first layer is decided by accumulation, the second never gets decided at all, and the third sits in a document on a shared drive that staff have not read.</p>
+
+    <h2>What changes when someone is accountable</h2>
+
+    <p>The smallest functional version of AI governance is one person who can say "I am responsible for this." That is the minimum. Once that person exists, certain things start happening that did not happen before.</p>
+
+    <p>New tools get evaluated before staff start using them, not after. A new AI feature appears in Microsoft 365 or the EHR, and the person who owns the decision sees it first, evaluates it, and either turns it on, turns it off, or sets a deadline for a real review. The staff member who would have just tried it now has somewhere to send the question.</p>
+
+    <p>Staff stop having to guess. The case manager who would have pasted client notes into a free AI tool now knows what is permitted, what is not, and who to ask when she is unsure. The honest result is that fewer of those questions even come up, because the boundaries are clear.</p>
+
+    <p>The organization gets a story it can tell. Funders are starting to ask. Boards are starting to ask. Clients in regulated sectors are starting to ask. When the answer is "we have a person responsible for this, and here is what they do," the conversation goes differently than when the answer is silence or a shrug.</p>
+
+    <p>None of this requires a complicated framework. It requires one accountable person and the explicit, written acknowledgement that they hold the role.</p>
+
+    <h2>The shape of one accountable person</h2>
+
+    <p>For most nonprofits, the accountable person is the executive director. Not because the executive director is the most technical staff member (often the opposite is true) but because the executive director is the person whose job is to hold the organization's risk profile. AI use is now part of that risk profile. The ED does not need to be the one evaluating each tool. They need to be the one who has explicitly assigned that work to someone, has reviewed the resulting policy, and can answer the funder's question.</p>
+
+    <p>In a slightly larger nonprofit, this can be a small group: the ED, the operations lead, and the program lead whose work is most affected by AI use. Three people is usually enough. More than three becomes a committee, and committees rarely produce policy that staff follow.</p>
+
+    <p>The accountable person does not need to be an AI expert. What they need is the authority to say no when a tool does not meet the bar, the patience to write a one-page policy and revise it as the field changes, and the willingness to have the conversation with staff who are already using something the organization has not yet approved. That last one is the hardest part, and the most important.</p>
+
+    <h2>The 76% number is a leadership question</h2>
+
+    <p>The Virtuous report's 76% governance gap is, in nearly every case, not a sign that nonprofit leaders do not care. It is a sign that the question of who decides has not been formally claimed by anyone. The work is invisible because no one has been asked to do it.</p>
+
+    <p>If you are an executive director reading this and your organization is in that 76%, the first move is not to write a policy. It is to claim the decision. Send the email that says: "I am the person responsible for our use of AI. Until we have a written policy, here is what I want staff doing and not doing. The policy is coming, and we will work on it together." That email, sent today, changes the organization's governance posture more than a thirty-page framework written six months from now.</p>
+
+    <p>The 92% adoption number is not going to fall. The tools are here, and the staff are using them. The only question left is whether the organization is guiding that use or discovering it. A leader who claims the decision is a leader who can guide. Everyone else is discovering.</p>
+
+  </div>
+
+  <div class="contact-block">
+    <div class="contact-name">Mandy Hathaway</div>
+    <p>AI Ethics Consultant &amp; Technology Specialist</p>
+    <p><a href="https://mandyhathaway.com">mandyhathaway.com</a> &nbsp;·&nbsp; <a href="mailto:MandyHathaway@Proton.me">MandyHathaway@Proton.me</a></p>
+  </div>
+
+</div>
+</body>
+</html>

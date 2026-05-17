@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- Home -->
+  <url>
+    <loc>https://aimissionready.org/</loc>
+    <lastmod>2026-05-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- Blog posts (standalone HTML pages) -->
+  <url>
+    <loc>https://aimissionready.org/blog_who_decides.html</loc>
+    <lastmod>2026-05-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://aimissionready.org/blog_funder_asked.html</loc>
+    <lastmod>2026-05-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://aimissionready.org/blog_client_data_chatgpt.html</loc>
+    <lastmod>2026-05-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Resource PDFs (publicly available reading) -->
+  <url>
+    <loc>https://aimissionready.org/nonprofit_ai_guide.pdf</loc>
+    <lastmod>2026-05-16</lastmod>
+    <changefreq>quarterly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://aimissionready.org/nonprofit_quick_reference.pdf</loc>
+    <lastmod>2026-05-16</lastmod>
+    <changefreq>quarterly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://aimissionready.org/how_ai_works.pdf</loc>
+    <lastmod>2026-05-16</lastmod>
+    <changefreq>quarterly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://aimissionready.org/nonprofit_ai_security.pdf</loc>
+    <lastmod>2026-05-14</lastmod>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://aimissionready.org/nonprofit_ai_privacy.pdf</loc>
+    <lastmod>2026-05-14</lastmod>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://aimissionready.org/nonprofit_ai_cost.pdf</loc>
+    <lastmod>2026-05-14</lastmod>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://aimissionready.org/nonprofit_ai_risk.pdf</loc>
+    <lastmod>2026-05-14</lastmod>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://aimissionready.org/nonprofit_ai_making_the_case.pdf</loc>
+    <lastmod>2026-05-14</lastmod>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://aimissionready.org/nonprofit_ai_preparing_data.pdf</loc>
+    <lastmod>2026-05-14</lastmod>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://aimissionready.org/nonprofit_ai_governance.pdf</loc>
+    <lastmod>2026-05-14</lastmod>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://aimissionready.org/nonprofit_ai_staff_policy.pdf</loc>
+    <lastmod>2026-05-14</lastmod>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://aimissionready.org/nonprofit_ai_vendor.pdf</loc>
+    <lastmod>2026-05-14</lastmod>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://aimissionready.org/nonprofit_ai_audit_informal.pdf</loc>
+    <lastmod>2026-05-14</lastmod>
+    <priority>0.5</priority>
+  </url>
+
+</urlset>

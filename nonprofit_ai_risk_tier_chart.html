@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Risk-Tier Use Chart for Nonprofit AI: A Printable One-Pager</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,400&family=Source+Sans+3:wght@300;400;600&family=DM+Mono:wght@400;500&display=swap');
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root { --ink:#1a1a18; --cream:#f5f0e6; --green:#2d5a3d; --green-light:#eaf3de; --blue:#2d6694; --blue-light:#e3ecf5; --amber:#b8882e; --amber-light:#fdf2dd; --red:#c0392b; --red-light:#fdecea; --muted:#5a6a5c; --border:rgba(45,90,61,0.18); }
+  body { font-family:'Source Sans 3',sans-serif; background:var(--cream); color:var(--ink); font-size:15px; line-height:1.6; padding:24px; }
+  .page { max-width:1100px; margin:0 auto; background:#fff; border:1px solid var(--border); box-shadow:0 2px 10px rgba(0,0,0,0.06); }
+  .header { background:var(--green); color:var(--cream); padding:36px 44px 28px; }
+  .header-kicker { font-family:'DM Mono',monospace; font-size:11px; font-weight:700; letter-spacing:0.18em; text-transform:uppercase; color:#aed6f1; margin-bottom:10px; }
+  .header h1 { font-family:'Playfair Display',serif; font-size:32px; font-weight:700; line-height:1.15; margin-bottom:6px; }
+  .header .header-sub { font-family:'Playfair Display',serif; font-style:italic; font-size:17px; color:#dce8d8; }
+  .body { padding:32px 44px 40px; }
+  .intro { font-size:15px; color:var(--ink); margin-bottom:24px; line-height:1.65; max-width:780px; }
+  .tier-grid { display:grid; grid-template-columns:1fr 1fr 1fr 1fr; gap:14px; margin-bottom:28px; }
+  .tier-col { border:1.5px solid var(--border); border-radius:6px; overflow:hidden; display:flex; flex-direction:column; }
+  .tier-col.low { border-color:var(--green); }
+  .tier-col.med { border-color:var(--amber); }
+  .tier-col.high { border-color:var(--blue); }
+  .tier-col.no { border-color:var(--red); }
+  .tier-header { padding:14px 18px; color:#fff; }
+  .tier-header.low { background:var(--green); }
+  .tier-header.med { background:var(--amber); }
+  .tier-header.high { background:var(--blue); }
+  .tier-header.no { background:var(--red); }
+  .tier-label { font-family:'DM Mono',monospace; font-size:10px; font-weight:700; letter-spacing:0.15em; text-transform:uppercase; opacity:0.85; margin-bottom:2px; }
+  .tier-name { font-family:'Playfair Display',serif; font-size:18px; font-weight:700; line-height:1.15; }
+  .tier-body { padding:16px 18px; background:#fff; flex:1; }
+  .tier-rule { font-size:13px; color:var(--muted); margin-bottom:14px; font-style:italic; padding-bottom:10px; border-bottom:1px dashed var(--border); }
+  .tier-body ul { list-style:none; padding:0; margin:0; }
+  .tier-body li { font-size:13.5px; margin-bottom:8px; line-height:1.45; padding-left:14px; position:relative; }
+  .tier-body li::before { content:"›"; position:absolute; left:0; color:var(--muted); font-weight:700; }
+  .tier-col.no .tier-body li::before { content:"✕"; color:var(--red); font-family:'DM Mono',monospace; font-size:11px; }
+  .principles { background:var(--green-light); border:1px solid var(--border); border-radius:6px; padding:20px 24px; margin-bottom:20px; }
+  .principles h3 { font-family:'Playfair Display',serif; font-size:16px; color:var(--green); margin-bottom:10px; }
+  .principles p { font-size:13.5px; margin-bottom:8px; color:var(--ink); }
+  .principles p:last-child { margin-bottom:0; }
+  .footer-strip { background:var(--green); color:var(--cream); padding:16px 44px; display:flex; justify-content:space-between; align-items:center; font-size:12px; flex-wrap:wrap; gap:10px; }
+  .footer-strip a { color:#aed6f1; text-decoration:none; font-weight:600; }
+  @media (max-width:900px) { .tier-grid { grid-template-columns:1fr 1fr; } }
+  @media (max-width:600px) { .tier-grid { grid-template-columns:1fr; } .body { padding:24px; } .header { padding:24px; } }
+  @media print {
+    body { padding:0; background:#fff; }
+    .page { box-shadow:none; border:none; max-width:none; }
+    .header, .tier-header, .principles, .footer-strip { -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+    @page { margin: 0.5in; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="header">
+    <div class="header-kicker">Nonprofit AI · Risk-Tier Use Chart · One-Pager</div>
+    <h1>Risk-tier use chart for nonprofit AI</h1>
+    <div class="header-sub">Print, post, refer back. Adapt to your organization.</div>
+  </div>
+
+  <div class="body">
+
+    <p class="intro">Not all AI use carries the same risk. A chart that treats brainstorming the same as eligibility screening will fail in practice. This one-pager sorts common nonprofit AI uses into four tiers, with the human review requirements that go with each. Adapt the specifics to your organization's mission, data, and population.</p>
+
+    <div class="tier-grid">
+
+      <div class="tier-col low">
+        <div class="tier-header low">
+          <div class="tier-label">Tier 1</div>
+          <div class="tier-name">Low risk</div>
+        </div>
+        <div class="tier-body">
+          <div class="tier-rule">Required: human review before publication; no PII in prompts; internal transparency about AI assistance.</div>
+          <ul>
+            <li>Drafting internal communications and newsletters</li>
+            <li>Brainstorming campaign or event ideas</li>
+            <li>Summarizing long documents and meeting notes</li>
+            <li>Grammar checking and proofreading</li>
+            <li>Social media drafts and variations</li>
+            <li>Research and literature summaries for grant prep</li>
+            <li>First-pass blog drafts on public topics</li>
+            <li>Meeting agendas and recaps from notes you've already cleaned</li>
+            <li>Headline and subject-line brainstorming</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="tier-col med">
+        <div class="tier-header med">
+          <div class="tier-label">Tier 2</div>
+          <div class="tier-name">Medium risk</div>
+        </div>
+        <div class="tier-body">
+          <div class="tier-rule">Required: supervisor or subject-matter expert review; documented rationale; disclosure to relevant parties where appropriate.</div>
+          <ul>
+            <li>Grant application drafting and revision</li>
+            <li>Donor communications and personalization</li>
+            <li>Financial forecasting assistance</li>
+            <li>Job description writing</li>
+            <li>Translation and multilingual communications</li>
+            <li>Program outcome analysis using aggregate data</li>
+            <li>Board materials and meeting briefings</li>
+            <li>Policy or process explainer emails</li>
+            <li>Curriculum scaffolds and training outlines</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="tier-col high">
+        <div class="tier-header high">
+          <div class="tier-label">Tier 3</div>
+          <div class="tier-name">High risk</div>
+        </div>
+        <div class="tier-body">
+          <div class="tier-rule">Required: mandatory human decision-making; AI may provide information but cannot determine outcomes; explicit policy review.</div>
+          <ul>
+            <li>Drafting communications to clients in distress</li>
+            <li>Summarizing case notes or service interactions</li>
+            <li>Anything touching protected health information (with BAA in place)</li>
+            <li>Personnel-adjacent drafting (performance, discipline-adjacent)</li>
+            <li>Predictive scoring of donors or prospects</li>
+            <li>Vendor evaluation involving sensitive data flows</li>
+            <li>Public statements during crises or controversies</li>
+            <li>AI-assisted recommendations in service planning</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="tier-col no">
+        <div class="tier-header no">
+          <div class="tier-label">Tier 4</div>
+          <div class="tier-name">Prohibited</div>
+        </div>
+        <div class="tier-body">
+          <div class="tier-rule">No AI use, regardless of tier or vendor. Errors here cause direct harm to the people you exist to serve.</div>
+          <ul>
+            <li>Eligibility decisions for services, housing, or benefits</li>
+            <li>Crisis communications in trauma or crisis situations</li>
+            <li>Individual client case notes that become part of the record without explicit human authorship</li>
+            <li>HR disciplinary actions and termination decisions</li>
+            <li>Medical or psychiatric recommendations for clients</li>
+            <li>Resume screening that determines who gets interviewed</li>
+            <li>Surveillance or behavior monitoring of clients in residential settings</li>
+            <li>Any automated decision denying someone access to services</li>
+            <li>Voice cloning to impersonate staff or stakeholders</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="principles">
+      <h3>Principles that apply across every tier</h3>
+      <p><strong>1. Anonymize before you paste.</strong> No client names, no donor identities, no SSNs, no specific financial details, no PHI without a BAA in place.</p>
+      <p><strong>2. Disclose when asked.</strong> If a funder, client, or partner asks whether AI contributed to a document, answer directly and specifically.</p>
+      <p><strong>3. Verify factual claims.</strong> AI confidently produces things that are wrong. Any name, number, citation, or law in an AI output is unverified until you check.</p>
+      <p><strong>4. Document who approved each new use.</strong> A short note in your shared drive saying when, why, and who signed off. The audit trail is the protection.</p>
+      <p><strong>5. Review the chart annually.</strong> AI capabilities, vendor policies, and sector norms change. What is medium risk today may be high risk in twelve months. Update accordingly.</p>
+    </div>
+
+  </div>
+
+  <div class="footer-strip">
+    <div>Adapt this chart to your organization. License: CC BY-NC 4.0.</div>
+    <div>Mandy Hathaway &middot; <a href="https://aimissionready.org">aimissionready.org</a> &middot; <a href="https://mandyhathaway.com">mandyhathaway.com</a></div>
+  </div>
+
+</div>
+</body>
+</html>

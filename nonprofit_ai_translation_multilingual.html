@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Translation and Multilingual Communications for Nonprofits: What Works, What Breaks</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,400&family=Source+Sans+3:wght@300;400;600&family=DM+Mono:wght@400;500&display=swap');
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root { --ink:#1a1a18; --cream:#f5f0e6; --green:#2d5a3d; --green-mid:#3d6b4a; --green-light:#eaf3de; --alert:#1d5e8a; --alert-light:#ddeaf5; --muted:#4e4e47; --border:rgba(45,90,61,0.18); }
+  body { font-family:'Source Sans 3',sans-serif; background:var(--cream); color:var(--ink); font-size:16px; line-height:1.7; }
+  .page { max-width:820px; margin:0 auto; }
+  .cover { background:var(--green); color:var(--cream); padding:72px 64px 60px; }
+  .cover-rule-top, .cover-rule-bottom { border:none; }
+  .cover-rule-top { border-top:1px solid #aed6f1; margin-bottom:40px; }
+  .cover-rule-bottom { border-top:1px solid rgba(174,214,241,0.35); margin-bottom:28px; }
+  .cover-kicker { font-size:12px; font-weight:700; letter-spacing:0.22em; text-transform:uppercase; color:#aed6f1; margin-bottom:18px; }
+  .cover-title { font-family:'Playfair Display',serif; font-size:42px; font-weight:900; line-height:1.1; margin-bottom:10px; }
+  .cover-sub { font-family:'Playfair Display',serif; font-style:italic; font-size:20px; color:#dce8d8; margin-bottom:36px; }
+  .cover-meta { font-size:13px; color:#b8d4c0; letter-spacing:0.04em; }
+  .cover-meta a { color:#aed6f1; text-decoration:none; }
+  .body-wrap { padding:56px 64px 72px; }
+  h2 { font-family:'Playfair Display',serif; font-size:26px; font-weight:700; color:var(--green); margin-top:44px; margin-bottom:14px; padding-bottom:8px; border-bottom:1.5px solid var(--border); }
+  p { margin-bottom:16px; color:var(--ink); }
+  .pullquote { background:var(--green); color:var(--cream); border-radius:4px; padding:28px 36px; margin:36px 0; font-family:'Playfair Display',serif; font-style:italic; font-size:20px; line-height:1.5; }
+  .alert-box { background:var(--alert-light); border-left:4px solid var(--alert); border-radius:0 4px 4px 0; padding:20px 24px; margin:28px 0; }
+  .alert-box .alert-label { font-family:'DM Mono',monospace; font-size:11px; font-weight:500; letter-spacing:0.15em; text-transform:uppercase; color:var(--alert); margin-bottom:6px; }
+  .alert-box p { margin:0; font-size:15px; }
+  .green-card { background:var(--green-light); border:1px solid var(--border); border-radius:4px; padding:24px 28px; margin:28px 0; }
+  .green-card .card-label { font-family:'DM Mono',monospace; font-size:11px; font-weight:500; letter-spacing:0.15em; text-transform:uppercase; color:var(--green); margin-bottom:10px; }
+  .green-card p { margin:0 0 10px; font-size:15px; }
+  .green-card p:last-child { margin-bottom:0; }
+  .numbered-list { counter-reset:item; list-style:none; padding:0; margin:20px 0 24px; }
+  .numbered-list li { counter-increment:item; display:flex; gap:18px; margin-bottom:18px; align-items:flex-start; }
+  .numbered-list li::before { content:counter(item); font-family:'DM Mono',monospace; font-size:13px; font-weight:500; color:var(--cream); background:var(--green); width:26px; height:26px; border-radius:50%; display:flex; align-items:center; justify-content:center; flex-shrink:0; margin-top:2px; }
+  .numbered-list li p { margin:0; font-size:15px; }
+  .numbered-list li strong { display:block; margin-bottom:2px; color:var(--green); }
+  .never-list { list-style:none; padding:0; margin:16px 0; }
+  .never-list li { display:flex; gap:14px; align-items:flex-start; margin-bottom:12px; font-size:15px; }
+  .never-list li::before { content:"✕"; font-family:'DM Mono',monospace; font-size:12px; color:#c0392b; font-weight:700; flex-shrink:0; margin-top:3px; }
+  .contact-block { background:var(--green); color:var(--cream); padding:36px 64px; margin-top:56px; text-align:center; }
+  .contact-block p { color:#dce8d8; margin-bottom:10px; font-size:15px; }
+  .contact-block a { color:#aed6f1; text-decoration:none; font-weight:600; }
+  .contact-block .contact-name { font-family:'Playfair Display',serif; font-size:20px; font-weight:700; color:var(--cream); margin-bottom:6px; }
+  hr.section-rule { border:none; border-top:1px solid var(--border); margin:40px 0; }
+  @media (max-width:700px) { .body-wrap { padding:44px 28px 52px; } .cover { padding:56px 28px 48px; } .cover-title { font-size:32px; } }
+  @media print { body{background:white;} .cover,.pullquote,.contact-block,.green-card,.alert-box,.numbered-list li::before { -webkit-print-color-adjust:exact; print-color-adjust:exact; } }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="cover">
+    <hr class="cover-rule-top">
+    <div class="cover-kicker">Nonprofit AI Resource Series &nbsp;·&nbsp; Deep Topic</div>
+    <h1 class="cover-title">AI translation and multilingual communications</h1>
+    <div class="cover-sub">What works, what breaks, and the legally significant difference</div>
+    <hr class="cover-rule-bottom">
+    <div class="cover-meta">
+      Mandy Hathaway Consulting &nbsp;·&nbsp;
+      <a href="https://mandyhathaway.com">mandyhathaway.com</a> &nbsp;·&nbsp;
+      AI Ethics &amp; Technology Consulting
+    </div>
+  </div>
+
+  <div class="body-wrap">
+
+    <p>Translation is one of the AI use cases where the gap between "good enough" and "not nearly good enough" is widest, and where the consequences of getting it wrong fall on the people your organization exists to serve. Nonprofits working with immigrant, refugee, and limited-English-proficient communities now have access to AI translation tools that produce output that looks fluent in nearly any major language. The output is fluent. It is also sometimes wrong, sometimes wrong in ways that no English-speaking staff member will catch, and sometimes wrong in ways that change the meaning of legal rights, medical instructions, or program eligibility.</p>
+
+    <p>This guide covers where AI translation works well, where it breaks, and what your organization needs in place before using it for anything that materially affects a client's life.</p>
+
+    <div class="pullquote">
+      The English version of a notice is the version your staff can verify. The Spanish, Arabic, or Hmong version, if generated by AI without qualified review, is the version your client will rely on. The asymmetry is the problem.
+    </div>
+
+    <h2>What AI translation actually does well</h2>
+
+    <p>For some uses, AI translation is genuinely useful and not particularly risky.</p>
+
+    <ol class="numbered-list">
+      <li>
+        <p><strong>Day-to-day informal communication where stakes are low and clients can ask for clarification.</strong> Newsletters, event reminders, general announcements. AI translation is sufficient and saves substantial staff time.</p>
+      </li>
+      <li>
+        <p><strong>Internal staff understanding of incoming communications in languages staff do not speak.</strong> An email comes in from a community partner in Vietnamese; AI translation gives your team enough to decide whether and how to respond.</p>
+      </li>
+      <li>
+        <p><strong>First-draft translations that will be reviewed by a qualified translator.</strong> AI does the boilerplate; the human reviews and corrects. This is the most cost-effective hybrid for most nonprofits.</p>
+      </li>
+      <li>
+        <p><strong>Real-time conversation aids where both parties understand the medium is imperfect.</strong> A staff member using a translation app to greet a client, schedule a follow-up, or ask basic intake questions, with the explicit understanding that anything substantive will be handled by an interpreter.</p>
+      </li>
+    </ol>
+
+    <h2>Where AI translation breaks</h2>
+
+    <p>The failure modes cluster in predictable places. Knowing them helps you decide what to never do without a qualified translator.</p>
+
+    <div class="alert-box">
+      <div class="alert-label">Failure mode one: legally significant content</div>
+      <p>Notices of rights, consent forms, eligibility determinations, court orders, lease agreements, immigration documents, IEPs, medical instructions. AI translation produces fluent output that may not accurately convey the legal meaning. If the translation is wrong, the client has been deprived of accurate information about something material. The legal and ethical exposure is real.</p>
+    </div>
+
+    <div class="alert-box">
+      <div class="alert-label">Failure mode two: low-resource languages</div>
+      <p>AI translation quality varies dramatically by language pair. English to Spanish, French, German, Mandarin is reasonable. English to Hmong, Karen, Tigrinya, Somali, Pashto, or many Indigenous languages is much weaker. The model has less training data, the output sounds fluent but is often substantially wrong, and the gap is invisible to English-speaking reviewers. The communities your organization may serve most are often the communities AI translation serves worst.</p>
+    </div>
+
+    <div class="alert-box">
+      <div class="alert-label">Failure mode three: dialect and register</div>
+      <p>"Spanish" is not one language. Mexican Spanish, Puerto Rican Spanish, Salvadoran Spanish, Cuban Spanish, and Castilian Spanish have meaningful differences, and AI translation defaults to a generic register that can land flat or wrong depending on the audience. Same pattern for Arabic, Chinese, Vietnamese, and other languages with significant regional variation.</p>
+    </div>
+
+    <div class="alert-box">
+      <div class="alert-label">Failure mode four: cultural context</div>
+      <p>Some concepts do not translate directly. "Empowerment," "consent," "informal caregiver," "person-centered planning," "trauma-informed" all have culturally specific meanings in English that AI translation may render in ways that strip the meaning or substitute a different one. A human translator who knows both cultures will navigate this; AI will not.</p>
+    </div>
+
+    <div class="alert-box">
+      <div class="alert-label">Failure mode five: hallucination in technical content</div>
+      <p>Medical information, immigration procedure, benefits eligibility, legal rights. The AI sometimes invents specifics that sound right and are not. A client acting on a hallucinated translation may make decisions with serious consequences.</p>
+    </div>
+
+    <h2>The legally significant standard</h2>
+
+    <p>For materials that affect legal rights, benefits, or services, the standard that should apply is qualified-human translation, not AI translation. This is not just risk avoidance; in many cases it is required.</p>
+
+    <p>Title VI of the Civil Rights Act requires recipients of federal funding to take reasonable steps to ensure meaningful access for limited-English-proficient persons. Section 504 of the Rehabilitation Act, the ADA, and many state-level statutes layer additional requirements. The federal Limited English Proficiency guidance specifies that "vital documents" should be translated by qualified individuals.</p>
+
+    <p>Vital documents typically include notices of free language services, intake and application forms, consent and complaint forms, written notices of rights, notices of denial or termination, anything explaining eligibility or non-eligibility. For these categories, AI translation alone is not the right tool.</p>
+
+    <h2>The back-translation check</h2>
+
+    <p>One simple discipline catches a meaningful fraction of AI translation errors. Take the AI-translated output and translate it back to English using the same or a different AI tool. Compare to the original. Where the back-translation differs in meaning, you have flagged a likely error.</p>
+
+    <div class="green-card">
+      <div class="card-label">How to use back-translation</div>
+      <p>This is a quality screen, not a quality guarantee. It will catch obvious errors and miss subtle ones. Use it as a first-pass review for any AI translation that will be used internally or for low-stakes external communication. Do not use it as a substitute for qualified translator review of legally significant content.</p>
+    </div>
+
+    <h2>Where AI translation should never be the only step</h2>
+
+    <ul class="never-list">
+      <li>Notices of rights, eligibility, denial, or appeal</li>
+      <li>Consent forms (informed consent requires the client to actually understand)</li>
+      <li>Medical or behavioral health information</li>
+      <li>Legal documents, court materials, immigration filings</li>
+      <li>Service plans, IEPs, individualized agreements</li>
+      <li>Crisis communications</li>
+      <li>Anything signed by the client that creates obligations or waives rights</li>
+      <li>Public communications in languages where your AI tool is known to perform poorly</li>
+    </ul>
+
+    <h2>A working policy for AI translation in nonprofit settings</h2>
+
+    <ol class="numbered-list">
+      <li>
+        <p><strong>Identify your "vital document" list.</strong> What materials, if wrong in translation, would harm clients? Those require qualified-translator review regardless of AI assistance.</p>
+      </li>
+      <li>
+        <p><strong>Maintain a qualified translator roster.</strong> Either in-house staff with verified language proficiency, or a vetted translator contract. Translation services like LanguageLine, CTS, or local-network translators are workable. Free volunteer translation is risky for vital documents.</p>
+      </li>
+      <li>
+        <p><strong>Use AI as a first-draft tool, with mandatory human review for anything client-facing.</strong> The hybrid is cost-effective. The hybrid without the review is not.</p>
+      </li>
+      <li>
+        <p><strong>Be explicit with staff about what AI translation can and cannot be used for.</strong> "AI translation is fine for the newsletter. Not for the consent form" is the level of clarity your policy needs.</p>
+      </li>
+      <li>
+        <p><strong>Audit your existing translated materials annually.</strong> Particularly anything that has been AI-translated. The errors that were too subtle to catch at the time become apparent on re-review.</p>
+      </li>
+      <li>
+        <p><strong>Ask clients about translation quality.</strong> The single best validation of your translation work is whether the people receiving the materials actually understand them. Build feedback into your community engagement.</p>
+      </li>
+    </ol>
+
+    <h2>Vendor questions for AI translation tools specifically</h2>
+
+    <ol class="numbered-list">
+      <li>
+        <p><strong>What languages do you support, and what is the documented quality difference between your major and minor language pairs?</strong> Vendors that cannot answer this are guessing.</p>
+      </li>
+      <li>
+        <p><strong>What dialect or register defaults apply, and can we configure them?</strong> Particularly important for Spanish and Chinese.</p>
+      </li>
+      <li>
+        <p><strong>How is the model evaluated for accuracy in the languages we use, and by whom?</strong> Native-speaker review by qualified translators is the right standard. Automated evaluation alone is not.</p>
+      </li>
+      <li>
+        <p><strong>Do you support back-translation natively?</strong> Helpful workflow feature.</p>
+      </li>
+      <li>
+        <p><strong>What is your data-handling policy for translated content?</strong> Same data-terms questions as any other AI tool. Translated client communications can include sensitive information.</p>
+      </li>
+    </ol>
+
+    <hr class="section-rule">
+
+    <p>AI translation is a real and useful tool for nonprofits working with multilingual communities. It is also a tool with sharper failure modes than English-only AI use, because the staff who would normally catch errors cannot. The discipline of knowing what to use it for, what to never use it for, and how to review the rest is what makes the difference between AI translation as a capacity multiplier and AI translation as a quiet source of harm to the people your organization exists to serve.</p>
+
+    <p>For the broader frame on equity-centered AI adoption, the Equity Lens framework is the right pairing. For the underlying data-hygiene rules, the Lane 1 Privacy guide applies here as elsewhere.</p>
+
+  </div>
+
+  <div class="contact-block">
+    <div class="contact-name">Mandy Hathaway</div>
+    <p>AI Ethics &amp; Technology Consulting for Nonprofits</p>
+    <p><a href="https://mandyhathaway.com">mandyhathaway.com</a> &nbsp;·&nbsp; <a href="https://mandyhathaway.com/book">Book a call</a></p>
+  </div>
+
+</div>
+</body>
+</html>
