@@ -1,18 +1,18 @@
 # AI Mission Ready
 
-[aimissionready.org](https://aimissionready.org) — practical AI ethics for nonprofits.
+[aimissionready.org](https://aimissionready.org): practical AI ethics for nonprofits.
 
-A free resource hub for mission-driven organizations navigating AI adoption. Plain-language guides, vetted tool reviews, prompt templates, and policy frameworks built for executive directors, program staff, and boards who don't have a CTO on call.
+A free resource hub for mission-driven organizations working through AI adoption. Plain-language guides, vetted tool reviews, prompt templates, and policy frameworks built for executive directors, program staff, and boards who don't have a CTO on call.
 
 ## What's here
 
-A single-page application (`index.html`) plus 38 standalone HTML guides covering:
+A single-page application (`index.html`) plus standalone HTML guides covering:
 
-Three lanes of adoption (Getting Started, Already Using AI, Shadow AI), each with its own deep-dive guides. A flagship Nonprofit AI Guide, a tools rubric with red flags, a 30-prompt library with data-hygiene rules, an external resources directory, and four long-form blog posts.
+Three lanes of adoption (Getting Started, Already Using AI, Shadow AI), each with its own deep-dive guides. A flagship Nonprofit AI Guide, a tools rubric with red flags, a prompt library with data-hygiene rules, an external resources directory, and long-form blog posts.
 
 Specialized guides cover HIPAA environments, disability services, grants, fundraising, workforce impact, equity lens, NIST AI RMF crosswalk, bias in client-facing AI, environmental cost, translation and multilingual work, sector-specific guides for arts, advocacy, environmental, and international nonprofits, and a funder-facing piece for program officers doing AI due diligence.
 
-Three printable one-pagers: risk tier wall chart, board questions, procurement language pack.
+Printable one-pagers: risk tier wall chart, board questions, procurement language pack.
 
 ## Audience
 
@@ -20,7 +20,7 @@ Nonprofit leaders, program staff, IT-adjacent generalists, board members, and fu
 
 ## Built by
 
-Mandy Hathaway Consulting — AI ethics and technology specialist work for mission-driven organizations. See [mandyhathaway.com](https://mandyhathaway.com).
+Mandy Hathaway Consulting. AI ethics and technology specialist work for mission-driven organizations. See [mandyhathaway.com](https://mandyhathaway.com).
 
 ## Stack
 
@@ -36,4 +36,4 @@ Spotted an error, a broken link, or a gap in coverage? Open an issue, or use the
 
 ## Contact
 
-Mandy Hathaway — `hathaway.mandyl@gmail.com`
+Mandy Hathaway: `hathaway.mandyl@gmail.com`

@@ -95,20 +95,20 @@
 
 /* ── TOKENS ── */
 :root {
-  /* Forest palette — professional, mission-driven */
-  --forest:      #1a3d2b;   /* primary — nav, hero, dark sections */
+  /* Forest palette: professional, mission-driven */
+  --forest:      #1a3d2b;   /* primary: nav, hero, dark sections */
   --forest-mid:  #2d6a4a;   /* hover states, active */
-  --forest-deep: #122a1e;   /* darkest — footer */
+  --forest-deep: #122a1e;   /* darkest: footer */
 
-  --blue:        #2d6694;   /* accent — credibility, CTAs */
-  --blue-light:  #e3ecf5;   /* blue wash — callout backgrounds */
+  --blue:        #2d6694;   /* accent: credibility, CTAs */
+  --blue-light:  #e3ecf5;   /* blue wash: callout backgrounds */
   --blue-mid:    #4a90b8;   /* hover blue */
 
   --sage:        #e4f0e8;   /* lane 1 card wash */
   --sage-mid:    #c5dfc8;   /* lane 1 border */
   --sky:         #e3ecf5;   /* lane 2 card wash */
   --sky-mid:     #b8cfe0;   /* lane 2 border */
-  --warm:        #f0ece3;   /* lane 3 card wash — warm sand */
+  --warm:        #f0ece3;   /* lane 3 card wash: warm sand */
   --warm-mid:    #ddd5c6;   /* lane 3 border */
 
   --paper:       #fafaf8;   /* page background */
@@ -1251,7 +1251,7 @@ button { cursor: pointer; font-family: inherit; }
 <nav class="nav">
   <div class="nav-inner">
     <a class="logo-wrap" href="#" onclick="showPage('home')">
-      <!-- Hex/phi logo mark — same as mandyhathaway.com favicon -->
+      <!-- Hex/phi logo mark: same as mandyhathaway.com favicon -->
       <div class="logo-mark">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="10 8 60 56" fill="none" width="38" height="38">
           <polygon points="40,12 58,24 58,48 40,60 22,48 22,24" stroke="rgba(255,255,255,0.5)" stroke-width="2.2" stroke-linejoin="round" fill="none"/>
@@ -1280,34 +1280,34 @@ button { cursor: pointer; font-family: inherit; }
       <li><a href="#" id="nav-home" class="active" onclick="showPage('home'); return false;">Home</a></li>
       <li><a href="#" id="nav-understanding" onclick="showPage('understanding'); return false;">Understanding AI</a></li>
       <li class="has-dropdown">
-        <a href="#" onclick="return false;" aria-haspopup="true">Choose a Path</a>
+        <a href="#" onclick="return false;" aria-haspopup="true">Where to Start</a>
         <ul class="dropdown-menu">
-          <li><a href="#" id="nav-lane1" onclick="showPage('lane1'); return false;">Getting Started<span class="dd-sub">Considering AI? 5 beginner guides</span></a></li>
+          <li><a href="#" id="nav-lane1" onclick="showPage('lane1'); return false;">New to AI<span class="dd-sub">Considering AI? Start with these 5 guides</span></a></li>
           <li><a href="#" id="nav-lane2" onclick="showPage('lane2'); return false;">Already Using AI<span class="dd-sub">Governance, policy, and vendor guides</span></a></li>
-          <li><a href="#" id="nav-lane3" onclick="showPage('lane3'); return false;">Shadow AI<span class="dd-sub">When AI is already happening informally</span></a></li>
+          <li><a href="#" id="nav-lane3" onclick="showPage('lane3'); return false;">AI Already in Use<span class="dd-sub">When AI is in use but not yet managed</span></a></li>
         </ul>
       </li>
       <li class="has-dropdown">
-        <a href="#" onclick="return false;" aria-haspopup="true">Tools &amp; Resources</a>
-        <ul class="dropdown-menu" style="min-width: 320px;">
-          <li style="padding: 0;"><div style="padding: 10px 14px 4px; font-family:'DM Mono',monospace; font-size: 0.65rem; font-weight: 700; letter-spacing: 0.13em; text-transform: uppercase; color: rgba(255,255,255,0.4);">Tools</div></li>
-          <li><a href="#" id="nav-tools" onclick="showPage('tools'); return false;">AI Tools<span class="dd-sub">Honest reviews and the red-flag rubric</span></a></li>
-          <li><a href="#" id="nav-prompts" onclick="showPage('prompts'); return false;">Prompt Library<span class="dd-sub">30 ready-to-adapt prompts for nonprofit work</span></a></li>
-
-          <li style="padding: 0;"><div style="padding: 12px 14px 4px; font-family:'DM Mono',monospace; font-size: 0.65rem; font-weight: 700; letter-spacing: 0.13em; text-transform: uppercase; color: rgba(255,255,255,0.4); border-top: 1px solid rgba(255,255,255,0.08); margin-top: 4px;">Guides to prompting</div></li>
-          <li><a href="nonprofit_ai_prompting_iteration.html" target="_blank">Prompting &amp; Iteration<span class="dd-sub">How to refine when the first output is mediocre</span></a></li>
-          <li><a href="nonprofit_ai_llm_literacy.html" target="_blank">Getting More From Any AI<span class="dd-sub">Custom GPTs, Claude Projects, Gemini Gems, context</span></a></li>
-
-          <li style="padding: 0;"><div style="padding: 12px 14px 4px; font-family:'DM Mono',monospace; font-size: 0.65rem; font-weight: 700; letter-spacing: 0.13em; text-transform: uppercase; color: rgba(255,255,255,0.4); border-top: 1px solid rgba(255,255,255,0.08); margin-top: 4px;">Policy &amp; frameworks</div></li>
-          <li><a href="#" id="nav-resources" onclick="showPage('resources'); return false;">External Frameworks &amp; Templates<span class="dd-sub">28 curated resources from NTEN, NIST, NetHope, more</span></a></li>
-          <li><a href="#" onclick="showPage('resources'); setTimeout(() =&gt; document.getElementById('cat-policy')?.scrollIntoView({behavior:'smooth', block:'start'}), 100); return false;">Policy Templates<span class="dd-sub">FastForward, NTEN, GlobalGiving, Kairoi</span></a></li>
-
-          <li style="padding: 0;"><div style="padding: 12px 14px 4px; font-family:'DM Mono',monospace; font-size: 0.65rem; font-weight: 700; letter-spacing: 0.13em; text-transform: uppercase; color: rgba(255,255,255,0.4); border-top: 1px solid rgba(255,255,255,0.08); margin-top: 4px;">Learn more</div></li>
-          <li><a href="#" onclick="showPage('understanding'); setTimeout(() =&gt; document.querySelector('#page-understanding section:last-of-type')?.scrollIntoView({behavior:'smooth', block:'start'}), 100); return false;">Books, Podcasts &amp; Courses<span class="dd-sub">Free courses, foundational books, ongoing reading</span></a></li>
+        <a href="#" onclick="return false;" aria-haspopup="true">Tools</a>
+        <ul class="dropdown-menu" style="min-width: 280px;">
+          <li style="padding: 0;"><div style="padding: 10px 14px 4px; font-family:'DM Mono',monospace; font-size: 0.65rem; font-weight: 700; letter-spacing: 0.13em; text-transform: uppercase; color: rgba(255,255,255,0.4);">Interactive tools</div></li>
+          <li><a href="#" id="nav-tools" onclick="showPage('tools'); return false;">AI Tool Reviews<span class="dd-sub">Honest reviews and the red-flag rubric</span></a></li>
+          <li><a href="#" id="nav-prompts" onclick="showPage('prompts'); return false;">Prompt Library<span class="dd-sub">Ready-to-adapt prompts for nonprofit work</span></a></li>
+          <li style="padding: 0;"><div style="padding: 12px 14px 4px; font-family:'DM Mono',monospace; font-size: 0.65rem; font-weight: 700; letter-spacing: 0.13em; text-transform: uppercase; color: rgba(255,255,255,0.4); border-top: 1px solid rgba(255,255,255,0.08); margin-top: 4px;">Prompting guides</div></li>
+          <li><a href="nonprofit_ai_prompting_iteration.html" target="_blank">Prompting &amp; Iteration ↗<span class="dd-sub">How to refine when the first output is mediocre</span></a></li>
+          <li><a href="nonprofit_ai_llm_literacy.html" target="_blank">Getting More From Any AI ↗<span class="dd-sub">Custom GPTs, Claude Projects, Gemini Gems, context</span></a></li>
+        </ul>
+      </li>
+      <li class="has-dropdown">
+        <a href="#" onclick="return false;" aria-haspopup="true">External Resources</a>
+        <ul class="dropdown-menu" style="min-width: 300px;">
+          <li><a href="#" id="nav-resources" onclick="showPage('resources'); return false;">Frameworks &amp; Standards<span class="dd-sub">NIST, NetHope, NTEN, and more</span></a></li>
+          <li><a href="#" onclick="showPage('resources'); return false;">Policy Templates<span class="dd-sub">FastForward, NTEN, GlobalGiving, Kairoi</span></a></li>
+          <li><a href="#" onclick="showPage('understanding'); return false;">Books, Podcasts &amp; Courses<span class="dd-sub">Free courses, foundational books, ongoing reading</span></a></li>
         </ul>
       </li>
       <li><a href="#" id="nav-blog" onclick="showPage('blog'); return false;">Blog</a></li>
-      <li><a href="#" id="nav-about" class="nav-cta" onclick="showPage('about'); return false;">Get Help</a></li>
+      <li><a href="#" id="nav-about" class="nav-cta" onclick="showPage('about'); return false;">Work With Me</a></li>
     </ul>
   </div>
 </nav>
@@ -1602,7 +1602,7 @@ button { cursor: pointer; font-family: inherit; }
         <a class="hub-card" href="#" onclick="showPage('tools'); return false;">
           <div class="hub-icon" aria-hidden="true">🧰</div>
           <h4>AI Tools</h4>
-          <p>Honest reviews of the 20 tools you'll actually encounter</p>
+          <p>Honest reviews of the tools you'll actually encounter</p>
         </a>
         <a class="hub-card" href="#" onclick="showPage('prompts'); return false;">
           <div class="hub-icon" aria-hidden="true">✏️</div>
@@ -2330,7 +2330,7 @@ button { cursor: pointer; font-family: inherit; }
           <div class="ext-card" data-topics="nten resource hub artificial intelligence courses">
             <span class="tag tag-using" style="align-self:flex-start;">Resource Hub</span>
             <h4>NTEN AI for Nonprofits Resource Hub</h4>
-            <p>The most comprehensive nonprofit-specific AI hub on the internet. Modules, templates, partner resources, and a free certificate path.</p>
+            <p>The most thorough nonprofit-specific AI hub on the internet. Modules, templates, partner resources, and a free certificate path.</p>
             <div class="ext-footer">
               <span class="source">NTEN</span>
               <a class="ext-link" href="https://www.nten.org/learn/resource-hubs/artificial-intelligence" target="_blank">Visit hub →</a>
@@ -3054,7 +3054,7 @@ button { cursor: pointer; font-family: inherit; }
     <div class="container">
       <div class="ph-kicker">Honest reviews</div>
       <h1>AI Tools</h1>
-      <p>Twenty tools your team is likely to encounter, with honest takes on strengths, weaknesses, and where the nonprofit-specific catches live. No affiliate links, no vendor relationships, no upsell.</p>
+      <p>The tools your team is likely to encounter, with honest takes on strengths, weaknesses, and where the nonprofit-specific catches live. No affiliate links, no vendor relationships, no upsell.</p>
     </div>
   </div>
 
@@ -3152,7 +3152,7 @@ button { cursor: pointer; font-family: inherit; }
     <section class="section" style="padding: 24px 0 8px;">
       <div class="container">
         <h3 style="font-family:'Playfair Display',serif; font-size:1.5rem; color:var(--forest); margin-bottom:6px;">Office &amp; productivity</h3>
-        <p style="color:var(--muted); margin-bottom:24px; font-size:0.92rem;">AI features baked into the tools your team already uses every day. Often the highest-leverage starting point because the integration overhead is zero.</p>
+        <p style="color:var(--muted); margin-bottom:24px; font-size:0.92rem;">AI features baked into the tools your team already uses every day. Often the highest-payoff starting point because the integration overhead is zero.</p>
 
         <div class="grid-2">
           <div class="resource-card" data-topics="microsoft 365 copilot word excel outlook teams">
@@ -3352,7 +3352,7 @@ button { cursor: pointer; font-family: inherit; }
     <div class="container">
       <div class="ph-kicker">Practical prompt library</div>
       <h1>Nonprofit Prompt Library</h1>
-      <p>Thirty ready-to-adapt prompts for the work your team actually does. Donor letters, grant LOIs, meeting recaps, plain-language explainers, board materials. Built for nonprofit context, with the data hygiene rules baked in.</p>
+      <p>Ready-to-adapt prompts for the work your team actually does. Donor letters, grant LOIs, meeting recaps, plain-language explainers, board materials. Built for nonprofit context, with the data hygiene rules baked in.</p>
     </div>
   </div>
 
@@ -4429,11 +4429,11 @@ function buildSearchIndex() {
   // Index top-level pages
   index.push({ group: 'Page', title: 'Home', desc: 'Start here, see all the lanes and resources.', page: 'home' });
   index.push({ group: 'Page', title: 'Understanding AI', desc: 'How AI works, FAQ, risks, glossary, free courses.', page: 'understanding' });
-  index.push({ group: 'Page', title: 'Considering AI', desc: 'Five guides for organizations thinking about AI.', page: 'lane1' });
-  index.push({ group: 'Page', title: 'Already Using AI', desc: 'Seven guides on governance, policy, vendor vetting.', page: 'lane2' });
-  index.push({ group: 'Page', title: 'Shadow AI', desc: 'Three guides for when AI is already happening informally.', page: 'lane3' });
-  index.push({ group: 'Page', title: 'AI Tools', desc: 'Honest reviews of twenty AI tools and the red-flag rubric.', page: 'tools' });
-  index.push({ group: 'Page', title: 'Prompt Library', desc: 'Thirty ready-to-adapt prompts for nonprofit work.', page: 'prompts' });
+  index.push({ group: 'Page', title: 'Considering AI', desc: 'Guides for organizations thinking about AI.', page: 'lane1' });
+  index.push({ group: 'Page', title: 'Already Using AI', desc: 'Guides on governance, policy, vendor vetting.', page: 'lane2' });
+  index.push({ group: 'Page', title: 'Shadow AI', desc: 'Guides for when AI is already happening informally.', page: 'lane3' });
+  index.push({ group: 'Page', title: 'AI Tools', desc: 'Honest reviews of AI tools and the red-flag rubric.', page: 'tools' });
+  index.push({ group: 'Page', title: 'Prompt Library', desc: 'Ready-to-adapt prompts for nonprofit work.', page: 'prompts' });
   index.push({ group: 'Page', title: 'External Resources', desc: 'Curated library of frameworks, toolkits, and reading.', page: 'resources' });
   index.push({ group: 'Page', title: 'Blog', desc: 'Short pieces on what is happening in nonprofit AI.', page: 'blog' });
   index.push({ group: 'Page', title: 'About / Get Help', desc: 'About the site, transparency, and ways to reach me.', page: 'about' });
@@ -4548,3 +4548,4 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      

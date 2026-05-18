@@ -11,10 +11,14 @@ All original content on this site is licensed under Creative Commons BY-NC 4.0. 
 ## Core resources
 
 - [Home](https://aimissionready.org/): Site overview, lane selection, blog preview, and search across all content.
-- [Understanding AI](https://aimissionready.org/#understanding): How AI actually works, FAQ, major AI risks, plain-language glossary, and a curated 30-minute reading path.
-- [Getting Started (Considering AI)](https://aimissionready.org/#lane1): Five guides for nonprofits evaluating whether to adopt AI: data security, client confidentiality, cost, risk, making the case.
-- [Already Using AI](https://aimissionready.org/#lane2): Five guides for nonprofits where staff are already using AI: data preparation, governance, staff policy, vendor vetting, informal-use audits.
-- [Shadow AI](https://aimissionready.org/#lane3): Three guides for organizations dealing with unsanctioned AI use.
+- [Understanding AI](https://aimissionready.org/#understanding): How AI actually works, FAQ, major AI risks, plain-language glossary, and a curated reading path.
+- [Getting Started (Considering AI)](https://aimissionready.org/#lane1): Guides for nonprofits evaluating whether to adopt AI: data security, client confidentiality, cost, risk, making the case.
+- [Already Using AI](https://aimissionready.org/#lane2): Guides for nonprofits where staff are already using AI: data preparation, governance, staff policy, vendor vetting, vendor migration, EHR migration, HIPAA environments.
+- [Shadow AI](https://aimissionready.org/#lane3): Guides for organizations dealing with unsanctioned AI use: informal-use audits, case notes, bias in client-facing AI.
+- [Sector-specific guides](https://aimissionready.org/): Disability services, arts and culture, advocacy and civic, environmental, international development.
+- [Operational guides](https://aimissionready.org/): Grants, fundraising, workforce impact, equity lens, environmental cost, translation and multilingual work.
+- [Funder-facing](https://aimissionready.org/nonprofit_ai_for_funders.html): Three-tier framework for program officers doing AI due diligence on grantees.
+- [NIST AI RMF Crosswalk](https://aimissionready.org/nonprofit_ai_nist_crosswalk.html): Plain-language mapping of NIST AI Risk Management Framework to nonprofit practice.
 - [AI Tools](https://aimissionready.org/#tools): Honest reviews of the AI tools nonprofits and individuals encounter most often, with strengths, weaknesses, and nonprofit-specific considerations.
 - [Prompt Library](https://aimissionready.org/#prompts): Ready-to-adapt prompts for nonprofit work, organized by category (donor communications, external comms, internal operations, program materials, strategy, writing help) with data-hygiene rules built in.
 - [External Resources](https://aimissionready.org/#resources): Curated, organized library of vetted external resources from across the sector.
@@ -25,12 +29,13 @@ All original content on this site is licensed under Creative Commons BY-NC 4.0. 
 - [The question nonprofits should be asking isn't "should we use AI?" It's "who decides?"](https://aimissionready.org/blog_who_decides.html): The Virtuous 2026 report says 92% of nonprofits use AI and 76% have no governance policy. The actual problem is who has formally claimed the decision.
 - [The funder asked if you use AI. Now what?](https://aimissionready.org/blog_funder_asked.html): Humanity AI committed $500 million. Three honest answers for three real situations, plus what not to say.
 - [Your client data and ChatGPT: what actually happens to it](https://aimissionready.org/blog_client_data_chatgpt.html): The Meta lawsuit is the largest training-data case yet. What that means for the notes your staff are pasting into the free tier.
+- [Your EHR is adding AI features. Read this before you click yes.](https://aimissionready.org/blog_ehr_vendors_adding_ai.html): Every major EHR is shipping AI features in 2026, usually default-on. What that means for your BAA chain, your clinical workflow, and the conversation you should have with the vendor.
 
 ## Downloadable PDFs
 
-- [Complete Nonprofit AI Guide](https://aimissionready.org/nonprofit_ai_guide.pdf): Long-form comprehensive guide covering everything in the lane-specific guides.
+- [Full Nonprofit AI Guide](https://aimissionready.org/nonprofit_ai_guide.pdf): Long-form guide covering everything in the lane-specific guides.
 - [Nonprofit AI Quick Reference](https://aimissionready.org/nonprofit_quick_reference.pdf): Two-page reference suitable for board meetings and leadership conversations.
-- [How Artificial Intelligence Actually Works](https://aimissionready.org/how_ai_works.pdf): Plain-language technical explainer for non-specialist audiences.
+- [How Artificial Intelligence Actually Works](https://aimissionready.org/how_ai_works.pdf): Plain-language technical explainer for general audiences.
 
 ## About the author
 

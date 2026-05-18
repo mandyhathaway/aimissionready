@@ -4,6 +4,30 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Prompting &amp; Iteration: How to Refine When the First Output Is Mediocre</title>
+<meta name="description" content="How to refine AI prompts when the first output is mediocre: iteration patterns, worked examples, and the avoidance lists that fix tone.">
+<meta name="author" content="Mandy Hathaway">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="theme-color" content="#2d5a3d">
+<link rel="canonical" href="https://aimissionready.org/nonprofit_ai_prompting_iteration.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="AI Mission Ready">
+<meta property="og:title" content="Prompting &amp; Iteration: How to Refine When the First Output Is Mediocre">
+<meta property="og:description" content="How to refine AI prompts when the first output is mediocre: iteration patterns, worked examples, and the avoidance lists that fix tone.">
+<meta property="og:url" content="https://aimissionready.org/nonprofit_ai_prompting_iteration.html">
+<meta property="og:image" content="https://aimissionready.org/og-image.png">
+<meta property="article:author" content="Mandy Hathaway">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Prompting & Iteration: How to Refine When the First Output Is Mediocre",
+  "description": "How to refine AI prompts when the first output is mediocre: iteration patterns, worked examples, and the avoidance lists that fix tone.",
+  "author": { "@type": "Person", "name": "Mandy Hathaway", "url": "https://mandyhathaway.com" },
+  "publisher": { "@type": "Organization", "name": "AI Mission Ready", "url": "https://aimissionready.org/" },
+  "mainEntityOfPage": "https://aimissionready.org/nonprofit_ai_prompting_iteration.html",
+  "inLanguage": "en-US"
+}
+</script>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,400&family=Source+Sans+3:wght@300;400;600&family=DM+Mono:wght@400;500&display=swap');
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -46,9 +70,12 @@
   hr.section-rule { border:none; border-top:1px solid var(--border); margin:40px 0; }
   @media (max-width:700px) { .body-wrap { padding:44px 28px 52px; } .cover { padding:56px 28px 48px; } .cover-title { font-size:34px; } }
   @media print { body{background:white;} .cover,.pullquote,.contact-block,.green-card,.alert-box,.turn-block,.numbered-list li::before { -webkit-print-color-adjust:exact; print-color-adjust:exact; } }
+  .back-link { display: inline-block; margin: 20px 64px 0; font-size: 13px; color: var(--green-mid, #3d6b4a); text-decoration: none; letter-spacing: 0.04em; }
+  .back-link:hover { color: var(--green, #2d5a3d); }
 </style>
 </head>
 <body>
+<a class="back-link" href="index.html">&larr; Back to AI Mission Ready</a>
 <div class="page">
 
   <div class="cover">
@@ -106,12 +133,12 @@
     <p>This is a real-ish conversation, lightly edited. The starting prompt was decent, but every turn made the output better.</p>
 
     <div class="turn-block">
-      <span class="turn-label">Turn 1 — original prompt</span>
+      <span class="turn-label">Turn 1: original prompt</span>
 Draft a thank-you note to a long-term donor who just gave a mid-level gift. Three paragraphs, warm but specific. No "generous support" or "transformative." Around 200 words.
     </div>
 
     <div class="turn-block">
-      <span class="turn-label">Turn 1 — output</span>
+      <span class="turn-label">Turn 1: output</span>
 Dear [Donor],
 
 Thank you for your continued partnership with [Organization]. Your gift this year will help us advance our mission of serving the community with the kind of dedication and care that defines our work…
@@ -120,24 +147,24 @@ Thank you for your continued partnership with [Organization]. Your gift this yea
     </div>
 
     <div class="turn-block">
-      <span class="turn-label">Turn 2 — fix</span>
+      <span class="turn-label">Turn 2: fix</span>
 This sounds like every donor letter ever written. Make it specific. Open with a moment, not a thank-you. Reference one actual thing the gift will support, not "our mission."
     </div>
 
     <div class="turn-block">
-      <span class="turn-label">Turn 2 — output</span>
+      <span class="turn-label">Turn 2: output</span>
 Dear [Donor],
 
 Tuesday's intake had eleven people waiting at 7 am. Three of them stayed for the full day. The reason that's possible is the after-hours pantry shift your gift funds, which means we don't have to send people home before they've eaten…
     </div>
 
     <div class="turn-block">
-      <span class="turn-label">Turn 3 — fix</span>
+      <span class="turn-label">Turn 3: fix</span>
 Better. Now tighten. Cut anything that sounds like fundraising. I want this to read like a personal note from the director.
     </div>
 
     <div class="turn-block">
-      <span class="turn-label">Turn 5 — output (after two more passes)</span>
+      <span class="turn-label">Turn 5: output (after two more passes)</span>
 Tuesday's intake had eleven people waiting at 7. The pantry shift your gift funds is the reason we didn't send anyone home before they'd eaten. I wanted to tell you that directly.
 
 This year has been harder than the last, in the ways you would expect and a few you wouldn't. Your gift makes a specific kind of difference, which is the only kind that matters.
@@ -215,7 +242,7 @@ Thank you for staying with us.
   <div class="contact-block">
     <div class="contact-name">Mandy Hathaway</div>
     <p>AI Ethics &amp; Technology Consulting for Nonprofits</p>
-    <p><a href="https://mandyhathaway.com">mandyhathaway.com</a> &nbsp;·&nbsp; <a href="https://mandyhathaway.com/book">Book a call</a></p>
+    <p><a href="https://mandyhathaway.com">mandyhathaway.com</a> &nbsp;·&nbsp; <a href="https://calendly.com/mandyhathaway">Book a call</a></p>
   </div>
 
 </div>
