@@ -1290,7 +1290,25 @@ button { cursor: pointer; font-family: inherit; }
     <ul class="nav-links">
       <li><a href="#" id="nav-home" class="active" onclick="showPage('home'); return false;">Home</a></li>
       <li><a href="#" id="nav-understanding" onclick="showPage('understanding'); return false;">Understanding AI</a></li>
-      <li><a href="#" id="nav-library" onclick="showPage('library'); return false;">Guide Library</a></li>
+      <li class="has-dropdown">
+        <a href="#" id="nav-library" onclick="showPage('library'); return false;" aria-haspopup="true">Guide Library</a>
+        <ul class="dropdown-menu" style="min-width: 320px;">
+          <li><a href="#" onclick="showPage('library'); return false;">All guides<span class="dd-sub">Every guide on the site, no filter</span></a></li>
+          <li style="padding: 0;"><div style="padding: 12px 14px 4px; font-family:'DM Mono',monospace; font-size: 0.65rem; font-weight: 700; letter-spacing: 0.13em; text-transform: uppercase; color: rgba(255,255,255,0.4); border-top: 1px solid rgba(255,255,255,0.08); margin-top: 4px;">Browse by topic</div></li>
+          <li><a href="#" onclick="return goToLibrary('topic', 't-gov');">Governance &amp; Policy<span class="dd-sub">Policy, board questions, NIST, audits</span></a></li>
+          <li><a href="#" onclick="return goToLibrary('topic', 't-data');">Data &amp; Privacy<span class="dd-sub">Security, confidentiality, case notes, HIPAA</span></a></li>
+          <li><a href="#" onclick="return goToLibrary('topic', 't-vendors');">Vendors &amp; Procurement<span class="dd-sub">Vendor vetting, EHR migration, contract language</span></a></li>
+          <li><a href="#" onclick="return goToLibrary('topic', 't-staff');">Staff &amp; Workforce<span class="dd-sub">Workforce impact, policy, prompting literacy</span></a></li>
+          <li><a href="#" onclick="return goToLibrary('topic', 't-equity');">Equity, Risk &amp; Impact<span class="dd-sub">Equity lens, bias, risk tier, environmental cost</span></a></li>
+          <li><a href="#" onclick="return goToLibrary('topic', 't-sector');">Sector Guides<span class="dd-sub">Disability, arts, advocacy, environmental, international</span></a></li>
+          <li style="padding: 0;"><div style="padding: 12px 14px 4px; font-family:'DM Mono',monospace; font-size: 0.65rem; font-weight: 700; letter-spacing: 0.13em; text-transform: uppercase; color: rgba(255,255,255,0.4); border-top: 1px solid rgba(255,255,255,0.08); margin-top: 4px;">Browse by role</div></li>
+          <li><a href="#" onclick="return goToLibrary('role', 'r-ed');">Executive Directors</a></li>
+          <li><a href="#" onclick="return goToLibrary('role', 'r-program');">Program Staff</a></li>
+          <li><a href="#" onclick="return goToLibrary('role', 'r-board');">Board Members</a></li>
+          <li><a href="#" onclick="return goToLibrary('role', 'r-funder');">Funders &amp; Program Officers</a></li>
+          <li><a href="#" onclick="return goToLibrary('role', 'r-tech');">The Tech-Adjacent Person</a></li>
+        </ul>
+      </li>
       <li class="has-dropdown">
         <a href="#" onclick="return false;" aria-haspopup="true">Tools</a>
         <ul class="dropdown-menu" style="min-width: 280px;">
@@ -4780,6 +4798,25 @@ function filterCards(containerId, query, topicFilter) {
   // No-results message
   const noResults = document.getElementById('no-results-' + containerId.replace('-cards', ''));
   if (noResults) noResults.classList.toggle('visible', visible === 0);
+}
+
+
+// ─── GUIDE LIBRARY: deep-link helper used by nav dropdown ───
+function goToLibrary(view, filterValue) {
+  showPage('library');
+  setLibraryView(view || 'topic');
+  if (filterValue) {
+    const rowId = (view === 'role') ? 'library-filters-role' : 'library-filters-topic';
+    const row = document.getElementById(rowId);
+    if (row) {
+      const btn = row.querySelector('[data-filter="' + filterValue + '"]');
+      if (btn) setLibraryFilter(filterValue, btn);
+    }
+  }
+  // Scroll the chips/cards into view if the page jump didn't already
+  const cards = document.getElementById('library-cards');
+  if (cards) cards.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  return false;
 }
 
 
