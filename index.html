@@ -1243,6 +1243,17 @@ button { cursor: pointer; font-family: inherit; }
   .trust-item { font-size: 0.72rem; padding: 3px 10px; }
 }
 
+  /* GUIDE LIBRARY */
+  .library-toggle { display: inline-flex; padding: 4px; background: var(--paper); border: 1px solid var(--rule); border-radius: 999px; gap: 4px; }
+  .library-toggle-btn { background: transparent; border: none; padding: 8px 18px; font-family: inherit; font-size: 0.88rem; font-weight: 600; color: var(--muted); cursor: pointer; border-radius: 999px; transition: background 0.15s, color 0.15s; }
+  .library-toggle-btn:hover { color: var(--forest); }
+  .library-toggle-btn.active { background: var(--forest); color: var(--white); }
+  .library-toggle-btn:focus-visible { outline: 2px solid var(--forest); outline-offset: 2px; }
+  .chip { display: inline-block; padding: 3px 9px; font-size: 0.7rem; font-weight: 600; letter-spacing: 0.03em; border-radius: 3px; border: 1px solid; line-height: 1.4; }
+  .chip-topic { background: var(--sage); color: var(--forest); border-color: var(--sage-mid); }
+  .chip-role { background: var(--blue-light); color: var(--blue); border-color: var(--sky-mid); }
+  .library-card { display: flex; flex-direction: column; }
+  .library-card .card-chips { display: flex; flex-wrap: wrap; gap: 5px; margin-bottom: 10px; }
 </style>
 </head>
 <body>
@@ -1279,14 +1290,7 @@ button { cursor: pointer; font-family: inherit; }
     <ul class="nav-links">
       <li><a href="#" id="nav-home" class="active" onclick="showPage('home'); return false;">Home</a></li>
       <li><a href="#" id="nav-understanding" onclick="showPage('understanding'); return false;">Understanding AI</a></li>
-      <li class="has-dropdown">
-        <a href="#" onclick="return false;" aria-haspopup="true">Where to Start</a>
-        <ul class="dropdown-menu">
-          <li><a href="#" id="nav-lane1" onclick="showPage('lane1'); return false;">New to AI<span class="dd-sub">Considering AI? Start with these 5 guides</span></a></li>
-          <li><a href="#" id="nav-lane2" onclick="showPage('lane2'); return false;">Already Using AI<span class="dd-sub">Governance, policy, and vendor guides</span></a></li>
-          <li><a href="#" id="nav-lane3" onclick="showPage('lane3'); return false;">AI Already in Use<span class="dd-sub">When AI is in use but not yet managed</span></a></li>
-        </ul>
-      </li>
+      <li><a href="#" id="nav-library" onclick="showPage('library'); return false;">Guide Library</a></li>
       <li class="has-dropdown">
         <a href="#" onclick="return false;" aria-haspopup="true">Tools</a>
         <ul class="dropdown-menu" style="min-width: 280px;">
@@ -1331,16 +1335,6 @@ button { cursor: pointer; font-family: inherit; }
           </div>
           <div id="hero-search-results" class="search-results" role="listbox" aria-label="Search results"></div>
         </div>
-        <div class="hero-ctas">
-          <a class="btn btn-outline" href="#" onclick="showPage('lane1'); return false;">
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8 2L14 8L8 14M2 8H14" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            We're just starting to explore AI
-          </a>
-          <a class="btn btn-outline" href="#" onclick="showPage('lane2'); return false;">
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8 2L14 8L8 14M2 8H14" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            We're already using AI
-          </a>
-        </div>
       </div>
     </div>
   </section>
@@ -1383,7 +1377,7 @@ button { cursor: pointer; font-family: inherit; }
       </div>
       <div class="grid-3">
         <!-- Lane 1 -->
-        <div class="lane-card lane-1" onclick="showPage('lane1')" style="cursor:pointer;">
+        <div class="lane-card lane-1" onclick="showPage('library')" style="cursor:pointer;">
           <div>
             <span class="lane-tag">Getting Started</span>
             <div class="lane-icon" aria-hidden="true">🌱</div>
@@ -1397,12 +1391,12 @@ button { cursor: pointer; font-family: inherit; }
             <li>What happens when things go wrong</li>
             <li>How to make the case (or not) for AI</li>
           </ul>
-          <a class="btn btn-green" href="#" onclick="showPage('lane1'); return false;" style="align-self:flex-start;">
+          <a class="btn btn-green" href="#" onclick="showPage('library'); return false;" style="align-self:flex-start;">
             Read these guides →
           </a>
         </div>
         <!-- Lane 2 -->
-        <div class="lane-card lane-2" onclick="showPage('lane2')" style="cursor:pointer;">
+        <div class="lane-card lane-2" onclick="showPage('library')" style="cursor:pointer;">
           <div>
             <span class="lane-tag">Already Using AI</span>
             <div class="lane-icon" aria-hidden="true">⚙️</div>
@@ -1418,12 +1412,12 @@ button { cursor: pointer; font-family: inherit; }
             <li>Case notes and AI: a careful guide</li>
             <li>EHR vendors and AI: a practical guide</li>
           </ul>
-          <a class="btn btn-blue" href="#" onclick="showPage('lane2'); return false;" style="align-self:flex-start;">
+          <a class="btn btn-blue" href="#" onclick="showPage('library'); return false;" style="align-self:flex-start;">
             Read these guides →
           </a>
         </div>
         <!-- Lane 3 -->
-        <div class="lane-card lane-3" onclick="showPage('lane3')" style="cursor:pointer;">
+        <div class="lane-card lane-3" onclick="showPage('library')" style="cursor:pointer;">
           <div>
             <span class="lane-tag">Shadow AI</span>
             <div class="lane-icon" aria-hidden="true">🔍</div>
@@ -1435,7 +1429,7 @@ button { cursor: pointer; font-family: inherit; }
             <li>How to create a staff use policy from scratch</li>
             <li>Where your data is going right now</li>
           </ul>
-          <a class="btn btn-warm" href="#" onclick="showPage('lane3'); return false;" style="align-self:flex-start;">
+          <a class="btn btn-warm" href="#" onclick="showPage('library'); return false;" style="align-self:flex-start;">
             Read these guides →
           </a>
         </div>
@@ -1549,7 +1543,7 @@ button { cursor: pointer; font-family: inherit; }
 
         <div class="faq-item" style="background: var(--white); border: 1px solid var(--rule); border-radius: var(--radius-lg); padding: 24px 28px;">
           <h3 style="font-family:'Playfair Display',serif; font-size: 1.15rem; font-weight: 700; color: var(--forest); margin-bottom: 10px;">Where should I start if I'm new to this?</h3>
-          <p style="font-size: 0.95rem; color: var(--ink); line-height: 1.65; margin: 0;">If your organization has not yet decided whether to use AI, start with the <a href="#" onclick="showPage('lane1'); return false;" style="color: var(--forest-mid); font-weight: 600;">Considering AI</a> lane. If your staff are already using AI tools, the <a href="#" onclick="showPage('lane2'); return false;" style="color: var(--forest-mid); font-weight: 600;">Already Using AI</a> lane is the right entry point. The data security guide is a reasonable first read for anyone in either situation.</p>
+          <p style="font-size: 0.95rem; color: var(--ink); line-height: 1.65; margin: 0;">If your organization has not yet decided whether to use AI, start with the <a href="#" onclick="showPage('library'); return false;" style="color: var(--forest-mid); font-weight: 600;">Considering AI</a> lane. If your staff are already using AI tools, the <a href="#" onclick="showPage('library'); return false;" style="color: var(--forest-mid); font-weight: 600;">Already Using AI</a> lane is the right entry point. The data security guide is a reasonable first read for anyone in either situation.</p>
         </div>
 
         <div class="faq-item" style="background: var(--white); border: 1px solid var(--rule); border-radius: var(--radius-lg); padding: 24px 28px;">
@@ -1584,17 +1578,17 @@ button { cursor: pointer; font-family: inherit; }
           <h4>Understanding AI</h4>
           <p>How AI actually works, FAQ, risks, glossary</p>
         </a>
-        <a class="hub-card" href="#" onclick="showPage('lane1'); return false;">
+        <a class="hub-card" href="#" onclick="showPage('library'); return false;">
           <div class="hub-icon" aria-hidden="true">🌱</div>
           <h4>Considering AI</h4>
           <p>New to AI? Start with our 5 beginner guides</p>
         </a>
-        <a class="hub-card" href="#" onclick="showPage('lane2'); return false;">
+        <a class="hub-card" href="#" onclick="showPage('library'); return false;">
           <div class="hub-icon" aria-hidden="true">⚙️</div>
           <h4>Already Using AI</h4>
           <p>Governance, policy, and vendor guides</p>
         </a>
-        <a class="hub-card" href="#" onclick="showPage('lane3'); return false;">
+        <a class="hub-card" href="#" onclick="showPage('library'); return false;">
           <div class="hub-icon" aria-hidden="true">🔍</div>
           <h4>Shadow AI</h4>
           <p>Think it's already happening? Start here</p>
@@ -2035,13 +2029,511 @@ button { cursor: pointer; font-family: inherit; }
       <div style="margin-top: 48px; padding: 32px; background: var(--sage); border-radius: var(--radius-lg); border: 1px solid var(--sage-mid);">
         <h3 style="margin-bottom: 10px; color: var(--forest);">Once you know what's happening, you'll want Lane 2</h3>
         <p style="color: var(--muted); margin-bottom: 20px;">After you've assessed the situation, the full Lane 2 guides will help you build proper governance, clean up your data practices, and get ahead of vendor relationships.</p>
-        <a class="btn btn-green" href="#" onclick="showPage('lane2'); return false;">Go to Lane 2: Already Using AI →</a>
+        <a class="btn btn-green" href="#" onclick="showPage('library'); return false;">Go to Lane 2: Already Using AI →</a>
       </div>
 
     </div>
   </section>
 </div><!-- /page-lane3 -->
 
+
+
+<!-- ============================================================
+     PAGE: GUIDE LIBRARY
+============================================================ -->
+<div id="page-library" class="page page-content">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-inner">
+        <div class="hero-kicker">All guides, one place</div>
+        <h1>Find the right guide<br><em>for what you're actually working on.</em></h1>
+        <p class="hero-sub">Every practical AI guide on the site, in one browsable collection. Whether you're thinking about adoption, writing a policy, reviewing a vendor, preparing your board, or doing funder due diligence, there's something here for the question you're trying to answer.</p>
+        <div class="search-wrap">
+          <div class="search-bar">
+            <input type="text" id="library-hero-search" placeholder="Search guides, tools, prompts, blog, glossary…" oninput="performGlobalSearch(this.value, 'library-hero-search-results')" autocomplete="off">
+            <button onclick="performGlobalSearch(document.getElementById('library-hero-search').value, 'library-hero-search-results')">Search</button>
+          </div>
+          <div id="library-hero-search-results" class="search-results" role="listbox" aria-label="Search results"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT THIS COLLECTION -->
+  <section class="why-section">
+    <div class="why-inner">
+      <div class="why-label">
+        <div class="kicker">About this collection</div>
+        <h2>Why these guides exist</h2>
+        <svg class="why-mark" xmlns="http://www.w3.org/2000/svg" viewBox="10 8 60 56" fill="none" width="90" height="90">
+          <polygon points="40,12 58,24 58,48 40,60 22,48 22,24" stroke="#1a3d2b" stroke-width="2.8" stroke-linejoin="round" fill="none"/>
+          <circle cx="40" cy="12" r="3" fill="#1a3d2b"/>
+          <circle cx="58" cy="24" r="3" fill="#1a3d2b"/>
+          <circle cx="58" cy="48" r="3" fill="#1a3d2b"/>
+          <circle cx="40" cy="60" r="3" fill="#1a3d2b"/>
+          <circle cx="22" cy="48" r="3" fill="#1a3d2b"/>
+          <circle cx="22" cy="24" r="3" fill="#1a3d2b"/>
+          <circle cx="40" cy="36" r="11" stroke="#1a3d2b" stroke-width="3" fill="none"/>
+          <line x1="40" y1="23" x2="40" y2="49" stroke="#1a3d2b" stroke-width="3" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="why-body">
+        <p>Most nonprofit AI advice is written for people who already speak the language. These guides are written for the person whose actual job is something else, and who got handed AI as one more thing to figure out.</p>
+        <p>Every guide is practitioner-written, plain-language, and free. No paywalls, no vendor backing, no upsell. You can read them in your browser or download them. You can share them with your team, your board, or a peer organization without asking permission. Use them, adapt them, copy from them.</p>
+        <p>Two ways to browse: by <strong>topic</strong> (governance, data, vendors, staff, equity, sector) when you know what you're working on, or by <strong>role</strong> (executive director, program staff, board, funder, the tech-adjacent person) when you want to see what other people in your seat are reading. Same guides underneath; different doors in.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+
+      <!-- VIEW TOGGLE -->
+      <div style="display:flex; justify-content:center; margin-bottom: 24px;">
+        <div class="library-toggle" role="tablist" aria-label="View mode">
+          <button id="library-view-topic-btn" class="library-toggle-btn active" onclick="setLibraryView('topic')" aria-selected="true">Browse by Topic</button>
+          <button id="library-view-role-btn" class="library-toggle-btn" onclick="setLibraryView('role')" aria-selected="false">Browse by Role</button>
+        </div>
+      </div>
+
+      <!-- TOPIC FILTERS -->
+      <div id="library-filters-topic" class="filter-row">
+        <button class="filter-btn active" data-filter="" onclick="setLibraryFilter('', this)">All topics</button>
+        <button class="filter-btn" data-filter="t-gov" onclick="setLibraryFilter('t-gov', this)">Governance &amp; Policy</button>
+        <button class="filter-btn" data-filter="t-data" onclick="setLibraryFilter('t-data', this)">Data &amp; Privacy</button>
+        <button class="filter-btn" data-filter="t-vendors" onclick="setLibraryFilter('t-vendors', this)">Vendors &amp; Procurement</button>
+        <button class="filter-btn" data-filter="t-staff" onclick="setLibraryFilter('t-staff', this)">Staff &amp; Workforce</button>
+        <button class="filter-btn" data-filter="t-equity" onclick="setLibraryFilter('t-equity', this)">Equity, Risk &amp; Impact</button>
+        <button class="filter-btn" data-filter="t-sector" onclick="setLibraryFilter('t-sector', this)">Sector Guides</button>
+      </div>
+
+      <!-- ROLE FILTERS -->
+      <div id="library-filters-role" class="filter-row" style="display:none;">
+        <button class="filter-btn active" data-filter="" onclick="setLibraryFilter('', this)">All roles</button>
+        <button class="filter-btn" data-filter="r-ed" onclick="setLibraryFilter('r-ed', this)">Executive Directors</button>
+        <button class="filter-btn" data-filter="r-program" onclick="setLibraryFilter('r-program', this)">Program Staff</button>
+        <button class="filter-btn" data-filter="r-board" onclick="setLibraryFilter('r-board', this)">Board Members</button>
+        <button class="filter-btn" data-filter="r-funder" onclick="setLibraryFilter('r-funder', this)">Funders &amp; Program Officers</button>
+        <button class="filter-btn" data-filter="r-tech" onclick="setLibraryFilter('r-tech', this)">The Tech-Adjacent Person</button>
+      </div>
+
+      <!-- CARDS -->
+      <div id="library-cards" class="grid-3" style="margin-top: 32px;">
+
+        <a href="nonprofit_ai_guide_v11.html" target="_blank" class="resource-card library-card" data-topics="t-gov t-equity r-ed r-board r-program flagship guide complete practical readiness policy vendor selection oversight">
+          <div class="card-chips">
+            <span class="chip chip-topic">Governance</span>
+            <span class="chip chip-topic">Equity &amp; Risk</span>
+            <span class="chip chip-role">Executive Directors</span>
+            <span class="chip chip-role">Board</span>
+            <span class="chip chip-role">Program Staff</span>
+          </div>
+          <h3>AI for Nonprofits: The Practical Guide</h3>
+          <p class="desc">The flagship long-form guide. From first question to first tool: readiness, planning, vendor selection, policy, oversight. Start here if you want the full picture.</p>
+          <div class="card-footer"><div class="card-meta"><strong>Long read</strong> · flagship guide</div><span class="card-dl">Read →</span></div>
+        </a>
+
+        <a href="nonprofit_ai_security.html" target="_blank" class="resource-card library-card" data-topics="t-data r-ed r-board r-tech security privacy data what happens cloud tools">
+          <div class="card-chips">
+            <span class="chip chip-topic">Data &amp; Privacy</span>
+            <span class="chip chip-role">Executive Directors</span>
+            <span class="chip chip-role">Board</span>
+            <span class="chip chip-role">Tech-Adjacent</span>
+          </div>
+          <h3>AI Security: What Happens to Your Data</h3>
+          <p class="desc">What actually happens when staff use cloud AI tools: where the real risks are, what safeguards to look for, how to protect clients without banning the tools outright.</p>
+          <div class="card-footer"><div class="card-meta"><strong>8 min read</strong></div><span class="card-dl">Read →</span></div>
+        </a>
+
+        <a href="nonprofit_ai_privacy.html" target="_blank" class="resource-card library-card" data-topics="t-data r-ed r-program r-tech privacy client confidentiality protected information policy">
+          <div class="card-chips">
+            <span class="chip chip-topic">Data &amp; Privacy</span>
+            <span class="chip chip-role">Executive Directors</span>
+            <span class="chip chip-role">Program Staff</span>
+            <span class="chip chip-role">Tech-Adjacent</span>
+          </div>
+          <h3>Protecting Client Confidentiality When Using AI</h3>
+          <p class="desc">Practical confidentiality rules for AI use: what counts as protected information, who can see it after it leaves your building, and how to write a usable policy.</p>
+          <div class="card-footer"><div class="card-meta"><strong>7 min read</strong></div><span class="card-dl">Read →</span></div>
+        </a>
+
+        <a href="nonprofit_ai_cost.html" target="_blank" class="resource-card library-card" data-topics="t-gov r-ed r-board cost budget finance hidden line items vendor pricing">
+          <div class="card-chips">
+            <span class="chip chip-topic">Governance</span>
+            <span class="chip chip-role">Executive Directors</span>
+            <span class="chip chip-role">Board</span>
+          </div>
+          <h3>What You'll Actually Spend</h3>
+          <p class="desc">What AI really costs nonprofits: subscription line items, hidden costs, staff time, implementation. A budgeting framework that survives a board conversation.</p>
+          <div class="card-footer"><div class="card-meta"><strong>6 min read</strong></div><span class="card-dl">Read →</span></div>
+        </a>
+
+        <a href="nonprofit_ai_risk.html" target="_blank" class="resource-card library-card" data-topics="t-equity t-gov r-ed r-board r-funder risk failure continuity accountability bias hallucination">
+          <div class="card-chips">
+            <span class="chip chip-topic">Equity &amp; Risk</span>
+            <span class="chip chip-topic">Governance</span>
+            <span class="chip chip-role">Executive Directors</span>
+            <span class="chip chip-role">Board</span>
+            <span class="chip chip-role">Funders</span>
+          </div>
+          <h3>What Happens When AI Gets It Wrong</h3>
+          <p class="desc">Failure modes that matter for nonprofits: bias, hallucination, privacy breach. How to assess each risk for your context and what to do when something affects a real person.</p>
+          <div class="card-footer"><div class="card-meta"><strong>8 min read</strong></div><span class="card-dl">Read →</span></div>
+        </a>
+
+        <a href="nonprofit_ai_making_the_case.html" target="_blank" class="resource-card library-card" data-topics="t-gov r-ed r-program decision making case board leadership strategy">
+          <div class="card-chips">
+            <span class="chip chip-topic">Governance</span>
+            <span class="chip chip-role">Executive Directors</span>
+            <span class="chip chip-role">Program Staff</span>
+          </div>
+          <h3>Making the Case for AI, or Against It</h3>
+          <p class="desc">A framework for deciding whether AI fits your organization right now. Board talking points, a decision checklist, and a guide to the conversation without getting lost in hype.</p>
+          <div class="card-footer"><div class="card-meta"><strong>9 min read</strong></div><span class="card-dl">Read →</span></div>
+        </a>
+
+        <a href="nonprofit_ai_preparing_data.html" target="_blank" class="resource-card library-card" data-topics="t-data r-tech r-program data preparation clean protect keep out hygiene">
+          <div class="card-chips">
+            <span class="chip chip-topic">Data &amp; Privacy</span>
+            <span class="chip chip-role">Tech-Adjacent</span>
+            <span class="chip chip-role">Program Staff</span>
+          </div>
+          <h3>Preparing Your Data for AI</h3>
+          <p class="desc">What to clean, what to protect, what to keep out entirely, and the privacy checks to run before any AI tool sees your information.</p>
+          <div class="card-footer"><div class="card-meta"><strong>7 min read</strong></div><span class="card-dl">Read →</span></div>
+        </a>
+
+        <a href="nonprofit_ai_governance.html" target="_blank" class="resource-card library-card" data-topics="t-gov t-data r-ed r-board r-tech governance data going right now monitoring oversight">
+          <div class="card-chips">
+            <span class="chip chip-topic">Governance</span>
+            <span class="chip chip-topic">Data &amp; Privacy</span>
+            <span class="chip chip-role">Executive Directors</span>
+            <span class="chip chip-role">Board</span>
+            <span class="chip chip-role">Tech-Adjacent</span>
+          </div>
+          <h3>Where Is Your Data Going Right Now?</h3>
+          <p class="desc">Practical AI data governance: knowing where data goes, who can see it, and how to set boundaries before staff adopt new tools.</p>
+          <div class="card-footer"><div class="card-meta"><strong>8 min read</strong></div><span class="card-dl">Read →</span></div>
+        </a>
+
+        <a href="nonprofit_ai_staff_policy.html" target="_blank" class="resource-card library-card" data-topics="t-gov t-staff r-ed r-board policy staff use template rules starter">
+          <div class="card-chips">
+            <span class="chip chip-topic">Governance</span>
+            <span class="chip chip-topic">Staff &amp; Workforce</span>
+            <span class="chip chip-role">Executive Directors</span>
+            <span class="chip chip-role">Board</span>
+          </div>
+          <h3>Creating an AI Use Policy When You Have None</h3>
+          <p class="desc">A starting-point policy for nonprofits with nothing on the books. Rules to copy, situations to cover, and how to write one staff will actually follow.</p>
+          <div class="card-footer"><div class="card-meta"><strong>9 min read</strong></div><span class="card-dl">Read →</span></div>
+        </a>
+
+        <a href="nonprofit_ai_vendor.html" target="_blank" class="resource-card library-card" data-topics="t-vendors r-ed r-tech vendor accountability contract clauses sign protected">
+          <div class="card-chips">
+            <span class="chip chip-topic">Vendors</span>
+            <span class="chip chip-role">Executive Directors</span>
+            <span class="chip chip-role">Tech-Adjacent</span>
+          </div>
+          <h3>What to Ask Before You Sign an AI Vendor Contract</h3>
+          <p class="desc">AI vendor questions: what to ask, what to insist on in writing, and which contract clauses keep your data and clients protected.</p>
+          <div class="card-footer"><div class="card-meta"><strong>8 min read</strong></div><span class="card-dl">Read →</span></div>
+        </a>
+
+        <a href="nonprofit_ai_audit_informal.html" target="_blank" class="resource-card library-card" data-topics="t-gov t-staff r-ed r-tech r-program audit informal shadow staff already using policy">
+          <div class="card-chips">
+            <span class="chip chip-topic">Governance</span>
+            <span class="chip chip-topic">Staff &amp; Workforce</span>
+            <span class="chip chip-role">Executive Directors</span>
+            <span class="chip chip-role">Tech-Adjacent</span>
+            <span class="chip chip-role">Program Staff</span>
+          </div>
+          <h3>When Staff Are Already Using AI (And No One Has a Policy)</h3>
+          <p class="desc">How to audit informal AI use without making staff defensive: questions to ask, what you'll probably find, and how to move toward sanctioned use.</p>
+          <div class="card-footer"><div class="card-meta"><strong>8 min read</strong></div><span class="card-dl">Read →</span></div>
+        </a>
+
+        <a href="nonprofit_ai_case_notes.html" target="_blank" class="resource-card library-card" data-topics="t-data r-program r-ed case notes client human services chatbot risky">
+          <div class="card-chips">
+            <span class="chip chip-topic">Data &amp; Privacy</span>
+            <span class="chip chip-role">Program Staff</span>
+            <span class="chip chip-role">Executive Directors</span>
+          </div>
+          <h3>Case Notes and AI: A Careful Guide</h3>
+          <p class="desc">When pasting client case notes into a chatbot is appropriate, when it is not, and what to do when staff are asking for help with their notes.</p>
+          <div class="card-footer"><div class="card-meta"><strong>9 min read</strong></div><span class="card-dl">Read →</span></div>
+        </a>
+
+        <a href="nonprofit_ai_ehr_migration.html" target="_blank" class="resource-card library-card" data-topics="t-vendors t-sector r-ed r-tech r-program ehr migration baa healthcare behavioral health clinical default-on procentive">
+          <div class="card-chips">
+            <span class="chip chip-topic">Vendors</span>
+            <span class="chip chip-topic">Sector Guides</span>
+            <span class="chip chip-role">Executive Directors</span>
+            <span class="chip chip-role">Tech-Adjacent</span>
+            <span class="chip chip-role">Program Staff</span>
+          </div>
+          <h3>EHR Vendors and AI</h3>
+          <p class="desc">EHR-specific AI considerations for human services, behavioral health, and clinical nonprofits: migration evaluation, BAA chains, the default-on problem.</p>
+          <div class="card-footer"><div class="card-meta"><strong>10 min read</strong></div><span class="card-dl">Read →</span></div>
+        </a>
+
+        <a href="nonprofit_ai_vendor_migration.html" target="_blank" class="resource-card library-card" data-topics="t-vendors r-ed r-tech vendor migration adds ai existing tool audit framework">
+          <div class="card-chips">
+            <span class="chip chip-topic">Vendors</span>
+            <span class="chip chip-role">Executive Directors</span>
+            <span class="chip chip-role">Tech-Adjacent</span>
+          </div>
+          <h3>When Your Software Vendor Adds AI</h3>
+          <p class="desc">When a vendor adds AI to a tool you already use: the audit framework, staff-conversation template, and six-question decision process before clicking yes.</p>
+          <div class="card-footer"><div class="card-meta"><strong>9 min read</strong></div><span class="card-dl">Read →</span></div>
+        </a>
+
+        <a href="nonprofit_ai_hipaa_environment.html" target="_blank" class="resource-card library-card" data-topics="t-data t-sector r-ed r-tech r-program hipaa phi baa healthcare regulated clinical incident">
+          <div class="card-chips">
+            <span class="chip chip-topic">Data &amp; Privacy</span>
+            <span class="chip chip-topic">Sector Guides</span>
+            <span class="chip chip-role">Executive Directors</span>
+            <span class="chip chip-role">Tech-Adjacent</span>
+            <span class="chip chip-role">Program Staff</span>
+          </div>
+          <h3>AI in a HIPAA-Regulated Environment</h3>
+          <p class="desc">AI in HIPAA-regulated settings: PHI exposure, BAA requirements, incident response, and what counts as a covered tool.</p>
+          <div class="card-footer"><div class="card-meta"><strong>9 min read</strong></div><span class="card-dl">Read →</span></div>
+        </a>
+
+        <a href="nonprofit_ai_grants.html" target="_blank" class="resource-card library-card" data-topics="t-sector r-program r-ed grants funders proposals discount programs candid instrumentl techsoup ethics">
+          <div class="card-chips">
+            <span class="chip chip-topic">Sector Guides</span>
+            <span class="chip chip-role">Program Staff</span>
+            <span class="chip chip-role">Executive Directors</span>
+          </div>
+          <h3>AI for Grants Work</h3>
+          <p class="desc">Tools worth using, funders worth knowing, discount programs that lower software costs, and how to disclose AI use in proposals.</p>
+          <div class="card-footer"><div class="card-meta"><strong>9 min read</strong></div><span class="card-dl">Read →</span></div>
+        </a>
+
+        <a href="nonprofit_ai_fundraising.html" target="_blank" class="resource-card library-card" data-topics="t-sector r-program r-ed fundraising development donors stewardship crm appeals confidentiality">
+          <div class="card-chips">
+            <span class="chip chip-topic">Sector Guides</span>
+            <span class="chip chip-role">Program Staff</span>
+            <span class="chip chip-role">Executive Directors</span>
+          </div>
+          <h3>AI for Fundraising &amp; Development</h3>
+          <p class="desc">What helps, what to watch for in donor work, and where confidentiality breaks down. CRM-AI integration guidance and the personalization vs. surveillance line.</p>
+          <div class="card-footer"><div class="card-meta"><strong>8 min read</strong></div><span class="card-dl">Read →</span></div>
+        </a>
+
+        <a href="nonprofit_ai_workforce.html" target="_blank" class="resource-card library-card" data-topics="t-staff t-equity r-ed r-board r-program workforce staff impact augmentation displacement capacity treadmill">
+          <div class="card-chips">
+            <span class="chip chip-topic">Staff &amp; Workforce</span>
+            <span class="chip chip-topic">Equity &amp; Risk</span>
+            <span class="chip chip-role">Executive Directors</span>
+            <span class="chip chip-role">Board</span>
+            <span class="chip chip-role">Program Staff</span>
+          </div>
+          <h3>AI and Your Staff</h3>
+          <p class="desc">Augmentation versus displacement, the capacity treadmill, and conversations to have with staff before you adopt.</p>
+          <div class="card-footer"><div class="card-meta"><strong>9 min read</strong></div><span class="card-dl">Read →</span></div>
+        </a>
+
+        <a href="nonprofit_ai_equity_lens.html" target="_blank" class="resource-card library-card" data-topics="t-equity r-ed r-funder r-program equity lens four questions framework vulnerable populations bias">
+          <div class="card-chips">
+            <span class="chip chip-topic">Equity &amp; Risk</span>
+            <span class="chip chip-role">Executive Directors</span>
+            <span class="chip chip-role">Funders</span>
+            <span class="chip chip-role">Program Staff</span>
+          </div>
+          <h3>The Equity Lens (Four Questions)</h3>
+          <p class="desc">Four equity questions to ask before any AI adoption: affected groups, harms, accountability, and reversibility. Built for a fast vendor-demo check.</p>
+          <div class="card-footer"><div class="card-meta"><strong>6 min read</strong></div><span class="card-dl">Read →</span></div>
+        </a>
+
+        <a href="nonprofit_ai_environmental_cost.html" target="_blank" class="resource-card library-card" data-topics="t-equity r-ed r-board r-funder environmental cost energy water carbon footprint sustainability data center">
+          <div class="card-chips">
+            <span class="chip chip-topic">Equity &amp; Risk</span>
+            <span class="chip chip-role">Executive Directors</span>
+            <span class="chip chip-role">Board</span>
+            <span class="chip chip-role">Funders</span>
+          </div>
+          <h3>The Environmental Cost of AI</h3>
+          <p class="desc">What nonprofits should know about energy and water use, carbon footprint, and how to ask vendors about sustainability.</p>
+          <div class="card-footer"><div class="card-meta"><strong>7 min read</strong></div><span class="card-dl">Read →</span></div>
+        </a>
+
+        <a href="nonprofit_ai_translation_multilingual.html" target="_blank" class="resource-card library-card" data-topics="t-sector r-program translation multilingual language immigrant refugee lep vital documents back translation accessibility">
+          <div class="card-chips">
+            <span class="chip chip-topic">Sector Guides</span>
+            <span class="chip chip-role">Program Staff</span>
+          </div>
+          <h3>AI Translation and Multilingual Communications</h3>
+          <p class="desc">Where AI translation works, where it breaks (Title VI, low-resource languages, cultural concepts), and the back-translation discipline that catches errors.</p>
+          <div class="card-footer"><div class="card-meta"><strong>8 min read</strong></div><span class="card-dl">Read →</span></div>
+        </a>
+
+        <a href="nonprofit_ai_bias_client_facing.html" target="_blank" class="resource-card library-card" data-topics="t-equity t-data r-program r-ed bias client facing eligibility screening intake prioritization automated decisions allocative representational">
+          <div class="card-chips">
+            <span class="chip chip-topic">Equity &amp; Risk</span>
+            <span class="chip chip-topic">Data &amp; Privacy</span>
+            <span class="chip chip-role">Program Staff</span>
+            <span class="chip chip-role">Executive Directors</span>
+          </div>
+          <h3>Bias in Client-Facing AI</h3>
+          <p class="desc">How bias shows up in eligibility, intake, prioritization, and decisions that affect people. Practical checks for allocative and representational harm.</p>
+          <div class="card-footer"><div class="card-meta"><strong>8 min read</strong></div><span class="card-dl">Read →</span></div>
+        </a>
+
+        <a href="nonprofit_ai_disability_services.html" target="_blank" class="resource-card library-card" data-topics="t-sector r-program r-ed disability idd developmental supported employment consent residential apse cognitive">
+          <div class="card-chips">
+            <span class="chip chip-topic">Sector Guides</span>
+            <span class="chip chip-role">Program Staff</span>
+            <span class="chip chip-role">Executive Directors</span>
+          </div>
+          <h3>AI in Disability Services</h3>
+          <p class="desc">Considerations for IDD and supported-employment organizations: consent, cognitive accessibility, residential-setting risks, APSE-aligned practice.</p>
+          <div class="card-footer"><div class="card-meta"><strong>8 min read</strong></div><span class="card-dl">Read →</span></div>
+        </a>
+
+        <a href="nonprofit_ai_llm_literacy.html" target="_blank" class="resource-card library-card" data-topics="t-staff r-program r-tech llm literacy custom gpts projects gems context reference documents">
+          <div class="card-chips">
+            <span class="chip chip-topic">Staff &amp; Workforce</span>
+            <span class="chip chip-role">Program Staff</span>
+            <span class="chip chip-role">Tech-Adjacent</span>
+          </div>
+          <h3>Getting More From Any AI</h3>
+          <p class="desc">Custom GPTs, Claude Projects, Gemini Gems, and persistent context. How to set up reusable assistants that learn your organization's voice.</p>
+          <div class="card-footer"><div class="card-meta"><strong>7 min read</strong></div><span class="card-dl">Read →</span></div>
+        </a>
+
+        <a href="nonprofit_ai_prompting_iteration.html" target="_blank" class="resource-card library-card" data-topics="t-staff r-program prompting iteration refine output draft cycle worked example">
+          <div class="card-chips">
+            <span class="chip chip-topic">Staff &amp; Workforce</span>
+            <span class="chip chip-role">Program Staff</span>
+          </div>
+          <h3>Prompting &amp; Iteration</h3>
+          <p class="desc">How to refine when the first output is mediocre: iteration patterns, worked examples, and the avoidance lists that fix tone.</p>
+          <div class="card-footer"><div class="card-meta"><strong>7 min read</strong></div><span class="card-dl">Read →</span></div>
+        </a>
+
+        <a href="nonprofit_ai_for_funders.html" target="_blank" class="resource-card library-card" data-topics="t-gov r-funder funder grantmaker foundation program officer due diligence ai grantee philanthropy three tier">
+          <div class="card-chips">
+            <span class="chip chip-topic">Governance</span>
+            <span class="chip chip-role">Funders</span>
+          </div>
+          <h3>How to Ask Grantees About AI Use</h3>
+          <p class="desc">A three-tier framework for funders and program officers doing AI due diligence on grantees. Sample questions for each grant size and risk level.</p>
+          <div class="card-footer"><div class="card-meta"><strong>8 min read</strong></div><span class="card-dl">Read →</span></div>
+        </a>
+
+        <a href="nonprofit_ai_nist_crosswalk.html" target="_blank" class="resource-card library-card" data-topics="t-gov t-equity r-ed r-funder r-tech nist ai rmf risk management framework crosswalk govern map measure manage federal funder">
+          <div class="card-chips">
+            <span class="chip chip-topic">Governance</span>
+            <span class="chip chip-topic">Equity &amp; Risk</span>
+            <span class="chip chip-role">Executive Directors</span>
+            <span class="chip chip-role">Funders</span>
+            <span class="chip chip-role">Tech-Adjacent</span>
+          </div>
+          <h3>NIST AI Risk Management Framework Crosswalk</h3>
+          <p class="desc">Plain-language map of GOVERN, MAP, MEASURE, and MANAGE to nonprofit practice, with cross-references to every guide on the site.</p>
+          <div class="card-footer"><div class="card-meta"><strong>10 min read</strong></div><span class="card-dl">Read →</span></div>
+        </a>
+
+        <a href="nonprofit_ai_risk_tier_chart.html" target="_blank" class="resource-card library-card" data-topics="t-equity r-ed r-board r-tech risk tier chart wall low medium high prohibited printable">
+          <div class="card-chips">
+            <span class="chip chip-topic">Equity &amp; Risk</span>
+            <span class="chip chip-role">Executive Directors</span>
+            <span class="chip chip-role">Board</span>
+            <span class="chip chip-role">Tech-Adjacent</span>
+          </div>
+          <h3>Risk-Tier Use Chart (One-Pager)</h3>
+          <p class="desc">A printable wall chart classifying nonprofit AI uses by risk tier, from low-risk drafting through prohibited uses involving client decisions.</p>
+          <div class="card-footer"><div class="card-meta"><strong>One-pager</strong> · printable</div><span class="card-dl">Read →</span></div>
+        </a>
+
+        <a href="nonprofit_ai_board_questions.html" target="_blank" class="resource-card library-card" data-topics="t-gov r-board r-ed board questions five governance fiduciary forvis mazars">
+          <div class="card-chips">
+            <span class="chip chip-topic">Governance</span>
+            <span class="chip chip-role">Board</span>
+            <span class="chip chip-role">Executive Directors</span>
+          </div>
+          <h3>Five Questions Every Board Should Ask</h3>
+          <p class="desc">Five questions covering governance, data, vendor accountability, equity, and continuity, with sample meeting language.</p>
+          <div class="card-footer"><div class="card-meta"><strong>One-pager</strong> · printable</div><span class="card-dl">Read →</span></div>
+        </a>
+
+        <a href="nonprofit_ai_procurement_language.html" target="_blank" class="resource-card library-card" data-topics="t-vendors t-gov r-ed r-tech procurement language pack contract clauses rfp msa baa exit terms">
+          <div class="card-chips">
+            <span class="chip chip-topic">Vendors</span>
+            <span class="chip chip-topic">Governance</span>
+            <span class="chip chip-role">Executive Directors</span>
+            <span class="chip chip-role">Tech-Adjacent</span>
+          </div>
+          <h3>AI Procurement Language Pack</h3>
+          <p class="desc">Ready-to-use contract clauses, RFP questions, BAA addendum language, and exit terms. The immediate-utility artifact for any nonprofit signing AI-touching contracts.</p>
+          <div class="card-footer"><div class="card-meta"><strong>One-pager</strong> · printable</div><span class="card-dl">Read →</span></div>
+        </a>
+
+        <a href="nonprofit_ai_sector_arts.html" target="_blank" class="resource-card library-card" data-topics="t-sector r-program r-ed arts culture museum gallery artist copyright image generation creative community">
+          <div class="card-chips">
+            <span class="chip chip-topic">Sector Guides</span>
+            <span class="chip chip-role">Program Staff</span>
+            <span class="chip chip-role">Executive Directors</span>
+          </div>
+          <h3>AI in Arts &amp; Culture Nonprofits</h3>
+          <p class="desc">Artist constituencies, copyright considerations, image generation tiers, and creative-community policy questions.</p>
+          <div class="card-footer"><div class="card-meta"><strong>7 min read</strong></div><span class="card-dl">Read →</span></div>
+        </a>
+
+        <a href="nonprofit_ai_sector_advocacy.html" target="_blank" class="resource-card library-card" data-topics="t-sector r-program r-ed advocacy civic lobbying electioneering deepfake authenticity policy organizing voter">
+          <div class="card-chips">
+            <span class="chip chip-topic">Sector Guides</span>
+            <span class="chip chip-role">Program Staff</span>
+            <span class="chip chip-role">Executive Directors</span>
+          </div>
+          <h3>AI in Advocacy &amp; Civic Nonprofits</h3>
+          <p class="desc">Lobbying limits, electioneering rules, authenticity in organizing, and the deepfake risk that lands fastest.</p>
+          <div class="card-footer"><div class="card-meta"><strong>8 min read</strong></div><span class="card-dl">Read →</span></div>
+        </a>
+
+        <a href="nonprofit_ai_sector_environmental.html" target="_blank" class="resource-card library-card" data-topics="t-sector r-program r-ed environmental climate conservation sustainability footprint carbon water scientific accuracy">
+          <div class="card-chips">
+            <span class="chip chip-topic">Sector Guides</span>
+            <span class="chip chip-role">Program Staff</span>
+            <span class="chip chip-role">Executive Directors</span>
+          </div>
+          <h3>AI in Environmental &amp; Climate Nonprofits</h3>
+          <p class="desc">Mission alignment, footprint trade-offs, scientific accuracy, and using AI for general-audience research synthesis.</p>
+          <div class="card-footer"><div class="card-meta"><strong>8 min read</strong></div><span class="card-dl">Read →</span></div>
+        </a>
+
+        <a href="nonprofit_ai_sector_international.html" target="_blank" class="resource-card library-card" data-topics="t-sector r-program r-ed international development global humanitarian cross border data partner organization gdpr local context">
+          <div class="card-chips">
+            <span class="chip chip-topic">Sector Guides</span>
+            <span class="chip chip-role">Program Staff</span>
+            <span class="chip chip-role">Executive Directors</span>
+          </div>
+          <h3>AI in International Development Nonprofits</h3>
+          <p class="desc">Cross-border data, GDPR exposure, power dynamics with partners, and local-context translation limits.</p>
+          <div class="card-footer"><div class="card-meta"><strong>8 min read</strong></div><span class="card-dl">Read →</span></div>
+        </a>
+
+      </div>
+
+      <p id="no-results-library" class="no-results">No guides match your search. Try different keywords or clear the filter.</p>
+
+      <div style="margin-top: 56px; padding: 32px; background: var(--sage); border-radius: var(--radius-lg); border: 1px solid var(--sage-mid);">
+        <div class="flex-between" style="flex-wrap: wrap; gap: 16px;">
+          <div>
+            <h3 style="font-size: 1.2rem; margin-bottom: 8px;">Need help finding the right guide?</h3>
+            <p style="font-size: 0.9rem; color: var(--muted); max-width: 500px;">If you're not sure where to start, a 15-minute conversation usually clears it up faster than browsing.</p>
+          </div>
+          <a class="btn btn-green" href="#" onclick="showPage('about'); return false;">Book a free intro call →</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+</div><!-- /page-library -->
 
 
 <!-- ============================================================
@@ -2069,9 +2561,9 @@ button { cursor: pointer; font-family: inherit; }
             <p style="font-size:0.9rem; color:var(--muted);">Plain-language, nonprofit-specific, no vendor ties. Start here if you're new to the site.</p>
           </div>
           <div style="display:flex; gap:10px; flex-wrap:wrap;">
-            <a class="btn btn-green btn-sm" href="#" onclick="showPage('lane1'); return false;">Considering AI →</a>
-            <a class="btn btn-ghost btn-sm" href="#" onclick="showPage('lane2'); return false;">Already Using AI →</a>
-            <a class="btn btn-ghost btn-sm" href="#" onclick="showPage('lane3'); return false;">Shadow AI →</a>
+            <a class="btn btn-green btn-sm" href="#" onclick="showPage('library'); return false;">Considering AI →</a>
+            <a class="btn btn-ghost btn-sm" href="#" onclick="showPage('library'); return false;">Already Using AI →</a>
+            <a class="btn btn-ghost btn-sm" href="#" onclick="showPage('library'); return false;">Shadow AI →</a>
           </div>
         </div>
       </div>
@@ -4160,8 +4652,8 @@ Limit to the 10 to 15 most important terms. Skip jargon that is genuinely common
       <div>
         <h5>Resources</h5>
         <ul>
-          <li><a href="#" onclick="showPage('lane1'); return false;">Getting Started</a></li>
-          <li><a href="#" onclick="showPage('lane2'); return false;">Already Using AI</a></li>
+          <li><a href="#" onclick="showPage('library'); return false;">Getting Started</a></li>
+          <li><a href="#" onclick="showPage('library'); return false;">Already Using AI</a></li>
           <li><a href="#" onclick="showPage('resources'); return false;">External Library</a></li>
           <li><a href="#" onclick="showPage('blog'); return false;">Blog</a></li>
         </ul>
@@ -4300,9 +4792,10 @@ function renderCard(p) {
 const NAV_MAP = {
   home: 'nav-home',
   understanding: 'nav-understanding',
-  lane1: 'nav-lane1',
-  lane2: 'nav-lane2',
-  lane3: 'nav-lane3',
+  library: 'nav-library',
+  lane1: 'nav-library',
+  lane2: 'nav-library',
+  lane3: 'nav-library',
   tools: 'nav-tools',
   prompts: 'nav-prompts',
   resources: 'nav-resources',
@@ -4368,6 +4861,71 @@ function filterCards(containerId, query, topicFilter) {
 }
 
 
+// ─── GUIDE LIBRARY: view toggle + dual-axis filter ───
+let LIBRARY_VIEW = 'topic';   // 'topic' | 'role'
+let LIBRARY_FILTER = '';      // '' | 't-gov' | 'r-ed' | etc.
+
+function setLibraryView(view) {
+  LIBRARY_VIEW = view;
+  LIBRARY_FILTER = '';
+  const topicBtn = document.getElementById('library-view-topic-btn');
+  const roleBtn = document.getElementById('library-view-role-btn');
+  const topicFilters = document.getElementById('library-filters-topic');
+  const roleFilters = document.getElementById('library-filters-role');
+  if (view === 'topic') {
+    topicBtn.classList.add('active'); topicBtn.setAttribute('aria-selected', 'true');
+    roleBtn.classList.remove('active'); roleBtn.setAttribute('aria-selected', 'false');
+    topicFilters.style.display = '';
+    roleFilters.style.display = 'none';
+  } else {
+    roleBtn.classList.add('active'); roleBtn.setAttribute('aria-selected', 'true');
+    topicBtn.classList.remove('active'); topicBtn.setAttribute('aria-selected', 'false');
+    roleFilters.style.display = '';
+    topicFilters.style.display = 'none';
+  }
+  // Reset active filter chip to "All"
+  document.querySelectorAll('#library-filters-topic .filter-btn, #library-filters-role .filter-btn').forEach(b => b.classList.remove('active'));
+  const activeRow = view === 'topic' ? topicFilters : roleFilters;
+  const allBtn = activeRow.querySelector('.filter-btn[data-filter=""]');
+  if (allBtn) allBtn.classList.add('active');
+  filterLibrary();
+}
+
+function setLibraryFilter(filterValue, btn) {
+  LIBRARY_FILTER = filterValue;
+  const activeRow = LIBRARY_VIEW === 'topic'
+    ? document.getElementById('library-filters-topic')
+    : document.getElementById('library-filters-role');
+  activeRow.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  if (btn) btn.classList.add('active');
+  filterLibrary();
+}
+
+function filterLibrary() {
+  const container = document.getElementById('library-cards');
+  if (!container) return;
+  const searchEl = document.getElementById('search-library');
+  const q = (searchEl ? searchEl.value : '').toLowerCase().trim();
+  const tokens = q.split(/\s+/).filter(Boolean);
+  const cards = container.querySelectorAll('.resource-card');
+  let visible = 0;
+  cards.forEach(card => {
+    const text = (card.textContent || '').toLowerCase();
+    const topics = (card.getAttribute('data-topics') || '').toLowerCase();
+    const matchesQuery = tokens.length === 0 || tokens.every(t => text.includes(t) || topics.includes(t));
+    const matchesFilter = !LIBRARY_FILTER || topics.split(/\s+/).includes(LIBRARY_FILTER);
+    if (matchesQuery && matchesFilter) {
+      card.classList.remove('hidden');
+      visible++;
+    } else {
+      card.classList.add('hidden');
+    }
+  });
+  const noResults = document.getElementById('no-results-library');
+  if (noResults) noResults.classList.toggle('visible', visible === 0);
+}
+
+
 // ─── GLOBAL SITE-WIDE SEARCH ───
 let SEARCH_INDEX = null;
 
@@ -4375,15 +4933,19 @@ function buildSearchIndex() {
   if (SEARCH_INDEX) return SEARCH_INDEX;
   const index = [];
 
-  // Index resource cards (lane guides + specialized guides on Understanding AI)
-  document.querySelectorAll('#page-lane1 .resource-card, #page-lane2 .resource-card, #page-lane3 .resource-card, #page-understanding .resource-card').forEach(card => {
+  // Index resource cards (library + lane guides + specialized guides on Understanding AI)
+  const seenLinks = new Set();
+  document.querySelectorAll('#page-library .resource-card, #page-lane1 .resource-card, #page-lane2 .resource-card, #page-lane3 .resource-card, #page-understanding .resource-card').forEach(card => {
     const title = card.querySelector('h3')?.textContent?.trim();
     const desc = card.querySelector('.desc')?.textContent?.trim()?.slice(0, 160);
     // Card link can be on the card itself (anchor wrapping the card) or on a .card-dl child
     let link = card.getAttribute('href');
     if (!link) link = card.querySelector('.card-dl')?.getAttribute('href') || card.querySelector('a.card-dl')?.getAttribute('href');
+    // Dedupe across library + lane pages (same guide appears in both)
+    if (link && seenLinks.has(link)) return;
+    if (link) seenLinks.add(link);
     const lane = card.closest('[id^=page-]')?.id?.replace('page-', '');
-    if (title) index.push({ group: 'Guide', title, desc: desc || '', page: lane, href: link });
+    if (title) index.push({ group: 'Guide', title, desc: desc || '', page: lane === 'library' ? 'library' : lane, href: link });
   });
 
   // Index AI tools
@@ -4427,11 +4989,9 @@ function buildSearchIndex() {
   });
 
   // Index top-level pages
-  index.push({ group: 'Page', title: 'Home', desc: 'Start here, see all the lanes and resources.', page: 'home' });
+  index.push({ group: 'Page', title: 'Home', desc: 'Start here, see all the resources at a glance.', page: 'home' });
   index.push({ group: 'Page', title: 'Understanding AI', desc: 'How AI works, FAQ, risks, glossary, free courses.', page: 'understanding' });
-  index.push({ group: 'Page', title: 'Considering AI', desc: 'Guides for organizations thinking about AI.', page: 'lane1' });
-  index.push({ group: 'Page', title: 'Already Using AI', desc: 'Guides on governance, policy, vendor vetting.', page: 'lane2' });
-  index.push({ group: 'Page', title: 'Shadow AI', desc: 'Guides for when AI is already happening informally.', page: 'lane3' });
+  index.push({ group: 'Page', title: 'Guide Library', desc: 'Every guide on the site, browsable by topic or by role.', page: 'library' });
   index.push({ group: 'Page', title: 'AI Tools', desc: 'Honest reviews of AI tools and the red-flag rubric.', page: 'tools' });
   index.push({ group: 'Page', title: 'Prompt Library', desc: 'Ready-to-adapt prompts for nonprofit work.', page: 'prompts' });
   index.push({ group: 'Page', title: 'External Resources', desc: 'Curated library of frameworks, toolkits, and reading.', page: 'resources' });
@@ -4442,8 +5002,9 @@ function buildSearchIndex() {
   return SEARCH_INDEX;
 }
 
-function performGlobalSearch(query) {
-  const resultsBox = document.getElementById('hero-search-results');
+function performGlobalSearch(query, resultsId) {
+  resultsId = resultsId || 'hero-search-results';
+  const resultsBox = document.getElementById(resultsId);
   if (!resultsBox) return;
   const q = (query || '').toLowerCase().trim();
   if (!q || q.length < 2) {
@@ -4459,7 +5020,7 @@ function performGlobalSearch(query) {
 
   if (matches.length === 0) {
     resultsBox.innerHTML = `
-      <div class="search-meta"><span>No results</span><button class="search-close" onclick="closeSearch()">&times;</button></div>
+      <div class="search-meta"><span>No results</span><button class="search-close" onclick="closeSearch('${resultsId}')">&times;</button></div>
       <div class="search-no-results">Nothing matched "${escapeHtml(query)}". Try fewer or different keywords.</div>
     `;
     resultsBox.classList.add('visible');
@@ -4473,7 +5034,7 @@ function performGlobalSearch(query) {
     groups[m.group].push(m);
   });
   const groupOrder = ['Page', 'Guide', 'AI Tool', 'Prompt', 'Blog', 'External Resource', 'FAQ', 'Glossary'];
-  let html = `<div class="search-meta"><span>${matches.length} result${matches.length === 1 ? '' : 's'} for "${escapeHtml(query)}"</span><button class="search-close" onclick="closeSearch()">&times;</button></div>`;
+  let html = `<div class="search-meta"><span>${matches.length} result${matches.length === 1 ? '' : 's'} for "${escapeHtml(query)}"</span><button class="search-close" onclick="closeSearch('${resultsId}')">&times;</button></div>`;
   groupOrder.forEach(g => {
     if (!groups[g]) return;
     html += `<div class="search-group"><h5>${g}${groups[g].length > 1 ? 's' : ''}</h5>`;
@@ -4503,11 +5064,17 @@ function highlightMatch(text, tokens) {
   return out;
 }
 
-function closeSearch() {
-  const sr = document.getElementById('hero-search-results');
-  if (sr) sr.classList.remove('visible');
-  const input = document.getElementById('hero-search');
-  if (input) input.value = '';
+function closeSearch(resultsId) {
+  resultsId = resultsId || 'hero-search-results';
+  const sr = document.getElementById(resultsId);
+  if (sr) {
+    sr.classList.remove('visible');
+    const wrap = sr.parentElement;
+    if (wrap) {
+      const input = wrap.querySelector('input[type="text"]');
+      if (input) input.value = '';
+    }
+  }
 }
 
 
