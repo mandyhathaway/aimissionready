@@ -1440,6 +1440,46 @@ button { cursor: pointer; font-family: inherit; }
     </div>
   </section>
 
+  <!-- GUIDE LIBRARY FEATURE -->
+  <section class="section" style="background: var(--sage); border-top: 1px solid var(--sage-mid); border-bottom: 1px solid var(--sage-mid);">
+    <div class="container">
+      <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items:center;">
+        <div>
+          <div class="kicker" style="color:var(--forest);">Start with our guides</div>
+          <h2 style="margin-bottom:16px;">Every guide on the site, in one library</h2>
+          <p style="color:var(--muted); margin-bottom:24px;">Practitioner-written, plain-language, nonprofit-specific. Browse by topic when you know what you're working on, or by role when you want to see what other people in your seat are reading. Same guides underneath, different doors in.</p>
+          <a class="btn btn-green" href="#" onclick="showPage('library'); return false;">Browse the Guide Library →</a>
+        </div>
+        <div style="display:grid; grid-template-columns: 1fr 1fr; gap:12px;">
+          <a href="#" onclick="return goToLibrary('topic', 't-gov');" style="background:var(--white); border-radius:var(--radius); padding:16px; border:0.5px solid var(--sage-mid); text-decoration:none; color:inherit; display:block; transition: transform 0.15s, box-shadow 0.15s;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='var(--shadow-md)';" onmouseout="this.style.transform='none'; this.style.boxShadow='none';">
+            <p style="font-size:0.72rem; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; color:var(--forest); margin-bottom:6px;">Governance &amp; Policy</p>
+            <p style="font-size:0.85rem; color:var(--muted); margin:0;">Staff policy, board questions, NIST crosswalk, audits</p>
+          </a>
+          <a href="#" onclick="return goToLibrary('topic', 't-data');" style="background:var(--white); border-radius:var(--radius); padding:16px; border:0.5px solid var(--sage-mid); text-decoration:none; color:inherit; display:block; transition: transform 0.15s, box-shadow 0.15s;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='var(--shadow-md)';" onmouseout="this.style.transform='none'; this.style.boxShadow='none';">
+            <p style="font-size:0.72rem; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; color:var(--forest); margin-bottom:6px;">Data &amp; Privacy</p>
+            <p style="font-size:0.85rem; color:var(--muted); margin:0;">Security, confidentiality, case notes, HIPAA</p>
+          </a>
+          <a href="#" onclick="return goToLibrary('topic', 't-vendors');" style="background:var(--white); border-radius:var(--radius); padding:16px; border:0.5px solid var(--sage-mid); text-decoration:none; color:inherit; display:block; transition: transform 0.15s, box-shadow 0.15s;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='var(--shadow-md)';" onmouseout="this.style.transform='none'; this.style.boxShadow='none';">
+            <p style="font-size:0.72rem; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; color:var(--forest); margin-bottom:6px;">Vendors &amp; Procurement</p>
+            <p style="font-size:0.85rem; color:var(--muted); margin:0;">Vendor vetting, EHR migration, procurement clauses</p>
+          </a>
+          <a href="#" onclick="return goToLibrary('topic', 't-staff');" style="background:var(--white); border-radius:var(--radius); padding:16px; border:0.5px solid var(--sage-mid); text-decoration:none; color:inherit; display:block; transition: transform 0.15s, box-shadow 0.15s;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='var(--shadow-md)';" onmouseout="this.style.transform='none'; this.style.boxShadow='none';">
+            <p style="font-size:0.72rem; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; color:var(--forest); margin-bottom:6px;">Staff &amp; Workforce</p>
+            <p style="font-size:0.85rem; color:var(--muted); margin:0;">Workforce impact, prompting, LLM literacy</p>
+          </a>
+          <a href="#" onclick="return goToLibrary('topic', 't-equity');" style="background:var(--white); border-radius:var(--radius); padding:16px; border:0.5px solid var(--sage-mid); text-decoration:none; color:inherit; display:block; transition: transform 0.15s, box-shadow 0.15s;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='var(--shadow-md)';" onmouseout="this.style.transform='none'; this.style.boxShadow='none';">
+            <p style="font-size:0.72rem; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; color:var(--forest); margin-bottom:6px;">Equity, Risk &amp; Impact</p>
+            <p style="font-size:0.85rem; color:var(--muted); margin:0;">Equity lens, bias, risk tier, environmental cost</p>
+          </a>
+          <a href="#" onclick="return goToLibrary('topic', 't-sector');" style="background:var(--white); border-radius:var(--radius); padding:16px; border:0.5px solid var(--sage-mid); text-decoration:none; color:inherit; display:block; transition: transform 0.15s, box-shadow 0.15s;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='var(--shadow-md)';" onmouseout="this.style.transform='none'; this.style.boxShadow='none';">
+            <p style="font-size:0.72rem; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; color:var(--forest); margin-bottom:6px;">Sector Guides</p>
+            <p style="font-size:0.85rem; color:var(--muted); margin:0;">Disability, arts, advocacy, environmental, international</p>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- EXTERNAL RESOURCES FEATURE -->
   <section class="section" style="background: var(--blue-light); border-top: 1px solid var(--sky-mid); border-bottom: 1px solid var(--sky-mid);">
     <div class="container">
@@ -1447,7 +1487,7 @@ button { cursor: pointer; font-family: inherit; }
         <div>
           <div class="kicker" style="color:var(--blue);">Beyond our guides</div>
           <h2 style="margin-bottom:16px;">A curated library of external resources</h2>
-          <p style="color:var(--muted); margin-bottom:24px;">The AI policy and ethics space moves fast, and no single site covers everything. I've hand-picked 20+ frameworks, toolkits, training programs, and research reports from organizations doing credible work in this space: NTEN, NetHope, AJL, Data &amp; Society, EFF, NIST, and more. No ads, no affiliate links.</p>
+          <p style="color:var(--muted); margin-bottom:24px;">The AI policy and ethics space moves fast, and no single site covers everything. I've hand-picked frameworks, toolkits, training programs, and research reports from organizations doing credible work in this space: NTEN, NetHope, AJL, Data &amp; Society, EFF, NIST, and more. No ads, no affiliate links.</p>
           <a class="btn btn-green" href="#" onclick="showPage('resources'); return false;">Browse external resources →</a>
         </div>
         <div style="display:grid; grid-template-columns: 1fr 1fr; gap:12px;">
@@ -1495,7 +1535,7 @@ button { cursor: pointer; font-family: inherit; }
 
         <div class="faq-item" style="background: var(--white); border: 1px solid var(--rule); border-radius: var(--radius-lg); padding: 24px 28px;">
           <h3 style="font-family:'Playfair Display',serif; font-size: 1.15rem; font-weight: 700; color: var(--forest); margin-bottom: 10px;">Where should I start if I'm new to this?</h3>
-          <p style="font-size: 0.95rem; color: var(--ink); line-height: 1.65; margin: 0;">If your organization has not yet decided whether to use AI, start with the <a href="#" onclick="showPage('library'); return false;" style="color: var(--forest-mid); font-weight: 600;">Considering AI</a> lane. If your staff are already using AI tools, the <a href="#" onclick="showPage('library'); return false;" style="color: var(--forest-mid); font-weight: 600;">Already Using AI</a> lane is the right entry point. The data security guide is a reasonable first read for anyone in either situation.</p>
+          <p style="font-size: 0.95rem; color: var(--ink); line-height: 1.65; margin: 0;">Open the <a href="#" onclick="showPage('library'); return false;" style="color: var(--forest-mid); font-weight: 600;">Guide Library</a> and either pick a topic that matches what you're working on (governance, data, vendors, staff, equity, sector) or pick a role that matches your seat (executive director, program staff, board, funder, tech-adjacent). The data security guide is a reasonable first read for anyone, in any situation.</p>
         </div>
 
         <div class="faq-item" style="background: var(--white); border: 1px solid var(--rule); border-radius: var(--radius-lg); padding: 24px 28px;">
