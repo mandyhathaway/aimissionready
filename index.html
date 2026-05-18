@@ -4478,7 +4478,7 @@ Limit to the 10 to 15 most important terms. Skip jargon that is genuinely common
       <div class="about-card">
         <div class="about-grid">
           <div class="about-sidebar">
-            <div class="about-img-placeholder">🎓</div>
+            <div class="about-img-placeholder" style="background-image: url('mandy_headshot.jpg'), linear-gradient(145deg, var(--forest), var(--forest-mid)); background-size: cover; background-position: center; font-size: 0;" role="img" aria-label="Mandy Hathaway"></div>
             <ul class="cred-list">
               <li>MA, Ethical Technology &amp; AI · Metropolitan State University</li>
               <li>AI for Nonprofits Professional Certificate · Microsoft, LinkedIn, NetHope</li>
@@ -4681,6 +4681,7 @@ const BLOG_POSTS = [
   {
     slug: "blog_who_decides",
     href: "blog_who_decides.html",
+    image: "blog_who_decides_cover.jpg",
     category: "Governance",
     title: "Who decides whether your nonprofit uses AI?",
     excerpt: "Most nonprofits I talk to assume the answer is leadership. In practice, it's whoever opened ChatGPT first. That's worth getting in front of, calmly.",
@@ -4691,6 +4692,7 @@ const BLOG_POSTS = [
   {
     slug: "blog_funder_asked",
     href: "blog_funder_asked.html",
+    image: "blog_funder_asked_cover.jpg",
     category: "Funders",
     title: "A funder just asked us about our AI policy. What now?",
     excerpt: "The question is starting to land in due diligence packets across the sector. Here's how to answer honestly without overpromising, and what to actually have in place.",
@@ -4700,6 +4702,7 @@ const BLOG_POSTS = [
   {
     slug: "blog_client_data_chatgpt",
     href: "blog_client_data_chatgpt.html",
+    image: "blog_client_data_chatgpt_cover.jpg",
     category: "Data &amp; Privacy",
     title: "Our case manager put a client name in ChatGPT. What do we do?",
     excerpt: "Not the worst thing that could happen, and a normal mistake worth talking about openly. A practical sequence: what to do tonight, this week, and next month.",
@@ -4709,6 +4712,7 @@ const BLOG_POSTS = [
   {
     slug: "blog_ehr_vendors_adding_ai",
     href: "blog_ehr_vendors_adding_ai.html",
+    image: "blog_ehr_vendors_adding_ai_cover.jpg",
     category: "Vendors",
     title: "Your EHR is adding AI features. Read this before you click yes.",
     excerpt: "Every major EHR is shipping AI features in 2026, usually default-on. What that means for your BAA chain, your clinical workflow, and the conversation you should have with the vendor.",
@@ -4735,9 +4739,12 @@ function renderBlogCards() {
 }
 
 function renderFeatured(p) {
+  const imgStyle = p.image
+    ? `style="background-image: linear-gradient(135deg, rgba(26,61,43,0.55) 0%, rgba(45,90,61,0.55) 100%), url('${p.image}'); background-size: cover; background-position: center;"`
+    : '';
   return `
     <a href="${p.href}" target="_blank" class="blog-featured" style="text-decoration:none; color:inherit;">
-      <div class="blog-featured-img">
+      <div class="blog-featured-img" ${imgStyle}>
         <div style="position:relative; z-index:1;">
           <span class="blog-featured-badge">Featured</span>
           <h2>${p.title}</h2>
@@ -4753,9 +4760,12 @@ function renderFeatured(p) {
 }
 
 function renderCard(p) {
+  const imgStyle = p.image
+    ? `style="background-image: linear-gradient(135deg, rgba(26,61,43,0.55) 0%, rgba(45,90,61,0.55) 100%), url('${p.image}'); background-size: cover; background-position: center;"`
+    : '';
   return `
     <a href="${p.href}" target="_blank" class="blog-card" style="text-decoration:none; color:inherit;">
-      <div class="blog-card-img">
+      <div class="blog-card-img" ${imgStyle}>
         <span class="blog-cat">${p.category}</span>
       </div>
       <div class="blog-card-body">
